@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blue Engine — Visual Identity v2</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* ── Blues ── */
+  --navy:         #0B1E36;
+  --royal:        #1455A4;
+  --blue:         #1976D2;
+  --teal:         #3DA6CD;
+  --powder:       #DDEEFF;
+  --bg:           #F0F6FF;
+  --surface:      #FFFFFF;
+
+  /* ── Warm contrast ── */
+  --amber:        #C8921A;
+  --amber-deep:   #A87415;
+  --amber-pale:   rgba(200, 146, 26, 0.09);
+
+  /* ── Ink ── */
+  --ink:          #0B1E36;
+  --ink-mid:      #2C3F58;
+  --ink-light:    #5A7080;
+
+  /* ── Borders ── */
+  --border:       #C2D6EE;
+  --border-light: #D9E8F8;
+
+  /* ── Shadows ── */
+  --shadow-blue:  0 4px 28px rgba(25, 118, 210, 0.14), 0 1px 4px rgba(25, 118, 210, 0.08);
+  --shadow-soft:  0 2px 20px rgba(11, 30, 54, 0.07), 0 1px 4px rgba(11, 30, 54, 0.04);
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+/* ── LAYOUT ── */
+.page { max-width: 980px; margin: 0 auto; padding: 60px 40px 120px; }
+
+/* ── HEADER ── */
+.preview-header { border-bottom: 2px solid var(--border); padding-bottom: 36px; margin-bottom: 72px; }
+.preview-version {
+  font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--amber); margin-bottom: 10px;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.preview-version::before { content: '●'; font-size: 8px; }
+.preview-header h1 {
+  font-family: 'DM Sans', sans-serif; font-size: 42px; font-weight: 700;
+  color: var(--ink); line-height: 1.12; letter-spacing: -0.02em;
+}
+.preview-header h1 em { font-style: normal; color: var(--teal); font-weight: 400; }
+.preview-header p {
+  margin-top: 12px; font-size: 18px; color: var(--ink-light); font-weight: 300; line-height: 1.7;
+}
+.change-log {
+  margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px;
+}
+.change-pill {
+  font-size: 13px; font-weight: 600; padding: 5px 14px; border-radius: 100px;
+}
+.change-pill.new { background: var(--amber-pale); color: var(--amber-deep); border: 1px solid rgba(200,146,26,0.2); }
+.change-pill.updated { background: rgba(25,118,210,0.08); color: var(--royal); border: 1px solid rgba(25,118,210,0.2); }
+
+/* ── SECTION ── */
+.section { margin-bottom: 80px; }
+.section-label {
+  font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--blue); margin-bottom: 24px;
+  display: flex; align-items: center; gap: 12px;
+}
+.section-label::after { content: ''; flex: 1; height: 1px; background: var(--border-light); }
+
+/* ── PALETTE ── */
+.palette-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 16px; }
+.swatch { border-radius: 12px; overflow: hidden; border: 1px solid var(--border-light); }
+.swatch-color { height: 90px; }
+.swatch-info { background: white; padding: 12px 14px; }
+.swatch-name { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+.swatch-hex { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--ink-light); letter-spacing: 0.04em; }
+.swatch-role { font-size: 12px; color: var(--ink-light); margin-top: 4px; font-weight: 300; }
+
+/* ── TYPOGRAPHY ── */
+.type-stack { display: flex; flex-direction: column; gap: 0; }
+.type-row {
+  display: grid; grid-template-columns: 180px 1fr; gap: 28px; align-items: start;
+  padding: 32px 0; border-bottom: 1px solid var(--border-light);
+}
+.type-row:last-child { border-bottom: none; }
+.type-meta-name {
+  font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--blue); margin-bottom: 6px;
+}
+.type-meta-detail { font-size: 13px; color: var(--ink-light); font-weight: 300; line-height: 1.6; }
+.type-size-badge {
+  display: inline-block; margin-top: 6px;
+  font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.08em;
+  background: var(--amber-pale); color: var(--amber-deep);
+  padding: 2px 8px; border-radius: 4px;
+}
+.t-display {
+  font-family: 'DM Sans', sans-serif; font-size: 58px; font-weight: 700;
+  line-height: 1.08; letter-spacing: -0.025em; color: var(--ink);
+}
+.t-display em { font-style: normal; color: var(--teal); font-weight: 400; }
+.t-h2 {
+  font-family: 'DM Sans', sans-serif; font-size: 36px; font-weight: 700;
+  line-height: 1.15; letter-spacing: -0.02em; color: var(--ink);
+}
+.t-h2 em { font-style: normal; color: var(--teal); }
+.t-h3 {
+  font-family: 'DM Sans', sans-serif; font-size: 24px; font-weight: 600;
+  line-height: 1.22; color: var(--ink);
+}
+.t-body {
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 18px;
+  font-weight: 300; line-height: 1.78; color: var(--ink-mid); max-width: 540px;
+}
+.t-body-large {
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 20px;
+  font-weight: 300; line-height: 1.75; color: var(--ink-mid); max-width: 560px;
+}
+.t-caption {
+  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 15px;
+  font-weight: 400; color: var(--ink-light); line-height: 1.65;
+}
+.t-mono {
+  font-family: 'IBM Plex Mono', monospace; font-size: 12px;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--blue);
+}
+
+/* ── BUTTONS ── */
+.btn-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 16px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 16px; font-weight: 600; text-decoration: none; border: none;
+  cursor: pointer; border-radius: 8px; padding: 14px 28px; transition: all 0.2s;
+}
+.btn-primary { background: var(--amber); color: white; box-shadow: 0 4px 20px rgba(200,146,26,0.30); }
+.btn-primary:hover { background: var(--amber-deep); }
+.btn-blue { background: var(--blue); color: white; box-shadow: 0 4px 20px rgba(25,118,210,0.25); }
+.btn-blue:hover { background: var(--royal); }
+.btn-outline { color: var(--navy); background: white; border: 1.5px solid var(--border); }
+.btn-outline:hover { border-color: var(--blue); color: var(--blue); }
+.btn-ghost { color: var(--blue); background: rgba(25,118,210,0.08); border: 1px solid rgba(25,118,210,0.20); }
+.btn-dark { background: var(--navy); color: white; }
+.btn-sm { font-size: 13px; padding: 10px 20px; }
+.btn-mono {
+  font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px; background: var(--amber); color: white;
+  border-radius: 6px; border: none; cursor: pointer;
+}
+
+/* ── TAGS / CHIPS ── */
+.tag-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.tag {
+  font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 5px 13px; border-radius: 100px; font-weight: 500;
+}
+.tag-blue { color: var(--royal); background: rgba(25,118,210,0.09); border: 1px solid rgba(25,118,210,0.22); }
+.tag-coral { color: var(--amber-deep); background: var(--amber-pale); border: 1px solid rgba(200,146,26,0.22); }
+.tag-navy { color: rgba(255,255,255,0.88); background: var(--navy); }
+.tag-sky { color: #0B4A8A; background: var(--powder); border: 1px solid var(--border); }
+.chip {
+  font-size: 14px; font-weight: 600; color: var(--blue);
+  background: rgba(25,118,210,0.09); padding: 6px 16px;
+  border-radius: 100px; display: inline-flex; align-items: center; gap: 6px;
+}
+.chip::before { content: '✓'; color: var(--blue); font-weight: 700; }
+.chip-coral {
+  font-size: 14px; font-weight: 600; color: var(--amber-deep);
+  background: var(--amber-pale); padding: 6px 16px;
+  border-radius: 100px; display: inline-flex; align-items: center; gap: 6px;
+}
+.chip-coral::before { content: '✓'; color: var(--amber); font-weight: 700; }
+
+/* ── CARDS ── */
+.card-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+.card {
+  background: white; border: 1px solid var(--border-light); border-radius: 16px;
+  padding: 32px; position: relative; overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+.card-icon {
+  width: 48px; height: 48px; background: rgba(25,118,210,0.10);
+  border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
+}
+.card-title { font-family: 'DM Sans', sans-serif; font-size: 20px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+.card-body { font-size: 16px; font-weight: 300; color: var(--ink-mid); line-height: 1.75; }
+.card::after {
+  content: ''; position: absolute; bottom: 0; left: 32px; right: 32px; height: 3px;
+  background: var(--amber); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s ease;
+}
+.card:hover::after { transform: scaleX(1); }
+.card-dark { background: var(--navy); border-color: rgba(255,255,255,0.07); }
+.card-dark .card-title { color: white; }
+.card-dark .card-body { color: rgba(255,255,255,0.5); }
+.card-dark .card-icon { background: rgba(25,118,210,0.18); }
+.card-featured {
+  background: var(--blue); border-color: var(--blue); color: white;
+}
+.card-featured .card-title { color: white; }
+.card-featured .card-body { color: rgba(255,255,255,0.8); }
+.card-featured .card-icon { background: rgba(255,255,255,0.15); }
+
+/* ── HERO DARK SAMPLE ── */
+.motif-area {
+  position: relative; height: 260px; background: var(--navy);
+  border-radius: 20px; overflow: hidden;
+  display: flex; align-items: center; padding: 0 52px; gap: 48px;
+}
+.motif-circle { position: absolute; border-radius: 50%; pointer-events: none; }
+.motif-text { position: relative; z-index: 2; flex: 1; }
+.motif-eyebrow {
+  font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 12px;
+}
+.motif-headline {
+  font-family: 'DM Sans', sans-serif; font-size: 38px; font-weight: 400;
+  color: white; line-height: 1.1;
+}
+.motif-headline em { font-style: normal; color: var(--teal); font-weight: 400; }
+.motif-cta { margin-top: 20px; }
+.motif-stat { position: relative; z-index: 2; text-align: center; }
+.motif-stat-num {
+  font-family: 'DM Sans', sans-serif; font-size: 52px; font-weight: 700; color: white; line-height: 1;
+}
+.motif-stat-num span { color: var(--amber); }
+.motif-stat-label {
+  font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: rgba(255,255,255,0.4); margin-top: 8px;
+}
+
+/* ── IMAGERY DIRECTION ── */
+.image-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.image-placeholder {
+  border-radius: 16px; overflow: hidden; position: relative; aspect-ratio: 4/3;
+  background: var(--powder); border: 1px solid var(--border-light);
+}
+.image-placeholder img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.image-overlay {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 16px;
+  background: linear-gradient(to top, rgba(11,30,54,0.65) 0%, transparent 55%);
+}
+.image-tag {
+  font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: white; background: var(--amber);
+  padding: 4px 10px; border-radius: 4px; align-self: flex-start;
+}
+.image-caption { font-size: 14px; font-weight: 500; color: white; margin-top: 6px; line-height: 1.4; }
+.image-note {
+  margin-top: 10px; font-size: 14px; color: var(--ink-light); font-style: italic; font-weight: 300;
+}
+
+/* ── STAT STRIP ── */
+.stat-strip {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  background: white; border: 1px solid var(--border-light);
+  border-radius: 16px; overflow: hidden;
+}
+.stat { padding: 32px 28px; border-right: 1px solid var(--border-light); }
+.stat:last-child { border-right: none; }
+.stat-num {
+  font-family: 'DM Sans', sans-serif; font-size: 44px; font-weight: 700;
+  color: var(--ink); line-height: 1; margin-bottom: 6px;
+}
+.stat-num .accent { color: var(--amber); }
+.stat-label {
+  font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light);
+}
+
+/* ── NAV ── */
+.nav-sample {
+  background: rgba(240,246,255,0.95); backdrop-filter: blur(16px);
+  border: 1px solid var(--border-light); border-radius: 14px;
+  padding: 0 32px; height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo-demo { display: flex; align-items: center; gap: 12px; }
+.nav-logo-demo img { height: 28px; width: auto; }
+.nav-sub-demo {
+  font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ink-light);
+  padding-left: 12px; border-left: 1px solid var(--border);
+}
+.nav-links-demo { display: flex; gap: 32px; align-items: center; list-style: none; }
+.nav-links-demo li a { font-size: 15px; font-weight: 500; color: var(--ink-mid); text-decoration: none; }
+.nav-cta-demo {
+  background: var(--amber) !important; color: white !important;
+  padding: 10px 22px; border-radius: 8px; font-size: 14px !important;
+  font-weight: 700 !important; box-shadow: 0 3px 14px rgba(200,146,26,0.3);
+}
+
+/* ── QUOTE ── */
+.quote-block {
+  background: white; border-radius: 16px; padding: 36px 40px;
+  border-left: 4px solid var(--amber); box-shadow: var(--shadow-soft);
+}
+.quote-block blockquote {
+  font-family: 'DM Sans', sans-serif; 
+  font-size: 24px; font-weight: 500; color: var(--ink); line-height: 1.45; margin-bottom: 14px;
+}
+.quote-block cite { font-size: 15px; color: var(--ink-light); font-style: normal; font-weight: 400; }
+
+/* ── APPROVAL BAR ── */
+.approval-bar {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: var(--navy); padding: 18px 44px;
+  display: flex; align-items: center; justify-content: space-between;
+  z-index: 100; border-top: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 -8px 40px rgba(11,30,54,0.35);
+}
+.approval-bar p { font-size: 15px; color: rgba(255,255,255,0.55); font-weight: 300; }
+.approval-bar p strong { color: white; font-weight: 600; }
+.approval-actions { display: flex; gap: 10px; }
+.approval-actions button {
+  font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase; border: none; cursor: pointer;
+  padding: 10px 22px; border-radius: 7px;
+}
+.btn-approve { background: var(--amber); color: white; }
+.btn-approve:hover { background: var(--amber-deep); }
+.btn-reject { background: rgba(255,255,255,0.09); color: rgba(255,255,255,0.6); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="preview-header">
+    <div class="preview-version">Identity v5 — DM Sans</div>
+    <h1>Blue Engine Solutions<br><em>Visual Identity Preview</em></h1>
+    <p>DM Sans throughout — the standard clean font for SaaS and consulting brands. Clear, readable, no personality quirks.</p>
+    <div class="change-log">
+      <span class="change-pill new">Fraunces → DM Sans</span>
+      <span class="change-pill new">#3DA6CD teal added</span>
+      <span class="change-pill updated">No decorative italics</span>
+      <span class="change-pill updated">Amber CTAs kept</span>
+    </div>
+  </div>
+
+  <!-- 1. COLOR PALETTE -->
+  <div class="section">
+    <div class="section-label">01 — Color Palette</div>
+
+    <div class="palette-row">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#0B1E36;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Navy</div>
+          <div class="swatch-hex">#0B1E36</div>
+          <div class="swatch-role">Dark sections / footer / headings on light</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1455A4;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Royal</div>
+          <div class="swatch-hex">#1455A4</div>
+          <div class="swatch-role">Deep blue for hover states</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#1976D2;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Blue</div>
+          <div class="swatch-hex">#1976D2</div>
+          <div class="swatch-role">Primary blue / links / emphasis</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#3DA6CD;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Teal</div>
+          <div class="swatch-hex">#3DA6CD</div>
+          <div class="swatch-role">Accent / emphasis / section highlights</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#DDEEFF;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Powder</div>
+          <div class="swatch-hex">#DDEEFF</div>
+          <div class="swatch-role">Light backgrounds / tags</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-row">
+      <div class="swatch">
+        <div class="swatch-color" style="background:#C8921A;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Amber</div>
+          <div class="swatch-hex">#C8921A</div>
+          <div class="swatch-role">Primary CTA / attention / accent</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#A87415;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Amber Deep</div>
+          <div class="swatch-hex">#A87415</div>
+          <div class="swatch-role">CTA hover state</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#F0F6FF;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Cloud</div>
+          <div class="swatch-hex">#F0F6FF</div>
+          <div class="swatch-role">Page background</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#2C3F58;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Ink Mid</div>
+          <div class="swatch-hex">#2C3F58</div>
+          <div class="swatch-role">Body / paragraph text</div>
+        </div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background:#5A7080;"></div>
+        <div class="swatch-info">
+          <div class="swatch-name">Ink Light</div>
+          <div class="swatch-hex">#5A7080</div>
+          <div class="swatch-role">Captions / muted text</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:white;border-radius:12px;padding:20px 24px;border:1px solid var(--border-light);margin-top:4px;">
+      <p style="font-size:15px;color:var(--ink-light);font-weight:400;line-height:1.6;">
+        <strong style="color:var(--ink);">Usage logic:</strong>
+        Navy and blue carry the brand — trustworthy, professional. Amber is the action color: every CTA button, every "call us now" moment.
+        It's warm and inviting without the harshness of orange. Use it sparingly against blues for maximum contrast and impact.
+      </p>
+    </div>
+  </div>
+
+  <!-- 2. TYPOGRAPHY -->
+  <div class="section">
+    <div class="section-label">02 — Typography Scale (Sizes Increased)</div>
+    <div class="type-stack">
+      <div class="type-row">
+        <div>
+          <div class="type-meta-name">Display / H1</div>
+          <div class="type-meta-detail">DM Sans 700<br>58–70px · tracking −0.025em</div>
+          <div class="type-size-badge">↑ Large & bold</div>
+        </div>
+        <div class="t-display">You shouldn't have<br>to fight <em>your CRM.</em></div>
+      </div>
+      <div class="type-row">
+        <div>
+          <div class="type-meta-name">Section / H2</div>
+          <div class="type-meta-detail">DM Sans 700<br>36–48px</div>
+        </div>
+        <div class="t-h2">Salesforce consulting,<br><em>done right.</em></div>
+      </div>
+      <div class="type-row">
+        <div>
+          <div class="type-meta-name">Card / H3</div>
+          <div class="type-meta-detail">DM Sans 700<br>24px (up from 21)</div>
+          <div class="type-size-badge">↑ +3px</div>
+        </div>
+        <div class="t-h3">Fix What's Broken</div>
+      </div>
+      <div class="type-row">
+        <div>
+          <div class="type-meta-name">Lead Body</div>
+          <div class="type-meta-detail">Plus Jakarta Sans 300<br>20px · leading 1.75</div>
+          <div class="type-size-badge">↑ New large body</div>
+        </div>
+        <div class="t-body-large">We make Salesforce work the way your business actually works — clean, clear, and built to stay that way long after we're gone.</div>
+      </div>
+      <div class="type-row">
+        <div>
+          <div class="type-meta-name">Body</div>
+          <div class="type-meta-detail">Plus Jakarta Sans 300<br>18px · leading 1.78</div>
+          <div class="type-size-badge">↑ +3–4px from before</div>
+        </div>
+        <div class="t-body">No account managers. No long chains of communication. You work directly with 1–2 senior consultants who understand your business and do the work themselves. Clear scope. Clear billing. No surprises.</div>
+      </div>
+      <div class="type-row">
+        <div>
+          <div class="type-meta-name">Caption / Small</div>
+          <div class="type-meta-detail">Plus Jakarta Sans 400<br>15px (up from 11–12)</div>
+          <div class="type-size-badge">↑ +3–4px</div>
+        </div>
+        <div class="t-caption">Operations Director · Nonprofit &nbsp;·&nbsp; Est. 2019 &nbsp;·&nbsp; Certified Salesforce Partner</div>
+      </div>
+      <div class="type-row">
+        <div>
+          <div class="type-meta-name">Eyebrow / Label</div>
+          <div class="type-meta-detail">IBM Plex Mono<br>12px · 0.14em tracking</div>
+          <div class="type-size-badge">↑ +1–2px</div>
+        </div>
+        <div class="t-mono">// What We Do &nbsp;·&nbsp; Salesforce Consulting &nbsp;·&nbsp; Free Assessment</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. BUTTONS -->
+  <div class="section">
+    <div class="section-label">03 — Buttons</div>
+    <div class="btn-row">
+      <button class="btn btn-primary">Get Free Assessment →</button>
+      <button class="btn btn-blue">Learn More</button>
+      <button class="btn btn-outline">See What We Do</button>
+      <button class="btn btn-ghost">Our Work</button>
+      <button class="btn btn-dark">Contact Us</button>
+    </div>
+    <div class="btn-row">
+      <button class="btn-mono">FREE ASSESSMENT →</button>
+      <button class="btn btn-primary btn-sm">Talk to Us</button>
+      <button class="btn btn-outline btn-sm">Services</button>
+    </div>
+    <p style="font-size:15px;color:var(--ink-light);margin-top:12px;font-style:italic;">
+      Coral = primary action (Get Assessment, Talk to Us). Blue = secondary action (Learn More, Our Work). Outline = tertiary/navigation.
+    </p>
+  </div>
+
+  <!-- 4. TAGS -->
+  <div class="section">
+    <div class="section-label">04 — Tags & Chips</div>
+    <div class="tag-row" style="margin-bottom:14px;">
+      <span class="tag tag-blue">Nonprofit</span>
+      <span class="tag tag-blue">Retail</span>
+      <span class="tag tag-coral">Most Popular</span>
+      <span class="tag tag-coral">Quick Win</span>
+      <span class="tag tag-navy">High ROI</span>
+      <span class="tag tag-sky">Core Cloud</span>
+    </div>
+    <div class="tag-row">
+      <span class="chip">Clean data model</span>
+      <span class="chip">Hours saved weekly</span>
+      <span class="chip-coral">Free — no commitment</span>
+      <span class="chip">No lock-in</span>
+    </div>
+  </div>
+
+  <!-- 5. CARDS -->
+  <div class="section">
+    <div class="section-label">05 — Cards (Larger Text)</div>
+    <div class="card-row">
+      <div class="card">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 22 22" fill="none"><path d="M11 2L4 5.5v11L11 20l7-3.5v-11L11 2Z" stroke="#1976D2" stroke-width="1.4" stroke-linejoin="round"/><path d="M11 20v-8.5M4 5.5l7 5 7-5" stroke="#1976D2" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-title">Fix What's Broken</div>
+        <p class="card-body">We untangle overbuilt, messy Salesforce orgs — clearing technical debt and leaving you with a clean, reliable foundation.</p>
+      </div>
+      <div class="card card-dark">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 22 22" fill="none"><path d="M11 2v18M15.5 5H8.5a3.5 3.5 0 100 6h5a3.5 3.5 0 010 7H5" stroke="#42A5F5" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="card-title">Stop Overpaying</div>
+        <p class="card-body">We've helped clients cut Salesforce spend by 30–60% without losing a single capability they actually use.</p>
+      </div>
+      <div class="card card-featured">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="7" r="4" stroke="white" stroke-width="1.4"/><path d="M3 19c0-3.9 3.6-7 8-7s8 3.1 8 7" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+        </div>
+        <div class="card-title">Coach Your Team</div>
+        <p class="card-body">We teach, document, and record video tutorials your team keeps forever — so you own your org, not us.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. DARK HERO SAMPLE -->
+  <div class="section">
+    <div class="section-label">06 — Dark Hero / Section Sample</div>
+    <div class="motif-area">
+      <!-- Arc circles -->
+      <div class="motif-circle" style="width:380px;height:380px;top:-110px;right:-50px;border:2px solid rgba(25,118,210,0.25);"></div>
+      <div class="motif-circle" style="width:210px;height:210px;top:20px;right:80px;background:rgba(25,118,210,0.12);"></div>
+      <div class="motif-circle" style="width:100px;height:100px;bottom:-20px;left:360px;background:rgba(200,146,26,0.18);"></div>
+
+      <div class="motif-text">
+        <div class="motif-eyebrow">// Salesforce Consulting</div>
+        <div class="motif-headline">The right help,<br><em>wherever you're stuck.</em></div>
+        <div class="motif-cta">
+          <button class="btn btn-primary" style="font-size:15px;">Get Free Assessment →</button>
+        </div>
+      </div>
+      <div class="motif-stat">
+        <div class="motif-stat-num">98<span>%</span></div>
+        <div class="motif-stat-label">Client Retention</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. IMAGERY DIRECTION -->
+  <div class="section">
+    <div class="section-label">07 — Imagery Direction (Happy, Human, Real)</div>
+    <div class="image-grid">
+      <div class="image-placeholder">
+        <img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?auto=format&fit=crop&w=600&q=80" alt="Team celebrating">
+        <div class="image-overlay">
+          <span class="image-tag">Do use</span>
+          <div class="image-caption">Real smiles, collaborative energy, eye contact with camera</div>
+        </div>
+      </div>
+      <div class="image-placeholder">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80" alt="Happy meeting">
+        <div class="image-overlay">
+          <span class="image-tag">Do use</span>
+          <div class="image-caption">Warm, bright offices — consultants & clients together</div>
+        </div>
+      </div>
+      <div class="image-placeholder">
+        <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&w=600&q=80" alt="Confident professional">
+        <div class="image-overlay">
+          <span class="image-tag">Do use</span>
+          <div class="image-caption">Confident, approachable professionals — "nerdy but human"</div>
+        </div>
+      </div>
+    </div>
+    <div style="background:white;border-radius:12px;padding:20px 24px;border:1px solid var(--border-light);margin-top:12px;">
+      <p style="font-size:15px;color:var(--ink-light);line-height:1.7;">
+        <strong style="color:var(--ink);">Imagery tone:</strong>
+        Warm, natural light. Genuine smiles. People looking at each other or at the camera — not at screens. Diverse teams. Real workspaces (whiteboards, sticky notes, coffee). Avoid: stock-photo fakeness, staged handshakes, dark moody offices.
+      </p>
+    </div>
+  </div>
+
+  <!-- 8. STATS STRIP -->
+  <div class="section">
+    <div class="section-label">08 — Stats Strip</div>
+    <div class="stat-strip">
+      <div class="stat">
+        <div class="stat-num">150<span class="accent">+</span></div>
+        <div class="stat-label">Projects Delivered</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">98<span class="accent">%</span></div>
+        <div class="stat-label">Client Retention</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">12<span class="accent">+</span></div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">~<span class="accent">50</span>%</div>
+        <div class="stat-label">Nonprofit Clients</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. NAV -->
+  <div class="section">
+    <div class="section-label">09 — Navigation (Coral CTA)</div>
+    <div class="nav-sample">
+      <div class="nav-logo-demo">
+        <img src="brand_assets/blue engine logo transparent background.png" alt="Blue Engine">
+        <span class="nav-sub-demo">Solutions</span>
+      </div>
+      <ul class="nav-links-demo">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Why Us</a></li>
+        <li><a href="#">Who We Serve</a></li>
+        <li><a href="#" class="nav-cta-demo">Free Assessment →</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 10. QUOTE -->
+  <div class="section">
+    <div class="section-label">10 — Pull Quote (Coral Accent)</div>
+    <div class="quote-block">
+      <blockquote>"We don't care what industry you're in. We care that you want clarity, partnership, and a system that works."</blockquote>
+      <cite>— Blue Engine positioning statement</cite>
+    </div>
+  </div>
+
+</div><!-- /page -->
+
+<!-- APPROVAL BAR -->
+<div class="approval-bar" id="approvalBar">
+  <p><strong>Identity v2</strong> — Blue palette · Coral accent · Larger text · Happy imagery. Approve to apply, or request changes.</p>
+  <div class="approval-actions">
+    <button class="btn-reject" onclick="document.getElementById('approvalBar').innerHTML='<p style=\'color:rgba(255,255,255,0.5)\'>Got it — share your changes and I\'ll revise before touching any page.</p>'">Request Changes</button>
+    <button class="btn-approve" onclick="document.getElementById('approvalBar').innerHTML='<p style=\'color:#4ade80;font-weight:600\'>✓ Approved — applying to production pages now.</p>'">Looks Good — Apply It →</button>
+  </div>
+</div>
+
+</body>
+</html>

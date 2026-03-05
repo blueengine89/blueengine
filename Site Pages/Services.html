@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services – Blue Engine Solutions</title>
+<link rel="stylesheet" href="../Technical/brand.css">
+<style>
+
+
+/* SHARED */
+/* PAGE HERO */
+.page-hero {
+  background:var(--navy);
+  padding:10rem 5rem 7rem;
+  position:relative; overflow:hidden;
+}
+.page-hero::before {
+  content:'';
+  position:absolute; top:-150px; right:-150px;
+  width:600px; height:600px;
+  background:radial-gradient(circle,rgba(61,166,205,0.12) 0%,transparent 70%);
+  pointer-events:none;
+}
+.page-hero::after {
+  content:'';
+  position:absolute; bottom:-100px; left:30%;
+  width:400px; height:400px;
+  background:radial-gradient(circle,rgba(61,166,205,0.08) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-inner { max-width:1300px; margin:0 auto; position:relative; z-index:1; }
+.hero-breadcrumb {
+  font-family:'IBM Plex Mono',monospace; font-size:0.65rem; font-weight:700;
+  letter-spacing:0.15em; text-transform:uppercase;
+  color:rgba(255,255,255,0.35); margin-bottom:1.5rem;
+}
+.hero-breadcrumb a { color:rgba(255,255,255,0.35); text-decoration:none; transition:color 0.2s; }
+.hero-breadcrumb a:hover { color:var(--sky); }
+.hero-breadcrumb span { color:rgba(255,255,255,0.2); margin:0 0.5rem; }
+.page-hero h1 {
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(3rem,5vw,5.5rem); font-weight:300;
+  color:white; line-height:1.05; margin-bottom:1.5rem;
+  animation:fadeUp 0.7s 0.1s both;
+}
+.page-hero h1 em { font-style:normal; color:var(--teal); }
+/* Secondary button on dark hero backgrounds */
+.hero-cta-row .btn-secondary { color:white; border-color:rgba(255,255,255,0.35); }
+.hero-cta-row .btn-secondary:hover { border-color:white; background:rgba(255,255,255,0.08); }
+.page-hero p {
+  font-size:1.15rem; line-height:1.8; color:rgba(255,255,255,0.55);
+  font-weight:300; max-width:580px;
+  animation:fadeUp 0.7s 0.25s both;
+}
+.hero-cta-row {
+  display:flex; gap:1rem; flex-wrap:wrap; margin-top:2.5rem;
+  animation:fadeUp 0.7s 0.4s both;
+}
+
+/* STICKY NAV */
+.sticky-nav {
+  position:sticky; top:72px; z-index:100;
+  background:rgba(253,252,251,0.96);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  padding:0 5rem;
+}
+.sticky-nav-inner {
+  max-width:1300px; margin:0 auto;
+  display:flex; gap:0; overflow-x:auto;
+}
+.sticky-nav-item {
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.65rem; font-weight:700; letter-spacing:0.1em;
+  text-transform:uppercase; color:var(--muted);
+  padding:1.1rem 1.5rem; white-space:nowrap;
+  text-decoration:none; border-bottom:2px solid transparent;
+  transition:color 0.2s, border-color 0.2s;
+  cursor:pointer;
+}
+.sticky-nav-item:hover, .sticky-nav-item.active { color:var(--blue); border-bottom-color:var(--blue); }
+
+/* SERVICE SECTIONS */
+.service-section {
+  padding:7rem 5rem;
+  max-width:1300px; margin:0 auto;
+  scroll-margin-top:140px;
+}
+.service-section:nth-child(odd) { }
+
+.service-layout {
+  display:grid; grid-template-columns:1fr 1.4fr;
+  gap:6rem; align-items:start; margin-top:4rem;
+}
+.service-layout.reverse { grid-template-columns:1.4fr 1fr; }
+.service-layout.reverse .service-left { order:2; }
+.service-layout.reverse .service-right { order:1; }
+
+/* Service number + label */
+.service-eyebrow {
+  display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem;
+}
+.service-num {
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.65rem; font-weight:700; letter-spacing:0.12em;
+  color:var(--blue); background:var(--ice);
+  padding:0.35rem 0.75rem; border-radius:4px;
+}
+.service-tag {
+  font-family:'IBM Plex Mono',monospace;
+  font-size:0.6rem; font-weight:700; letter-spacing:0.15em;
+  text-transform:uppercase; color:var(--muted);
+}
+
+.service-title {
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(2rem,3.5vw,3rem); font-weight:400;
+  color:var(--navy); line-height:1.1; margin-bottom:1.25rem;
+}
+.service-title em { font-style:normal; color:var(--teal); }
+
+.service-desc {
+  font-size:1rem; line-height:1.85; color:var(--muted);
+  font-weight:300; margin-bottom:2rem;
+}
+
+.service-quote-block {
+  background:var(--cream); border-radius:12px;
+  padding:1.5rem 1.75rem;
+  border-left:3px solid var(--teal);
+  margin-bottom:2rem;
+}
+.service-quote-block p {
+  font-family:'DM Sans',sans-serif; font-style:italic;
+  font-size:1rem; color:var(--navy); line-height:1.5; font-weight:300;
+}
+.service-quote-block span {
+  display:block; margin-top:0.5rem;
+  font-size:0.75rem; color:var(--muted); font-weight:500;
+  font-family:'Plus Jakarta Sans',sans-serif; font-style:normal;
+}
+
+/* Right column: feature cards */
+.service-features { display:flex; flex-direction:column; gap:1rem; }
+.feature-card {
+  background:var(--cream); border-radius:10px;
+  padding:1.5rem 1.75rem;
+  border:1px solid var(--border-light);
+  transition:transform 0.2s, box-shadow 0.2s, background 0.2s;
+  position:relative; overflow:hidden;
+}
+.feature-card:hover { transform:translateY(-3px); box-shadow:0 12px 32px rgba(14,31,53,0.07); background:white; }
+.feature-card::before {
+  content:''; position:absolute; left:0; top:0; bottom:0; width:3px;
+  background:var(--blue); transform:scaleY(0); transform-origin:bottom;
+  transition:transform 0.3s;
+}
+.feature-card:hover::before { transform:scaleY(1); }
+.feature-icon { font-size:1.4rem; margin-bottom:0.75rem; }
+.feature-title { font-size:0.92rem; font-weight:600; color:var(--navy); margin-bottom:0.4rem; }
+.feature-body { font-size:0.82rem; line-height:1.65; color:var(--muted); font-weight:300; }
+
+/* Outcome chips */
+.outcome-row { display:flex; flex-wrap:wrap; gap:0.5rem; margin-top:1.5rem; }
+.outcome-chip {
+  font-size:0.75rem; font-weight:600; color:var(--blue);
+  background:var(--ice); padding:0.4rem 0.85rem; border-radius:100px;
+  display:flex; align-items:center; gap:0.35rem;
+}
+.outcome-chip::before { content:'✓'; font-weight:700; }
+
+/* Divider between service sections */
+.section-divider {
+  max-width:1300px; margin:0 auto;
+  border:none; border-top:1px solid var(--border-light);
+}
+
+/* Dark service section */
+.service-section-dark {
+  background:var(--navy);
+  padding:7rem 5rem;
+  position:relative; overflow:hidden;
+}
+.service-section-dark::before {
+  content:''; position:absolute; top:-100px; right:-100px;
+  width:500px; height:500px;
+  background:radial-gradient(circle,rgba(61,166,205,0.1) 0%,transparent 70%);
+  pointer-events:none;
+}
+.service-section-dark .section-inner { max-width:1300px; margin:0 auto; position:relative; z-index:1; }
+.service-section-dark .service-num { background:rgba(61,166,205,0.15); color:var(--sky); }
+.service-section-dark .service-tag { color:rgba(255,255,255,0.3); }
+.service-section-dark .service-title { color:white; }
+.service-section-dark .service-title em { color:var(--sky); }
+.service-section-dark .service-desc { color:rgba(255,255,255,0.5); }
+.service-section-dark .service-quote-block { background:rgba(255,255,255,0.05); border-left-color:var(--sky); }
+.service-section-dark .service-quote-block p { color:white; }
+.service-section-dark .service-quote-block span { color:rgba(255,255,255,0.35); }
+.service-section-dark .feature-card { background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.07); }
+.service-section-dark .feature-card:hover { background:rgba(255,255,255,0.09); box-shadow:none; }
+.service-section-dark .feature-title { color:white; }
+.service-section-dark .feature-body { color:rgba(255,255,255,0.45); }
+.service-section-dark .outcome-chip { background:rgba(61,166,205,0.15); color:var(--sky); }
+
+/* ENGAGEMENT MODELS */
+.engagement-section {
+  background:var(--cream); padding:7rem 5rem;
+}
+.engagement-inner { max-width:1300px; margin:0 auto; }
+.engagement-grid {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:1px; background:var(--border); margin-top:3.5rem;
+  border:1px solid var(--border); border-radius:12px; overflow:hidden;
+}
+.engagement-card {
+  background:white; padding:2rem 1.75rem;
+  transition:background 0.2s;
+}
+.engagement-card:hover { background:var(--ice); }
+.eng-icon { font-size:1.75rem; margin-bottom:1.25rem; }
+.eng-title { font-family:'DM Sans',sans-serif; font-size:1.15rem; font-weight:400; color:var(--navy); margin-bottom:0.6rem; }
+.eng-desc { font-size:0.82rem; line-height:1.65; color:var(--muted); font-weight:300; }
+.eng-best {
+  display:inline-block; margin-top:0.85rem;
+  font-family:'IBM Plex Mono',monospace; font-size:0.58rem; font-weight:700;
+  letter-spacing:0.1em; text-transform:uppercase;
+  color:var(--teal); background:rgba(61,166,205,0.08);
+  padding:0.3rem 0.65rem; border-radius:4px;
+}
+
+/* TOOLS GRID */
+.tools-section { padding:7rem 5rem; max-width:1300px; margin:0 auto; }
+.tools-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:1.25rem; margin-top:3.5rem;
+}
+.tool-card {
+  border:1px solid var(--border-light); border-radius:10px;
+  padding:1.5rem 1.75rem;
+  transition:border-color 0.2s, transform 0.2s;
+}
+.tool-card:hover { border-color:var(--blue); transform:translateY(-2px); }
+.tool-name { font-size:0.92rem; font-weight:600; color:var(--navy); margin-bottom:0.4rem; }
+.tool-desc { font-size:0.8rem; line-height:1.6; color:var(--muted); font-weight:300; }
+.tool-badge {
+  display:inline-block; margin-top:0.6rem;
+  font-family:'IBM Plex Mono',monospace; font-size:0.55rem; font-weight:700;
+  letter-spacing:0.08em; text-transform:uppercase;
+  color:var(--blue); background:var(--ice);
+  padding:0.25rem 0.5rem; border-radius:3px;
+}
+
+/* ASSESSMENT SECTION */
+.assessment-section { background:var(--teal); padding:7rem 5rem; position:relative; overflow:hidden; }
+.assessment-section::before { content:''; position:absolute; top:0;left:0;right:0;bottom:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); }
+.assessment-inner { max-width:900px; margin:0 auto; text-align:center; position:relative; z-index:1; }
+.a-eye { font-family:'IBM Plex Mono',monospace; font-size:0.65rem; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.6); margin-bottom:1.25rem; }
+.a-head { font-family:'DM Sans',sans-serif; font-size:clamp(2.2rem,4vw,4rem); font-weight:300; color:white; line-height:1.1; margin-bottom:1.25rem; }
+.a-head em { font-style:italic; }
+.a-sub { font-size:1rem; line-height:1.75; color:rgba(255,255,255,0.7); font-weight:300; margin:0 auto 2.5rem; max-width:600px; }
+.a-perks { display:flex; justify-content:center; gap:2.5rem; margin-bottom:2.5rem; flex-wrap:wrap; }
+.perk { display:flex; align-items:center; gap:0.5rem; font-size:0.82rem; color:rgba(255,255,255,0.75); font-weight:500; }
+.perk::before { content:'✓'; font-weight:700; color:white; }
+.a-btn { font-family:'IBM Plex Mono',monospace; font-size:0.78rem; font-weight:700; letter-spacing:0.08em; color:var(--teal); background:white; border:none; padding:1.15rem 2.5rem; border-radius:4px; cursor:pointer; text-decoration:none; transition:transform 0.2s,box-shadow 0.2s; display:inline-block; }
+.a-btn:hover { transform:translateY(-2px); box-shadow:0 12px 40px rgba(0,0,0,0.2); }
+
+/* FOOTER — handled by footer.js */
+
+/* ANIMATIONS */
+@keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+.reveal { opacity:0; transform:translateY(28px); transition:opacity 0.75s ease,transform 0.75s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+.d1 { transition-delay:0.1s; }
+.d2 { transition-delay:0.2s; }
+.d3 { transition-delay:0.3s; }
+.d4 { transition-delay:0.4s; }
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav { padding:1rem 1.5rem; }
+  .nav-links { display:none; }
+  .page-hero { padding:7rem 1.5rem 5rem; }
+  .sticky-nav { padding:0 1.5rem; }
+  .service-section { padding:5rem 1.5rem; }
+  .service-section-dark { padding:5rem 1.5rem; }
+  .service-layout, .service-layout.reverse { grid-template-columns:1fr; gap:3rem; }
+  .service-layout.reverse .service-left { order:0; }
+  .service-layout.reverse .service-right { order:0; }
+  .engagement-section,.tools-section,.assessment-section { padding:5rem 1.5rem; }
+  .engagement-grid { grid-template-columns:1fr 1fr; }
+  .tools-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<div id="site-nav"></div>
+<script src="../Technical/nav.js"></script>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <!-- Mood-board circular arc motifs -->
+  <div style="position:absolute;border-radius:50%;pointer-events:none;width:380px;height:380px;top:-100px;right:8%;border:2px solid rgba(61,166,205,0.25);"></div>
+  <div style="position:absolute;border-radius:50%;pointer-events:none;width:220px;height:220px;top:40px;right:calc(8% + 80px);background:rgba(61,166,205,0.10);"></div>
+  <div style="position:absolute;border-radius:50%;pointer-events:none;width:120px;height:120px;bottom:10%;left:6%;background:rgba(61,166,205,0.15);"></div>
+  <div class="hero-inner">
+    <div class="hero-breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      Services
+    </div>
+    <h1>The right help,<br><em>wherever you're stuck.</em></h1>
+    <p>We work with nonprofits, growing companies, and mission-driven teams to solve Salesforce problems that slow teams down, frustrate leadership, and waste money.</p>
+    <div class="hero-cta-row">
+      <a href="health-assessment.html" class="btn-primary">GET FREE ASSESSMENT →</a>
+      <a href="#engagement" class="btn-secondary">HOW WE WORK</a>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY SERVICE NAV -->
+<div class="sticky-nav">
+  <div class="sticky-nav-inner">
+    <a href="#fix" class="sticky-nav-item active">Fix Broken Orgs</a>
+    <a href="#automate" class="sticky-nav-item">Automation</a>
+    <a href="#save" class="sticky-nav-item">Save Money</a>
+    <a href="#implement" class="sticky-nav-item">New Implementations</a>
+    <a href="#training" class="sticky-nav-item">Training & Support</a>
+    <a href="#managed" class="sticky-nav-item">Managed Services</a>
+  </div>
+</div>
+
+<!-- SERVICE 1: FIX BROKEN ORGS -->
+<section class="service-section" id="fix">
+  <div class="service-layout reveal">
+    <div class="service-left">
+      <div class="service-eyebrow">
+        <span class="service-num">01</span>
+        <span class="service-tag">Most common</span>
+      </div>
+      <h2 class="service-title">Fix broken or<br><em>overbuilt orgs.</em></h2>
+      <p class="service-desc">Most orgs we inherit were built by people who knew Salesforce technically but didn't understand the business. The result: 50 custom fields when there should be one relationship. Automation that breaks for no reason. Reports nobody trusts. We fix that.</p>
+      <div class="service-quote-block">
+        <p>"We inherited a Salesforce mess and don't know where to start."</p>
+        <span>— How most of our clients describe themselves before we meet</span>
+      </div>
+      <div class="outcome-row">
+        <span class="outcome-chip">Clean data model</span>
+        <span class="outcome-chip">Fewer clicks per task</span>
+        <span class="outcome-chip">Reports you can trust</span>
+        <span class="outcome-chip">Systems that don't break</span>
+      </div>
+    </div>
+    <div class="service-right">
+      <div class="service-features">
+        <div class="feature-card">
+          <div class="feature-icon">🗂️</div>
+          <div class="feature-title">Data Model Cleanup</div>
+          <div class="feature-body">We audit every object, field, and relationship in your org. Redundant fields get consolidated. Messy hierarchies get redesigned. You end up with a clean, logical structure that reflects how your business actually works.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔀</div>
+          <div class="feature-title">Duplicate & Legacy Data Management</div>
+          <div class="feature-body">Duplicate contacts and accounts are a silent killer for reporting accuracy. We merge, dedupe, and establish rules to prevent it from happening again.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🧱</div>
+          <div class="feature-title">Object Re-Architecture</div>
+          <div class="feature-body">Sometimes the underlying structure needs to change. We redesign objects and relationships to support real-world workflows — not the way a consultant guessed you worked three years ago.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔍</div>
+          <div class="feature-title">Salesforce Health Audit</div>
+          <div class="feature-body">Not sure where to start? We offer a free health check that gives you a prioritized list of what's broken, what's wasteful, and what to fix first. No commitment required.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="section-divider">
+
+<!-- SERVICE 2: AUTOMATION -->
+<section class="service-section" id="automate">
+  <div class="service-layout reverse reveal">
+    <div class="service-left">
+      <div class="service-eyebrow">
+        <span class="service-num">02</span>
+        <span class="service-tag">High ROI</span>
+      </div>
+      <h2 class="service-title">Smart automation<br><em>that saves time.</em></h2>
+      <p class="service-desc">If a human on your team is doing something repetitively — sending the same email, copying data from one place to another, following up on the same tasks — Salesforce can almost certainly automate it. We find those moments and build smart workflows that run themselves.</p>
+      <div class="service-quote-block">
+        <p>"We're still doing a ton of manual work. Can this be automated?"</p>
+        <span>— Yes. Almost certainly yes.</span>
+      </div>
+      <div class="outcome-row">
+        <span class="outcome-chip">Hours saved weekly</span>
+        <span class="outcome-chip">Fewer dropped balls</span>
+        <span class="outcome-chip">Consistent follow-up</span>
+        <span class="outcome-chip">Better data quality</span>
+      </div>
+    </div>
+    <div class="service-right">
+      <div class="service-features">
+        <div class="feature-card">
+          <div class="feature-icon">📧</div>
+          <div class="feature-title">Email & SMS Workflows</div>
+          <div class="feature-body">Automated outreach triggered by the right events — new contacts, stage changes, renewals, anniversaries. Personalized, timely, and hands-free once it's built.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔔</div>
+          <div class="feature-title">Reminders & Follow-up Sequences</div>
+          <div class="feature-body">Volunteer reminders, donor follow-ups, sales cadences, onboarding sequences — we build the logic so nothing falls through the cracks.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">✅</div>
+          <div class="feature-title">Approval Processes</div>
+          <div class="feature-body">Multi-step approvals with the right people in the right order. Automatic notifications, escalations, and audit trails built in.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <div class="feature-title">Auto-logging & Handoffs</div>
+          <div class="feature-body">Automatically log calls, emails, and interactions. Route leads and cases to the right people. Eliminate the manual note-taking nobody does consistently anyway.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="section-divider">
+
+<!-- SERVICE 3: SAVE MONEY (dark) -->
+<section class="service-section-dark" id="save">
+  <div class="section-inner">
+    <div class="service-layout reveal">
+      <div class="service-left">
+        <div class="service-eyebrow">
+          <span class="service-num">03</span>
+          <span class="service-tag">Quick win</span>
+        </div>
+        <h2 class="service-title">Cut your<br><em>Salesforce costs.</em></h2>
+        <p class="service-desc">Most organizations are significantly overpaying for Salesforce. Wrong license tiers, unused seats, features nobody knows about. We've helped clients cut monthly spend by 30–60% without losing a single capability they actually use.</p>
+        <div class="service-quote-block">
+          <p>"Are we overpaying for Salesforce? Do we need all these licenses?"</p>
+          <span>— Probably yes. Let's find out.</span>
+        </div>
+        <div class="outcome-row">
+          <span class="outcome-chip">30–60% cost reduction</span>
+          <span class="outcome-chip">Right-sized licenses</span>
+          <span class="outcome-chip">No lost features</span>
+        </div>
+        <div style="margin-top:2rem;">
+          <a href="contact.html" class="btn-primary">GET A FREE LICENSE AUDIT →</a>
+        </div>
+      </div>
+      <div class="service-right">
+        <div class="service-features">
+          <div class="feature-card">
+            <div class="feature-icon">🔎</div>
+            <div class="feature-title">License Audit</div>
+            <div class="feature-body">We review every license, user role, and edition in your org. We identify who needs what, who needs less, and where you're paying for things you're not using.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚖️</div>
+            <div class="feature-title">Right-sizing User Roles</div>
+            <div class="feature-body">Sales Cloud Enterprise when you only need Professional. Platform licenses where full licenses aren't needed. We find every opportunity to reduce spend without reducing capability.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <div class="feature-title">Renewal Negotiation Support</div>
+            <div class="feature-body">We help you go into Salesforce renewals armed with real data. Know exactly what you need, what you can cut, and what leverage you have.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE 4: NEW IMPLEMENTATIONS -->
+<section class="service-section" id="implement">
+  <div class="service-layout reveal">
+    <div class="service-left">
+      <div class="service-eyebrow">
+        <span class="service-num">04</span>
+        <span class="service-tag">Start fresh</span>
+      </div>
+      <h2 class="service-title">New implementations<br><em>done right.</em></h2>
+      <p class="service-desc">New to Salesforce? You have one shot to build the foundation correctly. We've seen what happens when it's rushed or handed to the wrong firm — you inherit a mess that takes years to untangle. We build clean, scalable systems from day one.</p>
+      <div class="service-quote-block">
+        <p>"We're new to Salesforce and want to do this right the first time."</p>
+        <span>— The smartest thing a new client can say.</span>
+      </div>
+      <div class="outcome-row">
+        <span class="outcome-chip">Clean from day one</span>
+        <span class="outcome-chip">Fast go-live</span>
+        <span class="outcome-chip">Team trained & ready</span>
+        <span class="outcome-chip">Scales with you</span>
+      </div>
+    </div>
+    <div class="service-right">
+      <div class="service-features">
+        <div class="feature-card">
+          <div class="feature-icon">📐</div>
+          <div class="feature-title">Discovery & Architecture</div>
+          <div class="feature-body">Before writing a single field, we map your business processes, data model, and user needs. The result is a blueprint that makes sense — not a guess.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <div class="feature-title">Quick-Start Packages</div>
+          <div class="feature-body">Get live fast with a focused scope. We prioritize the features your team will use immediately and add complexity deliberately, not all at once.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔗</div>
+          <div class="feature-title">Integrations from Day One</div>
+          <div class="feature-body">Email, calendar, marketing tools, accounting — we plan for your integrations upfront so they don't become costly retrofits later.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎓</div>
+          <div class="feature-title">Training & Handoff</div>
+          <div class="feature-body">We don't disappear at launch. We train your team, document everything, and make sure you're genuinely ready to run the system independently.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="section-divider">
+
+<!-- SERVICE 5: TRAINING -->
+<section class="service-section" id="training">
+  <div class="service-layout reverse reveal">
+    <div class="service-left">
+      <div class="service-eyebrow">
+        <span class="service-num">05</span>
+        <span class="service-tag">Empower your team</span>
+      </div>
+      <h2 class="service-title">Admin support<br><em>& training.</em></h2>
+      <p class="service-desc">You have a smart person internally who handles Salesforce — but they're overwhelmed, or they've hit a ceiling they can't get past alone. We become their mentor, their safety net, and their escalation path when things get complicated.</p>
+      <div class="service-quote-block">
+        <p>"We have someone internally, but they're overwhelmed or unsure."</p>
+        <span>— We've helped dozens of admins level up and gain real confidence.</span>
+      </div>
+      <div class="outcome-row">
+        <span class="outcome-chip">Confident admins</span>
+        <span class="outcome-chip">Video tutorials forever</span>
+        <span class="outcome-chip">Architecture QA</span>
+        <span class="outcome-chip">On-call support</span>
+      </div>
+    </div>
+    <div class="service-right">
+      <div class="service-features">
+        <div class="feature-card">
+          <div class="feature-icon">🎯</div>
+          <div class="feature-title">1-on-1 Admin Coaching</div>
+          <div class="feature-body">Regular sessions with your internal admin to work through real problems, review their work, and help them grow. We teach, we don't just do.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎬</div>
+          <div class="feature-title">Custom Video Tutorials</div>
+          <div class="feature-body">We record walkthroughs of every process, report, and automation we build. Your team keeps them forever. No more "how do I do that thing Jon showed us?"</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <div class="feature-title">Documentation</div>
+          <div class="feature-body">Clear, readable documentation of your org's architecture, processes, and custom logic. Essential for onboarding new staff and maintaining continuity.</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔬</div>
+          <div class="feature-title">Architecture Reviews & QA</div>
+          <div class="feature-body">Your admin built something — let us review it before it goes live. We catch issues early, suggest improvements, and make sure it's built to last.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="section-divider">
+
+<!-- SERVICE 6: MANAGED SERVICES (dark) -->
+<section class="service-section-dark" id="managed">
+  <div class="section-inner">
+    <div class="service-layout reverse reveal">
+      <div class="service-left">
+        <div class="service-eyebrow">
+          <span class="service-num">06</span>
+          <span class="service-tag">Most popular</span>
+        </div>
+        <h2 class="service-title">Managed services<br><em>that flex with you.</em></h2>
+        <p class="service-desc">You need ongoing Salesforce help but you're not ready — or don't need — a full-time hire. We become your embedded Salesforce team. Available when you need us, not billing when you don't. No bloated retainers, no minimum commitments.</p>
+        <div class="service-quote-block">
+          <p>"We need ongoing help but aren't ready to hire someone full-time."</p>
+          <span>— This is exactly what managed services is built for.</span>
+        </div>
+        <div class="outcome-row">
+          <span class="outcome-chip">No full-time hire needed</span>
+          <span class="outcome-chip">Flexible hours</span>
+          <span class="outcome-chip">Same consultants, always</span>
+        </div>
+        <div style="margin-top:2rem;">
+          <a href="contact.html" class="btn-primary">LEARN ABOUT MANAGED SERVICES →</a>
+        </div>
+      </div>
+      <div class="service-right">
+        <div class="service-features">
+          <div class="feature-card">
+            <div class="feature-icon">📅</div>
+            <div class="feature-title">Dedicated Monthly Hours</div>
+            <div class="feature-body">Reserve a block of hours each month for anything Salesforce-related — new features, fixes, questions, training. Unused hours roll over.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🚨</div>
+            <div class="feature-title">Priority Support</div>
+            <div class="feature-body">Managed services clients get priority response times. When something breaks, you're not waiting in a queue — you're our first call.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🗺️</div>
+            <div class="feature-title">Ongoing Roadmapping</div>
+            <div class="feature-body">Monthly or quarterly check-ins to review what's working, what's changed in your business, and what to build next. We stay aligned with your goals.</div>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <div class="feature-title">Reporting & Dashboards</div>
+            <div class="feature-body">Ongoing refinement of your reports and dashboards as your business evolves. The numbers your leadership actually needs, always up to date.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENT MODELS -->
+<section class="engagement-section" id="engagement">
+  <div class="engagement-inner">
+    <div class="reveal" style="text-align:center;">
+      <p class="section-tag">How we work together</p>
+      <h2 class="section-headline">Choose what fits<br><em>where you are.</em></h2>
+    </div>
+    <div class="engagement-grid reveal" style="transition-delay:0.15s">
+      <div class="engagement-card">
+        <div class="eng-icon">🪣</div>
+        <div class="eng-title">Blocks of Hours</div>
+        <div class="eng-desc">Pre-purchase a block of consulting hours. Use them however you need, on whatever comes up. No expiry pressure, no scope creep surprises.</div>
+        <span class="eng-best">Best for: one-off projects</span>
+      </div>
+      <div class="engagement-card">
+        <div class="eng-icon">📆</div>
+        <div class="eng-title">Monthly Retainer</div>
+        <div class="eng-desc">Reserved hours each month for ongoing support, development, and strategy. Your embedded Salesforce team, without the full-time cost.</div>
+        <span class="eng-best">Best for: ongoing needs</span>
+      </div>
+      <div class="engagement-card">
+        <div class="eng-icon">🎯</div>
+        <div class="eng-title">Fixed-Scope Projects</div>
+        <div class="eng-desc">Defined deliverables, defined price, defined timeline. Great for implementations, audits, or specific feature builds with a clear finish line.</div>
+        <span class="eng-best">Best for: clear scope</span>
+      </div>
+      <div class="engagement-card">
+        <div class="eng-icon">🤝</div>
+        <div class="eng-title">Coaching & Mentorship</div>
+        <div class="eng-desc">Regular sessions with your internal admin or team. We guide, review, and teach — you do the hands-on work. Builds long-term capability inside your org.</div>
+        <span class="eng-best">Best for: growing internal teams</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="tools-section">
+  <div class="reveal">
+    <p class="section-tag">What we work with</p>
+    <h2 class="section-headline">Fluent across the<br><em>full Salesforce ecosystem.</em></h2>
+  </div>
+  <div class="tools-grid">
+    <div class="tool-card reveal d1">
+      <div class="tool-name">Sales Cloud</div>
+      <div class="tool-desc">Pipeline management, opportunity tracking, forecasting, and sales automation for growing revenue teams.</div>
+      <span class="tool-badge">Core Cloud</span>
+    </div>
+    <div class="tool-card reveal d2">
+      <div class="tool-name">Service Cloud</div>
+      <div class="tool-desc">Case management, customer support workflows, knowledge bases, and omnichannel service tools.</div>
+      <span class="tool-badge">Core Cloud</span>
+    </div>
+    <div class="tool-card reveal d3">
+      <div class="tool-name">Nonprofit Cloud (NPSP)</div>
+      <div class="tool-desc">Constituent management, donation tracking, grant management, and volunteer coordination for nonprofits.</div>
+      <span class="tool-badge">Nonprofit</span>
+    </div>
+    <div class="tool-card reveal d1">
+      <div class="tool-name">Experience Cloud</div>
+      <div class="tool-desc">Partner portals, customer communities, and self-service sites built on top of your Salesforce data.</div>
+      <span class="tool-badge">Communities</span>
+    </div>
+    <div class="tool-card reveal d2">
+      <div class="tool-name">Marketing Cloud & Pardot</div>
+      <div class="tool-desc">Email marketing, lead nurturing, campaign tracking, and marketing automation connected to your CRM.</div>
+      <span class="tool-badge">Marketing</span>
+    </div>
+    <div class="tool-card reveal d3">
+      <div class="tool-name">Consumer Goods Cloud</div>
+      <div class="tool-desc">Field execution, retail planning, and key account management for consumer goods organizations.</div>
+      <span class="tool-badge">Industry</span>
+    </div>
+    <div class="tool-card reveal d1">
+      <div class="tool-name">CRM Analytics & Tableau</div>
+      <div class="tool-desc">Advanced dashboards, predictive analytics, and reporting that goes beyond standard Salesforce reports.</div>
+      <span class="tool-badge">Analytics</span>
+    </div>
+    <div class="tool-card reveal d2">
+      <div class="tool-name">FormAssembly & Zapier</div>
+      <div class="tool-desc">Form-to-Salesforce automation, third-party integrations, and workflow connections across your tech stack.</div>
+      <span class="tool-badge">Integrations</span>
+    </div>
+    <div class="tool-card reveal d3">
+      <div class="tool-name">Twilio & SMS Tools</div>
+      <div class="tool-desc">SMS-based automation for volunteer coordination, client outreach, and appointment reminders.</div>
+      <span class="tool-badge">Integrations</span>
+    </div>
+  </div>
+</section>
+
+<!-- ASSESSMENT CTA -->
+<section class="assessment-section">
+  <div class="assessment-inner">
+    <p class="a-eye">Free · No commitment · No pressure</p>
+    <h2 class="a-head">Not sure which service<br><em>you actually need?</em></h2>
+    <p class="a-sub">That's what the free assessment is for. We'll look at your org, listen to your goals, and tell you honestly what we'd recommend — even if the answer is "you don't need us for this."</p>
+    <div class="a-perks">
+      <span class="perk">Full org review</span>
+      <span class="perk">Honest recommendations</span>
+      <span class="perk">No sales pressure</span>
+    </div>
+    <a href="health-assessment.html" class="a-btn">GET YOUR FREE ASSESSMENT →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<div id="site-footer"></div>
+<script src="../Technical/footer.js"></script>
+
+
+<script>
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+reveals.forEach(r => obs.observe(r));
+
+// Sticky nav active state
+const sections = document.querySelectorAll('[id]');
+const navItems = document.querySelectorAll('.sticky-nav-item');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if(window.scrollY >= s.offsetTop - 200) current = s.id; });
+  navItems.forEach(n => {
+    n.classList.remove('active');
+    if(n.getAttribute('href') === '#' + current) n.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>

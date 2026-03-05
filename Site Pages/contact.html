@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Let's Talk — Blue Engine Solutions</title>
+<link rel="stylesheet" href="../Technical/brand.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Epilogue:wght@300;400;500;600;700&family=Inconsolata:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f1c2e;--blue:#1a5fa8;--sky:#3b8fd4;--sand:#f5f0e8;--warm:#faf8f4;--rust:#c95f2a;--text:#1a1f2e;--mid:#5a6272;--light:#8e97a8;--rule:rgba(15,28,46,0.1);}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{font-family:'Epilogue',sans-serif;background:var(--warm);color:var(--text);overflow-x:hidden;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}.reveal.up{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:.1s;}.reveal-delay-2{transition-delay:.2s;}.reveal-delay-3{transition-delay:.32s;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 4rem;background:rgba(250,248,244,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);transition:padding .3s,box-shadow .3s;}
+nav.scrolled{padding:.8rem 4rem;box-shadow:0 2px 20px rgba(15,28,46,.08);}
+.nav-brand{display:flex;align-items:center;text-decoration:none;}
+.nav-logo-svg{height:32px;width:auto;display:block;}
+.nav-links{display:flex;align-items:center;gap:2.25rem;list-style:none;}
+.nav-links a{font-size:.85rem;font-weight:500;color:var(--mid);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--navy);}
+.nav-cta{font-family:'Inconsolata',monospace;font-size:.78rem;font-weight:700;letter-spacing:.05em;background:var(--blue);color:white!important;padding:.65rem 1.4rem;border-radius:4px;transition:background .2s;}
+.nav-cta:hover{background:var(--navy)!important;}
+
+/* ── HERO ── */
+.contact-hero{padding-top:72px;background:#f5f1ea;position:relative;overflow:hidden;}
+.contact-hero::before{content:'';position:absolute;top:-200px;right:-150px;width:700px;height:700px;background:radial-gradient(circle,rgba(59,143,212,.09),transparent 65%);pointer-events:none;}
+.contact-hero::after{content:'';position:absolute;bottom:-100px;left:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(201,95,42,.07),transparent 65%);pointer-events:none;}
+.hero-inner{max-width:1200px;margin:0 auto;padding:5rem 5rem 5rem;display:grid;grid-template-columns:1fr 1.15fr;gap:5rem;align-items:start;position:relative;z-index:1;}
+.hero-left{padding-top:2rem;}
+.hero-pretag{font-family:'Inconsolata',monospace;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin-bottom:1.5rem;display:block;opacity:0;animation:fadeUp .7s .1s forwards;}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,3.5vw,4rem);line-height:1.06;color:var(--navy);margin-bottom:1.25rem;opacity:0;animation:fadeUp .8s .22s forwards;}
+.hero-h1 em{font-style:italic;color:var(--sky);}
+.hero-sub{font-size:.98rem;line-height:1.8;color:var(--mid);font-weight:300;max-width:400px;margin-bottom:2rem;opacity:0;animation:fadeUp .8s .36s forwards;}
+.hero-checks{display:flex;flex-direction:column;gap:.85rem;opacity:0;animation:fadeUp .8s .5s forwards;}
+.hero-check{display:flex;align-items:flex-start;gap:.85rem;}
+.check-icon{width:20px;height:20px;background:rgba(59,143,212,.22);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;font-size:.62rem;color:var(--sky);}
+.check-text{font-size:.88rem;color:var(--mid);font-weight:300;line-height:1.5;}
+.hero-trust-row{display:flex;align-items:center;gap:1rem;margin-top:2.25rem;opacity:0;animation:fadeUp .8s .64s forwards;}
+.hero-stars{color:#f5a623;font-size:.9rem;letter-spacing:.1em;}
+.hero-trust-text{font-size:.75rem;color:var(--mid);}
+.hero-trust-text strong{color:var(--navy);font-weight:600;}
+
+/* ── CALENDLY WRAPPER ── */
+.calendly-wrap{opacity:0;animation:fadeUp .9s .28s forwards;}
+.calendly-label{font-family:'Inconsolata',monospace;font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mid);margin-bottom:.85rem;display:block;}
+.calendly-card{background:white;border-radius:14px;overflow:hidden;box-shadow:0 8px 40px rgba(15,28,46,.12),0 2px 8px rgba(15,28,46,.06);border:1px solid rgba(15,28,46,.07);}
+.calendly-card .calendly-inline-widget{border-radius:14px;}
+
+/* ── TRUST STRIP ── */
+.trust-strip{background:#0b1522;padding:3rem 5rem;border-top:1px solid rgba(255,255,255,.05);}
+.trust-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;}
+.trust-stat{text-align:center;}
+.trust-num{font-family:'Playfair Display',serif;font-size:2.2rem;color:white;font-weight:700;line-height:1;}
+.trust-label{font-family:'Inconsolata',monospace;font-size:.58rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:.3rem;}
+.trust-div{width:1px;height:40px;background:rgba(255,255,255,.08);}
+.trust-email-block{text-align:right;}
+.trust-email-label{font-size:.8rem;color:rgba(255,255,255,.4);font-weight:300;margin-bottom:.4rem;}
+.trust-email-link{font-family:'Inconsolata',monospace;font-size:.8rem;font-weight:700;color:var(--sky);text-decoration:none;letter-spacing:.02em;transition:color .2s;}
+.trust-email-link:hover{color:white;}
+
+/* ── PROCESS SECTION ── */
+.process-section{padding:7rem 5rem;background:var(--warm);}
+.process-inner{max-width:960px;margin:0 auto;text-align:center;}
+.process-label{font-family:'Inconsolata',monospace;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);display:block;margin-bottom:1.25rem;}
+.process-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);color:var(--navy);line-height:1.15;margin-bottom:.85rem;}
+.process-title em{font-style:italic;color:var(--blue);}
+.process-sub{font-size:.98rem;color:var(--mid);font-weight:300;line-height:1.78;max-width:580px;margin:0 auto 3.5rem;}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:left;}
+.pstep-num{font-family:'Playfair Display',serif;font-size:3rem;color:var(--rule);font-weight:700;line-height:1;margin-bottom:.85rem;transition:color .3s;}
+.pstep:hover .pstep-num{color:var(--blue);}
+.pstep-title{font-family:'Playfair Display',serif;font-size:1rem;color:var(--navy);margin-bottom:.5rem;}
+.pstep-desc{font-size:.82rem;color:var(--mid);line-height:1.7;font-weight:300;}
+
+/* ── FAQ ── */
+.faq-section{padding:7rem 5rem;background:var(--sand);}
+.faq-inner{max-width:800px;margin:0 auto;}
+.faq-label{font-family:'Inconsolata',monospace;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);display:block;margin-bottom:1.25rem;}
+.faq-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.5vw,2.4rem);color:var(--navy);margin-bottom:3rem;}
+.faq-item{border-bottom:1px solid var(--rule);padding:1.5rem 0;}
+.faq-item:first-of-type{border-top:1px solid var(--rule);}
+.faq-q{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--navy);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;line-height:1.3;}
+.faq-q::after{content:'+';font-family:'Inconsolata',monospace;font-size:1.4rem;color:var(--blue);flex-shrink:0;transition:transform .25s;}
+.faq-item.open .faq-q::after{transform:rotate(45deg);}
+.faq-a{font-size:.9rem;color:var(--mid);line-height:1.78;font-weight:300;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s;}
+.faq-item.open .faq-a{max-height:300px;padding-top:.85rem;}
+
+/* ── SECONDARY FORM (muted) ── */
+.secondary-form-section{padding:6rem 5rem;background:white;border-top:1px solid var(--rule);}
+.secondary-form-inner{max-width:560px;margin:0 auto;}
+.sf-eyebrow{font-family:'Inconsolata',monospace;font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--light);margin-bottom:.85rem;display:block;}
+.sf-title{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--mid);margin-bottom:.5rem;line-height:1.25;}
+.sf-sub{font-size:.85rem;color:var(--light);font-weight:300;line-height:1.65;margin-bottom:2rem;}
+.sf-input,.sf-textarea,.sf-select{width:100%;font-family:'Epilogue',sans-serif;font-size:.88rem;color:var(--text);background:var(--warm);border:1.5px solid rgba(15,28,46,.1);border-radius:6px;padding:.7rem .95rem;transition:border-color .2s,box-shadow .2s;outline:none;margin-bottom:1rem;}
+.sf-input:focus,.sf-textarea:focus,.sf-select:focus{border-color:var(--sky);box-shadow:0 0 0 3px rgba(59,143,212,.1);}
+.sf-textarea{min-height:110px;resize:vertical;line-height:1.6;}
+.sf-select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238e97a8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;}
+.sf-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;}
+.sf-submit{width:100%;padding:.85rem;background:transparent;color:var(--mid);font-family:'Inconsolata',monospace;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1.5px solid rgba(15,28,46,.18);border-radius:6px;cursor:pointer;transition:border-color .2s,color .2s,background .2s;}
+.sf-submit:hover{border-color:var(--blue);color:var(--blue);background:rgba(26,95,168,.04);}
+.sf-note{font-size:.7rem;color:var(--light);text-align:center;margin-top:.75rem;font-style:italic;}
+.sf-success{display:none;text-align:center;padding:2rem 0;}
+.sf-success-icon{font-size:2.5rem;margin-bottom:.85rem;}
+.sf-success-title{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:.5rem;}
+.sf-success-text{font-size:.88rem;color:var(--mid);line-height:1.7;font-weight:300;}
+
+
+/* ── CEO INTRO CARD ── */
+.ceo-intro{display:flex;align-items:center;gap:.9rem;margin-bottom:2rem;background:white;border:1px solid rgba(15,28,46,.09);border-radius:12px;padding:.75rem 1rem;width:fit-content;box-shadow:0 2px 12px rgba(15,28,46,.07);opacity:0;animation:fadeUp .7s .05s forwards;}
+.ceo-photo{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center top;flex-shrink:0;border:2px solid rgba(59,143,212,.2);}
+.ceo-intro-copy strong{display:block;font-size:.88rem;color:var(--navy);font-weight:600;line-height:1.3;}
+.ceo-intro-copy span{font-size:.75rem;color:var(--mid);font-weight:300;}
+.ceo-intro-badge{display:inline-block;margin-top:.2rem;font-family:'Inconsolata',monospace;font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--rust);background:rgba(201,95,42,.08);border-radius:3px;padding:.15rem .45rem;}
+
+/* ── PULLQUOTE ── */
+.pullquote-section{padding:5rem 5rem;background:white;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);}
+.pullquote-inner{max-width:760px;margin:0 auto;text-align:center;}
+.pullquote-mark{font-family:'Playfair Display',serif;font-size:5rem;color:var(--sky);opacity:.25;line-height:.6;display:block;margin-bottom:1.25rem;}
+.pullquote-text{font-family:'Playfair Display',serif;font-size:clamp(1.45rem,2.8vw,2.1rem);font-style:italic;color:var(--navy);line-height:1.45;margin-bottom:2rem;}
+.pullquote-person{display:flex;align-items:center;justify-content:center;gap:1rem;}
+.pullquote-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0;}
+.pullquote-name strong{display:block;font-size:.88rem;color:var(--navy);font-weight:600;text-align:left;}
+.pullquote-name span{font-size:.78rem;color:var(--mid);font-weight:300;text-align:left;display:block;}
+@media(max-width:960px){.pullquote-section{padding:4rem 1.5rem;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:960px){
+  nav{padding:.9rem 1.5rem;}.nav-links{display:none;}
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem;padding:4rem 1.5rem 3rem;}
+  .trust-strip{padding:2.5rem 1.5rem;}
+  .trust-inner{flex-direction:column;text-align:center;}.trust-div{display:none;}.trust-email-block{text-align:center;}
+  .process-section,.faq-section,.secondary-form-section{padding:5rem 1.5rem;}
+  .process-steps{grid-template-columns:1fr 1fr;gap:2rem;}
+  .sf-row{grid-template-columns:1fr;}
+}
+@media(max-width:560px){
+  .process-steps{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+<script src="../Technical/nav.js"></script>
+
+<!-- ── HERO + CALENDLY ── -->
+<section class="contact-hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="ceo-intro">
+        <img src="../brand_assets/Team Photos/founder headshot.webp" class="ceo-photo" alt="Jon Mervis, Founder">
+        <div class="ceo-intro-copy">
+          <strong>Jon Mervis</strong>
+          <span>Founder &amp; CEO</span>
+          <span class="ceo-intro-badge">Books these calls personally</span>
+        </div>
+      </div>
+      <span class="hero-pretag">No Pitch. No Sales Reps. Ever.</span>
+      <h1 class="hero-h1">Show us what's<br>going wrong.<br><em>We'll help fix it.</em></h1>
+      <p class="hero-sub">Book 20 minutes directly with Jon. We'll jump on a screenshare, you show us your Salesforce, and we'll give you straight answers on the spot — no deck, no pitch, just a real conversation.</p>
+      <div class="hero-checks">
+        <div class="hero-check">
+          <span class="check-icon">✓</span>
+          <span class="check-text">Screenshare your org — we'll look at it live with you</span>
+        </div>
+        <div class="hero-check">
+          <span class="check-icon">✓</span>
+          <span class="check-text">Honest feedback from Jon, not a sales rep or junior consultant</span>
+        </div>
+        <div class="hero-check">
+          <span class="check-icon">✓</span>
+          <span class="check-text">~20 minutes · Zero commitment · We're just here to help</span>
+        </div>
+      </div>
+      <div class="hero-trust-row">
+        <span class="hero-stars">★★★★★</span>
+        <span class="hero-trust-text"><strong>4.9 / 5</strong> on Salesforce AppExchange &nbsp;·&nbsp; 95% five-star reviews</span>
+      </div>
+    </div>
+
+    <div class="calendly-wrap">
+      <span class="calendly-label">Pick a time that works for you</span>
+      <div class="calendly-card">
+        <!-- Calendly inline widget begin -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/jonmervis/intro?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Calendly inline widget end -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TRUST STRIP ── -->
+<div class="trust-strip">
+  <div class="trust-inner reveal">
+    <div class="trust-stat">
+      <div class="trust-num">4.9</div>
+      <div class="trust-label">AppExchange Rating</div>
+    </div>
+    <div class="trust-div"></div>
+    <div class="trust-stat">
+      <div class="trust-num">95%</div>
+      <div class="trust-label">Five-Star Reviews</div>
+    </div>
+    <div class="trust-div"></div>
+    <div class="trust-stat">
+      <div class="trust-num">7</div>
+      <div class="trust-label">Senior Consultants</div>
+    </div>
+    <div class="trust-div"></div>
+    <div class="trust-stat">
+      <div class="trust-num">2019</div>
+      <div class="trust-label">Certified Partner Since</div>
+    </div>
+    <div class="trust-div"></div>
+    <div class="trust-email-block">
+      <p class="trust-email-label">Or reach us directly</p>
+      <a href="mailto:hello@blueenginesolutions.com" class="trust-email-link">hello@blueenginesolutions.com</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── PULLQUOTE ── -->
+<section class="pullquote-section">
+  <div class="pullquote-inner">
+    <span class="pullquote-mark reveal">&ldquo;</span>
+    <p class="pullquote-text reveal reveal-delay-1">Working with Blue Engine felt like having a brilliant colleague inside our org. They didn&rsquo;t just fix things &mdash; they actually taught us how to own our system.</p>
+    <div class="pullquote-person reveal reveal-delay-2">
+      <img class="pullquote-avatar"
+           src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&h=100&q=80"
+           alt="Sarah M.">
+      <div class="pullquote-name">
+        <strong>Sarah M.</strong>
+        <span>Operations Director, Nonprofit &mdash; Washington, DC</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT HAPPENS NEXT ── -->
+<section class="process-section">
+  <div class="process-inner">
+    <span class="process-label reveal">What to Expect</span>
+    <h2 class="process-title reveal reveal-delay-1">From first call<br>to <em>real results.</em></h2>
+    <p class="process-sub reveal reveal-delay-2">Book a time above and here's exactly what happens next — no surprises, no pressure.</p>
+    <div class="process-steps">
+      <div class="pstep reveal">
+        <div class="pstep-num">1</div>
+        <h3 class="pstep-title">You book a time</h3>
+        <p class="pstep-desc">Pick any available slot on the calendar above. You'll get a confirmation and a calendar invite immediately.</p>
+      </div>
+      <div class="pstep reveal reveal-delay-1">
+        <div class="pstep-num">2</div>
+        <h3 class="pstep-title">We meet (30 min)</h3>
+        <p class="pstep-desc">A senior consultant leads the call. We ask the right questions, listen more than we talk, and give you honest feedback on the spot.</p>
+      </div>
+      <div class="pstep reveal reveal-delay-2">
+        <div class="pstep-num">3</div>
+        <h3 class="pstep-title">You get a clear read</h3>
+        <p class="pstep-desc">We'll tell you what we see in your Salesforce — what's working, what isn't, and what we'd do about it. Straight talk, no fluff.</p>
+      </div>
+      <div class="pstep reveal reveal-delay-3">
+        <div class="pstep-num">4</div>
+        <h3 class="pstep-title">You decide what's next</h3>
+        <p class="pstep-desc">No pressure to hire us. Take the insights, run with them yourself, or let's talk about working together. Either way, you win.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <span class="faq-label reveal">Common Questions</span>
+    <h2 class="faq-title reveal reveal-delay-1">Things people ask<br>before booking.</h2>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Is the intro call actually free?</div>
+      <div class="faq-a">Yes, completely. No hidden fees, no invoice at the end, no pressure to buy anything. We offer it because it's a great way to meet potential clients and show them how we think. You'll leave with real, useful information either way.</div>
+    </div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')">
+      <div class="faq-q">We're a small nonprofit. Are we too small for Blue Engine?</div>
+      <div class="faq-a">Absolutely not. About half our clients are nonprofits, and many have small teams and tight budgets. We love working with mission-driven organizations and we'll always be honest about what makes sense financially.</div>
+    </div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')">
+      <div class="faq-q">How quickly can you get started?</div>
+      <div class="faq-a">Typically within 1–2 weeks of our initial call, depending on scope. For urgent issues we can often prioritize faster. We'll give you a clear timeline before you commit to anything.</div>
+    </div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Do we have to sign a long-term contract?</div>
+      <div class="faq-a">No. Many clients start with a block of hours, then decide whether to move to a retainer or call us as needed. We don't lock you in — we earn your continued trust the old-fashioned way, by doing great work.</div>
+    </div>
+    <div class="faq-item reveal" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Who will actually be working on our Salesforce?</div>
+      <div class="faq-a">Senior consultants — the same people you talk to on the intro call. We don't hand work off to junior staff or offshore teams. You'll always know who's doing what and why.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SECONDARY CONTACT FORM (less prominent) ── -->
+<section class="secondary-form-section" id="send-message">
+  <div class="secondary-form-inner">
+    <span class="sf-eyebrow">Prefer to write?</span>
+    <h2 class="sf-title">Send us a message instead</h2>
+    <p class="sf-sub">Not ready to book a call? No problem. Leave us a note and we'll follow up within one business day.</p>
+    <form id="sf-form">
+      <div class="sf-row">
+        <input class="sf-input" type="text" name="fname" placeholder="First name" required>
+        <input class="sf-input" type="text" name="lname" placeholder="Last name" required>
+      </div>
+      <input class="sf-input" type="email" name="email" placeholder="Work email" required>
+      <select class="sf-select" name="topic">
+        <option value="" disabled selected>What brings you here?</option>
+        <option value="health-check">Free Salesforce Health Check</option>
+        <option value="org-cleanup">Org Cleanup or Rebuild</option>
+        <option value="automation">Automation &amp; Workflows</option>
+        <option value="managed">Ongoing Managed Services</option>
+        <option value="cost">Cost &amp; License Optimization</option>
+        <option value="other">Something else</option>
+      </select>
+      <textarea class="sf-textarea" name="message" placeholder="Tell us a bit about your Salesforce situation…"></textarea>
+      <button type="submit" class="sf-submit">SEND MESSAGE →</button>
+      <p class="sf-note">We'll reply within one business day. No spam, no pitch.</p>
+    </form>
+    <div class="sf-success" id="sf-success">
+      <div class="sf-success-icon">✉️</div>
+      <h3 class="sf-success-title">Message received.</h3>
+      <p class="sf-success-text">Thanks for writing. A real person will be in touch within one business day.</p>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="../Technical/footer.js"></script>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('up'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+
+// FAQ toggle
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.addEventListener('click', () => item.classList.toggle('open'));
+});
+
+// Secondary form submit (demo — replace with actual backend)
+document.getElementById('sf-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  this.style.display = 'none';
+  document.getElementById('sf-success').style.display = 'block';
+});
+</script>
+</body>
+</html>

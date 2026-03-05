@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers — Blue Engine Solutions</title>
+<link rel="stylesheet" href="../Technical/brand.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Epilogue:wght@300;400;500;600;700&family=Inconsolata:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0f1c2e;--blue:#1a5fa8;--sky:#3b8fd4;--sand:#f5f0e8;--warm:#faf8f4;--rust:#c95f2a;--text:#1a1f2e;--mid:#5a6272;--light:#8e97a8;--rule:rgba(15,28,46,0.1);}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{font-family:'Epilogue',sans-serif;background:var(--warm);color:var(--text);overflow-x:hidden;}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}.reveal.up{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:.12s;}.reveal-delay-2{transition-delay:.24s;}.reveal-delay-3{transition-delay:.38s;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:none;}}
+
+/* ── HERO ── */
+.careers-hero{padding-top:72px;background:#f5f1ea;position:relative;overflow:hidden;border-bottom:1px solid rgba(15,28,46,.08);}
+.careers-hero::before{content:'';position:absolute;top:-200px;right:-100px;width:650px;height:650px;background:radial-gradient(circle,rgba(26,95,168,.08),transparent 65%);pointer-events:none;}
+.careers-hero::after{content:'';position:absolute;bottom:-80px;left:-140px;width:500px;height:500px;background:radial-gradient(circle,rgba(201,95,42,.07),transparent 65%);pointer-events:none;}
+.hero-inner{max-width:1080px;margin:0 auto;padding:5.5rem 5rem 5.5rem;position:relative;z-index:1;}
+.hero-pretag{font-family:'Inconsolata',monospace;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin-bottom:1.25rem;display:block;opacity:0;animation:fadeUp .7s .1s forwards;}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,4.2vw,4.8rem);line-height:1.04;color:var(--navy);margin-bottom:1.5rem;max-width:700px;opacity:0;animation:fadeUp .8s .22s forwards;}
+.hero-h1 em{font-style:italic;color:var(--blue);}
+.hero-sub{font-size:1.05rem;line-height:1.82;color:var(--mid);font-weight:300;max-width:560px;opacity:0;animation:fadeUp .8s .36s forwards;}
+
+/* ── VALUES BAR ── */
+.values-bar{background:white;border-bottom:1px solid var(--rule);padding:2.25rem 5rem;}
+.values-bar-inner{max-width:1080px;margin:0 auto;display:flex;gap:3.5rem;flex-wrap:wrap;}
+.vb-item{display:flex;align-items:flex-start;gap:.85rem;}
+.vb-icon{width:32px;height:32px;background:rgba(201,95,42,.1);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.9rem;color:var(--rust);}
+.vb-text{display:flex;flex-direction:column;gap:.1rem;}
+.vb-label{font-family:'Inconsolata',monospace;font-size:.64rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--light);}
+.vb-value{font-size:.9rem;font-weight:500;color:var(--navy);}
+
+/* ── OPENINGS ── */
+.openings-section{max-width:1080px;margin:0 auto;padding:5rem 5rem;}
+.section-label{font-family:'Inconsolata',monospace;font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);display:block;margin-bottom:1rem;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,2.8vw,2.8rem);color:var(--navy);line-height:1.15;margin-bottom:.6rem;}
+.section-title em{font-style:italic;color:var(--blue);}
+.section-sub{font-size:.98rem;color:var(--mid);font-weight:300;line-height:1.78;max-width:520px;margin-bottom:3rem;}
+.openings-count{font-family:'Inconsolata',monospace;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--light);margin-bottom:1.5rem;display:block;}
+
+/* ── JOB CARD ── */
+.job-card{background:white;border-radius:14px;padding:2.5rem 2.25rem;box-shadow:0 4px 24px rgba(15,28,46,.07),0 1px 4px rgba(15,28,46,.04);border:1px solid rgba(15,28,46,.07);display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;transition:transform .25s,box-shadow .25s;text-decoration:none;color:inherit;}
+.job-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(15,28,46,.12),0 2px 8px rgba(15,28,46,.06);}
+.job-card-left{}
+.job-card-type{font-family:'Inconsolata',monospace;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rust);margin-bottom:.65rem;display:block;}
+.job-card-title{font-family:'Playfair Display',serif;font-size:1.55rem;color:var(--navy);line-height:1.18;margin-bottom:.75rem;}
+.job-card-desc{font-size:.92rem;line-height:1.72;color:var(--mid);font-weight:300;max-width:580px;margin-bottom:1.25rem;}
+.job-card-tags{display:flex;flex-wrap:wrap;gap:.5rem;}
+.job-tag{font-family:'Inconsolata',monospace;font-size:.68rem;font-weight:700;letter-spacing:.06em;background:var(--warm);border:1.5px solid rgba(15,28,46,.09);border-radius:5px;padding:.28rem .7rem;color:var(--mid);}
+.job-card-cta{display:flex;flex-direction:column;align-items:flex-end;gap:.85rem;flex-shrink:0;}
+.job-cta-btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--navy);color:white;font-family:'Inconsolata',monospace;font-size:.77rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.75rem 1.5rem;border-radius:7px;text-decoration:none;white-space:nowrap;transition:background .2s,transform .15s;}
+.job-cta-btn:hover{background:#1a3d6b;transform:translateY(-1px);}
+.job-cta-btn svg{transition:transform .2s;}
+.job-cta-btn:hover svg{transform:translateX(3px);}
+.job-card-remote{font-family:'Inconsolata',monospace;font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--light);}
+
+/* ── NO MORE ROLES ── */
+.no-more{margin-top:2rem;background:var(--sand);border-radius:12px;padding:2rem 2.25rem;border:1px solid rgba(15,28,46,.07);}
+.no-more-text{font-size:.92rem;color:var(--mid);font-weight:300;line-height:1.7;}
+.no-more-text a{color:var(--blue);font-weight:500;text-decoration:none;}
+.no-more-text a:hover{text-decoration:underline;}
+
+/* ── CULTURE SECTION ── */
+.culture-section{background:var(--navy);padding:6rem 5rem;position:relative;overflow:hidden;}
+.culture-section::before{content:'';position:absolute;top:-100px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(59,143,212,.1),transparent 65%);pointer-events:none;}
+.culture-inner{max-width:1080px;margin:0 auto;}
+.culture-label{font-family:'Inconsolata',monospace;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);display:block;margin-bottom:1.25rem;}
+.culture-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,3.2rem);color:white;line-height:1.12;margin-bottom:.85rem;}
+.culture-title em{font-style:italic;color:var(--sky);}
+.culture-sub{font-size:1rem;color:rgba(255,255,255,.48);font-weight:300;line-height:1.8;max-width:520px;margin-bottom:3.5rem;}
+.culture-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+.culture-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:2rem 1.75rem;transition:background .25s;}
+.culture-card:hover{background:rgba(255,255,255,.08);}
+.culture-card-num{font-family:'Inconsolata',monospace;font-size:.65rem;font-weight:700;letter-spacing:.14em;color:rgba(255,255,255,.2);display:block;margin-bottom:.75rem;}
+.culture-card-title{font-family:'Playfair Display',serif;font-size:1.15rem;color:white;margin-bottom:.6rem;line-height:1.25;}
+.culture-card-desc{font-size:.88rem;color:rgba(255,255,255,.44);font-weight:300;line-height:1.72;}
+
+@media(max-width:960px){
+  .hero-inner,.openings-section,.values-bar,.culture-section{padding-left:1.5rem;padding-right:1.5rem;}
+  .culture-grid{grid-template-columns:1fr 1fr;}
+  .values-bar-inner{gap:2rem;}
+  .job-card{grid-template-columns:1fr;}
+  .job-card-cta{align-items:flex-start;flex-direction:row;align-items:center;}
+}
+@media(max-width:560px){
+  .culture-grid{grid-template-columns:1fr;}
+  .job-cta-btn{width:100%;justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+<script src="../Technical/nav.js"></script>
+
+<!-- HERO -->
+<section class="careers-hero">
+  <div class="hero-inner">
+    <span class="hero-pretag">Careers at Blue Engine</span>
+    <h1 class="hero-h1">Work that's <em>interesting.</em><br>A team that's real.</h1>
+    <p class="hero-sub">We're a small Salesforce consultancy that does meaningful work for nonprofits and growing businesses. If you're sharp, curious, and want to own your projects — you'll fit right in.</p>
+  </div>
+</section>
+
+<!-- VALUES BAR -->
+<div class="values-bar">
+  <div class="values-bar-inner">
+    <div class="vb-item reveal">
+      <div class="vb-icon">&#9788;</div>
+      <div class="vb-text">
+        <span class="vb-label">PTO</span>
+        <span class="vb-value">4 Weeks</span>
+      </div>
+    </div>
+    <div class="vb-item reveal reveal-delay-1">
+      <div class="vb-icon">&#9651;</div>
+      <div class="vb-text">
+        <span class="vb-label">Work/Life</span>
+        <span class="vb-value">Max 32 hrs/wk billable</span>
+      </div>
+    </div>
+    <div class="vb-item reveal reveal-delay-2">
+      <div class="vb-icon">&#9672;</div>
+      <div class="vb-text">
+        <span class="vb-label">Team Size</span>
+        <span class="vb-value">Small &amp; Intentional</span>
+      </div>
+    </div>
+    <div class="vb-item reveal reveal-delay-3">
+      <div class="vb-icon">&#8853;</div>
+      <div class="vb-text">
+        <span class="vb-label">Autonomy</span>
+        <span class="vb-value">Own your projects</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- OPENINGS -->
+<div class="openings-section">
+  <span class="section-label">Open Roles</span>
+  <h2 class="section-title">We're hiring for<br><em>one key position</em></h2>
+  <p class="section-sub">We keep our team lean by design. Right now we're looking for one great consultant to join us full-time.</p>
+  <span class="openings-count reveal">1 Open Position</span>
+
+  <a href="consultant-role.html" class="job-card reveal">
+    <div class="job-card-left">
+      <span class="job-card-type">Full-Time</span>
+      <h3 class="job-card-title">Salesforce Consultant<br>for Small Business &amp; Nonprofits</h3>
+      <p class="job-card-desc">A client-facing role where you'll own projects end-to-end — from requirements gathering to go-live. You'll serve a diverse mix of nonprofit and small business clients, building solutions that actually get used.</p>
+      <div class="job-card-tags">
+        <span class="job-tag">Salesforce</span>
+        <span class="job-tag">Client-Facing</span>
+        <span class="job-tag">3+ Years</span>
+        <span class="job-tag">Remote-Friendly</span>
+        <span class="job-tag">DC/Bethesda Preferred</span>
+      </div>
+    </div>
+    <div class="job-card-cta">
+      <a href="consultant-role.html" class="job-cta-btn">
+        View Role
+        <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <span class="job-card-remote">Washington DC / Remote</span>
+    </div>
+  </a>
+
+  <div class="no-more reveal reveal-delay-1">
+    <p class="no-more-text">Don't see the right role? We occasionally bring on contractors and advisors. <a href="mailto:hello@blueenginesolutions.com">Drop us a line</a> and introduce yourself — we keep a running list of great people.</p>
+  </div>
+</div>
+
+<!-- CULTURE SECTION -->
+<section class="culture-section">
+  <div class="culture-inner">
+    <span class="culture-label">Life at Blue Engine</span>
+    <h2 class="culture-title">Small team. <em>Real autonomy.</em><br>Actual humans.</h2>
+    <p class="culture-sub">We built this company the way we'd want to work. Here's what that looks like in practice.</p>
+    <div class="culture-grid">
+      <div class="culture-card reveal">
+        <span class="culture-card-num">01</span>
+        <h3 class="culture-card-title">You Own Your Work</h3>
+        <p class="culture-card-desc">No hand-off culture. You're the consultant, the architect, and the trusted advisor — all in one. That means real responsibility and real credit.</p>
+      </div>
+      <div class="culture-card reveal reveal-delay-1">
+        <span class="culture-card-num">02</span>
+        <h3 class="culture-card-title">Interesting Problems</h3>
+        <p class="culture-card-desc">Our clients span industries: nonprofits, healthcare, retail, financial services, real estate. Every project is a new puzzle. You'll never stop learning.</p>
+      </div>
+      <div class="culture-card reveal reveal-delay-2">
+        <span class="culture-card-num">03</span>
+        <h3 class="culture-card-title">No Burnout Culture</h3>
+        <p class="culture-card-desc">We genuinely mean the 32-hour cap and 4 weeks PTO. You should have a life outside of work. We built the company around that belief.</p>
+      </div>
+      <div class="culture-card reveal">
+        <span class="culture-card-num">04</span>
+        <h3 class="culture-card-title">Direct Access</h3>
+        <p class="culture-card-desc">No layers of management. No account managers gatekeeping clients. You talk directly to the people you're helping, and they talk directly to you.</p>
+      </div>
+      <div class="culture-card reveal reveal-delay-1">
+        <span class="culture-card-num">05</span>
+        <h3 class="culture-card-title">We Actually Like Each Other</h3>
+        <p class="culture-card-desc">Professional and collegial. The team is small enough that you know everyone, and good enough that you want to.</p>
+      </div>
+      <div class="culture-card reveal reveal-delay-2">
+        <span class="culture-card-num">06</span>
+        <h3 class="culture-card-title">Mission-Driven Clients</h3>
+        <p class="culture-card-desc">About half our clients are nonprofits doing real work in the world. It feels good to build things that help people, not just move numbers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="../Technical/footer.js"></script>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('up'); observer.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
