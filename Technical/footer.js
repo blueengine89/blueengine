@@ -149,21 +149,21 @@
 <div class="ft-clients">
   <span class="ft-clients-label">Some of our happy clients</span>
   <div class="ft-clients-logos">
-    <div class="ft-client-logo"><img src="../Client Logos/cag_logo-removebg-preview.png" alt="CAG"></div>
-    <div class="ft-client-logo"><img src="../Client Logos/camden health logo transparent.png" alt="Camden Health"></div>
-    <div class="ft-client-logo"><img src="../Client Logos/topgolf logo.png" alt="Topgolf"></div>
-    <div class="ft-client-logo"><img src="../Client Logos/bond_civilutility_logo.jpg" alt="Bond Civil &amp; Utility"></div>
-    <div class="ft-client-logo"><img src="../Client Logos/rebuilding-together-logo-vector.png" alt="Rebuilding Together"></div>
-    <div class="ft-client-logo"><img src="../Client Logos/hero devs logo.png" alt="Hero Devs"></div>
-    <div class="ft-client-logo"><img src="../Client Logos/penn logo.png" alt="University of Pennsylvania"></div>
-    <div class="ft-client-logo"><img src="../Client Logos/umd logo 2.png" alt="University of Maryland"></div>
+    <div class="ft-client-logo"><img src="/Client Logos/cag_logo-removebg-preview.png" alt="CAG"></div>
+    <div class="ft-client-logo"><img src="/Client Logos/camden health logo transparent.png" alt="Camden Health"></div>
+    <div class="ft-client-logo"><img src="/Client Logos/topgolf logo.png" alt="Topgolf"></div>
+    <div class="ft-client-logo"><img src="/Client Logos/bond_civilutility_logo.jpg" alt="Bond Civil &amp; Utility"></div>
+    <div class="ft-client-logo"><img src="/Client Logos/rebuilding-together-logo-vector.png" alt="Rebuilding Together"></div>
+    <div class="ft-client-logo"><img src="/Client Logos/hero devs logo.png" alt="Hero Devs"></div>
+    <div class="ft-client-logo"><img src="/Client Logos/penn logo.png" alt="University of Pennsylvania"></div>
+    <div class="ft-client-logo"><img src="/Client Logos/umd logo 2.png" alt="University of Maryland"></div>
   </div>
 </div>
 <footer>
   <div class="ft-top">
     <div>
-      <a href="homepage_prior_chat.html" class="ft-brand-logo">
-        <img src="../brand_assets/blueengine-2b.svg" alt="Blue Engine">
+      <a href="/index.html" class="ft-brand-logo">
+        <img src="/brand_assets/blueengine-2b.svg" alt="Blue Engine">
       </a>
       <p class="ft-desc">A certified Salesforce Partner helping nonprofits and growing businesses get more from the platform they've already invested in. Founded 2019.</p>
       <p class="ft-addr">Blue Engine Salesforce Consultants<br>1342 Florida Ave NW<br>Washington, DC 20009</p>
@@ -171,29 +171,29 @@
     <div>
       <p class="ft-col-title">Services</p>
       <ul class="ft-links">
-        <li><a href="health-assessment.html">Health Check</a></li>
-        <li><a href="homepage_prior_chat.html#services">Managed Services</a></li>
-        <li><a href="homepage_prior_chat.html#services">Org Cleanup</a></li>
-        <li><a href="homepage_prior_chat.html#services">Quick Starts</a></li>
-        <li><a href="homepage_prior_chat.html#services">Integrations</a></li>
-        <li><a href="homepage_prior_chat.html#services">Training</a></li>
+        <li><a href="/Site Pages/health-assessment.html">Health Check</a></li>
+        <li><a href="/Site Pages/Services.html">Managed Services</a></li>
+        <li><a href="/Site Pages/Services.html">Org Cleanup</a></li>
+        <li><a href="/Site Pages/Services.html">Quick Starts</a></li>
+        <li><a href="/Site Pages/Services.html">Integrations</a></li>
+        <li><a href="/Site Pages/Services.html">Training</a></li>
       </ul>
     </div>
     <div>
       <p class="ft-col-title">Company</p>
       <ul class="ft-links">
-        <li><a href="homepage_prior_chat.html#about">About Us</a></li>
-        <li><a href="homepage_prior_chat.html#work">Case Studies</a></li>
+        <li><a href="/Site Pages/about.html">About Us</a></li>
+        <li><a href="/Site Pages/Case-Studies.html">Case Studies</a></li>
         <li><a href="#">AppExchange Reviews</a></li>
         <li><a href="#">Blog</a></li>
-        <li><a href="careers.html">Careers</a></li>
+        <li><a href="/Site Pages/careers.html">Careers</a></li>
       </ul>
     </div>
     <div>
       <p class="ft-col-title">Get In Touch</p>
       <ul class="ft-links">
-        <li><a href="health-assessment.html">Free Assessment</a></li>
-        <li><a href="contact.html">Schedule a Call</a></li>
+        <li><a href="/Site Pages/health-assessment.html">Free Assessment</a></li>
+        <li><a href="/Site Pages/contact.html">Schedule a Call</a></li>
         <li><a href="mailto:hello@blueenginesolutions.com">hello@blueenginesolutions.com</a></li>
         <li><a href="https://maps.google.com/?q=1342+Florida+Ave+NW,+Washington,+DC+20009" target="_blank" rel="noopener">1342 Florida Ave NW, Washington DC</a></li>
       </ul>

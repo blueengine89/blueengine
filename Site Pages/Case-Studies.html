@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies — Blue Engine Solutions</title>
+<link rel="stylesheet" href="../Technical/brand.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Epilogue:wght@300;400;500;600;700&family=Inconsolata:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0B1E36;--blue:#C43040;--sky:#3DA6CD;--sand:#EEF3F8;--warm:#F5F8FB;--rust:#3DA6CD;--green:#2a7a5a;--text:#0B1E36;--mid:#5a6272;--light:#8e97a8;--rule:rgba(11,30,54,0.1);--red:#C43040;--red-deep:#A8202E;--teal:#3DA6CD;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{font-family:'Epilogue',sans-serif;background:var(--warm);color:var(--text);overflow-x:hidden;}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .75s ease,transform .75s ease;}.reveal.up{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:.12s;}.reveal-delay-2{transition-delay:.24s;}.reveal-delay-3{transition-delay:.36s;}.reveal-delay-4{transition-delay:.48s;}
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 4rem;background:rgba(250,248,244,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);transition:padding .3s,box-shadow .3s;}
+nav.scrolled{padding:.8rem 4rem;box-shadow:0 2px 20px rgba(15,28,46,.08);}
+.nav-brand{display:flex;align-items:center;text-decoration:none;}
+.nav-logo-svg{height:32px;width:auto;display:block;}
+.nav-links{display:flex;align-items:center;gap:2.25rem;list-style:none;}
+.nav-links a{font-size:.85rem;font-weight:500;color:var(--mid);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--navy);}
+.nav-cta{font-family:'Inconsolata',monospace;font-size:.78rem;font-weight:700;letter-spacing:.05em;background:var(--blue)!important;color:white!important;padding:.65rem 1.4rem;border-radius:4px;transition:background .2s;}
+.nav-cta:hover{background:var(--navy)!important;}
+.btn{display:inline-flex;align-items:center;font-family:'Inconsolata',monospace;font-size:.8rem;font-weight:700;letter-spacing:.06em;padding:.9rem 1.8rem;border-radius:4px;text-decoration:none;transition:opacity .2s,transform .2s;cursor:pointer;border:none;}
+.btn-blue{background:var(--blue);color:white;}.btn-blue:hover{background:#1053a0;transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,95,168,.4);}
+.btn-outline-dark{background:transparent;color:var(--navy);border:1.5px solid var(--rule);}.btn-outline-dark:hover{border-color:var(--blue);color:var(--blue);}
+.section-label{font-family:'Inconsolata',monospace;font-size:.95rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--rust);margin-bottom:1.25rem;display:block;}
+
+/* ── HERO ── */
+.page-hero{position:relative;padding:11rem 5rem 7rem;overflow:hidden;background:var(--navy);}
+.page-hero::before{content:'';position:absolute;top:-150px;right:-150px;width:600px;height:600px;background:radial-gradient(circle,rgba(59,143,212,.15),transparent 65%);pointer-events:none;}
+.page-hero::after{content:'';position:absolute;bottom:-100px;left:-100px;width:400px;height:400px;background:radial-gradient(circle,rgba(201,95,42,.08),transparent 65%);pointer-events:none;}
+.page-hero-inner{max-width:860px;position:relative;z-index:1;}
+.hero-eyebrow{font-family:'Inconsolata',monospace;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin-bottom:1.5rem;display:block;opacity:0;animation:fadeUp .7s .1s forwards;}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,4.5vw,5rem);line-height:1.05;color:white;margin-bottom:1.5rem;opacity:0;animation:fadeUp .8s .25s forwards;}
+.hero-h1 em{font-style:italic;color:#6ab4e8;}
+.hero-sub{font-size:1.05rem;line-height:1.8;color:rgba(255,255,255,.58);font-weight:300;max-width:560px;opacity:0;animation:fadeUp .8s .4s forwards;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── STATS STRIP ── */
+.stats-strip{background:var(--sand);border-bottom:1px solid var(--rule);padding:4rem 5rem;}
+.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center;}
+.stat-block{padding:1.5rem;}
+.stat-num{font-family:'Playfair Display',serif;font-size:3.5rem;color:var(--navy);line-height:1;font-weight:700;}
+.stat-label{font-family:'Inconsolata',monospace;font-size:.65rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mid);margin-top:.5rem;}
+
+/* ── CASES ── */
+.cases-section{background:var(--warm);padding:9rem 5rem;}
+.cases-inner{max-width:1200px;margin:0 auto;}
+.cases-section .section-label{margin-bottom:1rem;}
+.section-big{font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,3.5rem);line-height:1.1;color:var(--navy);margin-bottom:3.5rem;}
+.section-big em{font-style:italic;color:var(--teal);}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.case-card{background:white;border-radius:8px;overflow:hidden;border:1px solid rgba(15,28,46,.06);transition:transform .3s,box-shadow .3s;}
+.case-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(15,28,46,.1);}
+.case-header{height:150px;display:flex;align-items:center;justify-content:center;}
+.chbg1{background:linear-gradient(135deg,#1a3a5f,#2a6a9a);}
+.chbg2{background:linear-gradient(135deg,#2a4a1a,#3a8a4a);}
+.chbg3{background:linear-gradient(135deg,#3a1a10,#8a4a1a);}
+.case-client-name{font-family:'Playfair Display',serif;font-size:2.25rem;color:rgba(255,255,255,.2);font-style:italic;}
+.case-body{padding:2rem;}
+.case-client{font-family:'Inconsolata',monospace;font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem;}
+.case-stat{font-family:'Playfair Display',serif;font-size:3rem;color:var(--navy);line-height:1;font-weight:700;}
+.case-stat-label{font-size:.78rem;font-weight:600;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin:.4rem 0 1rem;}
+.case-desc{font-size:.875rem;line-height:1.75;color:var(--mid);font-weight:300;}
+
+/* ── PULLQUOTE ── */
+.pullquote{padding:7rem 5rem;background:var(--sand);text-align:center;position:relative;overflow:hidden;}
+.pullquote::before{content:'\201C';font-family:'Playfair Display',serif;font-size:20rem;line-height:.8;color:rgba(15,28,46,.05);position:absolute;top:-2rem;left:2rem;pointer-events:none;}
+.pq-inner{max-width:800px;margin:0 auto;position:relative;z-index:1;}
+.pq-text{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.5rem,2.5vw,2.4rem);line-height:1.4;color:var(--navy);margin-bottom:2rem;}
+.pq-attribution{display:flex;align-items:center;justify-content:center;gap:1rem;}
+.pq-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--rule);flex-shrink:0;}
+.pq-source{font-family:'Inconsolata',monospace;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);text-align:left;}
+.pq-source span{color:var(--blue);display:block;}
+
+/* ── FINAL CTA ── */
+.final-cta{padding:9rem 5rem;text-align:center;position:relative;overflow:hidden;background:var(--warm);}
+.final-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(26,95,168,.05),transparent 65%);pointer-events:none;}
+.final-cta-inner{position:relative;z-index:1;max-width:640px;margin:0 auto;}
+.final-cta-tag{font-family:'Inconsolata',monospace;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin-bottom:1.5rem;display:block;}
+.final-cta-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.75rem);line-height:1.1;color:var(--navy);margin-bottom:1.25rem;}
+.final-cta-title em{font-style:italic;color:var(--teal);}
+.final-cta-sub{font-size:1rem;color:var(--mid);font-weight:300;line-height:1.78;margin-bottom:2.5rem;}
+.final-cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.final-note{font-size:.8rem;color:var(--light);margin-top:1.5rem;font-style:italic;}
+
+@media(max-width:960px){
+  .page-hero{padding:9rem 1.5rem 5rem;}
+  .stats-strip{padding:3rem 1.5rem;}.stats-inner{grid-template-columns:1fr;}
+  .cases-section,.pullquote,.final-cta{padding:5rem 1.5rem;}
+  .cases-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+<script src="../Technical/nav.js"></script>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <span class="hero-eyebrow">Case Studies · Results That Speak</span>
+    <h1 class="hero-h1">Work we're<br><em>proud of.</em></h1>
+    <p class="hero-sub">Real clients, real challenges, real outcomes. Here's a look at what happens when you have the right partner in your corner.</p>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-block reveal">
+      <div class="stat-num">60%</div>
+      <div class="stat-label">Avg. Cost Reduction</div>
+    </div>
+    <div class="stat-block reveal reveal-delay-1">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Impact Tracked</div>
+    </div>
+    <div class="stat-block reveal reveal-delay-2">
+      <div class="stat-num">$1000s</div>
+      <div class="stat-label">Saved in License Costs</div>
+    </div>
+  </div>
+</div>
+
+<!-- CASES -->
+<section class="cases-section">
+  <div class="cases-inner">
+    <span class="section-label reveal">Client Stories</span>
+    <h2 class="section-big reveal reveal-delay-1">Transformations that <em>matter.</em></h2>
+    <div class="cases-grid">
+      <div class="case-card reveal">
+        <div class="case-header chbg1"><div class="case-client-name">CDLI</div></div>
+        <div class="case-body">
+          <div class="case-client">CDLI — Nonprofit, Long Island</div>
+          <div class="case-stat">60%</div>
+          <div class="case-stat-label">Reduction in Monthly Spend</div>
+          <p class="case-desc">Replaced a bloated vendor contract, rebuilt core parts of their Salesforce org, and slashed their monthly platform cost — while improving what actually mattered.</p>
+        </div>
+      </div>
+      <div class="case-card reveal reveal-delay-1">
+        <div class="case-header chbg2"><div class="case-client-name">Imadi</div></div>
+        <div class="case-body">
+          <div class="case-client">Imadi — Human Services</div>
+          <div class="case-stat">100%</div>
+          <div class="case-stat-label">Volunteer Impact Tracked</div>
+          <p class="case-desc">Transformed messy contact architecture into a clean data model, then built automated SMS tracking to measure real volunteer impact in real time.</p>
+        </div>
+      </div>
+      <div class="case-card reveal reveal-delay-2">
+        <div class="case-header chbg3"><div class="case-client-name">Multi</div></div>
+        <div class="case-body">
+          <div class="case-client">Multiple Clients</div>
+          <div class="case-stat">$1000s</div>
+          <div class="case-stat-label">Saved in License Costs</div>
+          <p class="case-desc">License audits and user role optimization across multiple clients — saving thousands per year without losing a single feature they actually needed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PULLQUOTE -->
+<div class="pullquote reveal">
+  <div class="pq-inner">
+    <p class="pq-text">"Most CRM consultants can push the right buttons. The best ones see around corners — they understand your real business needs and help you actually move the needle."</p>
+    <div class="pq-attribution">
+      <img class="pq-avatar" src="../brand_assets/Team Photos/founder headshot.webp" alt="Jon Mervis">
+      <span class="pq-source">Jon Mervis<span>Founder, Blue Engine Solutions</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <span class="final-cta-tag reveal">Ready to Start?</span>
+    <h2 class="final-cta-title reveal reveal-delay-1">Let's write your<br><em>success story.</em></h2>
+    <p class="final-cta-sub reveal reveal-delay-2">Get a free Salesforce health check and see exactly where you stand — no pitch, no pressure.</p>
+    <div class="final-cta-btns reveal reveal-delay-3">
+      <a href="health-assessment.html" class="btn btn-blue">CLAIM FREE HEALTH CHECK →</a>
+      <a href="contact.html" class="btn btn-outline-dark">SCHEDULE A CALL</a>
+    </div>
+    <p class="final-note reveal reveal-delay-4">Free assessment · No commitment · ~30 minutes</p>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="../Technical/footer.js"></script>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('up'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+window.addEventListener('scroll', () => {
+  document.querySelector('nav')?.classList.toggle('scrolled', window.scrollY > 40);
+});
+</script>
+</body>
+</html>

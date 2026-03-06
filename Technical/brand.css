@@ -5,7 +5,7 @@
  */
 
 /* ── FONTS ───────────────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Epilogue:wght@300;400;500;600;700&family=Inconsolata:wght@400;500;700&display=swap');
 
 /* ── RESET ───────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -24,9 +24,14 @@ html { scroll-behavior: smooth; font-size: 18px; }
   --powder:       #DDEEFF;
 
   /* Warm contrast — used for CTAs / primary actions only */
-  --amber:        #C8921A;
-  --amber-deep:   #A87415;
-  --amber-pale:   rgba(200, 146, 26, 0.09);
+  --red:          #C43040;
+  --red-deep:     #A8202E;
+  --red-pale:     rgba(196, 48, 64, 0.09);
+
+  /* Legacy aliases */
+  --amber:        #C43040;
+  --amber-deep:   #A8202E;
+  --amber-pale:   rgba(196, 48, 64, 0.09);
 
   /* Surfaces */
   --bg:           #F0F6FF;
@@ -63,7 +68,7 @@ html { scroll-behavior: smooth; font-size: 18px; }
 body {
   background: var(--bg);
   color: var(--ink);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Epilogue', sans-serif;
   font-weight: 400;
   line-height: 1.6;
   overflow-x: hidden;
@@ -72,17 +77,17 @@ body {
 
 /* ── TYPOGRAPHY ──────────────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-weight: 700;
   color: var(--ink);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
 }
 
 p {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Epilogue', sans-serif;
   font-weight: 300;
-  line-height: 1.75;
+  line-height: 1.8;
   color: var(--ink-mid);
   font-size: 18px;
 }
@@ -109,7 +114,7 @@ p {
 /* Section headlines */
 .section-title,
 .section-headline {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-weight: 700;
   color: var(--ink);
   line-height: 1.15;
@@ -128,22 +133,22 @@ p {
   align-items: center;
   gap: 8px;
   padding: 14px 28px;
-  background: var(--amber);
+  background: var(--red);
   color: white;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Epilogue', sans-serif;
   font-size: 15px;
   font-weight: 600;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 4px 20px rgba(200, 146, 26, 0.28);
+  box-shadow: 0 4px 20px rgba(196, 48, 64, 0.28);
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
 }
 .btn-primary:hover {
-  background: var(--amber-deep);
+  background: var(--red-deep);
   transform: translateY(-1px);
-  box-shadow: 0 8px 28px rgba(200, 146, 26, 0.35);
+  box-shadow: 0 8px 28px rgba(196, 48, 64, 0.35);
 }
 
 .btn-secondary {
@@ -153,7 +158,7 @@ p {
   padding: 14px 28px;
   background: transparent;
   color: var(--ink);
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Epilogue', sans-serif;
   font-size: 15px;
   font-weight: 600;
   border: 1.5px solid var(--border);
@@ -212,7 +217,7 @@ nav {
 }
 
 .nav-links a {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Epilogue', sans-serif;
   font-size: 15px;
   font-weight: 500;
   color: var(--ink-mid);
@@ -225,19 +230,19 @@ nav {
 
 .nav-cta {
   padding: 10px 22px !important;
-  background: var(--amber) !important;
+  background: var(--red) !important;
   color: white !important;
-  font-family: 'DM Sans', sans-serif !important;
+  font-family: 'Epilogue', sans-serif !important;
   font-size: 14px !important;
   font-weight: 600 !important;
   border-radius: 7px !important;
-  box-shadow: 0 2px 12px rgba(200, 146, 26, 0.28) !important;
+  box-shadow: 0 2px 12px rgba(196, 48, 64, 0.28) !important;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s !important;
 }
 .nav-cta:hover {
-  background: var(--amber-deep) !important;
+  background: var(--red-deep) !important;
   transform: translateY(-1px) !important;
-  box-shadow: 0 4px 18px rgba(200, 146, 26, 0.35) !important;
+  box-shadow: 0 4px 18px rgba(196, 48, 64, 0.35) !important;
 }
 
 /* ── UTILITIES ───────────────────────────────────────────────────── */

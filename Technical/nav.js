@@ -20,7 +20,7 @@
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(11, 30, 54, 0.07);
   transition: background 0.3s;
-  font-family: 'DM Sans', 'Epilogue', sans-serif;
+  font-family: 'Epilogue', sans-serif;
 }
 #site-nav .sn-logo {
   display: flex;
@@ -42,7 +42,7 @@
   padding: 0;
 }
 #site-nav .sn-links a {
-  font-family: 'DM Sans', 'Epilogue', sans-serif;
+  font-family: 'Epilogue', sans-serif;
   font-size: 15px;
   font-weight: 500;
   color: rgba(11, 30, 54, 0.58);
@@ -52,18 +52,18 @@
 #site-nav .sn-links a:hover { color: #0B1E36; }
 #site-nav .sn-cta {
   padding: 10px 22px !important;
-  background: #C8921A !important;
+  background: #C43040 !important;
   color: white !important;
   font-size: 14px !important;
   font-weight: 600 !important;
   border-radius: 7px !important;
-  box-shadow: 0 2px 12px rgba(200, 146, 26, 0.28) !important;
+  box-shadow: 0 2px 12px rgba(196, 48, 64, 0.28) !important;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s !important;
 }
 #site-nav .sn-cta:hover {
-  background: #A87415 !important;
+  background: #A8202E !important;
   transform: translateY(-1px) !important;
-  box-shadow: 0 4px 18px rgba(200, 146, 26, 0.35) !important;
+  box-shadow: 0 4px 18px rgba(196, 48, 64, 0.35) !important;
 }
 @media (max-width: 960px) {
   #site-nav nav { padding: 0 24px; }
@@ -73,14 +73,14 @@
 
   const html = `
 <nav id="bes-nav">
-  <a href="index.html" class="sn-logo">
-    <img src="../brand_assets/blueengine-2b.svg" alt="Blue Engine Solutions">
+  <a href="/index.html" class="sn-logo">
+    <img src="/brand_assets/blueengine-2b.svg" alt="Blue Engine Solutions">
   </a>
   <ul class="sn-links">
-    <li><a href="Services.html">Services</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="index.html#clients">Who We Serve</a></li>
-    <li><a href="contact.html" class="sn-cta">Contact</a></li>
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/Site Pages/Services.html">Services</a></li>
+    <li><a href="/Site Pages/about.html">About</a></li>
+    <li><a href="/Site Pages/contact.html" class="sn-cta">Contact</a></li>
   </ul>
 </nav>`;
 
