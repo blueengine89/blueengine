@@ -75,6 +75,33 @@
 .perk-text{font-size:.85rem;color:var(--mid);font-weight:300;line-height:1.5;padding-top:3px;}
 .perk-text strong{color:var(--navy);font-weight:600;}
 
+/* ── VOICES ── */
+.role-voices{background:#f0ebe0;padding:5rem;position:relative;overflow:hidden;border-top:1px solid rgba(15,28,46,.07);border-bottom:1px solid rgba(15,28,46,.07);}
+.role-voices::before{content:'';position:absolute;top:-200px;left:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(201,95,42,.05),transparent 65%);pointer-events:none;}
+.role-voices::after{content:'';position:absolute;bottom:-150px;right:-150px;width:500px;height:500px;background:radial-gradient(circle,rgba(26,95,168,.06),transparent 65%);pointer-events:none;}
+.voices-inner{max-width:1080px;margin:0 auto;position:relative;z-index:1;}
+.voices-header{margin-bottom:2.75rem;}
+.voices-label{font-family:'Inconsolata',monospace;font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);display:block;margin-bottom:.75rem;}
+.voices-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.8vw,2.4rem);color:var(--navy);line-height:1.15;}
+.voices-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.voice-card{background:white;border-radius:14px;padding:2.25rem 2.25rem 2rem;box-shadow:0 4px 24px rgba(15,28,46,.07),0 1px 3px rgba(15,28,46,.04);border:1px solid rgba(15,28,46,.06);position:relative;display:flex;flex-direction:column;justify-content:space-between;transition:transform .25s ease,box-shadow .25s ease;}
+.voice-card:hover{transform:translateY(-3px);box-shadow:0 10px 40px rgba(15,28,46,.11),0 2px 6px rgba(15,28,46,.05);}
+.voice-card:nth-child(2){margin-top:2rem;}
+.voice-card:nth-child(4){margin-top:-1rem;}
+.voice-quote-mark{font-family:'Playfair Display',serif;font-size:5rem;line-height:.7;color:var(--rust);opacity:.18;position:absolute;top:1.5rem;left:1.75rem;pointer-events:none;user-select:none;}
+.voice-text{font-size:.97rem;line-height:1.78;color:var(--mid);font-weight:300;font-style:italic;padding-top:1.5rem;position:relative;z-index:1;}
+.voice-text strong{font-style:normal;color:var(--text);font-weight:600;}
+.voice-attribution{display:flex;align-items:center;gap:.75rem;margin-top:1.5rem;padding-top:1.25rem;border-top:1px solid rgba(15,28,46,.07);}
+.voice-avatar{width:40px;height:40px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2px solid rgba(15,28,46,.08);}
+.voice-avatar img{width:100%;height:100%;object-fit:cover;object-position:center top;}
+.voice-name{font-family:'Inconsolata',monospace;font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);}
+.voice-title-tag{font-size:.75rem;color:var(--light);font-weight:300;}
+@media(max-width:720px){
+  .role-voices{padding:3.5rem 1.5rem;}
+  .voices-grid{grid-template-columns:1fr;}
+  .voice-card:nth-child(2),.voice-card:nth-child(4){margin-top:0;}
+}
+
 /* ── BOTTOM CTA ── */
 .role-cta-strip{background:var(--navy);padding:5rem;text-align:center;position:relative;overflow:hidden;}
 .role-cta-strip::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(59,143,212,.1),transparent 65%);pointer-events:none;}
@@ -134,6 +161,67 @@
       Apply Now
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </a>
+  </div>
+</section>
+
+<!-- FROM THE TEAM -->
+<section class="role-voices">
+  <div class="voices-inner">
+    <div class="voices-header reveal">
+      <span class="voices-label">From the Team</span>
+      <h2 class="voices-title">What it's actually like to work here</h2>
+    </div>
+    <div class="voices-grid">
+
+      <div class="voice-card reveal">
+        <span class="voice-quote-mark">&ldquo;</span>
+        <p class="voice-text">No two projects are exactly the same. It keeps the work <strong>genuinely interesting</strong> and constantly pushes me to learn new tools and new ways of approaching problems.</p>
+        <div class="voice-attribution">
+          <div class="voice-avatar"><img src="../brand_assets/Team Photos/geoff cropped square.jpg" alt="Geoff Campbell"></div>
+          <div>
+            <div class="voice-name">Geoff Campbell</div>
+            <div class="voice-title-tag">Salesforce Consultant</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="voice-card reveal reveal-delay-1">
+        <span class="voice-quote-mark">&ldquo;</span>
+        <p class="voice-text">The flexibility has been instrumental — I can <strong>drop my kids off and pick them up from school every day</strong> without sacrificing the quality of my work.</p>
+        <div class="voice-attribution">
+          <div class="voice-avatar"><img src="../brand_assets/Team Photos/nicholas.jpg" alt="Nicholas Zuaro"></div>
+          <div>
+            <div class="voice-name">Nicholas Zuaro</div>
+            <div class="voice-title-tag">Salesforce Consultant</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="voice-card reveal reveal-delay-1">
+        <span class="voice-quote-mark">&ldquo;</span>
+        <p class="voice-text">There's real <strong>trust placed in us to think through problems</strong> and take ownership of our work — not just execute tasks. That's rare.</p>
+        <div class="voice-attribution">
+          <div class="voice-avatar"><img src="../brand_assets/Team Photos/geoff cropped square.jpg" alt="Geoff Campbell"></div>
+          <div>
+            <div class="voice-name">Geoff Campbell</div>
+            <div class="voice-title-tag">Salesforce Consultant</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="voice-card reveal reveal-delay-2">
+        <span class="voice-quote-mark">&ldquo;</span>
+        <p class="voice-text">Our clients are <strong>real, relatable people working on problems that impact their communities</strong>. Supporting them is incredibly rewarding — you feel the difference you're making.</p>
+        <div class="voice-attribution">
+          <div class="voice-avatar"><img src="../brand_assets/Team Photos/nicholas.jpg" alt="Nicholas Zuaro"></div>
+          <div>
+            <div class="voice-name">Nicholas Zuaro</div>
+            <div class="voice-title-tag">Salesforce Consultant</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
