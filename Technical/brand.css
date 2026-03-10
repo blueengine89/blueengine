@@ -43,6 +43,7 @@ html { scroll-behavior: smooth; font-size: 18px; }
   --ink:          #0B1E36;
   --ink-mid:      #2C3F58;
   --ink-light:    #5A7080;
+  --ink-on-dark:  rgba(255, 255, 255, 0.80);   /* body text on navy/dark backgrounds */
 
   /* Borders */
   --border:       #C2D6EE;
@@ -95,12 +96,21 @@ p {
 /* Section labels / eyebrows — centralized 13px for all pages */
 .eyebrow,
 .section-tag,
+.service-tag,
 .who-label, .values-label, .diff-label, .jon-label,
 .team-label-tag, .about-cta-label,
 .hero-pretag, .process-label, .faq-label, .sf-eyebrow, .calendly-label,
 .clients-label,
 .hero-breadcrumb, .a-eye {
-  font-size: 13px !important;
+  font-size: 18px !important;
+}
+
+.service-tag {
+  font-family: 'Inconsolata', monospace;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .eyebrow,
@@ -170,6 +180,67 @@ p {
 .btn-secondary:hover {
   border-color: var(--teal);
   color: var(--teal-deep);
+}
+
+/* ── LEGACY BUTTON ALIASES (.btn + modifiers) ────────────────────── */
+/* Used across about, approach, case-studies, index                   */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Epilogue', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  cursor: pointer;
+  border: none;
+}
+.btn-blue {
+  background: var(--red);
+  color: white;
+  box-shadow: 0 4px 20px rgba(196, 48, 64, 0.28);
+}
+.btn-blue:hover {
+  background: var(--red-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(196, 48, 64, 0.35);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--border);
+}
+.btn-outline:hover {
+  border-color: var(--navy);
+  background: rgba(11, 30, 54, 0.04);
+}
+.btn-outline-light {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+}
+.btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+.btn-outline-dark {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--border);
+}
+.btn-outline-dark:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+.btn-white {
+  background: white;
+  color: var(--navy);
+}
+.btn-white:hover {
+  background: var(--bg);
 }
 
 /* ── NAV ─────────────────────────────────────────────────────────── */

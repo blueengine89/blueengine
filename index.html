@@ -8,8 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Epilogue:wght@300;400;500;600;700&family=Inconsolata:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--sand:#E4EEF8;--warm:#F0F6FF;--rust:#3DA6CD;--green:#2B8CAE;--text:#0B1E36;--mid:#5A7080;--light:#5A7080;--rule:rgba(11,30,54,0.1);--sky:#3DA6CD;--red:#C43040;--red-deep:#A8202E;--navy:#0B1E36;--blue:#2B8CAE;--teal:#3DA6CD;}
-*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}body{font-family:'Epilogue',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;}
+:root{--sand:#E4EEF8;--warm:#F0F6FF;--rust:#8B1A2A;--green:#2B8CAE;--text:#0B1E36;--mid:#5A7080;--light:#5A7080;--rule:rgba(11,30,54,0.1);}
 .reveal{opacity:0;transform:translateY(32px);transition:opacity .75s ease,transform .75s ease;}.reveal.up{opacity:1;transform:none;}
 .reveal-delay-1{transition-delay:.12s;}.reveal-delay-2{transition-delay:.24s;}.reveal-delay-3{transition-delay:.36s;}.reveal-delay-4{transition-delay:.48s;}
 
@@ -18,16 +17,13 @@
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% center;}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(10,20,38,.88) 38%,rgba(10,20,38,.45) 70%,rgba(10,20,38,.2) 100%);}
 .hero-content{position:relative;z-index:2;padding:calc(72px + 60px) 5rem 80px;max-width:660px;}
-.hero-pretag{font-family:'Inconsolata',monospace;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);margin-bottom:1.4rem;display:block;opacity:0;animation:fadeUp .7s .1s forwards;}
+.hero-pretag{font-family:'Inconsolata',monospace;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);margin-bottom:1.4rem;display:block;opacity:0;animation:fadeUp .7s .1s forwards;}
 .hero-h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.4rem,4vw,4.4rem);line-height:1.06;color:white;margin-bottom:1.5rem;opacity:0;animation:fadeUp .8s .25s forwards;}
 .hero-h1 em{font-style:italic;color:var(--teal);}
 .hero-sub{font-size:1rem;line-height:1.78;color:rgba(255,255,255,.65);font-weight:300;max-width:480px;margin-bottom:2rem;opacity:0;animation:fadeUp .8s .4s forwards;}
 .hero-sub strong{color:rgba(255,255,255,.9);font-weight:500;}
 .hero-btns{display:flex;gap:.85rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .55s forwards;}
-.btn{display:inline-flex;align-items:center;font-family:'Inconsolata',monospace;font-size:.8rem;font-weight:700;letter-spacing:.06em;padding:.9rem 1.8rem;border-radius:4px;text-decoration:none;transition:opacity .2s,transform .2s,box-shadow .2s;cursor:pointer;border:none;}
-.btn-blue{background:var(--red);color:white;}.btn-blue:hover{background:var(--red-deep);transform:translateY(-2px);box-shadow:0 8px 24px rgba(196,48,64,.4);}
-.btn-outline{background:transparent;color:white;border:1.5px solid rgba(255,255,255,.4);}.btn-outline:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.7);}
-.btn-white{background:white;color:var(--navy);}.btn-white:hover{background:var(--sand);}
+/* .btn classes — defined in brand.css */
 .hero-trust{margin-top:2rem;display:flex;align-items:center;gap:1rem;opacity:0;animation:fadeUp .8s .7s forwards;}
 .hero-stars{color:#f5a623;font-size:.95rem;letter-spacing:.1em;}
 .hero-trust-text{font-size:.78rem;color:rgba(255,255,255,.5);}
@@ -42,14 +38,14 @@
 .clients-strip-inner{max-width:1200px;margin:0 auto;text-align:center;}
 .clients-heading{font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;color:var(--navy);margin-bottom:.6rem;}
 .clients-heading em{font-style:italic;color:var(--teal);}
-.clients-label{font-family:'Inconsolata',monospace;font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#888;display:block;margin-bottom:2.5rem;}
+.clients-label{font-family:'Inconsolata',monospace;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#888;display:block;margin-bottom:2.5rem;}
 .clients-logos{display:flex;align-items:center;justify-content:center;gap:4rem;flex-wrap:wrap;}
 .client-logo-item{display:flex;align-items:center;justify-content:center;opacity:.85;transition:opacity .3s;}
 .client-logo-item:hover{opacity:1;}
 .client-logo-item img{height:52px;width:auto;max-width:180px;object-fit:contain;}
 
 /* ── SECTION SHARED ── */
-.section-label{font-family:'Inconsolata',monospace;font-size:.95rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--rust);margin-bottom:1.25rem;display:block;}
+.section-label{font-family:'Inconsolata',monospace;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--rust);margin-bottom:1.25rem;display:block;}
 .section-big{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,3vw,3.5rem);line-height:1.1;color:var(--navy);}
 .section-big em{font-style:italic;color:var(--teal);}
 
@@ -63,7 +59,7 @@
 .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.07);}
 .problem-card{background:var(--navy);padding:2.75rem;transition:background .3s;position:relative;overflow:hidden;}
 .problem-card:hover{background:rgba(255,255,255,.035);}
-.problem-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--sky),var(--blue));transform:scaleX(0);transition:transform .35s;transform-origin:left;}
+.problem-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--sky),var(--teal-deep));transform:scaleX(0);transition:transform .35s;transform-origin:left;}
 .problem-card:hover::after{transform:scaleX(1);}
 .problem-num{font-family:'Inconsolata',monospace;font-size:.65rem;color:var(--sky);opacity:.45;font-weight:700;letter-spacing:.12em;margin-bottom:1.25rem;}
 .problem-title{font-size:1.4rem;color:white;margin-bottom:.85rem;line-height:1.2;font-weight:600;}
@@ -82,7 +78,7 @@
 /* Guarantee card */
 .why-guarantee{background:var(--navy);border-radius:10px;padding:3rem;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s;}
 .why-guarantee:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(11,30,54,.2);}
-.why-guarantee::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--sky),var(--blue));}
+.why-guarantee::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--sky),var(--teal-deep));}
 .why-guarantee::after{content:'';position:absolute;bottom:-120px;right:-120px;width:300px;height:300px;background:radial-gradient(circle,rgba(61,166,205,.08),transparent 65%);pointer-events:none;}
 .guarantee-eyebrow{display:inline-flex;align-items:center;gap:.6rem;background:rgba(61,166,205,.12);border:1px solid rgba(61,166,205,.2);border-radius:100px;padding:.45rem 1.1rem;margin-bottom:2.25rem;align-self:flex-start;}
 .guarantee-eyebrow-dot{width:6px;height:6px;background:var(--sky);border-radius:50%;flex-shrink:0;}
@@ -97,7 +93,7 @@
 /* Four differentiator cards */
 .why-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
 .why-card{background:white;border:1px solid var(--rule);border-radius:10px;padding:2.25rem;transition:transform .3s,box-shadow .3s,border-color .3s;position:relative;overflow:hidden;}
-.why-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--sky),var(--blue));transform:scaleX(0);transition:transform .35s;transform-origin:left;}
+.why-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--sky),var(--teal-deep));transform:scaleX(0);transition:transform .35s;transform-origin:left;}
 .why-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(11,30,54,.08);border-color:rgba(61,166,205,.3);}
 .why-card:hover::after{transform:scaleX(1);}
 .why-icon{width:46px;height:46px;background:rgba(43,140,174,.07);border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;transition:background .25s;}
@@ -112,17 +108,17 @@
 .section-right-text{font-size:1rem;line-height:1.8;color:var(--mid);font-weight:300;}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
 .service-card{background:white;border:1px solid var(--rule);border-radius:8px;padding:2.25rem;transition:transform .3s,box-shadow .3s,border-color .3s;}
-.service-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(15,28,46,.1);border-color:var(--blue);}
+.service-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(15,28,46,.1);border-color:var(--teal-deep);}
 .service-icon-wrap{width:48px;height:48px;border-radius:10px;background:var(--sand);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;font-size:1.4rem;transition:background .3s;}
-.service-card:hover .service-icon-wrap{background:var(--blue);}
+.service-card:hover .service-icon-wrap{background:var(--teal-deep);}
 .service-title{font-size:1.2rem;color:var(--navy);margin-bottom:.75rem;line-height:1.25;font-weight:600;}
 .service-desc{font-size:.875rem;line-height:1.78;color:var(--mid);font-weight:300;}
-.service-quote{margin-top:1.25rem;font-style:italic;font-size:.78rem;color:var(--blue);line-height:1.5;padding-top:1.25rem;border-top:1px solid var(--rule);}
+.service-quote{margin-top:1.25rem;font-style:italic;font-size:.78rem;color:var(--teal-deep);line-height:1.5;padding-top:1.25rem;border-top:1px solid var(--rule);}
 .service-card.featured{background:var(--navy);border-color:var(--navy);}
 .service-card.featured .service-title{color:white;}.service-card.featured .service-desc{color:rgba(255,255,255,.5);}.service-card.featured .service-quote{color:var(--sky);border-color:rgba(255,255,255,.1);}.service-card.featured .service-icon-wrap{background:rgba(255,255,255,.1);}
 
 /* ── HEALTH BANNER ── */
-.health-banner{background:linear-gradient(135deg,var(--blue) 0%,var(--navy) 100%);padding:5.5rem 5rem;position:relative;overflow:hidden;}
+.health-banner{background:linear-gradient(135deg,var(--teal-deep) 0%,var(--navy) 100%);padding:5.5rem 5rem;position:relative;overflow:hidden;}
 .health-banner::before{content:'';position:absolute;top:-100px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(255,255,255,.1),transparent 65%);}
 .health-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;position:relative;z-index:1;}
 .health-tag{font-family:'Inconsolata',monospace;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.85rem;display:block;}
@@ -139,7 +135,7 @@
 .pq-attribution{display:flex;align-items:center;justify-content:center;gap:1rem;}
 .pq-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--rule);flex-shrink:0;}
 .pq-source{font-family:'Inconsolata',monospace;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);text-align:left;}
-.pq-source span{color:var(--blue);display:block;}
+.pq-source span{color:var(--teal-deep);display:block;}
 
 /* ── TESTIMONIALS ── */
 .testimonials-section{padding:9rem 5rem;background:var(--warm);}
@@ -152,7 +148,7 @@
 .testi-name{font-weight:600;font-size:.85rem;color:var(--navy);}
 .testi-role{font-size:.78rem;color:var(--mid);margin-top:.2rem;}
 .testi-footer{display:flex;align-items:center;gap:.5rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--rule);font-family:'Inconsolata',monospace;font-size:.6rem;font-weight:700;letter-spacing:.1em;color:var(--light);text-transform:uppercase;}
-.testi-dot{width:6px;height:6px;background:var(--blue);border-radius:50%;flex-shrink:0;}
+.testi-dot{width:6px;height:6px;background:var(--teal-deep);border-radius:50%;flex-shrink:0;}
 .testi-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;margin-bottom:.75rem;border:2px solid var(--rule);}
 
 /* ── ABOUT ── */
@@ -167,7 +163,7 @@
 .about-text{font-size:.95rem;line-height:1.85;color:var(--mid);font-weight:300;margin-bottom:1.25rem;}
 .about-text strong{color:var(--text);font-weight:600;}
 .principles{display:flex;flex-direction:column;gap:1rem;margin-top:2rem;}
-.principle{display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.25rem;background:white;border-radius:6px;border-left:3px solid var(--blue);}
+.principle{display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.25rem;background:white;border-radius:6px;border-left:3px solid var(--teal-deep);}
 .principle-icon{font-size:1.2rem;flex-shrink:0;}
 .principle-title{font-weight:600;font-size:.88rem;color:var(--navy);margin-bottom:.2rem;}
 .principle-desc{font-size:.82rem;color:var(--mid);line-height:1.6;}
@@ -224,8 +220,8 @@
     <h1 class="hero-h1">Salesforce that<br><em>actually works</em><br>for your team.</h1>
     <p class="hero-sub">We fix broken orgs, cut through technical debt, and make Salesforce feel like it was <strong>built for real people</strong> — because that's exactly what we do, every day.</p>
     <div class="hero-btns">
-      <a href="health-assessment.html" class="btn btn-blue">GET FREE HEALTH CHECK →</a>
-      <a href="Site Pages/Case-Studies.html" class="btn btn-outline">SEE OUR WORK</a>
+      <a href="/Site Pages/health-assessment.html" class="btn btn-blue">GET FREE HEALTH CHECK →</a>
+      <a href="Site Pages/Case-Studies.html" class="btn btn-outline-light">SEE OUR WORK</a>
     </div>
     <div class="hero-trust">
       <span class="hero-stars">★★★★★</span>
@@ -382,7 +378,7 @@
       <p class="health-sub">We'll analyze your org, identify what's broken or costing you money, and give you honest recommendations — absolutely no charge, no pitch, no pressure.</p>
     </div>
     <div class="health-right">
-      <a href="health-assessment.html" class="btn btn-white">CLAIM FREE ASSESSMENT →</a>
+      <a href="/Site Pages/health-assessment.html" class="btn btn-white">CLAIM FREE ASSESSMENT →</a>
       <p class="health-note">~30 minutes · Zero commitment</p>
     </div>
   </div>
@@ -441,8 +437,8 @@
     <h2 class="final-cta-title reveal reveal-delay-1">Let's talk about<br>what's <em>working</em> —<br>and what's not.</h2>
     <p class="final-cta-sub reveal reveal-delay-2">We'll take a look at your Salesforce setup, talk through your goals, and tell you honestly whether we can help. No pressure, no pitch.</p>
     <div class="final-cta-btns reveal reveal-delay-3">
-      <a href="health-assessment.html" class="btn btn-blue">CLAIM FREE HEALTH CHECK →</a>
-      <a href="contact.html" class="btn btn-outline">SCHEDULE A CALL</a>
+      <a href="/Site Pages/health-assessment.html" class="btn btn-blue">CLAIM FREE HEALTH CHECK →</a>
+      <a href="/Site Pages/contact.html" class="btn btn-outline-light">SCHEDULE A CALL</a>
     </div>
     <p class="final-note reveal reveal-delay-4">Free assessment · No commitment · ~30 minutes</p>
   </div>

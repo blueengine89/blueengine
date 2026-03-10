@@ -51,11 +51,12 @@
 }
 #site-nav .sn-links a:hover { color: #0B1E36; }
 #site-nav .sn-cta {
-  padding: 10px 22px !important;
+  padding: 9px 22px !important;
   background: #C43040 !important;
   color: white !important;
   font-size: 14px !important;
   font-weight: 600 !important;
+  border: 1.5px solid transparent !important;
   border-radius: 7px !important;
   box-shadow: 0 2px 12px rgba(196, 48, 64, 0.28) !important;
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s !important;
@@ -64,6 +65,48 @@
   background: #A8202E !important;
   transform: translateY(-1px) !important;
   box-shadow: 0 4px 18px rgba(196, 48, 64, 0.35) !important;
+}
+#site-nav .sn-health-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+#site-nav .sn-health {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: #0B1E36 !important;
+  text-decoration: none;
+  padding: 9px 20px !important;
+  padding-right: 52px !important;
+  border: 1.5px solid rgba(43, 140, 174, 0.35) !important;
+  border-radius: 7px !important;
+  background: rgba(61, 166, 205, 0.05) !important;
+  transition: border-color 0.2s, background 0.2s !important;
+  white-space: nowrap;
+  display: block;
+  line-height: 1.4;
+}
+#site-nav .sn-health:hover {
+  border-color: rgba(43, 140, 174, 0.65) !important;
+  background: rgba(61, 166, 205, 0.10) !important;
+  color: #0B1E36 !important;
+}
+#site-nav .sn-health-pill {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #3DA6CD;
+  color: white;
+  font-family: 'Inconsolata', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 2px 7px;
+  border-radius: 20px;
+  pointer-events: none;
+  line-height: 1.5;
 }
 @media (max-width: 960px) {
   #site-nav nav { padding: 0 24px; }
@@ -80,6 +123,12 @@
     <li><a href="/index.html">Home</a></li>
     <li><a href="/Site Pages/Services.html">Services</a></li>
     <li><a href="/Site Pages/about.html">About</a></li>
+    <li>
+      <span class="sn-health-wrap">
+        <a href="/Site Pages/health-assessment.html" class="sn-health">Health Check</a>
+        <span class="sn-health-pill">FREE</span>
+      </span>
+    </li>
     <li><a href="/Site Pages/contact.html" class="sn-cta">Contact</a></li>
   </ul>
 </nav>`;

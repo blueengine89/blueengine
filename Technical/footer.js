@@ -31,39 +31,39 @@
 }
 #site-footer .ft-desc {
   font-size: .87rem;
-  color: rgba(255,255,255,.42);
-  line-height: 1.78;
+  color: rgba(255,255,255,.58);
+  line-height: 1.68;
   font-weight: 300;
   max-width: 280px;
   margin: 0;
 }
 #site-footer .ft-addr {
   font-size: .82rem;
-  color: rgba(255,255,255,.28);
-  line-height: 1.7;
+  color: rgba(255,255,255,.42);
+  line-height: 1.6;
   font-style: italic;
-  margin-top: .75rem;
+  margin-top: .65rem;
 }
 #site-footer .ft-col-title {
   font-family: 'Inconsolata', 'IBM Plex Mono', monospace;
-  font-size: .65rem;
+  font-size: .72rem;
   font-weight: 700;
-  letter-spacing: .18em;
+  letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.28);
-  margin-bottom: 1.25rem;
+  color: rgba(255,255,255,1);
+  margin-bottom: .9rem;
 }
 #site-footer .ft-links {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: .65rem;
+  gap: .45rem;
   padding: 0;
   margin: 0;
 }
 #site-footer .ft-links a {
   font-size: .85rem;
-  color: rgba(255,255,255,.48);
+  color: rgba(255,255,255,.62);
   text-decoration: none;
   transition: color .2s;
 }
@@ -75,7 +75,7 @@
   padding-top: 2rem;
   font-family: 'Inconsolata', 'IBM Plex Mono', monospace;
   font-size: .72rem;
-  color: rgba(255,255,255,.22);
+  color: rgba(255,255,255,.38);
   letter-spacing: .04em;
 }
 #site-footer .ft-cert {
@@ -88,7 +88,7 @@
   font-size: .65rem;
   font-weight: 700;
   letter-spacing: .1em;
-  color: rgba(255,255,255,.35);
+  color: rgba(255,255,255,.5);
 }
 #site-footer .ft-cert-dot {
   width: 6px;
@@ -172,11 +172,11 @@
       <p class="ft-col-title">Services</p>
       <ul class="ft-links">
         <li><a href="/Site Pages/health-assessment.html">Health Check</a></li>
-        <li><a href="/Site Pages/Services.html">Managed Services</a></li>
-        <li><a href="/Site Pages/Services.html">Org Cleanup</a></li>
-        <li><a href="/Site Pages/Services.html">Quick Starts</a></li>
-        <li><a href="/Site Pages/Services.html">Integrations</a></li>
-        <li><a href="/Site Pages/Services.html">Training</a></li>
+        <li><a href="/Site Pages/Services.html#managed">Managed Services</a></li>
+        <li><a href="/Site Pages/Services.html#fix">Org Cleanup</a></li>
+        <li><a href="/Site Pages/Services.html#implement">Quick Starts</a></li>
+        <li><a href="/Site Pages/Services.html#automate">Integrations</a></li>
+        <li><a href="/Site Pages/Services.html#training">Training</a></li>
       </ul>
     </div>
     <div>
