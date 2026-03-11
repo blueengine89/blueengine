@@ -17,21 +17,19 @@
 .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(10,20,38,.88) 38%,rgba(10,20,38,.45) 70%,rgba(10,20,38,.2) 100%);}
 .hero-content{position:relative;z-index:2;padding:calc(72px + 48px) 5rem 64px;max-width:660px;}
-.hero-pretag{font-family:'Inconsolata',monospace;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rust);margin-bottom:1.4rem;display:block;opacity:0;animation:fadeUp .7s .1s forwards;}
+.hero-pretag{font-family:'Inconsolata',monospace;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:1.4rem;display:block;opacity:0;animation:fadeUp .7s .1s forwards;}
 .hero-h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.4rem,4vw,4.4rem);line-height:1.06;color:white;margin-bottom:1.5rem;opacity:0;animation:fadeUp .8s .25s forwards;}
 .hero-h1 em{font-style:italic;color:var(--teal);}
-.hero-sub{font-size:1rem;line-height:1.78;color:rgba(255,255,255,.65);font-weight:300;max-width:480px;margin-bottom:2rem;opacity:0;animation:fadeUp .8s .4s forwards;}
+.hero-sub{font-size:1.05rem;line-height:1.78;color:rgba(255,255,255,.65);font-weight:300;max-width:480px;margin-bottom:2rem;opacity:0;animation:fadeUp .8s .4s forwards;}
 .hero-sub strong{color:rgba(255,255,255,.9);font-weight:500;}
 .hero-btns{display:flex;gap:.85rem;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .55s forwards;}
-/* .btn classes — defined in brand.css */
 .hero-trust{margin-top:2rem;display:flex;align-items:center;gap:1rem;opacity:0;animation:fadeUp .8s .7s forwards;}
 .hero-stars{color:#f5a623;font-size:.95rem;letter-spacing:.1em;}
-.hero-trust-text{font-size:.78rem;color:rgba(255,255,255,.5);}
+.hero-trust-text{font-size:.82rem;color:rgba(255,255,255,.5);}
 .hero-trust-text strong{color:rgba(255,255,255,.8);font-weight:600;}
 .hero-badge{position:absolute;bottom:2rem;right:3rem;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-radius:10px;padding:.9rem 1.25rem;box-shadow:0 8px 32px rgba(0,0,0,.3);opacity:0;animation:fadeIn .8s 1.1s forwards;}
 .hero-badge-num{font-size:2rem;line-height:1;color:var(--navy);font-weight:800;}
 .hero-badge-label{font-size:.68rem;color:var(--mid);font-weight:500;margin-top:.2rem;}
-.hero-img{width:100%;height:100%;object-fit:cover;display:block;}
 
 /* ── CLIENT LOGOS ── */
 .clients-strip{padding:3.5rem 5rem;background:#e8e8e8;border-top:1px solid #d0d0d0;border-bottom:1px solid #d0d0d0;}
@@ -45,26 +43,54 @@
 .client-logo-item img{height:52px;width:auto;max-width:180px;object-fit:contain;}
 
 /* ── SECTION SHARED ── */
-.section-label{font-family:'Inconsolata',monospace;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--rust);margin-bottom:1.25rem;display:block;}
+.section-label{font-family:'Inconsolata',monospace;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--teal-deep);margin-bottom:1.25rem;display:block;}
 .section-big{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2rem,3vw,3.5rem);line-height:1.1;color:var(--navy);}
 .section-big em{font-style:italic;color:var(--teal);}
 
 /* ── PROBLEM SECTION ── */
-.problem-section{background:var(--navy);padding:9rem 5rem;position:relative;overflow:hidden;}
+.problem-section{background:var(--navy);padding:7rem 5rem 0;position:relative;overflow:hidden;}
 .problem-section::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(59,143,212,.12),transparent 70%);pointer-events:none;}
 .problem-inner{max-width:1200px;margin:0 auto;}
 .problem-section .section-label{color:var(--sky);}
 .problem-section .section-big{color:white;margin-bottom:.85rem;}
-.problem-intro{font-size:1rem;color:rgba(255,255,255,.5);font-weight:300;line-height:1.75;max-width:560px;margin-bottom:4rem;}
-.problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.07);}
-.problem-card{background:var(--navy);padding:2.75rem;transition:background .3s;position:relative;overflow:hidden;}
-.problem-card:hover{background:rgba(255,255,255,.035);}
-.problem-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--sky),var(--teal-deep));transform:scaleX(0);transition:transform .35s;transform-origin:left;}
-.problem-card:hover::after{transform:scaleX(1);}
-.problem-num{font-family:'Inconsolata',monospace;font-size:.65rem;color:var(--sky);opacity:.45;font-weight:700;letter-spacing:.12em;margin-bottom:1.25rem;}
-.problem-title{font-size:1.4rem;color:white;margin-bottom:.85rem;line-height:1.2;font-weight:600;}
-.problem-desc{font-size:.9rem;line-height:1.78;color:rgba(255,255,255,.5);font-weight:300;}
-.problem-quote{margin-top:1.25rem;font-style:italic;font-size:.8rem;color:var(--sky);opacity:.75;line-height:1.5;}
+.problem-intro{font-size:1.05rem;color:rgba(255,255,255,.5);font-weight:300;line-height:1.75;max-width:560px;margin-bottom:3.5rem;}
+/* Thought bubbles */
+.thought-bubbles{display:flex;gap:4rem;justify-content:center;align-items:center;margin-bottom:4rem;flex-wrap:wrap;}
+.thought-bubble{background:#ffffff;border-radius:1.75rem;padding:2rem 2.5rem;max-width:360px;position:relative;box-shadow:0 16px 56px rgba(0,0,0,.3),0 2px 10px rgba(0,0,0,.15);}
+.thought-bubble--left{transform:rotate(-2.5deg) translateY(12px);}
+.thought-bubble--right{transform:rotate(1.5deg) translateY(-12px);}
+.thought-text{font-family:'Playfair Display',Georgia,serif;font-size:1.2rem;color:var(--navy);line-height:1.5;font-weight:700;font-style:italic;margin:0;}
+.thought-tail{position:absolute;bottom:-30px;left:2.75rem;display:flex;flex-direction:column;gap:5px;align-items:flex-start;}
+.thought-tail span{display:block;background:rgba(255,255,255,.92);border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,.15);}
+.thought-tail span:nth-child(1){width:15px;height:15px;}
+.thought-tail span:nth-child(2){width:9px;height:9px;margin-left:5px;}
+.thought-tail span:nth-child(3){width:5px;height:5px;margin-left:11px;}
+/* Bridge from Sound Familiar into What We Do */
+.problem-bridge{text-align:center;padding:3.5rem 2rem 0;position:relative;}
+.problem-bridge-text{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:1.35rem;color:rgba(255,255,255,.55);margin-bottom:1.5rem;}
+.problem-bridge-text strong{color:white;font-style:normal;font-weight:700;}
+.problem-bridge-arrow{display:flex;flex-direction:column;align-items:center;gap:0;opacity:.4;}
+.problem-bridge-arrow span{display:block;width:1px;height:48px;background:linear-gradient(180deg,rgba(61,166,205,.8),transparent);}
+.problem-bridge-arrow svg{margin-top:-4px;color:rgba(61,166,205,.6);}
+/* Overlap connector: navy section bleeds into sand via a shape */
+.problem-connector{height:60px;background:var(--sand);margin-top:0;position:relative;}
+.problem-connector::before{content:'';position:absolute;top:0;left:0;right:0;height:60px;background:var(--navy);clip-path:ellipse(55% 100% at 50% 0%);}
+
+/* ── SERVICES ── */
+.services-section{padding:9rem 5rem;background:var(--sand);}
+.services-inner{max-width:1200px;margin:0 auto;}
+.section-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:5rem;}
+.section-right-text{font-size:1.05rem;line-height:1.8;color:var(--mid);font-weight:300;}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.service-card{background:white;border:1px solid var(--rule);border-radius:8px;padding:2.25rem;transition:transform .3s,box-shadow .3s,border-color .3s;}
+.service-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(15,28,46,.1);border-color:var(--teal-deep);}
+.service-icon-wrap{width:48px;height:48px;border-radius:10px;background:var(--sand);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;font-size:1.4rem;transition:background .3s;}
+.service-card:hover .service-icon-wrap{background:var(--teal-deep);}
+.service-title{font-size:1.2rem;color:var(--navy);margin-bottom:.75rem;line-height:1.25;font-weight:600;}
+.service-desc{font-size:.95rem;line-height:1.78;color:var(--mid);font-weight:300;}
+.service-quote{margin-top:1.25rem;font-style:italic;font-size:.82rem;color:var(--teal-deep);line-height:1.5;padding-top:1.25rem;border-top:1px solid var(--rule);}
+.service-card.featured{background:var(--navy);border-color:var(--navy);}
+.service-card.featured .service-title{color:white;}.service-card.featured .service-desc{color:rgba(255,255,255,.5);}.service-card.featured .service-quote{color:var(--sky);border-color:rgba(255,255,255,.1);}.service-card.featured .service-icon-wrap{background:rgba(255,255,255,.1);}
 
 /* ── WHY BLUE ENGINE ── */
 .why-section{background:var(--warm);padding:9rem 5rem;position:relative;overflow:hidden;}
@@ -72,7 +98,7 @@
 .why-inner{max-width:1200px;margin:0 auto;}
 .why-header{margin-bottom:4rem;}
 .why-header .section-big{margin-bottom:.85rem;}
-.why-intro-text{font-size:1rem;color:var(--mid);line-height:1.78;font-weight:300;max-width:520px;margin-top:.75rem;}
+.why-intro-text{font-size:1.05rem;color:var(--mid);line-height:1.78;font-weight:300;max-width:520px;margin-top:.75rem;}
 .why-layout{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:stretch;}
 
 /* Guarantee card */
@@ -85,9 +111,9 @@
 .guarantee-eyebrow-text{font-family:'Inconsolata',monospace;font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--sky);}
 .guarantee-icon-wrap{width:56px;height:56px;background:rgba(61,166,205,.1);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;}
 .guarantee-title{font-family:'Playfair Display',Georgia,serif;font-size:1.6rem;color:white;line-height:1.2;margin-bottom:1rem;}
-.guarantee-desc{font-size:.92rem;line-height:1.8;color:rgba(255,255,255,.55);font-weight:300;flex-grow:1;}
+.guarantee-desc{font-size:1rem;line-height:1.8;color:rgba(255,255,255,.55);font-weight:300;flex-grow:1;}
 .guarantee-callout{margin-top:2rem;padding:1.25rem 1.5rem;background:rgba(61,166,205,.08);border-left:3px solid rgba(61,166,205,.5);border-radius:0 6px 6px 0;}
-.guarantee-callout p{font-family:'Epilogue',sans-serif;font-size:.85rem;line-height:1.72;color:rgba(255,255,255,.65);font-style:italic;}
+.guarantee-callout p{font-family:'Epilogue',sans-serif;font-size:.92rem;line-height:1.72;color:rgba(255,255,255,.65);font-style:italic;}
 .guarantee-callout strong{color:rgba(255,255,255,.9);font-style:normal;font-weight:600;}
 
 /* Four differentiator cards */
@@ -99,23 +125,16 @@
 .why-icon{width:46px;height:46px;background:rgba(43,140,174,.07);border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;transition:background .25s;}
 .why-card:hover .why-icon{background:rgba(43,140,174,.14);}
 .why-card-title{font-size:1.08rem;font-weight:700;color:var(--navy);margin-bottom:.6rem;line-height:1.25;}
-.why-card-desc{font-size:.86rem;line-height:1.78;color:var(--mid);font-weight:300;}
+.why-card-desc{font-size:.92rem;line-height:1.78;color:var(--mid);font-weight:300;}
 
-/* ── SERVICES ── */
-.services-section{padding:9rem 5rem;background:var(--sand);}
-.services-inner{max-width:1200px;margin:0 auto;}
-.section-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:5rem;}
-.section-right-text{font-size:1rem;line-height:1.8;color:var(--mid);font-weight:300;}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-.service-card{background:white;border:1px solid var(--rule);border-radius:8px;padding:2.25rem;transition:transform .3s,box-shadow .3s,border-color .3s;}
-.service-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(15,28,46,.1);border-color:var(--teal-deep);}
-.service-icon-wrap{width:48px;height:48px;border-radius:10px;background:var(--sand);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;font-size:1.4rem;transition:background .3s;}
-.service-card:hover .service-icon-wrap{background:var(--teal-deep);}
-.service-title{font-size:1.2rem;color:var(--navy);margin-bottom:.75rem;line-height:1.25;font-weight:600;}
-.service-desc{font-size:.875rem;line-height:1.78;color:var(--mid);font-weight:300;}
-.service-quote{margin-top:1.25rem;font-style:italic;font-size:.78rem;color:var(--teal-deep);line-height:1.5;padding-top:1.25rem;border-top:1px solid var(--rule);}
-.service-card.featured{background:var(--navy);border-color:var(--navy);}
-.service-card.featured .service-title{color:white;}.service-card.featured .service-desc{color:rgba(255,255,255,.5);}.service-card.featured .service-quote{color:var(--sky);border-color:rgba(255,255,255,.1);}.service-card.featured .service-icon-wrap{background:rgba(255,255,255,.1);}
+/* ── GUARANTEE STRIP ── */
+.guarantee-strip{background:#0B1E36;padding:3rem 5rem;border-top:1px solid rgba(61,166,205,.12);border-bottom:1px solid rgba(61,166,205,.12);}
+.guarantee-strip-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;}
+.guarantee-strip-item{display:flex;align-items:flex-start;gap:1rem;}
+.guarantee-strip-icon{width:40px;height:40px;background:rgba(61,166,205,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.guarantee-strip-label{font-family:'Inconsolata',monospace;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--sky);margin-bottom:.3rem;}
+.guarantee-strip-text{font-size:.95rem;color:rgba(255,255,255,.62);line-height:1.55;font-weight:300;}
+.guarantee-strip-text strong{color:white;font-weight:600;}
 
 /* ── HEALTH BANNER ── */
 .health-banner{background:linear-gradient(135deg,var(--teal-deep) 0%,var(--navy) 100%);padding:5.5rem 5rem;position:relative;overflow:hidden;}
@@ -123,19 +142,9 @@
 .health-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;position:relative;z-index:1;}
 .health-tag{font-family:'Inconsolata',monospace;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:.85rem;display:block;}
 .health-title{font-size:clamp(1.75rem,2.5vw,2.75rem);color:white;line-height:1.15;margin-bottom:.85rem;font-weight:700;}
-.health-sub{font-size:.95rem;color:rgba(255,255,255,.6);line-height:1.75;font-weight:300;max-width:480px;}
+.health-sub{font-size:1rem;color:rgba(255,255,255,.6);line-height:1.75;font-weight:300;max-width:480px;}
 .health-right{text-align:center;flex-shrink:0;}
-.health-note{font-size:.75rem;color:rgba(255,255,255,.35);margin-top:.75rem;font-style:italic;}
-
-/* ── PULL QUOTE ── */
-.pullquote{padding:7rem 5rem;background:white;text-align:center;position:relative;overflow:hidden;}
-.pullquote::before{content:'\201C';font-family:'Playfair Display',Georgia,serif;font-size:20rem;line-height:.8;color:rgba(15,28,46,.04);position:absolute;top:-2rem;left:2rem;pointer-events:none;}
-.pq-inner{max-width:800px;margin:0 auto;position:relative;z-index:1;}
-.pq-text{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:clamp(1.5rem,2.5vw,2.4rem);line-height:1.4;color:var(--navy);margin-bottom:2rem;}
-.pq-attribution{display:flex;align-items:center;justify-content:center;gap:1rem;}
-.pq-avatar{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--rule);flex-shrink:0;}
-.pq-source{font-family:'Inconsolata',monospace;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--mid);text-align:left;}
-.pq-source span{color:var(--teal-deep);display:block;}
+.health-note{font-size:.78rem;color:rgba(255,255,255,.35);margin-top:.75rem;font-style:italic;}
 
 /* ── TESTIMONIALS ── */
 .testimonials-section{padding:9rem 5rem;background:var(--warm);}
@@ -144,40 +153,34 @@
 .testi-card{background:white;border:1px solid var(--rule);border-radius:8px;padding:2rem;transition:transform .3s,box-shadow .3s;}
 .testi-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(15,28,46,.08);}
 .testi-stars{color:#f5a623;font-size:.9rem;letter-spacing:.1em;margin-bottom:1rem;}
-.testi-text{font-size:.91rem;line-height:1.78;color:var(--text);font-weight:300;margin-bottom:1.5rem;font-style:italic;}
-.testi-name{font-weight:600;font-size:.85rem;color:var(--navy);}
-.testi-role{font-size:.78rem;color:var(--mid);margin-top:.2rem;}
+.testi-text{font-size:1rem;line-height:1.78;color:var(--text);font-weight:300;margin-bottom:1.5rem;font-style:italic;}
+.testi-name{font-weight:600;font-size:.88rem;color:var(--navy);}
+.testi-role{font-size:.82rem;color:var(--mid);margin-top:.2rem;}
 .testi-footer{display:flex;align-items:center;gap:.5rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--rule);font-family:'Inconsolata',monospace;font-size:.6rem;font-weight:700;letter-spacing:.1em;color:var(--light);text-transform:uppercase;}
 .testi-dot{width:6px;height:6px;background:var(--teal-deep);border-radius:50%;flex-shrink:0;}
 .testi-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;margin-bottom:.75rem;border:2px solid var(--rule);}
 
-/* ── ABOUT ── */
-.about-section{padding:9rem 5rem;background:var(--sand);}
-.about-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;}
-.about-photo-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;height:500px;}
-.about-photo{border-radius:8px;overflow:hidden;display:flex;align-items:center;justify-content:center;}
-.ap1{background:linear-gradient(135deg,#1e3a5f,#2a6a9a);grid-row:span 2;}.ap2{background:linear-gradient(135deg,#3a2a1a,#6a4a2a);}.ap3{background:linear-gradient(135deg,#1a3a1a,#3a6a3a);}
-.about-img{width:100%;height:100%;object-fit:cover;display:block;border-radius:8px;}
-.about-big{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.8rem,2.5vw,2.75rem);line-height:1.2;color:var(--navy);margin-bottom:1.5rem;}
-.about-big em{font-style:italic;color:var(--teal);}
-.about-text{font-size:.95rem;line-height:1.85;color:var(--mid);font-weight:300;margin-bottom:1.25rem;}
-.about-text strong{color:var(--text);font-weight:600;}
-.principles{display:flex;flex-direction:column;gap:1rem;margin-top:2rem;}
-.principle{display:flex;gap:1rem;align-items:flex-start;padding:1rem 1.25rem;background:white;border-radius:6px;border-left:3px solid var(--teal-deep);}
-.principle-icon{font-size:1.2rem;flex-shrink:0;}
-.principle-title{font-weight:600;font-size:.88rem;color:var(--navy);margin-bottom:.2rem;}
-.principle-desc{font-size:.82rem;color:var(--mid);line-height:1.6;}
-
 /* ── FINAL CTA ── */
-.final-cta{padding:10rem 5rem;text-align:center;position:relative;overflow:hidden;background:var(--warm);}
-.final-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:900px;height:900px;background:radial-gradient(circle,rgba(26,95,168,.05),transparent 65%);pointer-events:none;}
-.final-cta-inner{position:relative;z-index:1;max-width:700px;margin:0 auto;}
-.final-cta-tag{font-family:'Inconsolata',monospace;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--rust);margin-bottom:1.5rem;display:block;}
-.final-cta-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.5rem,5vw,5rem);line-height:1.05;color:var(--navy);margin-bottom:1.25rem;}
+.final-cta{padding:0;position:relative;overflow:hidden;background:var(--navy);}
+.final-cta-layout{display:grid;grid-template-columns:1fr 1fr;height:480px;}
+.final-cta-text{padding:3.5rem 5rem;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;}
+.final-cta-tag{font-family:'Inconsolata',monospace;font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem;}
+.final-cta-tag::before{content:'';display:inline-block;width:20px;height:2px;background:var(--teal);flex-shrink:0;}
+.final-cta-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.8rem,2.6vw,2.6rem);line-height:1.1;color:white;margin-bottom:.85rem;}
 .final-cta-title em{font-style:italic;color:var(--teal);}
-.final-cta-sub{font-size:1.05rem;color:var(--mid);font-weight:300;line-height:1.75;margin-bottom:2.5rem;}
-.final-cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-.final-note{font-size:.8rem;color:var(--light);margin-top:1.5rem;font-style:italic;}
+.final-cta-sub{font-size:.95rem;color:rgba(255,255,255,.6);font-weight:300;line-height:1.75;margin-bottom:1.75rem;max-width:420px;}
+.final-cta-btns{display:flex;gap:.85rem;flex-wrap:wrap;}
+.final-note{font-size:.78rem;color:rgba(255,255,255,.35);margin-top:1.25rem;font-style:italic;}
+.final-cta-photo{position:relative;overflow:hidden;}
+.final-cta-photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;filter:saturate(0.9);}
+.final-cta-photo::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 0%,rgba(26,58,92,0.25) 40%,transparent 70%);z-index:1;}
+.final-cta-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(26,58,92,0.5) 100%);z-index:1;}
+@media(max-width:768px){
+  .final-cta-layout{grid-template-columns:1fr;}
+  .final-cta-photo{height:360px;}
+  .final-cta-photo::before{background:linear-gradient(180deg,var(--navy) 0%,rgba(26,58,92,0.15) 40%,transparent 70%);}
+  .final-cta-text{padding:4rem 1.5rem 3rem;}
+}
 
 /* ── ANIMATIONS ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
@@ -190,16 +193,17 @@
   .hero-badge{bottom:1rem;right:1rem;}
   .clients-strip{padding:3rem 1.5rem;}
   .clients-logos{gap:2.5rem;}
-  .problem-section,.why-section,.services-section,.testimonials-section,.about-section,.final-cta,.pullquote,.health-banner{padding:5rem 1.5rem;}
-  .problem-grid{grid-template-columns:1fr;}
+  .problem-section,.why-section,.services-section,.testimonials-section,.final-cta,.health-banner,.guarantee-strip{padding:5rem 1.5rem;}
+  .thought-bubbles{gap:2rem;flex-direction:column;align-items:center;}
+  .thought-bubble--left,.thought-bubble--right{transform:none;margin-bottom:0;}
+  .problem-bridge{padding:2.5rem 1rem 0;}
   .why-layout{grid-template-columns:1fr;}
   .why-cards{grid-template-columns:1fr 1fr;}
   .section-header{grid-template-columns:1fr;gap:1.5rem;}
   .services-grid{grid-template-columns:1fr;}
   .health-inner{grid-template-columns:1fr;text-align:center;}
   .testimonials-grid{grid-template-columns:1fr;}
-  .about-inner{grid-template-columns:1fr;gap:3rem;}
-  .about-photo-grid{height:260px;}
+  .guarantee-strip-inner{grid-template-columns:1fr;gap:1.75rem;}
 }
 @media(max-width:600px){
   .why-cards{grid-template-columns:1fr;}
@@ -247,22 +251,55 @@
   </div>
 </div>
 
-<!-- ── 3. PROBLEM ── -->
+<!-- ── 3. SOUND FAMILIAR ── -->
 <section class="problem-section" id="services">
   <div class="problem-inner">
-    <span class="section-label reveal">Sound Familiar?</span>
-    <h2 class="section-big reveal reveal-delay-1">Salesforce shouldn't feel<br>like <em>a burden.</em></h2>
-    <p class="problem-intro reveal reveal-delay-2">But for a lot of teams, it does. Overengineered systems, long contracts, poor communication, mounting frustration. We fix all of it.</p>
-    <div class="problem-grid">
-      <div class="problem-card reveal"><div class="problem-num">01</div><h3 class="problem-title">Fix Broken or Overbuilt Orgs</h3><p class="problem-desc">We clean up messy data models, consolidate duplicates, and re-architect objects to support how your team actually works — not how a consultant six years ago imagined you might.</p><p class="problem-quote">"We inherited a Salesforce mess and don't know where to start."</p></div>
-      <div class="problem-card reveal reveal-delay-1"><div class="problem-num">02</div><h3 class="problem-title">Build Smart Automation</h3><p class="problem-desc">Email/SMS workflows, approval processes, auto-logging of interactions and handoffs. We eliminate manual work so your team can focus on what they're actually there to do.</p><p class="problem-quote">"We're still doing everything manually. Can this be automated?"</p></div>
-      <div class="problem-card reveal reveal-delay-2"><div class="problem-num">03</div><h3 class="problem-title">Support In-House Admins</h3><p class="problem-desc">Coaching, documentation, video tutorials, architecture reviews. We don't hoard knowledge — we help your internal team get unstuck and stay that way.</p><p class="problem-quote">"We have someone internally but they're overwhelmed."</p></div>
-      <div class="problem-card reveal reveal-delay-3"><div class="problem-num">04</div><h3 class="problem-title">Cut Your Salesforce Costs</h3><p class="problem-desc">License audits, right-sizing user roles, making sure you're not paying for features you've never touched. We've saved clients thousands — without losing a single thing they need.</p><p class="problem-quote">"Are we overpaying? Do we need all these licenses?"</p></div>
+    <h2 class="section-big reveal">Salesforce shouldn't feel<br>like <em>a burden.</em></h2>
+    <p class="problem-intro reveal reveal-delay-2">But for a lot of teams, it does. Overengineered systems, mounting costs, poor communication. We've heard it all — and we fix it.</p>
+    <div class="thought-bubbles">
+      <div class="reveal">
+        <div class="thought-bubble thought-bubble--left">
+          <p class="thought-text">"Our Salesforce is a mess and nobody really knows how to fix it."</p>
+          <div class="thought-tail"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="thought-bubble thought-bubble--right">
+          <p class="thought-text">"We're paying a lot for Salesforce and not getting much out of it."</p>
+          <div class="thought-tail"><span></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="problem-bridge reveal">
+      <p class="problem-bridge-text">If any of this sounds like your team, <strong style="color:var(--sky);font-style:normal;">we're here to help.</strong></p>
+      <div class="problem-bridge-arrow">
+        <span></span>
+        <svg width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1 1l5 5 5-5" stroke="#3DA6CD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="problem-connector"></div>
+
+<!-- ── 4. SERVICES / WHAT WE DO ── -->
+<section class="services-section">
+  <div class="services-inner">
+    <div class="section-header">
+      <div><span class="section-label reveal">What We Do</span><h2 class="section-big reveal reveal-delay-1">The right help,<br><em>wherever you're stuck.</em></h2></div>
+      <p class="section-right-text reveal">Whether you need a one-time rescue, a full rebuild, or an ongoing partner — we meet you where you are. No overselling, no hand-offs, no lock-in.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal"><div class="service-icon-wrap">🔍</div><h3 class="service-title">Salesforce Health Check</h3><p class="service-desc">We audit your org, identify what's broken or bloated, and give you a clear, honest roadmap. No jargon, no fluff, no invoice.</p><p class="service-quote">"We didn't know what we didn't know — now we have a clear plan."</p></div>
+      <div class="service-card featured reveal reveal-delay-1"><div class="service-icon-wrap">🔄</div><h3 class="service-title">Managed Services</h3><p class="service-desc">Your on-call Salesforce team. Monthly retainers, proactive support, ongoing optimization. We act like part of your team — without the full-time overhead.</p><p class="service-quote">"Like having an expert on staff, without the full-time cost."</p></div>
+      <div class="service-card reveal reveal-delay-2"><div class="service-icon-wrap">🔧</div><h3 class="service-title">Org Cleanup &amp; Rebuild</h3><p class="service-desc">Untangle years of messy customization. We rebuild with clean architecture, scalable data models, and documentation your team will actually read.</p><p class="service-quote">"Finally, a Salesforce that makes sense."</p></div>
+      <div class="service-card reveal"><div class="service-icon-wrap">⚡</div><h3 class="service-title">Quick Starts</h3><p class="service-desc">New to Salesforce? We get you live fast — with a setup built for how you actually work, not how the manual says you should.</p><p class="service-quote">"Got us live faster than any other vendor we spoke to."</p></div>
+      <div class="service-card reveal reveal-delay-1"><div class="service-icon-wrap">📈</div><h3 class="service-title">Reports &amp; Dashboards</h3><p class="service-desc">We turn your Salesforce data into real insight — dashboards leadership will actually check, with metrics that drive real decisions.</p><p class="service-quote">"We can finally see what's happening in our pipeline."</p></div>
+      <div class="service-card reveal reveal-delay-2"><div class="service-icon-wrap">🔗</div><h3 class="service-title">Integrations</h3><p class="service-desc">Connect Salesforce to the rest of your stack. Twilio, FormAssembly, Zapier, marketing tools, financial platforms. We make your systems talk to each other.</p><p class="service-quote">"Everything finally flows — no more manual exports."</p></div>
     </div>
   </div>
 </section>
 
-<!-- ── 4. WHY BLUE ENGINE ── -->
+<!-- ── 5. WHY BLUE ENGINE ── -->
 <section class="why-section">
   <div class="why-inner">
     <div class="why-header">
@@ -279,7 +316,6 @@
           <span class="guarantee-eyebrow-text">Our Commitment to You</span>
         </div>
         <div class="guarantee-icon-wrap">
-          <!-- Shield with checkmark -->
           <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
             <path d="M13 2L4 6v7c0 5.25 3.85 10.15 9 11.35C18.15 23.15 22 18.25 22 13V6L13 2Z" stroke="#3DA6CD" stroke-width="1.5" stroke-linejoin="round"/>
             <path d="M9 13l3 3 5-5" stroke="#3DA6CD" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -297,7 +333,6 @@
 
         <div class="why-card">
           <div class="why-icon">
-            <!-- Chess piece / strategy -->
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
               <path d="M11 3a2 2 0 100 4 2 2 0 000-4Z" stroke="var(--blue)" stroke-width="1.4"/>
               <path d="M8 7c0 1.5.5 2.5 1.5 3.5L8 14h6l-1.5-3.5C13.5 9.5 14 8.5 14 7" stroke="var(--blue)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -310,7 +345,6 @@
 
         <div class="why-card">
           <div class="why-icon">
-            <!-- Ear / listening -->
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
               <path d="M11 3a6 6 0 016 6c0 2.5-1.2 4.2-2.5 5.5C13 16 13 17 13 18a2 2 0 01-4 0" stroke="var(--blue)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M8 9a3 3 0 016 0" stroke="var(--blue)" stroke-width="1.4" stroke-linecap="round"/>
@@ -323,7 +357,6 @@
 
         <div class="why-card">
           <div class="why-icon">
-            <!-- Star / senior -->
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
               <circle cx="11" cy="8" r="3.5" stroke="var(--blue)" stroke-width="1.4"/>
               <path d="M4 19c0-3.9 3.1-7 7-7s7 3.1 7 7" stroke="var(--blue)" stroke-width="1.4" stroke-linecap="round"/>
@@ -336,7 +369,6 @@
 
         <div class="why-card">
           <div class="why-icon">
-            <!-- Receipt / transparent billing -->
             <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
               <path d="M6 2h10a1 1 0 011 1v17l-2-1.5L13 20l-2-1.5L9 20l-2-1.5L5 20V3a1 1 0 011-1Z" stroke="var(--blue)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M9 8h4M9 11h4M9 14h2" stroke="var(--blue)" stroke-width="1.4" stroke-linecap="round"/>
@@ -351,25 +383,50 @@
   </div>
 </section>
 
-<!-- ── 5. SERVICES ── -->
-<section class="services-section">
-  <div class="services-inner">
-    <div class="section-header">
-      <div><span class="section-label reveal">What We Do</span><h2 class="section-big reveal reveal-delay-1">The right help,<br><em>wherever you're stuck.</em></h2></div>
-      <p class="section-right-text reveal">Whether you need a one-time rescue mission, a full rebuild, or an ongoing partner — we meet you where you are and scale with you, not ahead of you.</p>
+<!-- ── 6. GUARANTEE STRIP ── -->
+<div class="guarantee-strip">
+  <div class="guarantee-strip-inner">
+    <div class="guarantee-strip-item reveal">
+      <div class="guarantee-strip-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 2L3 5v5c0 4 3 7.8 7 8.7C17 17.8 17 14 17 10V5L10 2Z" stroke="#3DA6CD" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M7 10l2.5 2.5L13 8" stroke="#3DA6CD" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div>
+        <div class="guarantee-strip-label">No Lock-In</div>
+        <p class="guarantee-strip-text"><strong>Cancel anytime with 30 days notice.</strong> No penalties, no exit fees, no awkward conversations.</p>
+      </div>
     </div>
-    <div class="services-grid">
-      <div class="service-card reveal"><div class="service-icon-wrap">🔍</div><h3 class="service-title">Salesforce Health Check</h3><p class="service-desc">We audit your org, identify what's broken or bloated, and give you a clear, honest roadmap. No jargon, no fluff, no invoice.</p><p class="service-quote">"We didn't know what we didn't know — now we have a clear plan."</p></div>
-      <div class="service-card featured reveal reveal-delay-1"><div class="service-icon-wrap">🔄</div><h3 class="service-title">Managed Services</h3><p class="service-desc">Your on-call Salesforce team. Monthly retainers, proactive support, ongoing optimization. We act like part of your team — without the full-time overhead.</p><p class="service-quote">"Like having an expert on staff, without the full-time cost."</p></div>
-      <div class="service-card reveal reveal-delay-2"><div class="service-icon-wrap">🔧</div><h3 class="service-title">Org Cleanup &amp; Rebuild</h3><p class="service-desc">Untangle years of messy customization. We rebuild with clean architecture, scalable data models, and documentation your team will actually read.</p><p class="service-quote">"Finally, a Salesforce that makes sense."</p></div>
-      <div class="service-card reveal"><div class="service-icon-wrap">⚡</div><h3 class="service-title">Quick Starts</h3><p class="service-desc">New to Salesforce? We get you live fast — with a setup built for how you actually work, not how the manual says you should.</p><p class="service-quote">"Got us live faster than any other vendor we spoke to."</p></div>
-      <div class="service-card reveal reveal-delay-1"><div class="service-icon-wrap">📈</div><h3 class="service-title">Reports &amp; Dashboards</h3><p class="service-desc">We turn your Salesforce data into real insight — dashboards leadership will actually check, with metrics that drive real decisions.</p><p class="service-quote">"We can finally see what's happening in our pipeline."</p></div>
-      <div class="service-card reveal reveal-delay-2"><div class="service-icon-wrap">🔗</div><h3 class="service-title">Integrations</h3><p class="service-desc">Connect Salesforce to the rest of your stack. Twilio, FormAssembly, Zapier, marketing tools, financial platforms. We make your systems talk to each other.</p><p class="service-quote">"Everything finally flows — no more manual exports."</p></div>
+    <div class="guarantee-strip-item reveal reveal-delay-1">
+      <div class="guarantee-strip-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <circle cx="10" cy="7" r="3" stroke="#3DA6CD" stroke-width="1.4"/>
+          <path d="M4 17c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="#3DA6CD" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M13 3l.6 1.2 1.4.4-1.4.4L13 6.4l-.6-1.4-1.4-.4 1.4-.4L13 3Z" stroke="#3DA6CD" stroke-width="1" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div>
+        <div class="guarantee-strip-label">Senior Only</div>
+        <p class="guarantee-strip-text"><strong>No juniors, no hand-offs.</strong> You work directly with senior consultants who do the work themselves.</p>
+      </div>
+    </div>
+    <div class="guarantee-strip-item reveal reveal-delay-2">
+      <div class="guarantee-strip-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M5 2h10a1 1 0 011 1v14l-1.5-1.2L13 17l-1.5-1.2L10 17l-1.5-1.2L7 17l-1.5-1.2L4 17V3a1 1 0 011-1Z" stroke="#3DA6CD" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M7.5 8h5M7.5 11h5M7.5 13.5h3" stroke="#3DA6CD" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <div class="guarantee-strip-label">No Surprises</div>
+        <p class="guarantee-strip-text"><strong>Clear scope, clear billing.</strong> If something is out of scope, we tell you before we do it — never after.</p>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ── 6. HEALTH ASSESSMENT CTA ── -->
+<!-- ── 7. HEALTH ASSESSMENT CTA ── -->
 <div class="health-banner" id="contact">
   <div class="health-inner">
     <div>
@@ -379,18 +436,7 @@
     </div>
     <div class="health-right">
       <a href="/Site Pages/health-assessment.html" class="btn btn-white">CLAIM FREE ASSESSMENT →</a>
-      <p class="health-note">~30 minutes · Zero commitment</p>
-    </div>
-  </div>
-</div>
-
-<!-- ── 7. PULL QUOTE ── -->
-<div class="pullquote reveal">
-  <div class="pq-inner">
-    <p class="pq-text">"Blue Engine Solutions took the time to deeply understand our needs before proposing anything. The solution was tailored, the communication was clear throughout, and the results were immediate."</p>
-    <div class="pq-attribution">
-      <img class="pq-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Client">
-      <span class="pq-source">Verified Client Review<span>Salesforce AppExchange ★★★★★</span></span>
+      <p class="health-note">~30 minutes · Zero commitment · Cancel anytime</p>
     </div>
   </div>
 </div>
@@ -408,39 +454,22 @@
   </div>
 </section>
 
-<!-- ── 9. ABOUT ── -->
-<section class="about-section" id="about">
-  <div class="about-inner">
-    <div class="about-photo-grid reveal">
-      <div class="about-photo ap1"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80" class="about-img" alt="Team"></div>
-      <div class="about-photo ap2"><img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=600&q=80" class="about-img" alt="Meeting"></div>
-      <div class="about-photo ap3"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" class="about-img" alt="Working"></div>
-    </div>
-    <div class="about-right">
-      <span class="section-label reveal">About Us</span>
-      <h2 class="about-big reveal reveal-delay-1">Smart people.<br>Clean builds.<br><em>No BS.</em></h2>
-      <p class="about-text reveal reveal-delay-2">Blue Engine Solutions is a <strong>certified Salesforce Partner</strong> founded in 2019. We're a team of senior consultants who believe Salesforce should work for people, not the other way around.</p>
-      <p class="about-text reveal reveal-delay-3">No account managers, no middle layers, no revolving doors. You work directly with the experienced people doing the work — and you get the full attention that brings. Every single time.</p>
-      <div class="principles reveal">
-        <div class="principle"><span class="principle-icon">🧠</span><div><div class="principle-title">Make It Simple</div><div class="principle-desc">"The definition of genius is taking the complex and making it simple." We live by this every day.</div></div></div>
-        <div class="principle"><span class="principle-icon">🤝</span><div><div class="principle-title">Be Kind</div><div class="principle-desc">We're here to hold your hand and make technology work for you — not intimidate you with it.</div></div></div>
-        <div class="principle"><span class="principle-icon">💡</span><div><div class="principle-title">Be Creative</div><div class="principle-desc">We're focused on your big-picture goals and we'll bring you new ideas to help you get there.</div></div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── 10. FINAL CTA ── -->
+<!-- ── 9. FINAL CTA ── -->
 <section class="final-cta">
-  <div class="final-cta-inner">
-    <span class="final-cta-tag reveal">Ready to Start?</span>
-    <h2 class="final-cta-title reveal reveal-delay-1">Let's talk about<br>what's <em>working</em> —<br>and what's not.</h2>
-    <p class="final-cta-sub reveal reveal-delay-2">We'll take a look at your Salesforce setup, talk through your goals, and tell you honestly whether we can help. No pressure, no pitch.</p>
-    <div class="final-cta-btns reveal reveal-delay-3">
-      <a href="/Site Pages/health-assessment.html" class="btn btn-blue">CLAIM FREE HEALTH CHECK →</a>
-      <a href="/Site Pages/contact.html" class="btn btn-outline-light">SCHEDULE A CALL</a>
+  <div class="final-cta-layout">
+    <div class="final-cta-text">
+      <span class="final-cta-tag reveal">Let's Talk</span>
+      <h2 class="final-cta-title reveal reveal-delay-1">Ready to make<br>Salesforce actually<br><em>work for you?</em></h2>
+      <p class="final-cta-sub reveal reveal-delay-2">We'll look at your setup, hear your goals, and give you an honest take — no sales pitch, no pressure. Just a real conversation.</p>
+      <div class="final-cta-btns reveal reveal-delay-3">
+        <a href="/Site Pages/health-assessment.html" class="btn btn-blue">GET A FREE HEALTH CHECK →</a>
+        <a href="/Site Pages/contact.html" class="btn btn-outline-light">SCHEDULE A CALL</a>
+      </div>
+      <p class="final-note reveal reveal-delay-4">Free · No commitment · Cancel anytime with 30 days notice</p>
     </div>
-    <p class="final-note reveal reveal-delay-4">Free assessment · No commitment · ~30 minutes</p>
+    <div class="final-cta-photo reveal reveal-delay-1">
+      <img src="/brand_assets/Team Photos/founder headshot.webp" alt="Geoff, founder of Blue Engine Solutions">
+    </div>
   </div>
 </section>
 

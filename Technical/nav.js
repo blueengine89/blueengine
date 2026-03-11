@@ -50,6 +50,24 @@
   transition: color 0.2s;
 }
 #site-nav .sn-links a:hover { color: #0B1E36; }
+
+/* Contact — secondary outline button */
+#site-nav .sn-contact {
+  padding: 9px 20px !important;
+  background: transparent !important;
+  color: rgba(11, 30, 54, 0.75) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  border: 1.5px solid rgba(11, 30, 54, 0.2) !important;
+  border-radius: 7px !important;
+  transition: border-color 0.2s, color 0.2s !important;
+}
+#site-nav .sn-contact:hover {
+  border-color: rgba(11, 30, 54, 0.45) !important;
+  color: #0B1E36 !important;
+}
+
+/* Free Health Check — primary red button */
 #site-nav .sn-cta {
   padding: 9px 22px !important;
   background: #C43040 !important;
@@ -66,48 +84,7 @@
   transform: translateY(-1px) !important;
   box-shadow: 0 4px 18px rgba(196, 48, 64, 0.35) !important;
 }
-#site-nav .sn-health-wrap {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
-#site-nav .sn-health {
-  font-family: 'Epilogue', sans-serif;
-  font-size: 14px !important;
-  font-weight: 600 !important;
-  color: #0B1E36 !important;
-  text-decoration: none;
-  padding: 9px 20px !important;
-  padding-right: 52px !important;
-  border: 1.5px solid rgba(43, 140, 174, 0.35) !important;
-  border-radius: 7px !important;
-  background: rgba(61, 166, 205, 0.05) !important;
-  transition: border-color 0.2s, background 0.2s !important;
-  white-space: nowrap;
-  display: block;
-  line-height: 1.4;
-}
-#site-nav .sn-health:hover {
-  border-color: rgba(43, 140, 174, 0.65) !important;
-  background: rgba(61, 166, 205, 0.10) !important;
-  color: #0B1E36 !important;
-}
-#site-nav .sn-health-pill {
-  position: absolute;
-  right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #3DA6CD;
-  color: white;
-  font-family: 'Inconsolata', monospace;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  padding: 2px 7px;
-  border-radius: 20px;
-  pointer-events: none;
-  line-height: 1.5;
-}
+
 #site-nav .sn-hamburger {
   display: none;
   flex-direction: column;
@@ -191,13 +168,8 @@
     <li><a href="/index.html">Home</a></li>
     <li><a href="/Site Pages/Services.html">Services</a></li>
     <li><a href="/Site Pages/about.html">About</a></li>
-    <li>
-      <span class="sn-health-wrap">
-        <a href="/Site Pages/health-assessment.html" class="sn-health">Health Check</a>
-        <span class="sn-health-pill">FREE</span>
-      </span>
-    </li>
-    <li><a href="/Site Pages/contact.html" class="sn-cta">Contact</a></li>
+    <li><a href="/Site Pages/contact.html" class="sn-contact">Contact</a></li>
+    <li><a href="/Site Pages/health-assessment.html" class="sn-cta">Free Health Check →</a></li>
   </ul>
   <div class="sn-hamburger">
     <span></span>
@@ -208,8 +180,8 @@
     <a href="/index.html">Home</a>
     <a href="/Site Pages/Services.html">Services</a>
     <a href="/Site Pages/about.html">About</a>
-    <a href="/Site Pages/health-assessment.html">Health Check</a>
     <a href="/Site Pages/contact.html">Contact</a>
+    <a href="/Site Pages/health-assessment.html">Free Health Check →</a>
   </div>
 </nav>`;
 

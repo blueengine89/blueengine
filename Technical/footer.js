@@ -26,8 +26,7 @@
   height: 28px;
   width: auto;
   display: block;
-  filter: brightness(0) invert(1);
-  opacity: .85;
+  opacity: 1;
 }
 #site-footer .ft-desc {
   font-size: .87rem;
@@ -36,13 +35,6 @@
   font-weight: 300;
   max-width: 280px;
   margin: 0;
-}
-#site-footer .ft-addr {
-  font-size: .82rem;
-  color: rgba(255,255,255,.42);
-  line-height: 1.6;
-  font-style: italic;
-  margin-top: .65rem;
 }
 #site-footer .ft-col-title {
   font-family: 'Inconsolata', 'IBM Plex Mono', monospace;
@@ -68,6 +60,70 @@
   transition: color .2s;
 }
 #site-footer .ft-links a:hover { color: white; }
+
+/* Why Blue Engine column */
+#site-footer .ft-why-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+#site-footer .ft-why-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: .55rem;
+  font-size: .85rem;
+  color: rgba(255,255,255,.62);
+  line-height: 1.4;
+}
+#site-footer .ft-why-check {
+  color: #3DA6CD;
+  font-size: 1rem;
+  flex-shrink: 0;
+  line-height: 1.3;
+}
+
+/* Conversion CTA buttons in footer */
+#site-footer .ft-cta-links {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  margin-bottom: 1.25rem;
+}
+#site-footer .ft-cta-btn {
+  display: block;
+  padding: .6rem 1rem;
+  background: #C43040;
+  color: white;
+  font-family: 'Epilogue', sans-serif;
+  font-size: .82rem;
+  font-weight: 600;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(196,48,64,.3);
+  transition: background .2s, transform .15s;
+}
+#site-footer .ft-cta-btn:hover {
+  background: #A8202E;
+  color: white;
+  transform: translateY(-1px);
+}
+#site-footer .ft-cta-btn--outline {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,.22);
+  color: rgba(255,255,255,.8);
+  box-shadow: none;
+}
+#site-footer .ft-cta-btn--outline:hover {
+  background: rgba(255,255,255,.07);
+  border-color: rgba(255,255,255,.4);
+  color: white;
+  transform: translateY(-1px);
+}
+
 #site-footer .ft-bottom {
   display: flex;
   justify-content: space-between;
@@ -105,60 +161,9 @@
 @media (max-width: 560px) {
   #site-footer .ft-top { grid-template-columns: 1fr; }
 }
-#site-footer .ft-clients {
-  padding: 2.25rem 5rem;
-  background: #e8e8e8;
-  border-bottom: 1px solid rgba(0,0,0,.07);
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  flex-wrap: wrap;
-}
-#site-footer .ft-clients-label {
-  font-family: 'Inconsolata', 'IBM Plex Mono', monospace;
-  font-size: .58rem;
-  font-weight: 700;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: rgba(0,0,0,.4);
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-#site-footer .ft-clients-logos {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  flex-wrap: wrap;
-}
-#site-footer .ft-client-logo img {
-  height: 44px;
-  width: auto;
-  max-width: 160px;
-  object-fit: contain;
-  opacity: .8;
-  transition: opacity .25s;
-}
-#site-footer .ft-client-logo img:hover { opacity: 1; }
-@media (max-width: 960px) {
-  #site-footer .ft-clients { padding: 2rem 1.5rem; gap: 2rem; }
-  #site-footer .ft-clients-logos { gap: 2rem; }
-}
 </style>`;
 
   const html = `
-<div class="ft-clients">
-  <span class="ft-clients-label">Some of our happy clients</span>
-  <div class="ft-clients-logos">
-    <div class="ft-client-logo"><img src="/Client Logos/cag_logo-removebg-preview.png" alt="CAG"></div>
-    <div class="ft-client-logo"><img src="/Client Logos/camden health logo transparent.png" alt="Camden Health"></div>
-    <div class="ft-client-logo"><img src="/Client Logos/topgolf logo.png" alt="Topgolf"></div>
-    <div class="ft-client-logo"><img src="/Client Logos/bond_civilutility_logo.jpg" alt="Bond Civil &amp; Utility"></div>
-    <div class="ft-client-logo"><img src="/Client Logos/rebuilding-together-logo-vector.png" alt="Rebuilding Together"></div>
-    <div class="ft-client-logo"><img src="/Client Logos/hero devs logo.png" alt="Hero Devs"></div>
-    <div class="ft-client-logo"><img src="/Client Logos/penn logo.png" alt="University of Pennsylvania"></div>
-    <div class="ft-client-logo"><img src="/Client Logos/umd logo 2.png" alt="University of Maryland"></div>
-  </div>
-</div>
 <footer>
   <div class="ft-top">
     <div>
@@ -166,7 +171,6 @@
         <img src="/brand_assets/blueengine-2b.svg" alt="Blue Engine">
       </a>
       <p class="ft-desc">A certified Salesforce Partner helping nonprofits and growing businesses get more from the platform they've already invested in. Founded 2019.</p>
-      <p class="ft-addr">Blue Engine Salesforce Consultants<br>1342 Florida Ave NW<br>Washington, DC 20009</p>
     </div>
     <div>
       <p class="ft-col-title">Services</p>
@@ -180,20 +184,22 @@
       </ul>
     </div>
     <div>
-      <p class="ft-col-title">Company</p>
-      <ul class="ft-links">
-        <li><a href="/Site Pages/about.html">About Us</a></li>
-        <li><a href="/Site Pages/Case-Studies.html">Case Studies</a></li>
-        <li><a href="#">AppExchange Reviews</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="/Site Pages/careers.html">Careers</a></li>
+      <p class="ft-col-title">Why Blue Engine?</p>
+      <ul class="ft-why-list">
+        <li><span class="ft-why-check">✓</span> Direct access to senior consultants</li>
+        <li><span class="ft-why-check">✓</span> Cancel anytime — no lock-in, no penalties</li>
+        <li><span class="ft-why-check">✓</span> Strategy before technology</li>
+        <li><span class="ft-why-check">✓</span> Transparent billing, no surprises</li>
+        <li><span class="ft-why-check">✓</span> We teach and empower your team</li>
       </ul>
     </div>
     <div>
       <p class="ft-col-title">Get In Touch</p>
+      <div class="ft-cta-links">
+        <a href="/Site Pages/health-assessment.html" class="ft-cta-btn">Free Assessment →</a>
+        <a href="/Site Pages/contact.html" class="ft-cta-btn ft-cta-btn--outline">Schedule a Call →</a>
+      </div>
       <ul class="ft-links">
-        <li><a href="/Site Pages/health-assessment.html">Free Assessment</a></li>
-        <li><a href="/Site Pages/contact.html">Schedule a Call</a></li>
         <li><a href="mailto:hello@blueenginesolutions.com">hello@blueenginesolutions.com</a></li>
         <li><a href="https://maps.google.com/?q=1342+Florida+Ave+NW,+Washington,+DC+20009" target="_blank" rel="noopener">1342 Florida Ave NW, Washington DC</a></li>
       </ul>
