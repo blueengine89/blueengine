@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Locations — Blue Engine Solutions</title>
+<link rel="stylesheet" href="../Technical/brand.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Epilogue:wght@300;400;500;600;700&family=Inconsolata:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* ── HERO ── */
+.loc-hero {
+  padding-top: 72px;
+  background: var(--navy);
+  padding-bottom: 5rem;
+  position: relative;
+  overflow: hidden;
+}
+.loc-hero::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -150px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(61,166,205,.12), transparent 65%);
+  pointer-events: none;
+}
+.loc-hero-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 5rem 0;
+}
+.loc-eyebrow {
+  font-family: 'Inconsolata', monospace;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  display: block;
+  margin-bottom: 1.25rem;
+}
+.loc-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 1.05;
+  color: white;
+  margin-bottom: 1.25rem;
+}
+.loc-h1 em { font-style: italic; color: var(--teal); }
+.loc-sub {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,.72);
+  font-weight: 300;
+  max-width: 560px;
+}
+.loc-sub p { color: rgba(255,255,255,.72); }
+
+/* ── GRID ── */
+.loc-section {
+  background: var(--bg);
+  padding: 6rem 5rem 8rem;
+}
+.loc-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.loc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+/* ── CARD ── */
+.loc-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--border-light);
+  padding: 2rem 2rem 1.75rem;
+  box-shadow: var(--shadow-soft);
+  transition: box-shadow .2s, transform .2s;
+}
+.loc-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(11,30,54,.10), 0 1px 4px rgba(11,30,54,.05);
+}
+.loc-card-city {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  padding-bottom: .85rem;
+  border-bottom: 1.5px solid var(--border-light);
+}
+.loc-card-city.hq::after {
+  content: 'HQ';
+  display: inline-block;
+  margin-left: .6rem;
+  font-family: 'Inconsolata', monospace;
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  background: var(--teal-pale);
+  border: 1px solid var(--teal-border);
+  padding: .2rem .55rem;
+  border-radius: 4px;
+  vertical-align: middle;
+  position: relative;
+  top: -.1em;
+}
+.loc-address {
+  font-family: 'Epilogue', sans-serif;
+  font-size: .88rem;
+  line-height: 1.65;
+  color: var(--ink-mid);
+  font-weight: 400;
+}
+.loc-address .company {
+  font-weight: 500;
+  color: var(--ink);
+  display: block;
+  margin-bottom: .15rem;
+}
+.loc-address .street {
+  display: block;
+}
+.loc-address .cityline {
+  display: block;
+  margin-bottom: .75rem;
+}
+.loc-phone {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: 'Inconsolata', monospace;
+  font-size: .82rem;
+  font-weight: 500;
+  color: var(--teal-deep);
+  text-decoration: none;
+  margin-top: .25rem;
+}
+.loc-phone:hover { color: var(--teal); }
+.loc-phone svg { flex-shrink: 0; opacity: .7; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .loc-hero-inner, .loc-section { padding-left: 2rem; padding-right: 2rem; }
+  .loc-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .loc-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div id="site-nav"></div>
+<script src="../Technical/nav.js"></script>
+
+<!-- HERO -->
+<section class="loc-hero">
+  <div class="loc-hero-inner">
+    <span class="loc-eyebrow">Our Offices</span>
+    <h1 class="loc-h1">We're distributed — and <em>proud of it.</em></h1>
+    <div class="loc-sub">
+      <p>Proudly headquartered in Washington, DC, our team is spread across the country. We'd love to have you visit us at any of our locations.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION GRID -->
+<section class="loc-section">
+  <div class="loc-inner">
+    <div class="loc-grid">
+
+      <!-- Washington DC -->
+      <div class="loc-card">
+        <div class="loc-card-city hq">Washington, DC</div>
+        <div class="loc-address">
+          <span class="company">Blue Engine Salesforce Consultants</span>
+          <span class="street">1342 Florida Ave NW</span>
+          <span class="cityline">Washington, DC 20009</span>
+        </div>
+        <a class="loc-phone" href="tel:2402731612">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+          (240) 273-1612
+        </a>
+      </div>
+
+      <!-- Philadelphia -->
+      <div class="loc-card">
+        <div class="loc-card-city">Philadelphia</div>
+        <div class="loc-address">
+          <span class="company">Blue Engine Salesforce Consulting</span>
+          <span class="street">1010 N Hancock St</span>
+          <span class="cityline">Philadelphia, PA 19123</span>
+        </div>
+        <a class="loc-phone" href="tel:2159870672">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+          (215) 987-0672
+        </a>
+      </div>
+
+      <!-- New York City -->
+      <div class="loc-card">
+        <div class="loc-card-city">New York City</div>
+        <div class="loc-address">
+          <span class="company">Blue Engine Salesforce Consultants</span>
+          <span class="street">61 Jane St #4M</span>
+          <span class="cityline">New York City, NY 10014-5150</span>
+        </div>
+        <a class="loc-phone" href="tel:9176338764">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+          (917) 633-8764
+        </a>
+      </div>
+
+      <!-- Miami -->
+      <div class="loc-card">
+        <div class="loc-card-city">Miami</div>
+        <div class="loc-address">
+          <span class="company">Blue Engine Salesforce Consultants</span>
+          <span class="street">25 SE 2nd Ave Suite 1020</span>
+          <span class="cityline">Miami, FL 33131</span>
+        </div>
+        <a class="loc-phone" href="tel:3056976381">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+          (305) 697-6381
+        </a>
+      </div>
+
+      <!-- St. Petersburg -->
+      <div class="loc-card">
+        <div class="loc-card-city">St. Petersburg</div>
+        <div class="loc-address">
+          <span class="company">Blue Engine Salesforce Consultants</span>
+          <span class="street">425 72nd St N</span>
+          <span class="cityline">St. Petersburg, FL 33710</span>
+        </div>
+        <a class="loc-phone" href="tel:7274554921">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+          (727) 455-4921
+        </a>
+      </div>
+
+      <!-- Los Angeles -->
+      <div class="loc-card">
+        <div class="loc-card-city">Los Angeles</div>
+        <div class="loc-address">
+          <span class="company">Blue Engine Salesforce Consultants</span>
+          <span class="street">10390 La Grange Ave Suite 201</span>
+          <span class="cityline">Los Angeles, CA 90025</span>
+        </div>
+        <a class="loc-phone" href="tel:3108536544">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+          (310) 853-6544
+        </a>
+      </div>
+
+      <!-- Louisville -->
+      <div class="loc-card">
+        <div class="loc-card-city">Louisville</div>
+        <div class="loc-address">
+          <span class="company">Blue Engine Salesforce Consultants</span>
+          <span class="street">1229 S Shelby St.</span>
+          <span class="cityline">Louisville, KY 40203</span>
+        </div>
+        <a class="loc-phone" href="tel:5024522629">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+          (502) 452-2629
+        </a>
+      </div>
+
+      <!-- Raleigh -->
+      <div class="loc-card">
+        <div class="loc-card-city">Raleigh</div>
+        <div class="loc-address">
+          <span class="company">Blue Engine Salesforce Consultants</span>
+          <span class="street">555 Fayetteville St., Suite 300</span>
+          <span class="cityline">Raleigh, NC 27601</span>
+        </div>
+        <a class="loc-phone" href="tel:9193903000">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+          (919) 390-3000
+        </a>
+      </div>
+
+      <!-- Atlanta -->
+      <div class="loc-card">
+        <div class="loc-card-city">Atlanta</div>
+        <div class="loc-address">
+          <span class="company">Blue Engine Salesforce Consultants</span>
+          <span class="street">1776 Peachtree St NW, STE 210N</span>
+          <span class="cityline">Atlanta, GA 30309</span>
+        </div>
+        <a class="loc-phone" href="tel:4049732317">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+          (404) 973-2317
+        </a>
+      </div>
+
+      <!-- Richmond -->
+      <div class="loc-card">
+        <div class="loc-card-city">Richmond</div>
+        <div class="loc-address">
+          <span class="company">Blue Engine Salesforce Consultants</span>
+          <span class="street">2120 W Cary St</span>
+          <span class="cityline">Richmond, VA 23220</span>
+        </div>
+        <a class="loc-phone" href="tel:8049173806">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6.18 6.18l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/></svg>
+          (804) 917-3806
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="../Technical/footer.js"></script>
+
+</body>
+</html>

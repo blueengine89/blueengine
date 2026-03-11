@@ -14,7 +14,7 @@ html { scroll-behavior: smooth; font-size: 18px; }
 /* ── DESIGN TOKENS ───────────────────────────────────────────────── */
 :root {
   /* Blues */
-  --navy:         #0B1E36;
+  --navy:         #1A3A5C;
   --royal:        #1455A4;
   --blue:         #1976D2;
   --teal:         #3DA6CD;
@@ -40,7 +40,7 @@ html { scroll-behavior: smooth; font-size: 18px; }
   --surface-tint: #E4EEF8;   /* legacy alias */
 
   /* Ink */
-  --ink:          #0B1E36;
+  --ink:          #1A3A5C;
   --ink-mid:      #2C3F58;
   --ink-light:    #5A7080;
   --ink-on-dark:  rgba(255, 255, 255, 0.80);   /* body text on navy/dark backgrounds */
