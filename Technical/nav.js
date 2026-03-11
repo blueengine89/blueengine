@@ -108,9 +108,77 @@
   pointer-events: none;
   line-height: 1.5;
 }
+#site-nav .sn-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+#site-nav .sn-hamburger:hover { background: rgba(11, 30, 54, 0.06); }
+#site-nav .sn-hamburger span {
+  width: 100%;
+  height: 2px;
+  background: #0B1E36;
+  transition: transform 0.3s, opacity 0.3s;
+  transform-origin: center;
+  border-radius: 2px;
+}
+#site-nav .sn-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(0px, 7px); }
+#site-nav .sn-hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+#site-nav .sn-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(0px, -7px); }
+#site-nav .mobile-menu { display: none; }
 @media (max-width: 960px) {
   #site-nav nav { padding: 0 24px; }
-  #site-nav .sn-links li:not(:last-child) { display: none; }
+  #site-nav .sn-links { display: none; }
+  #site-nav .sn-hamburger { display: flex; }
+  #site-nav .mobile-menu {
+    position: fixed;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: rgba(247, 245, 241, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(11, 30, 54, 0.07);
+    padding: 24px 28px;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    box-shadow: 0 8px 24px rgba(11, 30, 54, 0.08);
+  }
+  #site-nav .mobile-menu.show { display: flex; }
+  #site-nav .mobile-menu a {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(11, 30, 54, 0.08);
+    color: rgba(11, 30, 54, 0.75);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  #site-nav .mobile-menu a:hover { color: #0B1E36; }
+  #site-nav .mobile-menu a:last-child {
+    border-bottom: none;
+    margin-top: 12px;
+    padding: 12px 22px;
+    background: #C43040;
+    color: white !important;
+    border-radius: 7px;
+    font-weight: 600;
+    font-size: 15px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(196, 48, 64, 0.28);
+  }
+  #site-nav .mobile-menu a:last-child:hover { background: #A8202E; }
 }
 </style>`;
 
@@ -131,6 +199,18 @@
     </li>
     <li><a href="/Site Pages/contact.html" class="sn-cta">Contact</a></li>
   </ul>
+  <div class="sn-hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="mobile-menu">
+    <a href="/index.html">Home</a>
+    <a href="/Site Pages/Services.html">Services</a>
+    <a href="/Site Pages/about.html">About</a>
+    <a href="/Site Pages/health-assessment.html">Health Check</a>
+    <a href="/Site Pages/contact.html">Contact</a>
+  </div>
 </nav>`;
 
   const target = document.getElementById('site-nav');
@@ -144,6 +224,14 @@
 
   // Scroll opacity
   const nav = document.getElementById('bes-nav');
+  const hamburger = document.querySelector('.sn-hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('show');
+  });
+
   window.addEventListener('scroll', () => {
     nav.style.background = window.scrollY > 60
       ? 'rgba(247, 245, 241, 0.98)'
