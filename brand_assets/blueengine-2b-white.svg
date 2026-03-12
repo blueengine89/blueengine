@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 72" width="520" height="72">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Chevron mark -->
+  <path d="M0 0 L22 36 L0 72 L14 72 L36 36 L14 0 Z" fill="#1A8BB5"/>
+
+  <!-- Wordmark -->
+  <text
+    x="50"
+    y="54"
+    font-family="'Plus Jakarta Sans', 'Montserrat', 'Segoe UI', sans-serif"
+    font-weight="800"
+    font-size="58"
+    letter-spacing="-2"
+  >
+    <tspan fill="#1A8BB5">Blue</tspan><tspan fill="#FFFFFF">Engine</tspan>
+  </text>
+</svg>

@@ -168,7 +168,7 @@
   <div class="ft-top">
     <div>
       <a href="/index.html" class="ft-brand-logo">
-        <img src="/brand_assets/blueengine-2b.svg" alt="Blue Engine">
+        <img src="/brand_assets/blueengine-2b-white.svg" alt="Blue Engine">
       </a>
       <p class="ft-desc">A certified Salesforce Partner helping nonprofits and growing businesses get more from the platform they've already invested in. Founded 2019.</p>
     </div>
