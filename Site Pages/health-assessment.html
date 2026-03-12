@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NF2DQXZ');</script>
+<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Salesforce Health Assessment — Blue Engine Solutions</title>
@@ -154,6 +161,36 @@ body{background:var(--warm);color:var(--text);}
 .faq-item.open .faq-q::after{transform:rotate(45deg);}
 .faq-a{font-size:.9rem;color:var(--mid);line-height:1.78;font-weight:300;max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s;}
 .faq-item.open .faq-a{max-height:300px;padding-top:.85rem;}
+
+/* ── FORMASSEMBLY OVERRIDES (health assessment — teal card style) ── */
+.form-card .wFormContainer,
+.form-card .wFormHeader{background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important;margin:0!important;}
+.form-card .wForm{font-family:'Epilogue',sans-serif!important;}
+.form-card .wFormTitle{display:none!important;}
+.form-card .oneField.field-container-D{margin-bottom:.75rem!important;float:none!important;clear:both!important;}
+.form-card .label.preField{display:block!important;font-family:'Epilogue',sans-serif!important;font-size:.75rem!important;font-weight:600!important;color:var(--navy)!important;margin-bottom:.35rem!important;letter-spacing:.01em!important;float:none!important;width:auto!important;padding:0!important;text-align:left!important;}
+.form-card .label.reqMark::after{content:' *'!important;color:var(--teal)!important;}
+.form-card .inputWrapper{float:none!important;width:100%!important;}
+.form-card .inputWrapper input[type="text"],
+.form-card .inputWrapper input[type="email"]{width:100%!important;font-family:'Epilogue',sans-serif!important;font-size:.88rem!important;color:var(--text)!important;background:var(--warm)!important;border:1.5px solid rgba(15,28,46,.11)!important;border-radius:7px!important;padding:.65rem .9rem!important;transition:border-color .2s,box-shadow .2s!important;outline:none!important;box-sizing:border-box!important;box-shadow:none!important;}
+.form-card .inputWrapper textarea{width:100%!important;font-family:'Epilogue',sans-serif!important;font-size:.88rem!important;color:var(--text)!important;background:var(--warm)!important;border:1.5px solid rgba(15,28,46,.11)!important;border-radius:7px!important;padding:.65rem .9rem!important;min-height:90px!important;resize:vertical!important;line-height:1.6!important;transition:border-color .2s,box-shadow .2s!important;outline:none!important;box-sizing:border-box!important;box-shadow:none!important;}
+.form-card .inputWrapper input[type="text"]:focus,
+.form-card .inputWrapper input[type="email"]:focus,
+.form-card .inputWrapper textarea:focus{border-color:var(--teal)!important;box-shadow:0 0 0 3px rgba(71,186,208,.12)!important;}
+.form-card .actions{margin-top:.5rem!important;padding:0!important;}
+.form-card .primaryAction{width:100%!important;padding:.9rem!important;background:var(--teal)!important;color:white!important;font-family:'Inconsolata',monospace!important;font-size:.82rem!important;font-weight:700!important;letter-spacing:.08em!important;text-transform:uppercase!important;border:none!important;border-radius:7px!important;cursor:pointer!important;transition:background .2s,transform .15s,box-shadow .2s!important;box-shadow:0 4px 16px rgba(71,186,208,.3)!important;}
+.form-card .primaryAction:hover{background:#38a8bc!important;transform:translateY(-1px)!important;box-shadow:0 6px 22px rgba(71,186,208,.38)!important;}
+.form-card .wFormFooter,
+.form-card .supportInfo,
+.form-card p.supportInfo{display:none!important;}
+.form-card .errFld input,
+.form-card .errFld textarea{border-color:var(--rust)!important;}
+.form-card .errMsg{font-family:'Epilogue',sans-serif!important;font-size:.75rem!important;color:var(--rust)!important;margin-top:.3rem!important;}
+/* Beat FA's inline !important ID widths with higher specificity */
+.form-card #tfa_1,
+.form-card #tfa_2,
+.form-card #tfa_3,
+.form-card #tfa_4{width:100%!important;box-sizing:border-box!important;}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 

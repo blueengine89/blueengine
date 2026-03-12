@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NF2DQXZ');</script>
+<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Let's Talk — Blue Engine Solutions</title>
@@ -179,6 +186,38 @@ body{background:var(--warm);}
 @media(max-width:560px){
   .process-steps{grid-template-columns:1fr;}
 }
+
+/* ── FORMASSEMBLY OVERRIDES (contact — muted secondary style) ── */
+.secondary-form-inner .wFormContainer,
+.secondary-form-inner .wFormHeader{background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important;margin:0!important;}
+.secondary-form-inner .wForm{font-family:'Epilogue',sans-serif!important;}
+.secondary-form-inner .wFormTitle{font-family:'Playfair Display',serif!important;font-size:1.3rem!important;color:var(--navy)!important;font-weight:700!important;margin:0 0 1.25rem!important;line-height:1.25!important;}
+.secondary-form-inner .oneField.field-container-D{margin-bottom:.75rem!important;float:none!important;clear:both!important;}
+.secondary-form-inner .label.preField{display:block!important;font-family:'Epilogue',sans-serif!important;font-size:.75rem!important;font-weight:600!important;color:var(--navy)!important;margin-bottom:.35rem!important;letter-spacing:.01em!important;float:none!important;width:auto!important;padding:0!important;text-align:left!important;}
+.secondary-form-inner .label.reqMark::after{content:' *'!important;color:var(--rust)!important;}
+.secondary-form-inner .inputWrapper{float:none!important;width:100%!important;}
+.secondary-form-inner .inputWrapper input[type="text"],
+.secondary-form-inner .inputWrapper input[type="email"]{width:100%!important;font-family:'Epilogue',sans-serif!important;font-size:.88rem!important;color:var(--text,#1a1f2e)!important;background:var(--warm)!important;border:1.5px solid rgba(15,28,46,.1)!important;border-radius:6px!important;padding:.68rem .95rem!important;transition:border-color .2s,box-shadow .2s!important;outline:none!important;box-sizing:border-box!important;box-shadow:none!important;}
+.secondary-form-inner .inputWrapper textarea{width:100%!important;font-family:'Epilogue',sans-serif!important;font-size:.88rem!important;color:var(--text,#1a1f2e)!important;background:var(--warm)!important;border:1.5px solid rgba(15,28,46,.1)!important;border-radius:6px!important;padding:.68rem .95rem!important;min-height:110px!important;resize:vertical!important;line-height:1.6!important;transition:border-color .2s,box-shadow .2s!important;outline:none!important;box-sizing:border-box!important;box-shadow:none!important;}
+.secondary-form-inner .inputWrapper input[type="text"]:focus,
+.secondary-form-inner .inputWrapper input[type="email"]:focus,
+.secondary-form-inner .inputWrapper textarea:focus{border-color:var(--sky,#3b8fd4)!important;box-shadow:0 0 0 3px rgba(59,143,212,.1)!important;}
+.secondary-form-inner .actions{margin-top:.5rem!important;padding:0!important;}
+.secondary-form-inner .primaryAction{width:100%!important;padding:.85rem!important;background:transparent!important;color:var(--mid)!important;font-family:'Inconsolata',monospace!important;font-size:.78rem!important;font-weight:700!important;letter-spacing:.08em!important;text-transform:uppercase!important;border:1.5px solid rgba(15,28,46,.18)!important;border-radius:6px!important;cursor:pointer!important;transition:border-color .2s,color .2s,background .2s!important;box-shadow:none!important;}
+.secondary-form-inner .primaryAction:hover{border-color:var(--rust)!important;color:var(--rust)!important;background:rgba(139,26,42,.04)!important;}
+.secondary-form-inner .wFormFooter,
+.secondary-form-inner .supportInfo,
+.secondary-form-inner p.supportInfo{display:none!important;}
+.secondary-form-inner .errFld input,
+.secondary-form-inner .errFld textarea{border-color:var(--rust)!important;}
+.secondary-form-inner .errMsg{font-family:'Epilogue',sans-serif!important;font-size:.75rem!important;color:var(--rust)!important;margin-top:.3rem!important;}
+/* Beat FA's inline !important ID widths with higher specificity */
+.secondary-form-inner #tfa_1,
+.secondary-form-inner #tfa_2,
+.secondary-form-inner #tfa_3,
+.secondary-form-inner #tfa_4{width:100%!important;box-sizing:border-box!important;}
+.secondary-form-inner .wFormContainer{margin-top:0!important;}
+.secondary-form-inner .wFormTitle{margin-top:0!important;}
 </style>
 </head>
 <body>
