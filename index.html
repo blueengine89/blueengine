@@ -1,6 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NF2DQXZ');</script>
+<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blue Engine Solutions – Salesforce Consulting</title>
@@ -8,14 +15,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Epilogue:wght@300;400;500;600;700&family=Inconsolata:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--sand:#E4EEF8;--warm:#F0F6FF;--rust:#8B1A2A;--green:#2B8CAE;--text:#0B1E36;--mid:#5A7080;--light:#5A7080;--rule:rgba(11,30,54,0.1);}
+:root{--sand:#E4EEF8;--warm:#F0F6FF;--rust:#8B1A2A;--green:#2B8CAE;--text:#1A3A5C;--mid:#5A7080;--light:#5A7080;--rule:rgba(26,58,92,0.1);}
 .reveal{opacity:0;transform:translateY(32px);transition:opacity .75s ease,transform .75s ease;}.reveal.up{opacity:1;transform:none;}
 .reveal-delay-1{transition-delay:.12s;}.reveal-delay-2{transition-delay:.24s;}.reveal-delay-3{transition-delay:.36s;}.reveal-delay-4{transition-delay:.48s;}
 
 /* ── HERO ── */
-.hero{position:relative;min-height:660px;overflow:hidden;display:flex;align-items:flex-start;}
-.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(10,20,38,.88) 38%,rgba(10,20,38,.45) 70%,rgba(10,20,38,.2) 100%);}
+.hero{position:relative;min-height:660px;overflow:hidden;display:flex;align-items:flex-start;background:linear-gradient(105deg,#1a3a5c 0%,#1e4570 55%,#1f4d7a 100%);}
 .hero-content{position:relative;z-index:2;padding:calc(72px + 48px) 5rem 64px;max-width:660px;}
 .hero-pretag{font-family:'Inconsolata',monospace;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:1.4rem;display:block;opacity:0;animation:fadeUp .7s .1s forwards;}
 .hero-h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.4rem,4vw,4.4rem);line-height:1.06;color:white;margin-bottom:1.5rem;opacity:0;animation:fadeUp .8s .25s forwards;}
@@ -103,7 +108,7 @@
 
 /* Guarantee card */
 .why-guarantee{background:var(--navy);border-radius:10px;padding:3rem;display:flex;flex-direction:column;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s;}
-.why-guarantee:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(11,30,54,.2);}
+.why-guarantee:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(26,58,92,.2);}
 .why-guarantee::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--sky),var(--teal-deep));}
 .why-guarantee::after{content:'';position:absolute;bottom:-120px;right:-120px;width:300px;height:300px;background:radial-gradient(circle,rgba(61,166,205,.08),transparent 65%);pointer-events:none;}
 .guarantee-eyebrow{display:inline-flex;align-items:center;gap:.6rem;background:rgba(61,166,205,.12);border:1px solid rgba(61,166,205,.2);border-radius:100px;padding:.45rem 1.1rem;margin-bottom:2.25rem;align-self:flex-start;}
@@ -120,7 +125,7 @@
 .why-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
 .why-card{background:white;border:1px solid var(--rule);border-radius:10px;padding:2.25rem;transition:transform .3s,box-shadow .3s,border-color .3s;position:relative;overflow:hidden;}
 .why-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--sky),var(--teal-deep));transform:scaleX(0);transition:transform .35s;transform-origin:left;}
-.why-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(11,30,54,.08);border-color:rgba(61,166,205,.3);}
+.why-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(26,58,92,.08);border-color:rgba(61,166,205,.3);}
 .why-card:hover::after{transform:scaleX(1);}
 .why-icon{width:46px;height:46px;background:rgba(43,140,174,.07);border-radius:11px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;transition:background .25s;}
 .why-card:hover .why-icon{background:rgba(43,140,174,.14);}
@@ -128,7 +133,7 @@
 .why-card-desc{font-size:.92rem;line-height:1.78;color:var(--mid);font-weight:300;}
 
 /* ── GUARANTEE STRIP ── */
-.guarantee-strip{background:#0B1E36;padding:3rem 5rem;border-top:1px solid rgba(61,166,205,.12);border-bottom:1px solid rgba(61,166,205,.12);}
+.guarantee-strip{background:#1A3A5C;padding:3rem 5rem;border-top:1px solid rgba(61,166,205,.12);border-bottom:1px solid rgba(61,166,205,.12);}
 .guarantee-strip-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;}
 .guarantee-strip-item{display:flex;align-items:flex-start;gap:1rem;}
 .guarantee-strip-icon{width:40px;height:40px;background:rgba(61,166,205,.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
@@ -161,7 +166,8 @@
 .testi-avatar{width:44px;height:44px;border-radius:50%;object-fit:cover;margin-bottom:.75rem;border:2px solid var(--rule);}
 
 /* ── FINAL CTA ── */
-.final-cta{padding:0;position:relative;overflow:hidden;background:var(--navy);}
+.final-cta{padding:0;position:relative;overflow:hidden;background:#1A3A5C;border-top:1px solid rgba(61,166,205,0.25);border-bottom:1px solid rgba(61,166,205,0.25);}
+.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 120% at 20% 50%,rgba(61,166,205,0.13) 0%,transparent 65%),radial-gradient(ellipse 60% 80% at 75% 20%,rgba(196,48,64,0.08) 0%,transparent 55%);pointer-events:none;z-index:0;}
 .final-cta-layout{display:grid;grid-template-columns:1fr 1fr;height:480px;}
 .final-cta-text{padding:3.5rem 5rem;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;}
 .final-cta-tag{font-family:'Inconsolata',monospace;font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:flex;align-items:center;gap:.6rem;}
@@ -173,12 +179,12 @@
 .final-note{font-size:.78rem;color:rgba(255,255,255,.35);margin-top:1.25rem;font-style:italic;}
 .final-cta-photo{position:relative;overflow:hidden;}
 .final-cta-photo img{width:100%;height:100%;object-fit:cover;object-position:center 15%;display:block;filter:saturate(0.9);}
-.final-cta-photo::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 0%,rgba(26,58,92,0.25) 40%,transparent 70%);z-index:1;}
+.final-cta-photo::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#1A3A5C 0%,rgba(26,58,92,0.25) 40%,transparent 70%);z-index:1;}
 .final-cta-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(26,58,92,0.5) 100%);z-index:1;}
 @media(max-width:768px){
   .final-cta-layout{grid-template-columns:1fr;}
   .final-cta-photo{height:360px;}
-  .final-cta-photo::before{background:linear-gradient(180deg,var(--navy) 0%,rgba(26,58,92,0.15) 40%,transparent 70%);}
+  .final-cta-photo::before{background:linear-gradient(180deg,#1A3A5C 0%,rgba(26,58,92,0.15) 40%,transparent 70%);}
   .final-cta-text{padding:4rem 1.5rem 3rem;}
 }
 
@@ -211,25 +217,22 @@
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NF2DQXZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <div id="site-nav"></div>
 <script src="Technical/nav.js"></script>
 
 <!-- ── 1. HERO ── -->
 <section class="hero">
-  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1800&q=80" class="hero-bg" alt="Confident professional">
-  <div class="hero-overlay"></div>
   <div class="hero-content">
     <span class="hero-pretag">Certified Salesforce Partner · Founded 2019</span>
     <h1 class="hero-h1">Salesforce that<br><em>actually works</em><br>for your team.</h1>
     <p class="hero-sub">We fix broken orgs, cut through technical debt, and make Salesforce feel like it was <strong>built for real people</strong> — because that's exactly what we do, every day.</p>
     <div class="hero-btns">
       <a href="/Site Pages/health-assessment.html" class="btn btn-blue">GET FREE HEALTH CHECK →</a>
-      <a href="Site Pages/Case-Studies.html" class="btn btn-outline-light">SEE OUR WORK</a>
-    </div>
-    <div class="hero-trust">
-      <span class="hero-stars">★★★★★</span>
-      <span class="hero-trust-text"><strong>4.9 / 5</strong> on Salesforce AppExchange &nbsp;·&nbsp; 95% five-star reviews</span>
     </div>
   </div>
   <div class="hero-badge"><div class="hero-badge-num">4.9</div><div class="hero-badge-label">AppExchange Rating</div></div>
@@ -465,7 +468,6 @@
         <a href="/Site Pages/health-assessment.html" class="btn btn-blue">GET A FREE HEALTH CHECK →</a>
         <a href="/Site Pages/contact.html" class="btn btn-outline-light">SCHEDULE A CALL</a>
       </div>
-      <p class="final-note reveal reveal-delay-4">Free · No commitment · Cancel anytime with 30 days notice</p>
     </div>
     <div class="final-cta-photo reveal reveal-delay-1">
       <img src="/brand_assets/Team Photos/founder headshot.webp" alt="Geoff, founder of Blue Engine Solutions">

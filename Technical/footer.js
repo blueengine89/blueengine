@@ -6,7 +6,7 @@
   const css = `
 <style id="bes-footer-styles">
 #site-footer footer {
-  background: #0f1c2e;
+  background: #1A3A5C;
   padding: 4rem 5rem 2.5rem;
   font-family: 'Epilogue', 'DM Sans', sans-serif;
 }
