@@ -4,6 +4,56 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Free Salesforce Health Assessment — Blue Engine Solutions</title>
+<!-- FORM: HEAD SECTION -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- THIS SCRIPT NEEDS TO BE LOADED FIRST BEFORE wforms.js -->
+    <script type="text/javascript" data-for="FA__DOMContentLoadedEventDispatch" src="https://www.tfaforms.com/js/FA__DOMContentLoadedEventDispatcher.js" defer></script>
+        <script type="text/javascript">
+        document.addEventListener("FA__DOMContentLoaded", function(){
+            const FORM_TIME_START = Math.floor((new Date).getTime()/1000);
+            let formElement = document.getElementById("tfa_0");
+            if (null === formElement) {
+                formElement = document.getElementById("0");
+            }
+            let appendJsTimerElement = function(){
+                let formTimeDiff = Math.floor((new Date).getTime()/1000) - FORM_TIME_START;
+                let cumulatedTimeElement = document.getElementById("tfa_dbCumulatedTime");
+                if (null !== cumulatedTimeElement) {
+                    let cumulatedTime = parseInt(cumulatedTimeElement.value);
+                    if (null !== cumulatedTime && cumulatedTime > 0) {
+                        formTimeDiff += cumulatedTime;
+                    }
+                }
+                let jsTimeInput = document.createElement("input");
+                jsTimeInput.setAttribute("type", "hidden");
+                jsTimeInput.setAttribute("value", formTimeDiff.toString());
+                jsTimeInput.setAttribute("name", "tfa_dbElapsedJsTime");
+                jsTimeInput.setAttribute("id", "tfa_dbElapsedJsTime");
+                jsTimeInput.setAttribute("autocomplete", "off");
+                if (null !== formElement) {
+                    formElement.appendChild(jsTimeInput);
+                }
+            };
+            if (null !== formElement) {
+                if(formElement.addEventListener){
+                    formElement.addEventListener('submit', appendJsTimerElement, false);
+                } else if(formElement.attachEvent){
+                    formElement.attachEvent('onsubmit', appendJsTimerElement);
+                }
+            }
+        });
+    </script>
+
+    <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-layout.css?v=1773345792" rel="stylesheet" type="text/css" />
+    <link href="https://www.tfaforms.com/uploads/themes/theme-68007.css" rel="stylesheet" type="text/css" />
+    <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=1773345792" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
+    <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=1773345792"></script>
+    <script type="text/javascript">
+        wFORMS.behaviors.prefill.skip = false;
+    </script>
+    <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_US.js?v=1773345792"></script>
+
 <link rel="stylesheet" href="../Technical/brand.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Epilogue:wght@300;400;500;600;700&family=Inconsolata:wght@500;700&display=swap" rel="stylesheet">
@@ -160,77 +210,60 @@ body{background:var(--warm);color:var(--text);}
         <h2 class="form-card-title">Tell us about your org</h2>
         <p class="form-card-sub">We'll review everything and get back to you within one business day to schedule your debrief.</p>
 
-        <form id="assess-form">
-          <div class="f-row">
-            <div>
-              <label class="f-label" for="fname">First name</label>
-              <input class="f-input" id="fname" type="text" name="fname" placeholder="Jane" required>
-            </div>
-            <div>
-              <label class="f-label" for="lname">Last name</label>
-              <input class="f-input" id="lname" type="text" name="lname" placeholder="Smith" required>
-            </div>
-          </div>
-          <div class="f-field">
-            <label class="f-label" for="email">Work email</label>
-            <input class="f-input" id="email" type="email" name="email" placeholder="jane@yourorg.org" required>
-          </div>
-          <div class="f-field">
-            <label class="f-label" for="org">Organization name</label>
-            <input class="f-input" id="org" type="text" name="org" placeholder="Acme Nonprofit" required>
-          </div>
-          <div class="f-field">
-            <label class="f-label" for="org-type">Organization type</label>
-            <select class="f-select" id="org-type" name="org-type">
-              <option value="" disabled selected>Select one…</option>
-              <option value="nonprofit">Nonprofit / NGO</option>
-              <option value="smb">Small / Mid-size Business</option>
-              <option value="enterprise">Enterprise</option>
-              <option value="gov">Government / Public Sector</option>
-              <option value="other">Other</option>
-            </select>
-          </div>
-          <div class="f-field">
-            <label class="f-label" for="sf-edition">Salesforce edition</label>
-            <select class="f-select" id="sf-edition" name="sf-edition">
-              <option value="" disabled selected>Select one…</option>
-              <option value="essentials">Essentials</option>
-              <option value="professional">Professional</option>
-              <option value="enterprise">Enterprise</option>
-              <option value="unlimited">Unlimited</option>
-              <option value="npsp">Nonprofit (NPSP)</option>
-              <option value="unsure">Not sure</option>
-            </select>
-          </div>
+        <!-- FORM: BODY SECTION -->
+<div class="wFormContainer" >
+    <div class="wFormHeader"></div>
+    <style type="text/css">
+                #tfa_1,
+                *[id^="tfa_1["] {
+                    width: 200px !important;
+                }
+                #tfa_1-D,
+                *[id^="tfa_1["][class~="field-container-D"] {
+                    width: auto !important;
+                }
 
-          <div class="f-field">
-            <span class="f-chips-label">What's giving you the most trouble? (check all that apply)</span>
-            <div class="f-chips">
-              <label class="f-chip"><input type="checkbox" name="pain" value="data"><span>Messy data</span></label>
-              <label class="f-chip"><input type="checkbox" name="pain" value="reports"><span>Reports I can't trust</span></label>
-              <label class="f-chip"><input type="checkbox" name="pain" value="automation"><span>Broken automations</span></label>
-              <label class="f-chip"><input type="checkbox" name="pain" value="cost"><span>Overpaying for licenses</span></label>
-              <label class="f-chip"><input type="checkbox" name="pain" value="adoption"><span>Low user adoption</span></label>
-              <label class="f-chip"><input type="checkbox" name="pain" value="customizations"><span>Too many customizations</span></label>
-              <label class="f-chip"><input type="checkbox" name="pain" value="integrations"><span>Integration issues</span></label>
-              <label class="f-chip"><input type="checkbox" name="pain" value="notsure"><span>Not sure where to start</span></label>
-            </div>
-          </div>
+                #tfa_2,
+                *[id^="tfa_2["] {
+                    width: 350px !important;
+                }
+                #tfa_2-D,
+                *[id^="tfa_2["][class~="field-container-D"] {
+                    width: auto !important;
+                }
 
-          <div class="f-field">
-            <label class="f-label" for="context">Anything else we should know?</label>
-            <textarea class="f-textarea" id="context" name="context" placeholder="How long have you been on Salesforce? How many users? What's the most painful thing day-to-day?"></textarea>
-          </div>
-
-          <button type="submit" class="f-submit">Request Free Health Assessment →</button>
-          <p class="f-note">We'll be in touch within one business day. No spam, no pitch, no obligation.</p>
-        </form>
-
-        <div class="f-success" id="assess-success">
-          <div class="f-success-icon">🩺</div>
-          <h3 class="f-success-title">Request received.</h3>
-          <p class="f-success-text">We'll review what you shared and reach out within one business day to schedule your debrief. Talk soon.</p>
-        </div>
+                #tfa_3,
+                *[id^="tfa_3["] {
+                    width: 350px !important;
+                }
+                #tfa_3-D,
+                *[id^="tfa_3["][class~="field-container-D"] {
+                    width: auto !important;
+                }
+            </style><div class=""><div class="wForm" id="5167807-WRPR" data-language="en_US" dir="ltr">
+<div class="codesection" id="code-5167807"></div>
+<form method="post" action="https://www.tfaforms.com/api_v2/workflow/processor" class=" labelsLeftAligned" id="5167807">
+<div class="oneField field-container-D    " id="tfa_4-D">
+<label id="tfa_4-L" class="label preField " for="tfa_4">Comments</label><div class="inputWrapper"><textarea id="tfa_4" name="tfa_4" title="Comments" class=""></textarea></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_1-D">
+<label id="tfa_1-L" class="label preField " for="tfa_1">First Name</label><div class="inputWrapper"><input type="text" id="tfa_1" name="tfa_1" value="" title="First Name" class=""></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_2-D">
+<label id="tfa_2-L" class="label preField reqMark" for="tfa_2">Last Name</label><div class="inputWrapper"><input aria-required="true" type="text" id="tfa_2" name="tfa_2" value="" title="Last Name" class="required"></div>
+</div>
+<div class="oneField field-container-D    " id="tfa_3-D">
+<label id="tfa_3-L" class="label preField reqMark" for="tfa_3">Email</label><div class="inputWrapper"><input aria-required="true" type="text" id="tfa_3" name="tfa_3" value="" title="Email" class="required"></div>
+</div>
+<div class="actions" id="5167807-A" data-contentid="submit_button"><input type="submit" data-label="Submit" class="primaryAction" id="submit_button" value="Submit"></div>
+<div style="clear:both"></div>
+<input type="hidden" value="5216222" name="tfa_dbFormId" id="tfa_dbFormId"><input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId"><input type="hidden" value="746b142b68387b35da460ca7b7f9c0a7" name="tfa_dbControl" id="tfa_dbControl"><input type="hidden" value="" name="tfa_dbWorkflowSessionUuid" id="tfa_dbWorkflowSessionUuid"><input type="hidden" value="1" name="tfa_dbVersionId" id="tfa_dbVersionId"><input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
+</form>
+</div></div><div class="wFormFooter"><p class="supportInfo"><br></p></div>
+  <p class="supportInfo" >
+      </p>
+ </div>
+<script src="https://www.tfaforms.com/api_v2/sst/copy-and-paste"></script>
       </div>
     </div>
   </div>
@@ -338,11 +371,6 @@ document.querySelectorAll('.faq-item').forEach(item => {
   item.addEventListener('click', () => item.classList.toggle('open'));
 });
 
-document.getElementById('assess-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  this.style.display = 'none';
-  document.getElementById('assess-success').style.display = 'block';
-});
 </script>
 </body>
 </html>
