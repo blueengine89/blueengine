@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Blue Engine Solutions — Universal Site Footer
  * Inject via: <div id="site-footer"></div><script src="footer.js"></script>
  */
@@ -175,12 +175,12 @@
     <div>
       <p class="ft-col-title">Services</p>
       <ul class="ft-links">
-        <li><a href="/Site Pages/health-assessment.html">Health Check</a></li>
-        <li><a href="/Site Pages/Services.html#managed">Managed Services</a></li>
-        <li><a href="/Site Pages/Services.html#fix">Org Cleanup</a></li>
-        <li><a href="/Site Pages/Services.html#implement">Quick Starts</a></li>
-        <li><a href="/Site Pages/Services.html#automate">Integrations</a></li>
-        <li><a href="/Site Pages/Services.html#training">Training</a></li>
+        <li><a href="/health-assessment/">Health Check</a></li>
+        <li><a href="/services/#managed">Managed Services</a></li>
+        <li><a href="/services/#fix">Org Cleanup</a></li>
+        <li><a href="/services/#implement">Quick Starts</a></li>
+        <li><a href="/services/#automate">Integrations</a></li>
+        <li><a href="/services/#training">Training</a></li>
       </ul>
     </div>
     <div>
@@ -196,8 +196,8 @@
     <div>
       <p class="ft-col-title">Get In Touch</p>
       <div class="ft-cta-links">
-        <a href="/Site Pages/health-assessment.html" class="ft-cta-btn">Free Assessment →</a>
-        <a href="/Site Pages/contact.html" class="ft-cta-btn ft-cta-btn--outline">Schedule a Call →</a>
+        <a href="/health-assessment/" class="ft-cta-btn">Free Assessment →</a>
+        <a href="/contact/" class="ft-cta-btn ft-cta-btn--outline">Schedule a Call →</a>
       </div>
       <ul class="ft-links">
         <li><a href="mailto:hello@blueenginesolutions.com">hello@blueenginesolutions.com</a></li>

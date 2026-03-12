@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Blue Engine Solutions — Universal Site Nav
  * Inject via: <div id="site-nav"></div><script src="nav.js"></script>
  * Place the div at the very start of <body>.
@@ -166,10 +166,10 @@
   </a>
   <ul class="sn-links">
     <li><a href="/index.html">Home</a></li>
-    <li><a href="/Site Pages/Services.html">Services</a></li>
-    <li><a href="/Site Pages/about.html">About</a></li>
-    <li><a href="/Site Pages/contact.html" class="sn-contact">Contact</a></li>
-    <li><a href="/Site Pages/health-assessment.html" class="sn-cta">Free Health Check →</a></li>
+    <li><a href="/services/">Services</a></li>
+    <li><a href="/about/">About</a></li>
+    <li><a href="/contact/" class="sn-contact">Contact</a></li>
+    <li><a href="/health-assessment/" class="sn-cta">Free Health Check →</a></li>
   </ul>
   <div class="sn-hamburger">
     <span></span>
@@ -178,10 +178,10 @@
   </div>
   <div class="mobile-menu">
     <a href="/index.html">Home</a>
-    <a href="/Site Pages/Services.html">Services</a>
-    <a href="/Site Pages/about.html">About</a>
-    <a href="/Site Pages/contact.html">Contact</a>
-    <a href="/Site Pages/health-assessment.html">Free Health Check →</a>
+    <a href="/services/">Services</a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+    <a href="/health-assessment/">Free Health Check →</a>
   </div>
 </nav>`;
 
