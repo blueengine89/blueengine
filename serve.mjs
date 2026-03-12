@@ -24,9 +24,33 @@ const MIME = {
   '.ttf':  'font/ttf',
 };
 
+const REWRITES = {
+  '/contact':                        '/Site Pages/contact.html',
+  '/contact/':                       '/Site Pages/contact.html',
+  '/services':                       '/Site Pages/Services.html',
+  '/services/':                      '/Site Pages/Services.html',
+  '/about':                          '/Site Pages/about.html',
+  '/about/':                         '/Site Pages/about.html',
+  '/approach':                       '/Site Pages/Approach.html',
+  '/approach/':                      '/Site Pages/Approach.html',
+  '/careers':                        '/Site Pages/careers.html',
+  '/careers/':                       '/Site Pages/careers.html',
+  '/locations':                      '/Site Pages/locations.html',
+  '/locations/':                     '/Site Pages/locations.html',
+  '/case-studies':                   '/Site Pages/Case-Studies.html',
+  '/case-studies/':                  '/Site Pages/Case-Studies.html',
+  '/health-assessment':              '/Site Pages/health-assessment.html',
+  '/health-assessment/':             '/Site Pages/health-assessment.html',
+  '/testimonials':                   '/Site Pages/testimonials.html',
+  '/testimonials/':                  '/Site Pages/testimonials.html',
+  '/role-salesforce-consultant-ft':  '/Site Pages/consultant-role.html',
+  '/role-salesforce-consultant-ft/': '/Site Pages/consultant-role.html',
+};
+
 http.createServer((req, res) => {
   let urlPath = decodeURIComponent(req.url.split('?')[0]);
   if (urlPath === '/') urlPath = '/index.html';
+  if (REWRITES[urlPath]) urlPath = REWRITES[urlPath];
   const filePath = path.join(__dirname, urlPath);
 
   fs.readFile(filePath, (err, data) => {
