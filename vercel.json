@@ -1,31 +1,24 @@
 {
   "rewrites": [
-    { "source": "/contact",           "destination": "/Site Pages/contact.html" },
-    { "source": "/contact/",          "destination": "/Site Pages/contact.html" },
-    { "source": "/services",          "destination": "/Site Pages/Services.html" },
-    { "source": "/services/",         "destination": "/Site Pages/Services.html" },
-    { "source": "/about",             "destination": "/Site Pages/about.html" },
-    { "source": "/about/",            "destination": "/Site Pages/about.html" },
-    { "source": "/approach",          "destination": "/Site Pages/Approach.html" },
-    { "source": "/approach/",         "destination": "/Site Pages/Approach.html" },
-    { "source": "/careers",           "destination": "/Site Pages/careers.html" },
-    { "source": "/careers/",          "destination": "/Site Pages/careers.html" },
-    { "source": "/locations",         "destination": "/Site Pages/locations.html" },
-    { "source": "/locations/",        "destination": "/Site Pages/locations.html" },
-    { "source": "/case-studies",      "destination": "/Site Pages/Case-Studies.html" },
-    { "source": "/case-studies/",     "destination": "/Site Pages/Case-Studies.html" },
-    { "source": "/health-assessment", "destination": "/Site Pages/health-assessment.html" },
-    { "source": "/health-assessment/","destination": "/Site Pages/health-assessment.html" },
-    { "source": "/testimonials",      "destination": "/Site Pages/testimonials.html" },
-    { "source": "/testimonials/",     "destination": "/Site Pages/testimonials.html" },
-    { "source": "/consultant-role",   "destination": "/Site Pages/consultant-role.html" },
-    { "source": "/consultant-role/",  "destination": "/Site Pages/consultant-role.html" }
-  ],
-  "redirects": [
-    {
-      "source": "/role-salesforce-consultant-ft/",
-      "destination": "/Site Pages/consultant-role.html",
-      "permanent": true
-    }
+    { "source": "/contact",                       "destination": "/Site Pages/contact.html" },
+    { "source": "/contact/",                      "destination": "/Site Pages/contact.html" },
+    { "source": "/services",                      "destination": "/Site Pages/Services.html" },
+    { "source": "/services/",                     "destination": "/Site Pages/Services.html" },
+    { "source": "/about",                         "destination": "/Site Pages/about.html" },
+    { "source": "/about/",                        "destination": "/Site Pages/about.html" },
+    { "source": "/approach",                      "destination": "/Site Pages/Approach.html" },
+    { "source": "/approach/",                     "destination": "/Site Pages/Approach.html" },
+    { "source": "/careers",                       "destination": "/Site Pages/careers.html" },
+    { "source": "/careers/",                      "destination": "/Site Pages/careers.html" },
+    { "source": "/locations",                     "destination": "/Site Pages/locations.html" },
+    { "source": "/locations/",                    "destination": "/Site Pages/locations.html" },
+    { "source": "/case-studies",                  "destination": "/Site Pages/Case-Studies.html" },
+    { "source": "/case-studies/",                 "destination": "/Site Pages/Case-Studies.html" },
+    { "source": "/health-assessment",             "destination": "/Site Pages/health-assessment.html" },
+    { "source": "/health-assessment/",            "destination": "/Site Pages/health-assessment.html" },
+    { "source": "/testimonials",                  "destination": "/Site Pages/testimonials.html" },
+    { "source": "/testimonials/",                 "destination": "/Site Pages/testimonials.html" },
+    { "source": "/role-salesforce-consultant-ft", "destination": "/Site Pages/consultant-role.html" },
+    { "source": "/role-salesforce-consultant-ft/","destination": "/Site Pages/consultant-role.html" }
   ]
 }
