@@ -17,7 +17,9 @@
     { "source": "/health-assessment", "destination": "/Site Pages/health-assessment.html" },
     { "source": "/health-assessment/","destination": "/Site Pages/health-assessment.html" },
     { "source": "/testimonials",      "destination": "/Site Pages/testimonials.html" },
-    { "source": "/testimonials/",     "destination": "/Site Pages/testimonials.html" }
+    { "source": "/testimonials/",     "destination": "/Site Pages/testimonials.html" },
+    { "source": "/consultant-role",   "destination": "/Site Pages/consultant-role.html" },
+    { "source": "/consultant-role/",  "destination": "/Site Pages/consultant-role.html" }
   ],
   "redirects": [
     {
