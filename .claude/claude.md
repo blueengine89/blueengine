@@ -42,10 +42,18 @@ use stock images.
 - If assets exist there, use them. Do not use placeholders where real assets are available.
 - If a logo is present, use it. If a color palette is defined, use those exact values — do not invent brand colors.
 
+## Typography System (locked — do not deviate)
+- **Headings:** Playfair Display (serif)
+- **Body / UI:** Plus Jakarta Sans (sans-serif)
+- **Eyebrows / labels / tags:** Epilogue (sans-serif)
+- **Monospace fonts are banned.** Never use Inconsolata, IBM Plex Mono, Courier, or any monospace font anywhere on the site.
+- **Minimum font size: 14px.** Nothing smaller, ever — not labels, not captions, not eyebrows.
+- Eyebrow / label text style: Epilogue, uppercase, wide letter-spacing, 14px minimum
+
 ## Anti-Generic Guardrails
 - **Colors:** Never use default Tailwind palette (indigo-500, blue-600, etc.). Pick a custom brand color and derive from it.
 - **Shadows:** Never use flat `shadow-md`. Use layered, color-tinted shadows with low opacity.
-- **Typography:** Never use the same font for headings and body. Pair a display/serif with a clean sans. Apply tight tracking (`-0.03em`) on large headings, generous line-height (`1.7`) on body.
+- **Typography:** See Typography System above. Apply tight tracking (`-0.03em`) on large headings, generous line-height (`1.7`) on body.
 - **Gradients:** Layer multiple radial gradients. Add grain/texture via SVG noise filter for depth.
 - **Animations:** Only animate `transform` and `opacity`. Never `transition-all`. Use spring-style easing.
 - **Interactive states:** Every clickable element needs hover, focus-visible, and active states. No exceptions.
