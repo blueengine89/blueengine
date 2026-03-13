@@ -1,27 +1,4 @@
 {
   "cleanUrls": true,
-  "rewrites": [
-    { "source": "/contact",                       "destination": "/pages/contact.html" },
-    { "source": "/contact/",                      "destination": "/pages/contact.html" },
-    { "source": "/services",                      "destination": "/pages/Services.html" },
-    { "source": "/services/",                     "destination": "/pages/Services.html" },
-    { "source": "/about",                         "destination": "/pages/about.html" },
-    { "source": "/about/",                        "destination": "/pages/about.html" },
-    { "source": "/approach",                      "destination": "/pages/Approach.html" },
-    { "source": "/approach/",                     "destination": "/pages/Approach.html" },
-    { "source": "/careers",                       "destination": "/pages/careers.html" },
-    { "source": "/careers/",                      "destination": "/pages/careers.html" },
-    { "source": "/locations",                     "destination": "/pages/locations.html" },
-    { "source": "/locations/",                    "destination": "/pages/locations.html" },
-    { "source": "/case-studies",                  "destination": "/pages/Case-Studies.html" },
-    { "source": "/case-studies/",                 "destination": "/pages/Case-Studies.html" },
-    { "source": "/health-assessment",             "destination": "/pages/health-assessment.html" },
-    { "source": "/health-assessment/",            "destination": "/pages/health-assessment.html" },
-    { "source": "/testimonials",                  "destination": "/pages/testimonials.html" },
-    { "source": "/testimonials/",                 "destination": "/pages/testimonials.html" },
-    { "source": "/role-salesforce-consultant-ft", "destination": "/pages/consultant-role.html" },
-    { "source": "/role-salesforce-consultant-ft/","destination": "/pages/consultant-role.html" },
-    { "source": "/salesforce-consultant-washington-dc",  "destination": "/pages/salesforce-consultant-washington-dc.html" },
-    { "source": "/salesforce-consultant-washington-dc/", "destination": "/pages/salesforce-consultant-washington-dc.html" }
-  ]
+  "trailingSlash": false
 }
