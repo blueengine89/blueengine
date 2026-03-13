@@ -37,10 +37,10 @@
   margin: 0;
 }
 #site-footer .ft-col-title {
-  font-family: 'Inconsolata', 'IBM Plex Mono', monospace;
+  font-family: 'Epilogue', sans-serif;
   font-size: .72rem;
   font-weight: 700;
-  letter-spacing: .14em;
+  letter-spacing: .08em;
   text-transform: uppercase;
   color: rgba(255,255,255,1);
   margin-bottom: .9rem;
@@ -95,7 +95,7 @@
 #site-footer .ft-cta-btn {
   display: block;
   padding: .6rem 1rem;
-  background: #C43040;
+  background: #3DA6CD;
   color: white;
   font-family: 'Epilogue', sans-serif;
   font-size: .82rem;
@@ -103,11 +103,11 @@
   border-radius: 6px;
   text-decoration: none;
   text-align: center;
-  box-shadow: 0 2px 10px rgba(196,48,64,.3);
+  box-shadow: 0 2px 10px rgba(61,166,205,.25);
   transition: background .2s, transform .15s;
 }
 #site-footer .ft-cta-btn:hover {
-  background: #A8202E;
+  background: #2e90b5;
   color: white;
   transform: translateY(-1px);
 }
@@ -124,16 +124,23 @@
   transform: translateY(-1px);
 }
 
-#site-footer .ft-bottom {
+#site-footer .ft-utility {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding-top: 2rem;
-  font-family: 'Inconsolata', 'IBM Plex Mono', monospace;
-  font-size: .72rem;
-  color: rgba(255,255,255,.38);
-  letter-spacing: .04em;
+  gap: 1.75rem;
+  padding: 1.5rem 0;
+  flex-wrap: wrap;
 }
+#site-footer .ft-utility a {
+  font-family: 'Epilogue', sans-serif;
+  font-size: .85rem;
+  font-weight: 400;
+  color: rgba(255,255,255,.62);
+  text-decoration: none;
+  transition: color .2s;
+}
+#site-footer .ft-utility a:hover { color: white; }
 #site-footer .ft-cert {
   display: flex;
   align-items: center;
@@ -205,8 +212,12 @@
       </ul>
     </div>
   </div>
-  <div class="ft-bottom">
-    <span>&copy; 2025 Blue Engine Solutions LLC. All rights reserved.</span>
+  <div class="ft-utility">
+    <a href="/about/">About</a>
+    <a href="/approach/">Our Approach</a>
+    <a href="/case-studies/">Case Studies</a>
+    <a href="/testimonials/">Testimonials</a>
+    <a href="/careers/">Careers</a>
     <div class="ft-cert"><span class="ft-cert-dot"></span>CERTIFIED SALESFORCE PARTNER SINCE 2019</div>
   </div>
 </footer>`;

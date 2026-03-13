@@ -142,44 +142,49 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 14px 28px;
+  padding: 13px 26px;
   background: var(--red);
   color: white;
   font-family: 'Epilogue', sans-serif;
   font-size: 15px;
   font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
   border: none;
-  border-radius: 8px;
+  border-radius: 100px;
   cursor: pointer;
   text-decoration: none;
-  box-shadow: 0 4px 20px rgba(196, 48, 64, 0.28);
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 3px 16px rgba(196, 48, 64, 0.30);
+  transition: background 0.2s, transform 0.15s cubic-bezier(.34,1.56,.64,1), box-shadow 0.2s;
 }
 .btn-primary:hover {
   background: var(--red-deep);
   transform: translateY(-1px);
-  box-shadow: 0 8px 28px rgba(196, 48, 64, 0.35);
+  box-shadow: 0 6px 24px rgba(196, 48, 64, 0.38);
 }
 
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 14px 28px;
+  padding: 12px 26px;
   background: transparent;
-  color: var(--ink);
+  color: var(--red);
   font-family: 'Epilogue', sans-serif;
   font-size: 15px;
   font-weight: 600;
-  border: 1.5px solid var(--border);
-  border-radius: 8px;
+  letter-spacing: 0;
+  text-transform: none;
+  border: 1.5px solid rgba(196, 48, 64, 0.45);
+  border-radius: 100px;
   cursor: pointer;
   text-decoration: none;
-  transition: border-color 0.2s, color 0.2s;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s cubic-bezier(.34,1.56,.64,1);
 }
 .btn-secondary:hover {
-  border-color: var(--teal);
-  color: var(--teal-deep);
+  border-color: var(--red);
+  background: rgba(196, 48, 64, 0.06);
+  transform: translateY(-1px);
 }
 
 /* ── LEGACY BUTTON ALIASES (.btn + modifiers) ────────────────────── */
@@ -190,57 +195,71 @@ p {
   font-family: 'Epilogue', sans-serif;
   font-size: 15px;
   font-weight: 600;
-  letter-spacing: 0.01em;
-  padding: 14px 28px;
-  border-radius: 8px;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 13px 26px;
+  border-radius: 100px;
   text-decoration: none;
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  transition: background 0.2s, transform 0.15s cubic-bezier(.34,1.56,.64,1), box-shadow 0.2s;
   cursor: pointer;
   border: none;
 }
+/* Solid coral — primary action */
 .btn-blue {
   background: var(--red);
   color: white;
-  box-shadow: 0 4px 20px rgba(196, 48, 64, 0.28);
+  box-shadow: 0 3px 16px rgba(196, 48, 64, 0.30);
 }
 .btn-blue:hover {
   background: var(--red-deep);
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(196, 48, 64, 0.35);
+  box-shadow: 0 6px 24px rgba(196, 48, 64, 0.38);
 }
+/* Coral outline on light bg — secondary/mid-page */
 .btn-outline {
   background: transparent;
-  color: var(--navy);
-  border: 1.5px solid var(--border);
+  color: var(--red);
+  border: 1.5px solid rgba(196, 48, 64, 0.45);
 }
 .btn-outline:hover {
-  border-color: var(--navy);
-  background: rgba(26, 58, 92, 0.04);
+  border-color: var(--red);
+  background: rgba(196, 48, 64, 0.06);
+  transform: translateY(-1px);
 }
+/* Coral outline on dark bg — secondary on navy sections */
 .btn-outline-light {
   background: transparent;
-  color: rgba(255, 255, 255, 0.7);
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.80);
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
 }
 .btn-outline-light:hover {
   background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.55);
   color: white;
+  transform: translateY(-1px);
 }
+/* Coral outline on light bg (alias) */
 .btn-outline-dark {
   background: transparent;
-  color: var(--navy);
-  border: 1.5px solid var(--border);
+  color: var(--red);
+  border: 1.5px solid rgba(196, 48, 64, 0.45);
 }
 .btn-outline-dark:hover {
   border-color: var(--red);
-  color: var(--red);
+  background: rgba(196, 48, 64, 0.06);
+  transform: translateY(-1px);
 }
+/* Coral outline on dark bg (health banner context) */
 .btn-white {
-  background: white;
-  color: var(--navy);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
 }
 .btn-white:hover {
-  background: var(--bg);
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.60);
+  color: white;
+  transform: translateY(-1px);
 }
 
 /* ── NAV ─────────────────────────────────────────────────────────── */
@@ -300,15 +319,17 @@ nav {
 .nav-links a.active { color: var(--blue); }
 
 .nav-cta {
-  padding: 10px 22px !important;
+  padding: 9px 20px !important;
   background: var(--red) !important;
   color: white !important;
   font-family: 'Epilogue', sans-serif !important;
   font-size: 14px !important;
   font-weight: 600 !important;
-  border-radius: 7px !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  border-radius: 100px !important;
   box-shadow: 0 2px 12px rgba(196, 48, 64, 0.28) !important;
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s !important;
+  transition: background 0.2s, transform 0.15s cubic-bezier(.34,1.56,.64,1), box-shadow 0.2s !important;
 }
 .nav-cta:hover {
   background: var(--red-deep) !important;

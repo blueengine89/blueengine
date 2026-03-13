@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muted Orange Options — Blue Engine</title>
+<link rel="stylesheet" href="/brand.css">
+<style>
+  body { background: #EEF4FB; font-family: 'Epilogue', sans-serif; color: #1A3A5C; }
+  .page { max-width: 860px; margin: 0 auto; padding: 3rem 2rem 6rem; }
+  h1 { font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: .25rem; }
+  .sub { font-size: .78rem; color: #5A7080; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 3rem; }
+
+  .row {
+    display: grid;
+    grid-template-columns: 180px 1fr 1fr;
+    gap: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(26,58,92,0.09), 0 1px 4px rgba(26,58,92,0.05);
+    margin-bottom: 1.5rem;
+  }
+
+  .swatch-cell {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.8rem 1.6rem;
+    gap: .3rem;
+  }
+  .swatch-name { font-weight: 700; font-size: .9rem; }
+  .swatch-hex { font-family: 'Inconsolata', monospace; font-size: .75rem; opacity: .6; }
+  .swatch-note { font-size: .72rem; opacity: .55; line-height: 1.4; margin-top: .25rem; }
+
+  .dark-cell {
+    background: #1A3A5C;
+    padding: 1.8rem 2rem;
+    display: flex; align-items: center; gap: .75rem; flex-wrap: wrap;
+  }
+  .light-cell {
+    background: #fff;
+    padding: 1.8rem 2rem;
+    border-left: 1px solid #E4EEF8;
+    display: flex; align-items: center; gap: .75rem; flex-wrap: wrap;
+  }
+
+  .panel-tag {
+    display: block; width: 100%;
+    font-size: .62rem; letter-spacing: .12em; text-transform: uppercase;
+    margin-bottom: .3rem;
+  }
+  .dark-cell .panel-tag { color: rgba(255,255,255,.28); }
+  .light-cell .panel-tag { color: #9AB0C8; }
+
+  /* ── Base btn shell ── */
+  .b {
+    display: inline-flex; align-items: center; gap: .4em;
+    font-family: 'Epilogue', sans-serif; font-size: .88rem; font-weight: 600;
+    letter-spacing: 0; text-transform: none; text-decoration: none;
+    padding: .6em 1.35em; border-radius: 100px; cursor: pointer;
+    transition: background .18s, border-color .18s, transform .15s cubic-bezier(.34,1.56,.64,1), box-shadow .18s;
+    border: none;
+  }
+  .b:hover { transform: translateY(-1px); }
+
+  /* ── A: Current coral #E05A44 ── */
+  .a-solid-d { background: #E05A44; color: #fff; box-shadow: 0 2px 12px rgba(224,90,68,.30); }
+  .a-solid-d:hover { background: #C94832; box-shadow: 0 4px 18px rgba(224,90,68,.40); }
+  .a-out-d   { background: transparent; color: rgba(255,255,255,.78); border: 1.5px solid rgba(255,255,255,.28); }
+  .a-out-d:hover { border-color: rgba(255,255,255,.55); color: #fff; }
+  .a-solid-l { background: #E05A44; color: #fff; box-shadow: 0 2px 12px rgba(224,90,68,.28); }
+  .a-solid-l:hover { background: #C94832; }
+  .a-out-l   { background: transparent; color: #C94832; border: 1.5px solid rgba(224,90,68,.45); }
+  .a-out-l:hover { border-color: #E05A44; background: rgba(224,90,68,.06); }
+
+  /* ── B: Dusty terracotta #C4714A ── */
+  .b-solid-d { background: #C4714A; color: #fff; box-shadow: 0 2px 12px rgba(196,113,74,.30); }
+  .b-solid-d:hover { background: #A85C38; box-shadow: 0 4px 18px rgba(196,113,74,.40); }
+  .b-out-d   { background: transparent; color: rgba(255,255,255,.78); border: 1.5px solid rgba(255,255,255,.28); }
+  .b-out-d:hover { border-color: rgba(255,255,255,.55); color: #fff; }
+  .b-solid-l { background: #C4714A; color: #fff; box-shadow: 0 2px 12px rgba(196,113,74,.28); }
+  .b-solid-l:hover { background: #A85C38; }
+  .b-out-l   { background: transparent; color: #A85C38; border: 1.5px solid rgba(196,113,74,.45); }
+  .b-out-l:hover { border-color: #C4714A; background: rgba(196,113,74,.06); }
+
+  /* ── C: Warm clay #B8683C ── */
+  .c-solid-d { background: #B8683C; color: #fff; box-shadow: 0 2px 12px rgba(184,104,60,.30); }
+  .c-solid-d:hover { background: #9C542C; box-shadow: 0 4px 18px rgba(184,104,60,.40); }
+  .c-out-d   { background: transparent; color: rgba(255,255,255,.78); border: 1.5px solid rgba(255,255,255,.28); }
+  .c-out-d:hover { border-color: rgba(255,255,255,.55); color: #fff; }
+  .c-solid-l { background: #B8683C; color: #fff; box-shadow: 0 2px 12px rgba(184,104,60,.28); }
+  .c-solid-l:hover { background: #9C542C; }
+  .c-out-l   { background: transparent; color: #9C542C; border: 1.5px solid rgba(184,104,60,.45); }
+  .c-out-l:hover { border-color: #B8683C; background: rgba(184,104,60,.06); }
+
+  /* ── D: Muted sienna #C07850 ── */
+  .d-solid-d { background: #C07850; color: #fff; box-shadow: 0 2px 12px rgba(192,120,80,.30); }
+  .d-solid-d:hover { background: #A4633C; box-shadow: 0 4px 18px rgba(192,120,80,.40); }
+  .d-out-d   { background: transparent; color: rgba(255,255,255,.78); border: 1.5px solid rgba(255,255,255,.28); }
+  .d-out-d:hover { border-color: rgba(255,255,255,.55); color: #fff; }
+  .d-solid-l { background: #C07850; color: #fff; box-shadow: 0 2px 12px rgba(192,120,80,.28); }
+  .d-solid-l:hover { background: #A4633C; }
+  .d-out-l   { background: transparent; color: #A4633C; border: 1.5px solid rgba(192,120,80,.45); }
+  .d-out-l:hover { border-color: #C07850; background: rgba(192,120,80,.06); }
+
+  /* ── E: Dusty amber #C08040 ── */
+  .e-solid-d { background: #C08040; color: #fff; box-shadow: 0 2px 12px rgba(192,128,64,.30); }
+  .e-solid-d:hover { background: #A46830; box-shadow: 0 4px 18px rgba(192,128,64,.40); }
+  .e-out-d   { background: transparent; color: rgba(255,255,255,.78); border: 1.5px solid rgba(255,255,255,.28); }
+  .e-out-d:hover { border-color: rgba(255,255,255,.55); color: #fff; }
+  .e-solid-l { background: #C08040; color: #fff; box-shadow: 0 2px 12px rgba(192,128,64,.28); }
+  .e-solid-l:hover { background: #A46830; }
+  .e-out-l   { background: transparent; color: #A46830; border: 1.5px solid rgba(192,128,64,.45); }
+  .e-out-l:hover { border-color: #C08040; background: rgba(192,128,64,.06); }
+</style>
+</head>
+<body>
+<div class="page">
+  <h1>Muted orange options</h1>
+  <p class="sub">Solid + outline · navy + white · each color in context</p>
+
+  <!-- A: Current -->
+  <div class="row">
+    <div class="swatch-cell" style="background:#E05A44; color:white;">
+      <span class="swatch-name">Current coral</span>
+      <span class="swatch-hex">#E05A44</span>
+      <span class="swatch-note" style="opacity:.5;">Brighter, more red-leaning</span>
+    </div>
+    <div class="dark-cell">
+      <span class="panel-tag">On navy</span>
+      <a class="b a-solid-d">Get a free health check →</a>
+      <a class="b a-out-d">Schedule a call</a>
+    </div>
+    <div class="light-cell">
+      <span class="panel-tag">On white</span>
+      <a class="b a-solid-l">Get a free health check →</a>
+      <a class="b a-out-l">Schedule a call</a>
+    </div>
+  </div>
+
+  <!-- B -->
+  <div class="row">
+    <div class="swatch-cell" style="background:#C4714A; color:white;">
+      <span class="swatch-name">Dusty terracotta</span>
+      <span class="swatch-hex">#C4714A</span>
+      <span class="swatch-note" style="opacity:.5;">Earthier, more clay. Less punchy.</span>
+    </div>
+    <div class="dark-cell">
+      <span class="panel-tag">On navy</span>
+      <a class="b b-solid-d">Get a free health check →</a>
+      <a class="b b-out-d">Schedule a call</a>
+    </div>
+    <div class="light-cell">
+      <span class="panel-tag">On white</span>
+      <a class="b b-solid-l">Get a free health check →</a>
+      <a class="b b-out-l">Schedule a call</a>
+    </div>
+  </div>
+
+  <!-- C -->
+  <div class="row">
+    <div class="swatch-cell" style="background:#B8683C; color:white;">
+      <span class="swatch-name">Warm clay</span>
+      <span class="swatch-hex">#B8683C</span>
+      <span class="swatch-note" style="opacity:.5;">Deeper, warm brown-orange. Very muted.</span>
+    </div>
+    <div class="dark-cell">
+      <span class="panel-tag">On navy</span>
+      <a class="b c-solid-d">Get a free health check →</a>
+      <a class="b c-out-d">Schedule a call</a>
+    </div>
+    <div class="light-cell">
+      <span class="panel-tag">On white</span>
+      <a class="b c-solid-l">Get a free health check →</a>
+      <a class="b c-out-l">Schedule a call</a>
+    </div>
+  </div>
+
+  <!-- D -->
+  <div class="row">
+    <div class="swatch-cell" style="background:#C07850; color:white;">
+      <span class="swatch-name">Muted sienna</span>
+      <span class="swatch-hex">#C07850</span>
+      <span class="swatch-note" style="opacity:.5;">Middle ground — orange-leaning but soft.</span>
+    </div>
+    <div class="dark-cell">
+      <span class="panel-tag">On navy</span>
+      <a class="b d-solid-d">Get a free health check →</a>
+      <a class="b d-out-d">Schedule a call</a>
+    </div>
+    <div class="light-cell">
+      <span class="panel-tag">On white</span>
+      <a class="b d-solid-l">Get a free health check →</a>
+      <a class="b d-out-l">Schedule a call</a>
+    </div>
+  </div>
+
+  <!-- E -->
+  <div class="row">
+    <div class="swatch-cell" style="background:#C08040; color:white;">
+      <span class="swatch-name">Dusty amber</span>
+      <span class="swatch-hex">#C08040</span>
+      <span class="swatch-note" style="opacity:.5;">More golden-orange, warm and calm.</span>
+    </div>
+    <div class="dark-cell">
+      <span class="panel-tag">On navy</span>
+      <a class="b e-solid-d">Get a free health check →</a>
+      <a class="b e-out-d">Schedule a call</a>
+    </div>
+    <div class="light-cell">
+      <span class="panel-tag">On white</span>
+      <a class="b e-solid-l">Get a free health check →</a>
+      <a class="b e-out-l">Schedule a call</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
