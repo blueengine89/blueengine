@@ -1,4 +1,5 @@
 {
+  "cleanUrls": true,
   "rewrites": [
     { "source": "/contact",                       "destination": "/pages/contact.html" },
     { "source": "/contact/",                      "destination": "/pages/contact.html" },
