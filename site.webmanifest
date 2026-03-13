@@ -1,0 +1,16 @@
+{
+  "name": "Blue Engine Solutions",
+  "short_name": "Blue Engine",
+  "description": "Boutique Salesforce consulting firm. We fix broken orgs and build systems that work.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#060E2A",
+  "theme_color": "#1A8BB5",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

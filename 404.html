@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page Not Found | Blue Engine Solutions</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1A8BB5">
+<link rel="stylesheet" href="/brand.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Epilogue:wght@300;400;500;600&family=Inconsolata:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  html, body { margin: 0; padding: 0; min-height: 100vh; }
+  body {
+    background: #060E2A;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    font-family: 'Epilogue', sans-serif;
+    color: rgba(255,255,255,0.7);
+    text-align: center;
+    padding: 2rem;
+  }
+  .mark {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+  .code {
+    font-family: 'Inconsolata', monospace;
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #1A8BB5;
+    margin-bottom: 1rem;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: white;
+    line-height: 1.1;
+    margin: 0 0 1rem;
+  }
+  p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 420px;
+    margin: 0 0 2.5rem;
+    color: rgba(255,255,255,0.55);
+  }
+  .btn-home {
+    display: inline-block;
+    background: #1A8BB5;
+    color: white;
+    text-decoration: none;
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    padding: 0.85rem 2rem;
+    border-radius: 6px;
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+  .btn-home:hover { background: #1d9ecf; transform: translateY(-1px); }
+  .btn-home:active { transform: translateY(0); }
+</style>
+</head>
+<body>
+  <svg class="mark" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+    <rect width="72" height="72" rx="12" fill="#0d1b3e"/>
+    <path d="M18 4 L40 36 L18 68 L30 68 L54 36 L30 4 Z" fill="#1A8BB5"/>
+  </svg>
+  <div class="code">404 — Not Found</div>
+  <h1>Wrong turn.</h1>
+  <p>This page doesn't exist — but your Salesforce problems do. Let's fix those instead.</p>
+  <a href="/" class="btn-home">Back to Home</a>
+</body>
+</html>
