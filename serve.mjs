@@ -1,4 +1,4 @@
-import http from 'http';
+﻿import http from 'http';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -25,26 +25,26 @@ const MIME = {
 };
 
 const REWRITES = {
-  '/contact':                        '/Site Pages/contact.html',
-  '/contact/':                       '/Site Pages/contact.html',
-  '/services':                       '/Site Pages/Services.html',
-  '/services/':                      '/Site Pages/Services.html',
-  '/about':                          '/Site Pages/about.html',
-  '/about/':                         '/Site Pages/about.html',
-  '/approach':                       '/Site Pages/Approach.html',
-  '/approach/':                      '/Site Pages/Approach.html',
-  '/careers':                        '/Site Pages/careers.html',
-  '/careers/':                       '/Site Pages/careers.html',
-  '/locations':                      '/Site Pages/locations.html',
-  '/locations/':                     '/Site Pages/locations.html',
-  '/case-studies':                   '/Site Pages/Case-Studies.html',
-  '/case-studies/':                  '/Site Pages/Case-Studies.html',
-  '/health-assessment':              '/Site Pages/health-assessment.html',
-  '/health-assessment/':             '/Site Pages/health-assessment.html',
-  '/testimonials':                   '/Site Pages/testimonials.html',
-  '/testimonials/':                  '/Site Pages/testimonials.html',
-  '/role-salesforce-consultant-ft':  '/Site Pages/consultant-role.html',
-  '/role-salesforce-consultant-ft/': '/Site Pages/consultant-role.html',
+  '/contact':                        '/pages/contact.html',
+  '/contact/':                       '/pages/contact.html',
+  '/services':                       '/pages/Services.html',
+  '/services/':                      '/pages/Services.html',
+  '/about':                          '/pages/about.html',
+  '/about/':                         '/pages/about.html',
+  '/approach':                       '/pages/Approach.html',
+  '/approach/':                      '/pages/Approach.html',
+  '/careers':                        '/pages/careers.html',
+  '/careers/':                       '/pages/careers.html',
+  '/locations':                      '/pages/locations.html',
+  '/locations/':                     '/pages/locations.html',
+  '/case-studies':                   '/pages/Case-Studies.html',
+  '/case-studies/':                  '/pages/Case-Studies.html',
+  '/health-assessment':              '/pages/health-assessment.html',
+  '/health-assessment/':             '/pages/health-assessment.html',
+  '/testimonials':                   '/pages/testimonials.html',
+  '/testimonials/':                  '/pages/testimonials.html',
+  '/role-salesforce-consultant-ft':  '/pages/consultant-role.html',
+  '/role-salesforce-consultant-ft/': '/pages/consultant-role.html',
 };
 
 http.createServer((req, res) => {
