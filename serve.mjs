@@ -45,6 +45,8 @@ const REWRITES = {
   '/testimonials/':                  '/pages/testimonials.html',
   '/role-salesforce-consultant-ft':  '/pages/consultant-role.html',
   '/role-salesforce-consultant-ft/': '/pages/consultant-role.html',
+  '/salesforce-consultant-washington-dc':  '/pages/salesforce-consultant-washington-dc.html',
+  '/salesforce-consultant-washington-dc/': '/pages/salesforce-consultant-washington-dc.html',
 };
 
 http.createServer((req, res) => {

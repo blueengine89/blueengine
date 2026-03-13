@@ -19,6 +19,8 @@
     { "source": "/testimonials",                  "destination": "/pages/testimonials.html" },
     { "source": "/testimonials/",                 "destination": "/pages/testimonials.html" },
     { "source": "/role-salesforce-consultant-ft", "destination": "/pages/consultant-role.html" },
-    { "source": "/role-salesforce-consultant-ft/","destination": "/pages/consultant-role.html" }
+    { "source": "/role-salesforce-consultant-ft/","destination": "/pages/consultant-role.html" },
+    { "source": "/salesforce-consultant-washington-dc",  "destination": "/pages/salesforce-consultant-washington-dc.html" },
+    { "source": "/salesforce-consultant-washington-dc/", "destination": "/pages/salesforce-consultant-washington-dc.html" }
   ]
 }
