@@ -19,12 +19,12 @@ If a reference image is provided: match layout, spacing, typography, and color e
 - If the server is already running, do not start a second instance.
 
 ## Screenshot Workflow
-- Puppeteer is installed at `C:/Users/nateh/AppData/Local/Temp/puppeteer-test/`. Chrome cache is at `C:/Users/nateh/.cache/puppeteer/`.
+- Puppeteer is installed at `C:/Users/jonme/AppData/Local/Temp/puppeteer-test/`. Chrome cache is at `C:/Users/jonme/.cache/puppeteer/`.
 - **Always screenshot from localhost:** `node screenshot.mjs http://localhost:3000`
-- Screenshots are saved automatically to `./temporary screenshots/screenshot-N.png` (auto-incremented, never overwritten).
+- Screenshots are saved automatically to `./temp screenshots/screenshot-N.png` (auto-incremented, never overwritten).
 - Optional label suffix: `node screenshot.mjs http://localhost:3000 label` → saves as `screenshot-N-label.png`
 - `screenshot.mjs` lives in the project root. Use it as-is.
-- After screenshotting, read the PNG from `temporary screenshots/` with the Read tool — Claude can see and analyze the image directly.
+- After screenshotting, read the PNG from `temp screenshots/` with the Read tool — Claude can see and analyze the image directly.
 - When comparing, be specific: "heading is 32px but reference shows ~24px", "card gap is 16px but should be 24px"
 - Check: spacing/padding, font size/weight/line-height, colors (exact hex), alignment, border-radius, shadows, image sizing
 
@@ -42,13 +42,16 @@ use stock images.
 - If assets exist there, use them. Do not use placeholders where real assets are available.
 - If a logo is present, use it. If a color palette is defined, use those exact values — do not invent brand colors.
 
+## Font Style/Size Consistency
+If there are situations where you want to deviate from the font styles and sizes in the brand.css file, ASK ME FIRST. tell me what you're proposing and what the alternative closest font style would be from the brand.css file. Show me a mockup image of how it would look both ways.
+
 ## Typography System (locked — do not deviate)
 - **Headings:** Playfair Display (serif)
 - **Body / UI:** Plus Jakarta Sans (sans-serif)
 - **Eyebrows / labels / tags:** Epilogue (sans-serif)
 - **Monospace fonts are banned.** Never use Inconsolata, IBM Plex Mono, Courier, or any monospace font anywhere on the site.
-- **Minimum font size: 14px.** Nothing smaller, ever — not labels, not captions, not eyebrows.
-- Eyebrow / label text style: Epilogue, uppercase, wide letter-spacing, 14px minimum
+- **Minimum font size: 12px.** Nothing smaller, ever — not labels, not captions, not eyebrows.
+- Eyebrow / label text style: Epilogue, uppercase, wide letter-spacing, 12px minimum
 
 ## Anti-Generic Guardrails
 - **Colors:** Never use default Tailwind palette (indigo-500, blue-600, etc.). Pick a custom brand color and derive from it.
@@ -81,7 +84,7 @@ Blue Engine Solutions –
 **Brand Positioning Summary**
 
 Who We Are
-We’re a small, smart Salesforce consultancy that fixes broken systems, cleans up technical debt, and makes Salesforce actually work — in a way that makes sense for real people.
+We’re a boutique, smart Salesforce consultancy that fixes broken systems, cleans up technical debt, and makes Salesforce actually work — in a way that makes sense for real people.
 We partner closely with nonprofits, growing companies, and mission-driven teams to turn Salesforce from a burden into a powerful, reliable platform that supports real business goals.
 We’re thinkers first. Builders second. Collaborators always.
 
