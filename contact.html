@@ -96,18 +96,18 @@ body{background:var(--warm);}
 .contact-hero{padding-top:72px;background:#f5f1ea;position:relative;overflow:hidden;}
 .contact-hero::before{content:'';position:absolute;top:-200px;right:-150px;width:700px;height:700px;background:radial-gradient(circle,rgba(59,143,212,.09),transparent 65%);pointer-events:none;}
 .contact-hero::after{content:'';position:absolute;bottom:-100px;left:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(201,95,42,.07),transparent 65%);pointer-events:none;}
-.hero-inner{max-width:1200px;margin:0 auto;padding:5rem 5rem 5.5rem;display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center;position:relative;z-index:1;}
+.hero-inner{max-width:1200px;margin:0 auto;padding:2.5rem 5rem 3rem;display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:center;position:relative;z-index:1;}
 /* ── FOUNDER PHOTO COL ── */
 .hero-photo-col{opacity:0;animation:fadeUp .85s .08s forwards;}
 .founder-photo-wrap{position:relative;border-radius:18px;overflow:hidden;box-shadow:0 24px 64px rgba(15,28,46,.18),0 4px 16px rgba(15,28,46,.1);}
-.founder-photo{width:100%;height:600px;object-fit:cover;object-position:center top;display:block;}
-.founder-badge{position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-radius:10px;padding:.75rem 1rem;box-shadow:0 4px 20px rgba(15,28,46,.14);display:flex;align-items:center;gap:.85rem;}
+.founder-photo{width:100%;height:440px;object-fit:cover;object-position:center 15%;display:block;}
+.founder-badge{background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-radius:10px;padding:.75rem 1rem;box-shadow:0 4px 20px rgba(15,28,46,.14);display:flex;align-items:center;gap:.85rem;margin-top:.85rem;}
 .founder-badge-copy strong{display:block;font-size:.9rem;color:var(--navy);font-weight:600;line-height:1.3;}
 .founder-badge-copy span{font-size:.75rem;color:var(--mid);font-weight:300;}
 .founder-badge-tag{display:inline-block;margin-top:.2rem;font-family:'Inconsolata',monospace;font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);background:rgba(201,95,42,.08);border-radius:3px;padding:.12rem .4rem;}
 /* ── HERO COPY ── */
 .hero-left{}
-.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,3.5vw,4rem);line-height:1.06;color:var(--navy);margin-bottom:1.25rem;opacity:0;animation:fadeUp .8s .22s forwards;}
+.hero-h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,3.2rem);line-height:1.06;color:var(--navy);margin-bottom:1rem;opacity:0;animation:fadeUp .8s .22s forwards;}
 .hero-h1 em{font-style:italic;color:var(--sky);}
 .hero-sub{font-size:.98rem;line-height:1.8;color:var(--mid);font-weight:300;max-width:420px;margin-bottom:2rem;opacity:0;animation:fadeUp .8s .36s forwards;}
 .hero-checks{display:flex;flex-direction:column;gap:.85rem;opacity:0;animation:fadeUp .8s .5s forwards;}
@@ -124,7 +124,7 @@ body{background:var(--warm);}
 .hero-cta-btn:hover svg{transform:translateY(3px);}
 
 /* ── CALENDLY SECTION ── */
-.calendly-section{padding:6rem 5rem;background:white;border-top:1px solid var(--rule);}
+.calendly-section{padding:2.5rem 5rem 5rem;background:white;border-top:1px solid var(--rule);}
 .calendly-section-inner{max-width:900px;margin:0 auto;}
 .calendly-section-header{text-align:center;margin-bottom:2.5rem;}
 .calendly-label{font-family:'Epilogue',sans-serif;font-size:0.875rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.85rem;}
@@ -191,6 +191,22 @@ body{background:var(--warm);}
 .sf-success-title{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--navy);margin-bottom:.5rem;}
 .sf-success-text{font-size:.88rem;color:var(--mid);line-height:1.7;font-weight:300;}
 
+/* ── PREFER TO WRITE LINK ── */
+.calendly-intro{max-width:600px;margin:0 auto 1.75rem;text-align:center;}
+.calendly-intro-title{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2vw,1.6rem);color:var(--navy);margin:0 0 .5rem;line-height:1.2;}
+.calendly-intro-sub{font-size:.9rem;color:var(--mid);font-weight:300;line-height:1.75;margin:0;}
+.prefer-write{text-align:center;margin-top:1.5rem;}
+.prefer-write a{font-family:'Epilogue',sans-serif;font-size:.85rem;color:var(--light);font-weight:300;text-decoration:none;border-bottom:1px solid rgba(15,28,46,.15);padding-bottom:.15rem;transition:color .2s,border-color .2s;}
+.prefer-write a:hover{color:var(--mid);border-color:rgba(15,28,46,.3);}
+
+/* ── POST-PULLQUOTE CTA ── */
+.pq-cta-section{padding:5rem 5rem;text-align:center;border-top:none;background:#cfe0ef;}
+.pq-cta-eyebrow{display:none;}
+.pq-cta-heading{font-family:'Playfair Display',serif;font-size:clamp(1.4rem,2vw,1.9rem);color:var(--navy);margin:0 0 1.75rem;line-height:1.2;}
+.pq-cta-btn{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 2.25rem;background:var(--sky,#3b8fd4);color:white;font-family:'Epilogue',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border:none;border-radius:7px;text-decoration:none;box-shadow:0 4px 20px rgba(59,143,212,.3),0 1px 4px rgba(59,143,212,.2);transition:background .2s,transform .18s,box-shadow .2s;}
+.pq-cta-btn:hover{background:#2d7fc4;transform:translateY(-2px);box-shadow:0 8px 28px rgba(59,143,212,.38),0 2px 6px rgba(59,143,212,.2);}
+@media(max-width:960px){.pq-cta-section{padding:4rem 1.5rem;}}
+
 
 /* ── CEO INTRO CARD ── */
 .ceo-intro{display:flex;align-items:center;gap:.9rem;margin-bottom:2rem;background:white;border:1px solid rgba(15,28,46,.09);border-radius:12px;padding:.75rem 1rem;width:fit-content;box-shadow:0 2px 12px rgba(15,28,46,.07);opacity:0;animation:fadeUp .7s .05s forwards;}
@@ -215,9 +231,9 @@ body{background:var(--warm);}
 
 @media(max-width:960px){
   nav{padding:.9rem 1.5rem;}.nav-links{display:none;}
-  .hero-inner{grid-template-columns:1fr;gap:2.5rem;padding:4rem 1.5rem 3rem;}
-  .founder-photo{height:380px;}
-  .calendly-section{padding:4rem 1.5rem;}
+  .hero-inner{grid-template-columns:1fr;gap:2rem;padding:2rem 1.5rem 2.5rem;}
+  .founder-photo{height:280px;}
+  .calendly-section{padding:2rem 1.5rem 4rem;}
   .trust-strip{padding:2.5rem 1.5rem;}
   .trust-inner{flex-direction:column;text-align:center;}.trust-div{display:none;}.trust-email-block{text-align:center;}
   .process-section,.faq-section,.secondary-form-section{padding:5rem 1.5rem;}
@@ -232,7 +248,7 @@ body{background:var(--warm);}
 .secondary-form-inner .wFormContainer,
 .secondary-form-inner .wFormHeader{background:transparent!important;border:none!important;box-shadow:none!important;padding:0!important;margin:0!important;}
 .secondary-form-inner .wForm{font-family:'Epilogue',sans-serif!important;}
-.secondary-form-inner .wFormTitle{font-family:'Playfair Display',serif!important;font-size:1.3rem!important;color:var(--navy)!important;font-weight:700!important;margin:0 0 1.25rem!important;line-height:1.25!important;}
+.secondary-form-inner .wFormTitle{display:none!important;}
 .secondary-form-inner .oneField.field-container-D{margin-bottom:.75rem!important;float:none!important;clear:both!important;}
 .secondary-form-inner .label.preField{display:block!important;font-family:'Epilogue',sans-serif!important;font-size:.75rem!important;font-weight:600!important;color:var(--navy)!important;margin-bottom:.35rem!important;letter-spacing:.01em!important;float:none!important;width:auto!important;padding:0!important;text-align:left!important;}
 .secondary-form-inner .label.reqMark::after{content:' *'!important;color:var(--rust)!important;}
@@ -244,7 +260,7 @@ body{background:var(--warm);}
 .secondary-form-inner .inputWrapper input[type="email"]:focus,
 .secondary-form-inner .inputWrapper textarea:focus{border-color:var(--sky,#3b8fd4)!important;box-shadow:0 0 0 3px rgba(59,143,212,.1)!important;}
 .secondary-form-inner .actions{margin-top:.5rem!important;padding:0!important;}
-.secondary-form-inner .primaryAction{width:100%!important;padding:.85rem!important;background:transparent!important;color:var(--mid)!important;font-family:'Inconsolata',monospace!important;font-size:.78rem!important;font-weight:700!important;letter-spacing:.08em!important;text-transform:uppercase!important;border:1.5px solid rgba(15,28,46,.18)!important;border-radius:6px!important;cursor:pointer!important;transition:border-color .2s,color .2s,background .2s!important;box-shadow:none!important;}
+.secondary-form-inner .primaryAction{width:auto!important;padding:.75rem 2rem!important;background:transparent!important;color:var(--mid)!important;font-family:'Epilogue',sans-serif!important;font-size:.78rem!important;font-weight:700!important;letter-spacing:.08em!important;text-transform:uppercase!important;border:1.5px solid rgba(15,28,46,.18)!important;border-radius:6px!important;cursor:pointer!important;transition:border-color .2s,color .2s,background .2s!important;box-shadow:none!important;display:inline-block!important;}
 .secondary-form-inner .primaryAction:hover{border-color:var(--rust)!important;color:var(--rust)!important;background:rgba(139,26,42,.04)!important;}
 .secondary-form-inner .wFormFooter,
 .secondary-form-inner .supportInfo,
@@ -275,42 +291,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-inner">
     <div class="hero-photo-col">
       <div class="founder-photo-wrap">
-        <img src="/brand_assets/Team Photos/founder headshot.webp" class="founder-photo" alt="Jon Mervis, Founder & CEO">
-        <div class="founder-badge">
-          <div class="founder-badge-copy">
-            <strong>Jon Mervis</strong>
-            <span>Founder &amp; CEO</span>
-            <span class="founder-badge-tag">Books these calls personally</span>
-          </div>
+        <img src="/brand_assets/Team Photos/Jon headshot.JPG" class="founder-photo" alt="Jon Mervis, Founder & CEO">
+      </div>
+      <div class="founder-badge">
+        <div class="founder-badge-copy">
+          <strong>Jon Mervis</strong>
+          <span>Founder &amp; CEO</span>
+          <span class="founder-badge-tag">Books these calls personally</span>
         </div>
       </div>
     </div>
 
     <div class="hero-left">
-      <h1 class="hero-h1">Show us what's<br>going wrong.<br><em>We'll help fix it.</em></h1>
-      <p class="hero-sub">Book 20 minutes directly with Jon. We'll jump on a screenshare, you show us your Salesforce, and we'll give you straight answers on the spot — no deck, no pitch, just a real conversation.</p>
-      <div class="hero-checks">
-        <div class="hero-check">
-          <span class="check-icon">✓</span>
-          <span class="check-text">Screenshare your org — we'll look at it live with you</span>
-        </div>
-        <div class="hero-check">
-          <span class="check-icon">✓</span>
-          <span class="check-text">Honest feedback from Jon, not a sales rep or junior consultant</span>
-        </div>
-        <div class="hero-check">
-          <span class="check-icon">✓</span>
-          <span class="check-text">~20 minutes · Zero commitment · We're just here to help</span>
-        </div>
-      </div>
+      <h1 class="hero-h1">Let's talk.</h1>
+      <p class="hero-sub">No sales reps, no runaround — just a real conversation with someone who actually knows Salesforce.</p>
       <div class="hero-trust-row">
         <span class="hero-stars">★★★★★</span>
         <span class="hero-trust-text"><strong>4.9 / 5</strong> on Salesforce AppExchange &nbsp;·&nbsp; 95% five-star reviews</span>
       </div>
-      <a href="#book-a-call" class="hero-cta-btn">
-        Pick a time with Jon
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 2v8M2 6l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
     </div>
   </div>
 </section>
@@ -318,10 +316,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ── BOOK A CALL / CALENDLY ── -->
 <section class="calendly-section" id="book-a-call">
   <div class="calendly-section-inner">
-    <div class="calendly-section-header reveal">
-      <span class="calendly-label">Schedule Your Free Intro Call</span>
-      <h2 class="calendly-section-title">Pick a time that<br><em>works for you.</em></h2>
-      <p class="calendly-section-sub">20 minutes. No pressure. Jon personally takes every call.</p>
+    <div class="calendly-intro reveal">
+      <h2 class="calendly-intro-title">Book time directly with our CEO.</h2>
+      <p class="calendly-intro-sub">Jump on a screenshare, show us what's going on in your Salesforce, and get straight answers on the spot — no deck, no pitch.</p>
     </div>
     <div class="calendly-card reveal">
       <!-- Calendly inline widget begin -->
@@ -329,39 +326,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       <!-- Calendly inline widget end -->
     </div>
+    <p class="prefer-write"><a href="/contact-form">Prefer to write instead? Send us a message →</a></p>
   </div>
 </section>
-
-<!-- ── TRUST STRIP ── -->
-<div class="trust-strip">
-  <div class="trust-inner reveal">
-    <div class="trust-stat">
-      <div class="trust-num">4.9</div>
-      <div class="trust-label">AppExchange Rating</div>
-    </div>
-    <div class="trust-div"></div>
-    <div class="trust-stat">
-      <div class="trust-num">95%</div>
-      <div class="trust-label">Five-Star Reviews</div>
-    </div>
-    <div class="trust-div"></div>
-    <div class="trust-stat">
-      <div class="trust-num">7</div>
-      <div class="trust-label">Senior Consultants</div>
-    </div>
-    <div class="trust-div"></div>
-    <div class="trust-stat">
-      <div class="trust-num">2019</div>
-      <div class="trust-label">Certified Partner Since</div>
-    </div>
-    <div class="trust-div"></div>
-    <div class="trust-email-block">
-      <p class="trust-email-label">Or reach us directly</p>
-      <a href="mailto:hello@blueenginesolutions.com" class="trust-email-link">hello@blueenginesolutions.com</a>
-    </div>
-  </div>
-</div>
-
 
 <!-- ── PULLQUOTE ── -->
 <section class="pullquote-section">
@@ -380,128 +347,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ── WHAT HAPPENS NEXT ── -->
-<section class="process-section">
-  <div class="process-inner">
-    <span class="process-label reveal">What to Expect</span>
-    <h2 class="process-title reveal reveal-delay-1">From first call<br>to <em>real results.</em></h2>
-    <p class="process-sub reveal reveal-delay-2">Book a time above and here's exactly what happens next — no surprises, no pressure.</p>
-    <div class="process-steps">
-      <div class="pstep reveal">
-        <div class="pstep-num">1</div>
-        <h3 class="pstep-title">You book a time</h3>
-        <p class="pstep-desc">Pick any available slot on the calendar above. You'll get a confirmation and a calendar invite immediately.</p>
-      </div>
-      <div class="pstep reveal reveal-delay-1">
-        <div class="pstep-num">2</div>
-        <h3 class="pstep-title">We meet (30 min)</h3>
-        <p class="pstep-desc">A senior consultant leads the call. We ask the right questions, listen more than we talk, and give you honest feedback on the spot.</p>
-      </div>
-      <div class="pstep reveal reveal-delay-2">
-        <div class="pstep-num">3</div>
-        <h3 class="pstep-title">You get a clear read</h3>
-        <p class="pstep-desc">We'll tell you what we see in your Salesforce — what's working, what isn't, and what we'd do about it. Straight talk, no fluff.</p>
-      </div>
-      <div class="pstep reveal reveal-delay-3">
-        <div class="pstep-num">4</div>
-        <h3 class="pstep-title">You decide what's next</h3>
-        <p class="pstep-desc">No pressure to hire us. Take the insights, run with them yourself, or let's talk about working together. Either way, you win.</p>
-      </div>
-    </div>
-  </div>
+<!-- ── POST-PULLQUOTE CTA ── -->
+<section class="pq-cta-section">
+<h2 class="pq-cta-heading reveal">Ready to get started?</h2>
+<a href="#book-a-call" class="pq-cta-btn reveal reveal-delay-1">Let's Talk &uarr;</a>
 </section>
 
-<!-- ── FAQ ── -->
-<section class="faq-section">
-  <div class="faq-inner">
-    <span class="faq-label reveal">Common Questions</span>
-    <h2 class="faq-title reveal reveal-delay-1">Things people ask<br>before booking.</h2>
-    <div class="faq-item reveal">
-      <div class="faq-q">Is the intro call actually free?</div>
-      <div class="faq-a">Yes, completely. No hidden fees, no invoice at the end, no pressure to buy anything. We offer it because it's a great way to meet potential clients and show them how we think. You'll leave with real, useful information either way.</div>
-    </div>
-    <div class="faq-item reveal">
-      <div class="faq-q">We're a small nonprofit. Are we too small for Blue Engine?</div>
-      <div class="faq-a">Absolutely not. About half our clients are nonprofits, and many have small teams and tight budgets. We love working with mission-driven organizations and we'll always be honest about what makes sense financially.</div>
-    </div>
-    <div class="faq-item reveal">
-      <div class="faq-q">How quickly can you get started?</div>
-      <div class="faq-a">Typically within 1–2 weeks of our initial call, depending on scope. For urgent issues we can often prioritize faster. We'll give you a clear timeline before you commit to anything.</div>
-    </div>
-    <div class="faq-item reveal">
-      <div class="faq-q">Do we have to sign a long-term contract?</div>
-      <div class="faq-a">No. Many clients start with a block of hours, then decide whether to move to a retainer or call us as needed. We don't lock you in — we earn your continued trust the old-fashioned way, by doing great work.</div>
-    </div>
-    <div class="faq-item reveal">
-      <div class="faq-q">Who will actually be working on our Salesforce?</div>
-      <div class="faq-a">Senior consultants — the same people you talk to on the intro call. We don't hand work off to junior staff or offshore teams. You'll always know who's doing what and why.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ── SECONDARY CONTACT FORM (less prominent) ── -->
-<section class="secondary-form-section" id="send-message">
-  <div class="secondary-form-inner">
-    <span class="sf-eyebrow">Prefer to write?</span>
-    <h2 class="sf-title">Send us a message instead</h2>
-    <p class="sf-sub">Not ready to book a call? No problem. Leave us a note and we'll follow up within one business day.</p>
-    <!-- FORM: BODY SECTION -->
-<div class="wFormContainer" >
-    <div class="wFormHeader"></div>
-    <style type="text/css">
-                #tfa_1,
-                *[id^="tfa_1["] {
-                    width: 200px !important;
-                }
-                #tfa_1-D,
-                *[id^="tfa_1["][class~="field-container-D"] {
-                    width: auto !important;
-                }
-
-                #tfa_2,
-                *[id^="tfa_2["] {
-                    width: 350px !important;
-                }
-                #tfa_2-D,
-                *[id^="tfa_2["][class~="field-container-D"] {
-                    width: auto !important;
-                }
-
-                #tfa_3,
-                *[id^="tfa_3["] {
-                    width: 350px !important;
-                }
-                #tfa_3-D,
-                *[id^="tfa_3["][class~="field-container-D"] {
-                    width: auto !important;
-                }
-            </style><div class=""><div class="wForm" id="5167807-WRPR" data-language="en_US" dir="ltr">
-<div class="codesection" id="code-5167807"></div>
-<h3 class="wFormTitle" data-testid="form-title" id="5167807-T">How Can We Help?</h3>
-<form method="post" action="https://www.tfaforms.com/api_v2/workflow/processor" class=" labelsLeftAligned" id="5167807">
-<div class="oneField field-container-D    " id="tfa_4-D">
-<label id="tfa_4-L" class="label preField " for="tfa_4">Comments</label><div class="inputWrapper"><textarea id="tfa_4" name="tfa_4" title="Comments" class=""></textarea></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_1-D">
-<label id="tfa_1-L" class="label preField " for="tfa_1">First Name</label><div class="inputWrapper"><input type="text" id="tfa_1" name="tfa_1" value="" title="First Name" class=""></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_2-D">
-<label id="tfa_2-L" class="label preField reqMark" for="tfa_2">Last Name</label><div class="inputWrapper"><input aria-required="true" type="text" id="tfa_2" name="tfa_2" value="" title="Last Name" class="required"></div>
-</div>
-<div class="oneField field-container-D    " id="tfa_3-D">
-<label id="tfa_3-L" class="label preField reqMark" for="tfa_3">Email</label><div class="inputWrapper"><input aria-required="true" type="text" id="tfa_3" name="tfa_3" value="" title="Email" class="required"></div>
-</div>
-<div class="actions" id="5167807-A" data-contentid="submit_button"><input type="submit" data-label="Submit" class="primaryAction" id="submit_button" value="Submit"></div>
-<div style="clear:both"></div>
-<input type="hidden" value="5167807" name="tfa_dbFormId" id="tfa_dbFormId"><input type="hidden" value="" name="tfa_dbResponseId" id="tfa_dbResponseId"><input type="hidden" value="9811b41a8acc473010eff384b82746f7" name="tfa_dbControl" id="tfa_dbControl"><input type="hidden" value="" name="tfa_dbWorkflowSessionUuid" id="tfa_dbWorkflowSessionUuid"><input type="hidden" value="3" name="tfa_dbVersionId" id="tfa_dbVersionId"><input type="hidden" value="" name="tfa_switchedoff" id="tfa_switchedoff">
-</form>
-</div></div><div class="wFormFooter"><p class="supportInfo"><br></p></div>
-  <p class="supportInfo" >
-      </p>
- </div>
-<script src="https://www.tfaforms.com/api_v2/sst/copy-and-paste"></script>
-  </div>
-</section>
 
 <div id="site-footer"></div>
 <script src="/footer.js"></script>
@@ -514,10 +365,6 @@ const obs = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 
-// FAQ toggle
-document.querySelectorAll('.faq-item').forEach(item => {
-  item.addEventListener('click', () => item.classList.toggle('open'));
-});
 
 </script>
 </body>
