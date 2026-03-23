@@ -108,9 +108,9 @@
   transform-origin: center;
   border-radius: 2px;
 }
-#site-nav .sn-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(0px, 7px); }
+#site-nav .sn-hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 #site-nav .sn-hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-#site-nav .sn-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(0px, -7px); }
+#site-nav .sn-hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 #site-nav .mobile-menu { display: none; }
 @media (max-width: 960px) {
   #site-nav nav { padding: 0 24px; }
