@@ -242,7 +242,7 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
   display: block;
   width: 100%;
   text-align: center;
-  background: var(--red);
+  background: var(--teal-deep);
   color: white;
   font-family: 'Epilogue', sans-serif;
   font-size: 15px;
@@ -250,14 +250,14 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
   padding: 11px 20px;
   border-radius: 100px;
   text-decoration: none;
-  box-shadow: 0 3px 14px rgba(196, 48, 64, 0.26);
+  box-shadow: 0 3px 14px rgba(43, 140, 174, 0.28);
   transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
   margin-bottom: 0.6rem;
 }
 .sidebar-apply-btn:hover {
-  background: var(--red-deep);
+  background: var(--teal-dark);
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(196, 48, 64, 0.34);
+  box-shadow: 0 6px 20px rgba(43, 140, 174, 0.38);
 }
 .sidebar-note {
   font-size: 13px;
@@ -311,6 +311,30 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
 .quote-name { font-size: 13px; font-weight: 600; color: var(--navy); }
 .quote-role { font-size: 12px; color: var(--ink-light); }
 
+/* ── BOTTOM APPLY BUTTON ── */
+.main-apply-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--teal-deep);
+  color: white;
+  font-family: 'Epilogue', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 100px;
+  text-decoration: none;
+  box-shadow: 0 3px 16px rgba(43, 140, 174, 0.30);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.main-apply-btn:hover {
+  background: var(--teal-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 22px rgba(43, 140, 174, 0.38);
+}
+.main-apply-btn svg { transition: transform 0.2s; }
+.main-apply-btn:hover svg { transform: translateX(3px); }
+
 @media (max-width: 960px) {
   .job-header-inner { padding: 2rem 1.5rem; }
   .job-body { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; gap: 2.5rem; }
@@ -354,21 +378,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         Remote (DC/Bethesda preferred)
       </span>
       <span class="chip">
-        <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.4"/><path d="M7 4v3.5l2 1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-        Up to 32 hrs/week billable
-      </span>
-      <span class="chip">
         <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M3 4h5M3 10h6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
         3+ Years Salesforce Experience
       </span>
     </div>
 
-    <div class="job-header-actions">
-      <a href="https://www.tfaforms.com/5059383" target="_blank" rel="noopener" class="apply-btn-primary">
-        Apply Now
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
   </div>
 </div>
 
@@ -469,6 +483,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
+    <hr class="job-divider">
+
+    <div style="padding-bottom: 1rem;">
+      <p style="font-size: 15px; color: var(--ink-mid); margin-bottom: 1.25rem;">Sound like the right fit? We'd love to hear from you.</p>
+      <a href="https://www.tfaforms.com/5059383" target="_blank" rel="noopener" class="main-apply-btn">
+        Apply for This Role
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M7.5 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
   </main>
 
   <!-- SIDEBAR -->
@@ -486,10 +510,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="detail-row">
           <span class="detail-key">Location</span>
           <span class="detail-val">Remote (DC/Bethesda preferred)</span>
-        </div>
-        <div class="detail-row">
-          <span class="detail-key">Max Billable Hours</span>
-          <span class="detail-val">32 hours/week</span>
         </div>
         <div class="detail-row">
           <span class="detail-key">Experience</span>
