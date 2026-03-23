@@ -162,19 +162,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .guarantee-strip-text{font-size:.95rem;color:rgba(255,255,255,.62);line-height:1.55;font-weight:300;}
 .guarantee-strip-text strong{color:white;font-weight:600;}
 
-/* ── CANCEL ANYTIME GUARANTEE (prize block) ── */
-.cancel-guarantee{position:relative;overflow:hidden;background:#0F1B2D;padding:3.5rem 5rem;}
-.cancel-guarantee::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 200% at 50% 50%,rgba(196,130,30,.15) 0%,transparent 65%);pointer-events:none;}
-.cancel-guarantee-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:2rem;position:relative;z-index:2;}
-.cancel-guarantee-shield{width:48px;height:48px;flex-shrink:0;background:rgba(196,130,30,.12);border:1px solid rgba(196,130,30,.25);border-radius:14px;display:flex;align-items:center;justify-content:center;}
-.cancel-guarantee-body{flex:1;}
-.cancel-guarantee-eyebrow{font-family:'Epilogue',sans-serif;font-size:0.875rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(196,130,30,.8);margin-bottom:.4rem;}
-.cancel-guarantee-heading{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.3rem,2vw,1.7rem);line-height:1.15;color:white;letter-spacing:-.01em;}
-.cancel-guarantee-heading em{font-style:italic;color:rgba(212,150,26,1);}
-.cancel-guarantee-text{font-size:.92rem;line-height:1.72;color:rgba(255,255,255,.5);font-weight:300;margin-top:.4rem;}
-.cancel-guarantee-terms{display:flex;align-items:center;gap:1.5rem;flex-shrink:0;}
-.cancel-guarantee-term{font-family:'Epilogue',sans-serif;font-size:0.875rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);white-space:nowrap;}
-.cancel-guarantee-dot{width:3px;height:3px;background:rgba(196,130,30,.45);border-radius:50%;flex-shrink:0;}
+/* ── HAPPINESS GUARANTEE ── */
+.guarantee-section{background:#FFFBF0;padding:4rem 5rem;position:relative;overflow:hidden;border-top:3px solid #F5C842;}
+.guarantee-section::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;background:radial-gradient(circle,rgba(245,200,66,0.14) 0%,transparent 70%);pointer-events:none;}
+.guarantee-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:3rem;position:relative;z-index:1;}
+.guarantee-badge-seal{width:220px;height:220px;flex-shrink:0;filter:drop-shadow(0 6px 24px rgba(212,150,26,0.18));}
+.guarantee-badge-seal svg{width:100%;height:100%;}
+.guarantee-text-col{flex:1;}
+.guarantee-headline{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.2rem,3.2vw,3.2rem);font-weight:800;font-style:italic;color:#1A3A5C;letter-spacing:-.02em;line-height:1.1;margin-bottom:.85rem;}
+.guarantee-body{font-size:.9rem;line-height:1.78;color:#4a5568;font-weight:300;margin-bottom:1.25rem;}
+.guarantee-chips{display:flex;flex-wrap:wrap;gap:.5rem;}
+.g-chip{font-family:'Epilogue',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7a5800;background:#FFF3C4;border:1.5px solid #F5C842;border-radius:100px;padding:.35rem .75rem;white-space:nowrap;}
 
 /* ── HEALTH BANNER ── */
 .health-banner{background:linear-gradient(135deg,var(--teal-deep) 0%,var(--navy) 100%);padding:5.5rem 5rem;position:relative;overflow:hidden;}
@@ -231,9 +229,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .thought-bubble--left,.thought-bubble--right{transform:none;margin-bottom:0;}
   .problem-bridge{padding:2.5rem 1rem 0;}
   .guarantee-strip-inner{grid-template-columns:1fr;gap:1.75rem;}
-  .cancel-guarantee{padding:2.5rem 1.5rem;}
-  .cancel-guarantee-inner{flex-direction:column;align-items:flex-start;gap:1.25rem;}
-  .cancel-guarantee-terms{gap:1rem;}
+  .guarantee-section{padding:3rem 1.5rem;}
+  .guarantee-inner{flex-direction:column;gap:1.5rem;}
+  .guarantee-badge-seal{width:130px;height:130px;}
   .section-header{grid-template-columns:1fr;gap:1.5rem;}
   .services-grid{grid-template-columns:1fr;}
   .health-inner{grid-template-columns:1fr;text-align:center;}
@@ -382,22 +380,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ── 6b. CANCEL ANYTIME GUARANTEE ── -->
-<div class="cancel-guarantee">
-  <div class="cancel-guarantee-inner">
-    <div class="cancel-guarantee-shield">
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-        <path d="M11 2L3 5.5v5.5c0 4.5 3.3 8.7 8 9.8C16.7 19.7 19 15.5 19 11V5.5L11 2Z" stroke="#D4961A" stroke-width="1.4" stroke-linejoin="round"/>
-        <path d="M7.5 11l2.5 2.5L14.5 8" stroke="#D4961A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+<!-- ── 6b. HAPPINESS GUARANTEE ── -->
+<section class="guarantee-section">
+  <div class="guarantee-inner">
+    <div class="guarantee-badge-seal" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="100" r="90" fill="#FFE94D"/>
+        <circle cx="100" cy="100" r="90" stroke="#1A3A5C" stroke-width="4"/>
+        <circle cx="72"  cy="82" r="9" fill="#1A3A5C"/>
+        <circle cx="128" cy="82" r="9" fill="#1A3A5C"/>
+        <path d="M54 110 C60 148 140 148 146 110" stroke="#1A3A5C" stroke-width="7" stroke-linecap="round" fill="none"/>
       </svg>
     </div>
-    <div class="cancel-guarantee-body">
-      <div class="cancel-guarantee-eyebrow">The Uncommon Guarantee</div>
-      <h2 class="cancel-guarantee-heading">Cancel anytime. <em>No questions asked.</em></h2>
-      <p class="cancel-guarantee-text">If you're ever unhappy with the direction of your engagement, walk away — no penalties, no exit fees, no awkward conversations. We earn your business every month, or we don't deserve it.</p>
+    <div class="guarantee-text-col">
+      <h2 class="guarantee-headline">Happiness Guarantee.</h2>
+      <p class="guarantee-body">We don't believe in contract lock-in. We do everything we can to make you happy — and if we fall short, cancel anytime and we'll part as friends. We're proud to share that many of our clients stay 3+&nbsp;years.</p>
+      <div class="guarantee-chips">
+        <span class="g-chip">No contract lock-in</span>
+        <span class="g-chip">Cancel anytime</span>
+        <span class="g-chip">We earn it every month</span>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
 <!-- ── 7. HEALTH ASSESSMENT CTA ── -->
 <div class="health-banner" id="contact">
