@@ -1,0 +1,21 @@
+{
+  "name": "claudewebsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "footer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blueengine89/blueengine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/blueengine89/blueengine/issues"
+  },
+  "homepage": "https://github.com/blueengine89/blueengine#readme"
+}
