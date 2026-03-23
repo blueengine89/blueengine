@@ -31,6 +31,17 @@ const browser = await puppeteer.launch({
 const page = await browser.newPage();
 await page.setViewport({ width: 1400, height: 900 });
 await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 });
+// Scroll to element by selector if label matches a known section
+if (label) {
+  await page.evaluate((lbl) => {
+    const selectors = ['.' + lbl + '-section', '#' + lbl, '.' + lbl];
+    for (const sel of selectors) {
+      const el = document.querySelector(sel);
+      if (el) { window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 80, behavior: 'instant' }); break; }
+    }
+  }, label);
+  await new Promise(r => setTimeout(r, 600));
+}
 await page.screenshot({ path: outPath, fullPage: false });
 await browser.close();
 

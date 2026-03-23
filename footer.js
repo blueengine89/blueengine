@@ -213,7 +213,7 @@
     </div>
   </div>
   <div class="ft-utility">
-    <a href="/about/">About</a>
+    <a href="/about-us/">About</a>
     <a href="/approach/">Our Approach</a>
     <a href="/case-studies/">Case Studies</a>
     <a href="/testimonials/">Testimonials</a>

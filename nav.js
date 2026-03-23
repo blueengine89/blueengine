@@ -167,7 +167,7 @@
   <ul class="sn-links">
     <li><a href="/index.html">Home</a></li>
     <li><a href="/services/">Services</a></li>
-    <li><a href="/about/">About</a></li>
+    <li><a href="/about-us/">About</a></li>
     <li><a href="/contact/" class="sn-contact">Contact</a></li>
     <li><a href="/health-assessment/" class="sn-cta">Free Health Check →</a></li>
   </ul>
@@ -179,7 +179,7 @@
   <div class="mobile-menu">
     <a href="/index.html">Home</a>
     <a href="/services/">Services</a>
-    <a href="/about/">About</a>
+    <a href="/about-us/">About</a>
     <a href="/contact/">Contact</a>
     <a href="/health-assessment/">Free Health Check →</a>
   </div>

@@ -29,8 +29,8 @@ const REWRITES = {
   '/contact/':                       '/pages/contact.html',
   '/services':                       '/pages/Services.html',
   '/services/':                      '/pages/Services.html',
-  '/about':                          '/pages/about.html',
-  '/about/':                         '/pages/about.html',
+  '/about-us':                       '/about-us.html',
+  '/about-us/':                      '/about-us.html',
   '/approach':                       '/pages/Approach.html',
   '/approach/':                      '/pages/Approach.html',
   '/careers':                        '/pages/careers.html',
@@ -47,6 +47,8 @@ const REWRITES = {
   '/role-salesforce-consultant-ft/': '/pages/consultant-role.html',
   '/salesforce-consultant-washington-dc':  '/pages/salesforce-consultant-washington-dc.html',
   '/salesforce-consultant-washington-dc/': '/pages/salesforce-consultant-washington-dc.html',
+  '/thank-you-applicant':                 '/thank-you-applicant.html',
+  '/thank-you-applicant/':               '/thank-you-applicant.html',
 };
 
 http.createServer((req, res) => {

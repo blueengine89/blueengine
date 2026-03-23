@@ -87,52 +87,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   animation:fadeUp 0.7s 0.4s both;
 }
 
-/* STICKY NAV */
-.sticky-nav {
-  position:sticky; top:72px; z-index:100;
-  background:rgba(240,246,255,0.97);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--border);
-  padding:0 5rem;
-}
-.sticky-nav-inner {
-  max-width:1300px; margin:0 auto;
-  display:flex; align-items:center; gap:8px;
-  padding:10px 0; overflow-x:auto;
-}
-.sticky-nav-label {
-  font-family:'Epilogue',sans-serif;
-  font-size:11px; font-weight:700; letter-spacing:0.14em;
-  text-transform:uppercase; color:var(--muted);
-  white-space:nowrap; margin-right:8px;
-  padding-right:16px;
-  border-right:1px solid var(--border);
-  flex-shrink:0;
-}
-.sticky-nav-item {
-  font-family:'Epilogue',sans-serif;
-  font-size:14px; font-weight:500;
-  color:var(--muted);
-  padding:7px 18px; white-space:nowrap;
-  text-decoration:none;
-  border-radius:999px;
-  border:1.5px solid var(--border);
-  transition:color 0.18s, background 0.18s, border-color 0.18s, box-shadow 0.18s;
-  cursor:pointer;
-}
-.sticky-nav-item:hover {
-  color:var(--teal-deep);
-  border-color:var(--teal);
-  background:rgba(61,166,205,.06);
-}
-.sticky-nav-item.active {
-  background:var(--teal);
-  color:white;
-  border-color:var(--teal);
-  font-weight:600;
-  box-shadow:0 2px 12px rgba(61,166,205,.28);
-}
 
 /* SERVICE SECTIONS */
 .service-section {
@@ -252,6 +206,53 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .service-section-dark .feature-body { color:rgba(255,255,255,0.45); }
 .service-section-dark .outcome-chip { background:rgba(61,166,205,0.15); color:var(--sky); }
 
+/* SERVICES ACCORDION */
+.services-accordion-section { background:white; }
+.accordion-inner { max-width:1200px; margin:0 auto; padding:0 5rem; }
+.acc-item { border-bottom:1px solid var(--border-light); scroll-margin-top:80px; }
+.acc-item:first-child { border-top:1px solid var(--border-light); }
+.acc-header {
+  width:100%; display:flex; align-items:center; gap:1.25rem;
+  padding:1.5rem 0; background:none; border:none; cursor:pointer;
+  text-align:left; transition:background 0.15s;
+}
+.acc-header:hover .acc-title { color:var(--teal-deep); }
+.acc-num {
+  font-family:'Epilogue',sans-serif; font-size:0.72rem; font-weight:700;
+  letter-spacing:.12em; color:var(--muted); flex-shrink:0; width:28px;
+}
+.acc-title {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(1.1rem,1.8vw,1.4rem); font-weight:700;
+  color:var(--navy); flex:1; line-height:1.2;
+  transition:color 0.18s;
+}
+.acc-item.open .acc-title { color:var(--teal-deep); }
+.acc-tag {
+  font-family:'Epilogue',sans-serif; font-size:0.7rem; font-weight:700;
+  letter-spacing:.1em; text-transform:uppercase;
+  color:var(--teal-deep); background:rgba(61,166,205,.08);
+  padding:.3rem .75rem; border-radius:100px; flex-shrink:0;
+}
+.acc-chevron { flex-shrink:0; color:var(--muted); transition:transform 0.3s ease; }
+.acc-item.open .acc-chevron { transform:rotate(180deg); color:var(--teal-deep); }
+.acc-body {
+  display:grid; grid-template-rows:0fr;
+  transition:grid-template-rows 0.35s ease;
+  overflow:hidden;
+}
+.acc-item.open .acc-body { grid-template-rows:1fr; }
+.acc-body-inner { min-height:0; }
+.acc-body-inner > .service-layout {
+  padding:0 0 3rem 2.25rem;
+  grid-template-columns:1fr 1.4fr; gap:4rem;
+}
+@media(max-width:768px){
+  .accordion-inner { padding:0 1.5rem; }
+  .acc-body-inner > .service-layout { grid-template-columns:1fr; gap:2rem; padding-left:0; }
+  .acc-tag { display:none; }
+}
+
 /* ENGAGEMENT MODELS */
 .engagement-section {
   background:var(--cream); padding:7rem 5rem;
@@ -300,6 +301,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   padding:0.25rem 0.5rem; border-radius:3px;
 }
 
+/* GUARANTEE SECTION */
+.guarantee-section { background:#FFFBF0; padding:4rem 5rem; position:relative; overflow:hidden; border-top:3px solid #F5C842; }
+.guarantee-section::before { content:''; position:absolute; top:-80px; right:-80px; width:320px; height:320px; background:radial-gradient(circle, rgba(245,200,66,0.14) 0%, transparent 70%); pointer-events:none; }
+.guarantee-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; gap:3rem; position:relative; z-index:1; }
+.guarantee-badge-seal { width:220px; height:220px; flex-shrink:0; filter:drop-shadow(0 6px 24px rgba(212,150,26,0.18)); }
+.guarantee-badge-seal svg { width:100%; height:100%; }
+.guarantee-text-col { flex:1; }
+.guarantee-headline {
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(2.2rem,3.2vw,3.2rem);
+  font-weight:800;
+  font-style:italic;
+  line-height:1.05;
+  color:var(--navy);
+  letter-spacing:-.02em;
+  margin-bottom:.85rem;
+}
+.guarantee-body { font-size:.9rem; line-height:1.78; color:#4a5568; font-weight:300; margin-bottom:1.25rem; }
+.guarantee-chips { display:flex; flex-wrap:wrap; gap:.5rem; }
+.g-chip { font-family:'Epilogue',sans-serif; font-size:0.7rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:#7a5800; background:#FFF3C4; border:1.5px solid #F5C842; border-radius:100px; padding:.35rem .75rem; white-space:nowrap; }
+@media(max-width:768px){
+  .guarantee-section { padding:3rem 1.5rem; }
+  .guarantee-inner { flex-direction:column; gap:1.5rem; }
+  .guarantee-badge-seal { width:130px; height:130px; }
+}
+
 /* ASSESSMENT SECTION */
 .assessment-section { background:var(--teal); padding:7rem 5rem; position:relative; overflow:hidden; }
 .assessment-section::before { content:''; position:absolute; top:0;left:0;right:0;bottom:0; background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); }
@@ -330,7 +357,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   nav { padding:1rem 1.5rem; }
   .nav-links { display:none; }
   .page-hero { padding:7rem 1.5rem 5rem; }
-  .sticky-nav { padding:0 1.5rem; }
   .service-section { padding:5rem 1.5rem; }
   .service-section-dark { padding:5rem 1.5rem; }
   .service-layout, .service-layout.reverse { grid-template-columns:1fr; gap:3rem; }
@@ -373,312 +399,330 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- STICKY SERVICE NAV -->
-<div class="sticky-nav">
-  <div class="sticky-nav-inner">
-    <span class="sticky-nav-label">Services</span>
-    <a href="#fix" class="sticky-nav-item active">Fix Broken Orgs</a>
-    <a href="#automate" class="sticky-nav-item">Automation</a>
-    <a href="#save" class="sticky-nav-item">Save Money</a>
-    <a href="#implement" class="sticky-nav-item">New Implementations</a>
-    <a href="#training" class="sticky-nav-item">Training & Support</a>
-    <a href="#managed" class="sticky-nav-item">Managed Services</a>
-  </div>
-</div>
+<!-- SERVICES ACCORDION -->
+<section class="services-accordion-section">
+  <div class="accordion-inner">
 
-<!-- SERVICE 1: FIX BROKEN ORGS -->
-<section class="service-section" id="fix">
-  <div class="service-layout reveal">
-    <div class="service-left">
-      <div class="service-eyebrow">
-        <span class="service-num">01</span>
-        <span class="service-tag">Most common</span>
-      </div>
-      <h2 class="service-title">Fix broken or<br><em>overbuilt orgs.</em></h2>
-      <p class="service-desc">Most orgs we inherit were built by people who knew Salesforce technically but didn't understand the business. The result: 50 custom fields when there should be one relationship. Automation that breaks for no reason. Reports nobody trusts. We fix that.</p>
-      <div class="service-quote-block">
-        <p>"We inherited a Salesforce mess and don't know where to start."</p>
-        <span>— How most of our clients describe themselves before we meet</span>
-      </div>
-      <div class="outcome-row">
-        <span class="outcome-chip">Clean data model</span>
-        <span class="outcome-chip">Fewer clicks per task</span>
-        <span class="outcome-chip">Reports you can trust</span>
-        <span class="outcome-chip">Systems that don't break</span>
+    <!-- 01 Fix Broken Orgs -->
+    <div class="acc-item open" id="acc-fix">
+      <button class="acc-header" aria-expanded="true">
+        <span class="acc-num">01</span>
+        <span class="acc-title">Fix broken or overbuilt orgs</span>
+        <span class="acc-tag">Most common</span>
+        <span class="acc-chevron">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 6.5L9 11.5L14 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+        <div class="service-layout">
+          <div class="service-left">
+            <p class="service-desc">Most orgs we inherit were built by people who knew Salesforce technically but didn't understand the business. The result: 50 custom fields when there should be one relationship. Automation that breaks for no reason. Reports nobody trusts. We fix that.</p>
+            <div class="service-quote-block">
+              <p>"We inherited a Salesforce mess and don't know where to start."</p>
+              <span>— How most of our clients describe themselves before we meet</span>
+            </div>
+            <div class="outcome-row">
+              <span class="outcome-chip">Clean data model</span>
+              <span class="outcome-chip">Fewer clicks per task</span>
+              <span class="outcome-chip">Reports you can trust</span>
+              <span class="outcome-chip">Systems that don't break</span>
+            </div>
+          </div>
+          <div class="service-right">
+            <div class="service-features">
+              <div class="feature-card">
+                <div class="feature-icon">🗂️</div>
+                <div class="feature-title">Data Model Cleanup</div>
+                <div class="feature-body">We audit every object, field, and relationship in your org. Redundant fields get consolidated. Messy hierarchies get redesigned. You end up with a clean, logical structure that reflects how your business actually works.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">🔀</div>
+                <div class="feature-title">Duplicate & Legacy Data Management</div>
+                <div class="feature-body">Duplicate contacts and accounts are a silent killer for reporting accuracy. We merge, dedupe, and establish rules to prevent it from happening again.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">🧱</div>
+                <div class="feature-title">Object Re-Architecture</div>
+                <div class="feature-body">Sometimes the underlying structure needs to change. We redesign objects and relationships to support real-world workflows — not the way a consultant guessed you worked three years ago.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">🔍</div>
+                <div class="feature-title">Salesforce Health Audit</div>
+                <div class="feature-body">Not sure where to start? We offer a free health check that gives you a prioritized list of what's broken, what's wasteful, and what to fix first. No commitment required.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
       </div>
     </div>
-    <div class="service-right">
-      <div class="service-features">
-        <div class="feature-card">
-          <div class="feature-icon">🗂️</div>
-          <div class="feature-title">Data Model Cleanup</div>
-          <div class="feature-body">We audit every object, field, and relationship in your org. Redundant fields get consolidated. Messy hierarchies get redesigned. You end up with a clean, logical structure that reflects how your business actually works.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔀</div>
-          <div class="feature-title">Duplicate & Legacy Data Management</div>
-          <div class="feature-body">Duplicate contacts and accounts are a silent killer for reporting accuracy. We merge, dedupe, and establish rules to prevent it from happening again.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🧱</div>
-          <div class="feature-title">Object Re-Architecture</div>
-          <div class="feature-body">Sometimes the underlying structure needs to change. We redesign objects and relationships to support real-world workflows — not the way a consultant guessed you worked three years ago.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔍</div>
-          <div class="feature-title">Salesforce Health Audit</div>
-          <div class="feature-body">Not sure where to start? We offer a free health check that gives you a prioritized list of what's broken, what's wasteful, and what to fix first. No commitment required.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<hr class="section-divider">
 
-<!-- SERVICE 2: AUTOMATION -->
-<section class="service-section" id="automate">
-  <div class="service-layout reverse reveal">
-    <div class="service-left">
-      <div class="service-eyebrow">
-        <span class="service-num">02</span>
-        <span class="service-tag">High ROI</span>
-      </div>
-      <h2 class="service-title">Smart automation<br><em>that saves time.</em></h2>
-      <p class="service-desc">If a human on your team is doing something repetitively — sending the same email, copying data from one place to another, following up on the same tasks — Salesforce can almost certainly automate it. We find those moments and build smart workflows that run themselves.</p>
-      <div class="service-quote-block">
-        <p>"We're still doing a ton of manual work. Can this be automated?"</p>
-        <span>— Yes. Almost certainly yes.</span>
-      </div>
-      <div class="outcome-row">
-        <span class="outcome-chip">Hours saved weekly</span>
-        <span class="outcome-chip">Fewer dropped balls</span>
-        <span class="outcome-chip">Consistent follow-up</span>
-        <span class="outcome-chip">Better data quality</span>
+    <!-- 02 Automation -->
+    <div class="acc-item" id="acc-automate">
+      <button class="acc-header" aria-expanded="false">
+        <span class="acc-num">02</span>
+        <span class="acc-title">Smart automation that saves time</span>
+        <span class="acc-tag">High ROI</span>
+        <span class="acc-chevron">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 6.5L9 11.5L14 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+        <div class="service-layout">
+          <div class="service-left">
+            <p class="service-desc">If a human on your team is doing something repetitively — sending the same email, copying data from one place to another, following up on the same tasks — Salesforce can almost certainly automate it. We find those moments and build smart workflows that run themselves.</p>
+            <div class="service-quote-block">
+              <p>"We're still doing a ton of manual work. Can this be automated?"</p>
+              <span>— Yes. Almost certainly yes.</span>
+            </div>
+            <div class="outcome-row">
+              <span class="outcome-chip">Hours saved weekly</span>
+              <span class="outcome-chip">Fewer dropped balls</span>
+              <span class="outcome-chip">Consistent follow-up</span>
+              <span class="outcome-chip">Better data quality</span>
+            </div>
+          </div>
+          <div class="service-right">
+            <div class="service-features">
+              <div class="feature-card">
+                <div class="feature-icon">📧</div>
+                <div class="feature-title">Email & SMS Workflows</div>
+                <div class="feature-body">Automated outreach triggered by the right events — new contacts, stage changes, renewals, anniversaries. Personalized, timely, and hands-free once it's built.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">🔔</div>
+                <div class="feature-title">Reminders & Follow-up Sequences</div>
+                <div class="feature-body">Volunteer reminders, donor follow-ups, sales cadences, onboarding sequences — we build the logic so nothing falls through the cracks.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">✅</div>
+                <div class="feature-title">Approval Processes</div>
+                <div class="feature-body">Multi-step approvals with the right people in the right order. Automatic notifications, escalations, and audit trails built in.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">📋</div>
+                <div class="feature-title">Auto-logging & Handoffs</div>
+                <div class="feature-body">Automatically log calls, emails, and interactions. Route leads and cases to the right people. Eliminate the manual note-taking nobody does consistently anyway.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
       </div>
     </div>
-    <div class="service-right">
-      <div class="service-features">
-        <div class="feature-card">
-          <div class="feature-icon">📧</div>
-          <div class="feature-title">Email & SMS Workflows</div>
-          <div class="feature-body">Automated outreach triggered by the right events — new contacts, stage changes, renewals, anniversaries. Personalized, timely, and hands-free once it's built.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔔</div>
-          <div class="feature-title">Reminders & Follow-up Sequences</div>
-          <div class="feature-body">Volunteer reminders, donor follow-ups, sales cadences, onboarding sequences — we build the logic so nothing falls through the cracks.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">✅</div>
-          <div class="feature-title">Approval Processes</div>
-          <div class="feature-body">Multi-step approvals with the right people in the right order. Automatic notifications, escalations, and audit trails built in.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📋</div>
-          <div class="feature-title">Auto-logging & Handoffs</div>
-          <div class="feature-body">Automatically log calls, emails, and interactions. Route leads and cases to the right people. Eliminate the manual note-taking nobody does consistently anyway.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<hr class="section-divider">
 
-<!-- SERVICE 3: SAVE MONEY (dark) -->
-<section class="service-section-dark" id="save">
-  <div class="section-inner">
-    <div class="service-layout reveal">
-      <div class="service-left">
-        <div class="service-eyebrow">
-          <span class="service-num">03</span>
-          <span class="service-tag">Quick win</span>
-        </div>
-        <h2 class="service-title">Cut your<br><em>Salesforce costs.</em></h2>
-        <p class="service-desc">Wrong license tiers, unused seats, features nobody knows about. We've helped clients cut monthly spend by 30–60% without losing a single capability they actually use.</p>
-        <!--
-        <div class="service-quote-block">
-          <p>"Are we overpaying for Salesforce? Do we need all these licenses?"</p>
-          <span>— Probably yes. Let's find out.</span>
-        </div>
-        <div class="outcome-row">
-          <span class="outcome-chip">30–60% cost reduction</span>
-          <span class="outcome-chip">Right-sized licenses</span>
-          <span class="outcome-chip">No lost features</span>
-        </div>-->
-        <div style="margin-top:2rem;">
-          <a href="/contact/" class="btn-secondary">Get a free license audit →</a>
-        </div>
-      </div>
-      <div class="service-right">
-        <div class="service-features">
-          <div class="feature-card">
-            <div class="feature-icon">🔎</div>
-            <div class="feature-title">License Audit</div>
-            <div class="feature-body">We review every license, user role, and edition in your org. We identify who needs what, who needs less, and where you're paying for things you're not using.</div>
+    <!-- 03 Save Money -->
+    <div class="acc-item" id="acc-save">
+      <button class="acc-header" aria-expanded="false">
+        <span class="acc-num">03</span>
+        <span class="acc-title">Cut your Salesforce costs</span>
+        <span class="acc-tag">Quick win</span>
+        <span class="acc-chevron">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 6.5L9 11.5L14 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+        <div class="service-layout">
+          <div class="service-left">
+            <p class="service-desc">Wrong license tiers, unused seats, features nobody knows about. We've helped clients cut monthly spend by 30–60% without losing a single capability they actually use.</p>
+            <div style="margin-top:1.5rem;">
+              <a href="/contact/" class="btn-secondary">Get a free license audit →</a>
+            </div>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">⚖️</div>
-            <div class="feature-title">Right-sizing User Roles</div>
-            <div class="feature-body">Sales Cloud Enterprise when you only need Professional. Platform licenses where full licenses aren't needed. We find every opportunity to reduce spend without reducing capability.</div>
+          <div class="service-right">
+            <div class="service-features">
+              <div class="feature-card">
+                <div class="feature-icon">🔎</div>
+                <div class="feature-title">License Audit</div>
+                <div class="feature-body">We review every license, user role, and edition in your org. We identify who needs what, who needs less, and where you're paying for things you're not using.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">⚖️</div>
+                <div class="feature-title">Right-sizing User Roles</div>
+                <div class="feature-body">Sales Cloud Enterprise when you only need Professional. Platform licenses where full licenses aren't needed. We find every opportunity to reduce spend without reducing capability.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">🤝</div>
+                <div class="feature-title">Renewal Negotiation Support</div>
+                <div class="feature-body">We help you go into Salesforce renewals armed with real data. Know exactly what you need, what you can cut, and what leverage you have.</div>
+              </div>
+            </div>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">🤝</div>
-            <div class="feature-title">Renewal Negotiation Support</div>
-            <div class="feature-body">We help you go into Salesforce renewals armed with real data. Know exactly what you need, what you can cut, and what leverage you have.</div>
-          </div>
+        </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- SERVICE 4: NEW IMPLEMENTATIONS -->
-<section class="service-section" id="implement">
-  <div class="service-layout reveal">
-    <div class="service-left">
-      <div class="service-eyebrow">
-        <span class="service-num">04</span>
-        <span class="service-tag">Start fresh</span>
-      </div>
-      <h2 class="service-title">New implementations<br><em>done right.</em></h2>
-      <p class="service-desc">New to Salesforce? You have one shot to build the foundation correctly. We've seen what happens when it's rushed or handed to the wrong firm — you inherit a mess that takes years to untangle. We build clean, scalable systems from day one.</p>
-      <div class="service-quote-block">
-        <p>"We're new to Salesforce and want to do this right the first time."</p>
-        <span>— The smartest thing a new client can say.</span>
-      </div>
-      <div class="outcome-row">
-        <span class="outcome-chip">Clean from day one</span>
-        <span class="outcome-chip">Fast go-live</span>
-        <span class="outcome-chip">Team trained & ready</span>
-        <span class="outcome-chip">Scales with you</span>
+    <!-- 04 New Implementations -->
+    <div class="acc-item" id="acc-implement">
+      <button class="acc-header" aria-expanded="false">
+        <span class="acc-num">04</span>
+        <span class="acc-title">New implementations done right</span>
+        <span class="acc-tag">Start fresh</span>
+        <span class="acc-chevron">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 6.5L9 11.5L14 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+        <div class="service-layout">
+          <div class="service-left">
+            <p class="service-desc">New to Salesforce? You have one shot to build the foundation correctly. We've seen what happens when it's rushed or handed to the wrong firm — you inherit a mess that takes years to untangle. We build clean, scalable systems from day one.</p>
+            <div class="service-quote-block">
+              <p>"We're new to Salesforce and want to do this right the first time."</p>
+              <span>— The smartest thing a new client can say.</span>
+            </div>
+            <div class="outcome-row">
+              <span class="outcome-chip">Clean from day one</span>
+              <span class="outcome-chip">Fast go-live</span>
+              <span class="outcome-chip">Team trained & ready</span>
+              <span class="outcome-chip">Scales with you</span>
+            </div>
+          </div>
+          <div class="service-right">
+            <div class="service-features">
+              <div class="feature-card">
+                <div class="feature-icon">📐</div>
+                <div class="feature-title">Discovery & Architecture</div>
+                <div class="feature-body">Before writing a single field, we map your business processes, data model, and user needs. The result is a blueprint that makes sense — not a guess.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-title">Quick-Start Packages</div>
+                <div class="feature-body">Get live fast with a focused scope. We prioritize the features your team will use immediately and add complexity deliberately, not all at once.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">🔗</div>
+                <div class="feature-title">Integrations from Day One</div>
+                <div class="feature-body">Email, calendar, marketing tools, accounting — we plan for your integrations upfront so they don't become costly retrofits later.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">🎓</div>
+                <div class="feature-title">Training & Handoff</div>
+                <div class="feature-body">We don't disappear at launch. We train your team, document everything, and make sure you're genuinely ready to run the system independently.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
       </div>
     </div>
-    <div class="service-right">
-      <div class="service-features">
-        <div class="feature-card">
-          <div class="feature-icon">📐</div>
-          <div class="feature-title">Discovery & Architecture</div>
-          <div class="feature-body">Before writing a single field, we map your business processes, data model, and user needs. The result is a blueprint that makes sense — not a guess.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <div class="feature-title">Quick-Start Packages</div>
-          <div class="feature-body">Get live fast with a focused scope. We prioritize the features your team will use immediately and add complexity deliberately, not all at once.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔗</div>
-          <div class="feature-title">Integrations from Day One</div>
-          <div class="feature-body">Email, calendar, marketing tools, accounting — we plan for your integrations upfront so they don't become costly retrofits later.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🎓</div>
-          <div class="feature-title">Training & Handoff</div>
-          <div class="feature-body">We don't disappear at launch. We train your team, document everything, and make sure you're genuinely ready to run the system independently.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<hr class="section-divider">
 
-<!-- SERVICE 5: TRAINING -->
-<section class="service-section" id="training">
-  <div class="service-layout reverse reveal">
-    <div class="service-left">
-      <div class="service-eyebrow">
-        <span class="service-num">05</span>
-        <span class="service-tag">Empower your team</span>
-      </div>
-      <h2 class="service-title">Admin support<br><em>& training.</em></h2>
-      <p class="service-desc">You have a smart person internally who handles Salesforce — but they're overwhelmed, or they've hit a ceiling they can't get past alone. We become their mentor, their safety net, and their escalation path when things get complicated.</p>
-      <div class="service-quote-block">
-        <p>"We have someone internally, but they're overwhelmed or unsure."</p>
-        <span>— We've helped dozens of admins level up and gain real confidence.</span>
-      </div>
-      <div class="outcome-row">
-        <span class="outcome-chip">Confident admins</span>
-        <span class="outcome-chip">Video tutorials forever</span>
-        <span class="outcome-chip">Architecture QA</span>
-        <span class="outcome-chip">On-call support</span>
+    <!-- 05 Training -->
+    <div class="acc-item" id="acc-training">
+      <button class="acc-header" aria-expanded="false">
+        <span class="acc-num">05</span>
+        <span class="acc-title">Admin support & training</span>
+        <span class="acc-tag">Empower your team</span>
+        <span class="acc-chevron">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 6.5L9 11.5L14 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+        <div class="service-layout">
+          <div class="service-left">
+            <p class="service-desc">You have a smart person internally who handles Salesforce — but they're overwhelmed, or they've hit a ceiling they can't get past alone. We become their mentor, their safety net, and their escalation path when things get complicated.</p>
+            <div class="service-quote-block">
+              <p>"We have someone internally, but they're overwhelmed or unsure."</p>
+              <span>— We've helped dozens of admins level up and gain real confidence.</span>
+            </div>
+            <div class="outcome-row">
+              <span class="outcome-chip">Confident admins</span>
+              <span class="outcome-chip">Video tutorials forever</span>
+              <span class="outcome-chip">Architecture QA</span>
+              <span class="outcome-chip">On-call support</span>
+            </div>
+          </div>
+          <div class="service-right">
+            <div class="service-features">
+              <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <div class="feature-title">1-on-1 Admin Coaching</div>
+                <div class="feature-body">Regular sessions with your internal admin to work through real problems, review their work, and help them grow. We teach, we don't just do.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">🎬</div>
+                <div class="feature-title">Custom Video Tutorials</div>
+                <div class="feature-body">We record walkthroughs of every process, report, and automation we build. Your team keeps them forever. No more "how do I do that thing Jon showed us?"</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">📋</div>
+                <div class="feature-title">Documentation</div>
+                <div class="feature-body">Clear, readable documentation of your org's architecture, processes, and custom logic. Essential for onboarding new staff and maintaining continuity.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">🔬</div>
+                <div class="feature-title">Architecture Reviews & QA</div>
+                <div class="feature-body">Your admin built something — let us review it before it goes live. We catch issues early, suggest improvements, and make sure it's built to last.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
       </div>
     </div>
-    <div class="service-right">
-      <div class="service-features">
-        <div class="feature-card">
-          <div class="feature-icon">🎯</div>
-          <div class="feature-title">1-on-1 Admin Coaching</div>
-          <div class="feature-body">Regular sessions with your internal admin to work through real problems, review their work, and help them grow. We teach, we don't just do.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🎬</div>
-          <div class="feature-title">Custom Video Tutorials</div>
-          <div class="feature-body">We record walkthroughs of every process, report, and automation we build. Your team keeps them forever. No more "how do I do that thing Jon showed us?"</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📋</div>
-          <div class="feature-title">Documentation</div>
-          <div class="feature-body">Clear, readable documentation of your org's architecture, processes, and custom logic. Essential for onboarding new staff and maintaining continuity.</div>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔬</div>
-          <div class="feature-title">Architecture Reviews & QA</div>
-          <div class="feature-body">Your admin built something — let us review it before it goes live. We catch issues early, suggest improvements, and make sure it's built to last.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<hr class="section-divider">
 
-<!-- SERVICE 6: MANAGED SERVICES (dark) -->
-<section class="service-section-dark" id="managed">
-  <div class="section-inner">
-    <div class="service-layout reverse reveal">
-      <div class="service-left">
-        <div class="service-eyebrow">
-          <span class="service-num">06</span>
-          <span class="service-tag">Most popular</span>
-        </div>
-        <h2 class="service-title">Managed services<br><em>that flex with you.</em></h2>
-        <p class="service-desc">You need ongoing Salesforce help but you're not ready — or don't need — a full-time hire. We become your embedded Salesforce team. Available when you need us, not billing when you don't. No bloated retainers, no minimum commitments.</p>
-        <div class="service-quote-block">
-          <p>"We need ongoing help but aren't ready to hire someone full-time."</p>
-          <span>— This is exactly what managed services is built for.</span>
-        </div>
-        <div class="outcome-row">
-          <span class="outcome-chip">No full-time hire needed</span>
-          <span class="outcome-chip">Flexible hours</span>
-          <span class="outcome-chip">Same consultants, always</span>
-        </div>
-        <div style="margin-top:2rem;">
-          <a href="/contact/" class="btn-primary">Learn about managed services →</a>
-        </div>
-      </div>
-      <div class="service-right">
-        <div class="service-features">
-          <div class="feature-card">
-            <div class="feature-icon">📅</div>
-            <div class="feature-title">Dedicated Monthly Hours</div>
-            <div class="feature-body">Reserve a block of hours each month for anything Salesforce-related — new features, fixes, questions, training. Unused hours roll over.</div>
+    <!-- 06 Managed Services -->
+    <div class="acc-item" id="acc-managed">
+      <button class="acc-header" aria-expanded="false">
+        <span class="acc-num">06</span>
+        <span class="acc-title">Managed services that flex with you</span>
+        <span class="acc-tag">Most popular</span>
+        <span class="acc-chevron">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M4 6.5L9 11.5L14 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </button>
+      <div class="acc-body">
+        <div class="acc-body-inner">
+        <div class="service-layout">
+          <div class="service-left">
+            <p class="service-desc">You need ongoing Salesforce help but you're not ready — or don't need — a full-time hire. We become your embedded Salesforce team. Available when you need us, not billing when you don't.</p>
+            <div class="service-quote-block">
+              <p>"We need ongoing help but aren't ready to hire someone full-time."</p>
+              <span>— This is exactly what managed services is built for.</span>
+            </div>
+            <div class="outcome-row">
+              <span class="outcome-chip">No full-time hire needed</span>
+              <span class="outcome-chip">Flexible hours</span>
+              <span class="outcome-chip">Same consultants, always</span>
+            </div>
+            <div style="margin-top:1.5rem;">
+              <a href="/contact/" class="btn-primary">Learn about managed services →</a>
+            </div>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">🚨</div>
-            <div class="feature-title">Priority Support</div>
-            <div class="feature-body">Managed services clients get priority response times. When something breaks, you're not waiting in a queue — you're our first call.</div>
+          <div class="service-right">
+            <div class="service-features">
+              <div class="feature-card">
+                <div class="feature-icon">📅</div>
+                <div class="feature-title">Dedicated Monthly Hours</div>
+                <div class="feature-body">Reserve a block of hours each month for anything Salesforce-related — new features, fixes, questions, training. Unused hours roll over.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <div class="feature-title">Ongoing Development</div>
+                <div class="feature-body">New features, integrations, automations — we keep building as your needs evolve. No need to scope a new project every time something comes up.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <div class="feature-title">Proactive Monitoring</div>
+                <div class="feature-body">We watch for failed flows, broken integrations, and data issues before they become problems. You focus on your business, we keep Salesforce running.</div>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon">📈</div>
+                <div class="feature-title">Reporting & Dashboards</div>
+                <div class="feature-body">Ongoing refinement of your reports and dashboards as your business evolves. The numbers your leadership actually needs, always up to date.</div>
+              </div>
+            </div>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon">🗺️</div>
-            <div class="feature-title">Ongoing Roadmapping</div>
-            <div class="feature-body">Monthly or quarterly check-ins to review what's working, what's changed in your business, and what to build next. We stay aligned with your goals.</div>
-          </div>
-          <div class="feature-card">
-            <div class="feature-icon">📈</div>
-            <div class="feature-title">Reporting & Dashboards</div>
-            <div class="feature-body">Ongoing refinement of your reports and dashboards as your business evolves. The numbers your leadership actually needs, always up to date.</div>
-          </div>
+        </div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
@@ -764,6 +808,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- GUARANTEE -->
+<section class="guarantee-section">
+  <div class="guarantee-inner reveal">
+    <div class="guarantee-badge-seal" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Main disc -->
+        <circle cx="100" cy="100" r="90" fill="#FFE94D"/>
+        <circle cx="100" cy="100" r="90" stroke="#1A3A5C" stroke-width="4"/>
+        <!-- Eyes -->
+        <circle cx="72"  cy="82" r="9" fill="#1A3A5C"/>
+        <circle cx="128" cy="82" r="9" fill="#1A3A5C"/>
+        <!-- Smile — wide and deep, classic emoji -->
+        <path d="M54 110 C60 148 140 148 146 110" stroke="#1A3A5C" stroke-width="7" stroke-linecap="round" fill="none"/>
+      </svg>
+    </div>
+    <div class="guarantee-text-col">
+      <h2 class="guarantee-headline">Happiness Guarantee.</h2>
+      <p class="guarantee-body">We don't believe in contract lock-in. We do everything we can to make you happy — and if we fall short, cancel anytime and we'll part as friends. We're proud to share that many of our clients stay 3+&nbsp;years.</p>
+      <div class="guarantee-chips">
+        <span class="g-chip">No contract lock-in</span>
+        <span class="g-chip">Cancel anytime</span>
+        <span class="g-chip">We earn it every month</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ASSESSMENT CTA -->
 <section class="assessment-section">
   <div class="assessment-inner">
@@ -793,15 +864,23 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 reveals.forEach(r => obs.observe(r));
 
-// Sticky nav active state
-const sections = document.querySelectorAll('[id]');
-const navItems = document.querySelectorAll('.sticky-nav-item');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => { if(window.scrollY >= s.offsetTop - 200) current = s.id; });
-  navItems.forEach(n => {
-    n.classList.remove('active');
-    if(n.getAttribute('href') === '#' + current) n.classList.add('active');
+// Accordion
+let openItem = document.querySelector('.acc-item.open') || null;
+document.querySelectorAll('.acc-header').forEach(header => {
+  header.addEventListener('click', () => {
+    const item = header.closest('.acc-item');
+    if (openItem && openItem !== item) {
+      openItem.classList.remove('open');
+      openItem.querySelector('.acc-header').setAttribute('aria-expanded', 'false');
+    }
+    const isOpen = item.classList.contains('open');
+    item.classList.toggle('open', !isOpen);
+    header.setAttribute('aria-expanded', String(!isOpen));
+    openItem = isOpen ? null : item;
+    if (!isOpen) setTimeout(() => {
+      const top = item.getBoundingClientRect().top + window.scrollY - 88;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }, 370);
   });
 });
 </script>
