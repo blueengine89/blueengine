@@ -125,7 +125,7 @@ body{background:var(--warm);}
 
 /* ── CALENDLY SECTION ── */
 .calendly-section{padding:2.5rem 5rem 5rem;background:white;border-top:1px solid var(--rule);}
-.calendly-section-inner{max-width:900px;margin:0 auto;}
+.calendly-section-inner{max-width:1100px;margin:0 auto;}
 .calendly-section-header{text-align:center;margin-bottom:2.5rem;}
 .calendly-label{font-family:'Epilogue',sans-serif;font-size:0.875rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:.85rem;}
 .calendly-section-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,2.5vw,2.4rem);color:var(--navy);line-height:1.15;margin:0;}
@@ -195,9 +195,9 @@ body{background:var(--warm);}
 .calendly-intro{max-width:600px;margin:0 auto 1.75rem;text-align:center;}
 .calendly-intro-title{font-family:'Playfair Display',serif;font-size:clamp(1.2rem,2vw,1.6rem);color:var(--navy);margin:0 0 .5rem;line-height:1.2;}
 .calendly-intro-sub{font-size:.9rem;color:var(--mid);font-weight:300;line-height:1.75;margin:0;}
-.prefer-write{text-align:center;margin-top:1.5rem;}
-.prefer-write a{font-family:'Epilogue',sans-serif;font-size:.85rem;color:var(--light);font-weight:300;text-decoration:none;border-bottom:1px solid rgba(15,28,46,.15);padding-bottom:.15rem;transition:color .2s,border-color .2s;}
-.prefer-write a:hover{color:var(--mid);border-color:rgba(15,28,46,.3);}
+.prefer-write{text-align:center;margin-top:1rem;}
+.prefer-write a{font-family:'Epilogue',sans-serif;font-size:.85rem;color:var(--teal-deep);font-weight:500;text-decoration:none;transition:color .2s;}
+.prefer-write a:hover{color:var(--navy);}
 
 /* ── POST-PULLQUOTE CTA ── */
 .pq-cta-section{padding:5rem 5rem;text-align:center;border-top:none;background:#cfe0ef;}
@@ -316,16 +316,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ── BOOK A CALL / CALENDLY ── -->
 <section class="calendly-section" id="book-a-call">
   <div class="calendly-section-inner">
-    <div class="calendly-intro reveal">
-      <h2 class="calendly-intro-title">Book time directly with our CEO.</h2>
-      <p class="calendly-intro-sub">Jump on a screenshare, show us what's going on in your Salesforce, and get straight answers on the spot — no deck, no pitch.</p>
-    </div>
     <div class="calendly-card reveal">
       <!-- Calendly inline widget begin -->
-      <div class="calendly-inline-widget" data-url="https://calendly.com/jonmervis/intro?hide_event_type_details=1&hide_gdpr_banner=1" style="min-width:320px;height:875px;"></div>
+      <div class="calendly-inline-widget" data-url="https://calendly.com/jonmervis/intro" style="min-width:320px;height:695px;"></div>
       <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
       <!-- Calendly inline widget end -->
     </div>
+    <p style="text-align:center;font-size:16px;color:var(--ink-light);font-style:italic;margin-top:1rem;font-weight:300;max-width:800px;margin-left:auto;margin-right:auto;"><em>Let's jump on a screenshare and you can show us what's going on in your Salesforce.<br>We'll give you straight answers — no deck, no pitch.</em></p>
     <p class="prefer-write"><a href="/contact-form">Prefer to write instead? Send us a message →</a></p>
   </div>
 </section>
