@@ -207,8 +207,8 @@
         <a href="/contact/" class="ft-cta-btn ft-cta-btn--outline">Schedule a Call →</a>
       </div>
       <ul class="ft-links">
-        <li><a href="mailto:hello@blueenginesolutions.com">hello@blueenginesolutions.com</a></li>
-        <li><a href="https://maps.google.com/?q=1342+Florida+Ave+NW,+Washington,+DC+20009" target="_blank" rel="noopener">1342 Florida Ave NW, Washington DC</a></li>
+        <li><a href="https://maps.google.com/?q=Blue+Engine+Salesforce+Consultants+Washington+DC" target="_blank" rel="noopener">Blue Engine Salesforce Consultants<br>1342 Florida Ave NW<br>Washington, DC 20009</a></li>
+        <li><a href="tel:+12402731612">(240) 273-1612</a></li>
       </ul>
     </div>
   </div>
