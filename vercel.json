@@ -1,7 +1,4 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    { "source": "/role-salesforce-consultant-ft", "destination": "/consultant-role.html" }
-  ]
+  "trailingSlash": false
 }
