@@ -38,7 +38,7 @@
 }
 #site-footer .ft-col-title {
   font-family: 'Epilogue', sans-serif;
-  font-size: .72rem;
+  font-size: .85rem;
   font-weight: 700;
   letter-spacing: .08em;
   text-transform: uppercase;
