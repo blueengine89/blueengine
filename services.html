@@ -822,6 +822,17 @@ const obs = new IntersectionObserver(entries => {
 reveals.forEach(r => obs.observe(r));
 
 // Accordion
+function openAccItem(item) {
+  if (!item) return;
+  if (openItem && openItem !== item) {
+    openItem.classList.remove('open');
+    openItem.querySelector('.acc-header').setAttribute('aria-expanded', 'false');
+  }
+  item.classList.add('open');
+  item.querySelector('.acc-header').setAttribute('aria-expanded', 'true');
+  openItem = item;
+}
+
 let openItem = document.querySelector('.acc-item.open') || null;
 document.querySelectorAll('.acc-header').forEach(header => {
   header.addEventListener('click', () => {
@@ -840,6 +851,18 @@ document.querySelectorAll('.acc-header').forEach(header => {
     }, 370);
   });
 });
+
+// Open accordion item from URL hash on load
+if (location.hash) {
+  const target = document.querySelector(location.hash);
+  if (target && target.classList.contains('acc-item')) {
+    openAccItem(target);
+    setTimeout(() => {
+      const top = target.getBoundingClientRect().top + window.scrollY - 88;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }, 100);
+  }
+}
 </script>
 </body>
 </html>

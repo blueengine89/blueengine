@@ -183,11 +183,11 @@
       <p class="ft-col-title">Services</p>
       <ul class="ft-links">
         <li><a href="/health-assessment/">Health Check</a></li>
-        <li><a href="/services/#managed">Managed Services</a></li>
-        <li><a href="/services/#fix">Org Cleanup</a></li>
-        <li><a href="/services/#implement">Quick Starts</a></li>
-        <li><a href="/services/#automate">Integrations</a></li>
-        <li><a href="/services/#training">Training</a></li>
+        <li><a href="/services/#acc-managed">Managed Services</a></li>
+        <li><a href="/services/#acc-fix">Org Cleanup</a></li>
+        <li><a href="/services/#acc-implement">Quick Starts</a></li>
+        <li><a href="/services/#acc-automate">Integrations</a></li>
+        <li><a href="/services/#acc-training">Training</a></li>
       </ul>
     </div>
     <div>
