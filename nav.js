@@ -44,8 +44,8 @@
 #site-nav .sn-links a {
   font-family: 'Epilogue', sans-serif;
   font-size: 15px;
-  font-weight: 500;
-  color: rgba(11, 30, 54, 0.58);
+  font-weight: 600;
+  color: rgba(11, 30, 54, 0.82);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -84,6 +84,42 @@
   transform: translateY(-1px) !important;
   box-shadow: 0 4px 18px rgba(196, 48, 64, 0.35) !important;
 }
+
+/* Dropdown */
+#site-nav .sn-has-dropdown { position: relative; }
+#site-nav .sn-dropdown-trigger {
+  display: flex; align-items: center; gap: 4px; cursor: pointer;
+}
+#site-nav .sn-dropdown-trigger svg { transition: transform 0.2s; opacity: 0.5; }
+#site-nav .sn-has-dropdown:hover .sn-dropdown-trigger svg { transform: rotate(180deg); }
+#site-nav .sn-dropdown {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%; transform: translateX(-50%) translateY(-6px);
+  width: 260px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 12px 48px rgba(11,30,54,0.14), 0 1px 4px rgba(11,30,54,0.06);
+  border: 1px solid rgba(11,30,54,0.07);
+  padding: 6px;
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.18s, visibility 0.18s, transform 0.18s;
+  z-index: 200;
+}
+#site-nav .sn-has-dropdown:hover .sn-dropdown {
+  opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0);
+}
+#site-nav .sn-dropdown a {
+  display: flex !important; align-items: center; gap: 12px;
+  padding: 10px 12px; border-radius: 7px;
+  color: rgba(11,30,54,0.75) !important;
+  font-size: 14px !important; font-weight: 500 !important;
+  transition: background 0.15s !important;
+}
+#site-nav .sn-dropdown a:hover { background: rgba(11,30,54,0.04) !important; color: #0B1E36 !important; }
+#site-nav .sn-dd-icon { font-size: 1.2rem; flex-shrink: 0; }
+#site-nav .sn-dd-label { display: block; font-weight: 600; font-size: 13.5px; color: #0B1E36; }
+#site-nav .sn-dd-sub { display: block; font-size: 12px; color: rgba(11,30,54,0.45); font-weight: 400; margin-top: 1px; }
 
 #site-nav .sn-hamburger {
   display: none;
@@ -167,6 +203,19 @@
   <ul class="sn-links">
     <li><a href="/index.html">Home</a></li>
     <li><a href="/services/">Services</a></li>
+    <li class="sn-has-dropdown">
+      <a href="#" class="sn-dropdown-trigger" onclick="return false;">Who We Serve <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 3.5l3.5 3.5 3.5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="sn-dropdown">
+        <a href="/for-businesses.html">
+          <span class="sn-dd-icon">📈</span>
+          <span><span class="sn-dd-label">Growing Businesses</span><span class="sn-dd-sub">Retail, finance, real estate &amp; more</span></span>
+        </a>
+        <a href="/for-nonprofits.html">
+          <span class="sn-dd-icon">🤝</span>
+          <span><span class="sn-dd-label">Nonprofits</span><span class="sn-dd-sub">NPSP, donor management &amp; training</span></span>
+        </a>
+      </div>
+    </li>
     <li><a href="/about-us/">About</a></li>
     <li><a href="/contact/" class="sn-contact">Contact</a></li>
     <li><a href="/health-assessment/" class="sn-cta">Free Health Check →</a></li>
@@ -179,6 +228,8 @@
   <div class="mobile-menu">
     <a href="/index.html">Home</a>
     <a href="/services/">Services</a>
+    <a href="/for-businesses.html">Growing Businesses</a>
+    <a href="/for-nonprofits.html">Nonprofits</a>
     <a href="/about-us/">About</a>
     <a href="/contact/">Contact</a>
     <a href="/health-assessment/">Free Health Check →</a>

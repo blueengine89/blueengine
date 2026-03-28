@@ -136,15 +136,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .section-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:5rem;}
 .section-right-text{font-size:1.05rem;line-height:1.8;color:var(--mid);font-weight:300;}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-.service-card{background:white;border:1px solid var(--rule);border-radius:8px;padding:2.25rem;transition:transform .3s,box-shadow .3s,border-color .3s;}
+.service-card{background:white;border:1px solid var(--rule);border-radius:8px;padding:2.25rem;transition:transform .3s,box-shadow .3s,border-color .3s;display:flex;flex-direction:column;}
 .service-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(15,28,46,.1);border-color:var(--teal-deep);}
 .service-icon-wrap{width:48px;height:48px;border-radius:10px;background:var(--sand);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;font-size:1.4rem;transition:background .3s;}
 .service-card:hover .service-icon-wrap{background:var(--teal-deep);}
 .service-title{font-size:1.2rem;color:var(--navy);margin-bottom:.75rem;line-height:1.25;font-weight:600;}
-.service-desc{font-size:.95rem;line-height:1.78;color:var(--mid);font-weight:300;}
-.service-quote{margin-top:1.25rem;font-style:italic;font-size:.82rem;color:var(--teal-deep);line-height:1.5;padding-top:1.25rem;border-top:1px solid var(--rule);}
+.service-desc{font-size:.95rem;line-height:1.78;color:var(--mid);font-weight:300;flex:1;}
+.service-link{display:inline-flex;align-items:center;gap:.35rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--rule);font-family:'Epilogue',sans-serif;font-size:.82rem;font-weight:600;letter-spacing:.04em;color:var(--teal-deep);text-decoration:none;transition:gap .2s,opacity .2s;}
+.service-link:hover{gap:.6rem;opacity:.8;}
 .service-card.featured{background:var(--navy);border-color:var(--navy);}
-.service-card.featured .service-title{color:white;}.service-card.featured .service-desc{color:rgba(255,255,255,.5);}.service-card.featured .service-quote{color:var(--sky);border-color:rgba(255,255,255,.1);}.service-card.featured .service-icon-wrap{background:rgba(255,255,255,.1);}
+.service-card.featured .service-title{color:white;}.service-card.featured .service-desc{color:rgba(255,255,255,.5);}.service-card.featured .service-link{color:var(--sky);border-color:rgba(255,255,255,.1);}.service-card.featured .service-icon-wrap{background:rgba(255,255,255,.1);}
+
+/* ── WHO WE SERVE ── */
+.who-section{display:grid;grid-template-columns:1fr 1fr;}
+.who-panel{position:relative;min-height:520px;display:flex;align-items:flex-end;padding:3.5rem 4rem;overflow:hidden;text-decoration:none;}
+.who-bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .65s cubic-bezier(.25,.46,.45,.94);}
+.who-panel:hover .who-bg{transform:scale(1.05);}
+.who-overlay{position:absolute;inset:0;transition:opacity .3s;}
+.who-panel--biz .who-overlay{background:linear-gradient(150deg,rgba(26,58,92,.90) 25%,rgba(26,58,92,.60) 100%);}
+.who-panel--np .who-overlay{background:linear-gradient(150deg,rgba(18,62,46,.92) 25%,rgba(18,62,46,.65) 100%);}
+.who-content{position:relative;z-index:2;max-width:460px;}
+.who-eyebrow{font-family:'Epilogue',sans-serif;font-size:0.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;display:block;margin-bottom:1rem;}
+.who-panel--biz .who-eyebrow{color:var(--teal);}
+.who-panel--np .who-eyebrow{color:#7ecba1;}
+.who-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.75rem,2.2vw,2.5rem);font-weight:700;color:white;line-height:1.1;margin-bottom:.9rem;}
+.who-title em{font-style:italic;}
+.who-desc{font-size:.875rem;line-height:1.75;color:rgba(255,255,255,.62);font-weight:300;margin-bottom:1.5rem;}
+.who-list{list-style:none;padding:0;margin:0 0 2rem;display:flex;flex-direction:column;gap:.5rem;}
+.who-list li{font-size:.82rem;color:rgba(255,255,255,.78);display:flex;align-items:center;gap:.6rem;}
+.who-panel--biz .who-list li::before{content:'→';color:var(--teal);font-size:.75rem;flex-shrink:0;}
+.who-panel--np .who-list li::before{content:'→';color:#7ecba1;font-size:.75rem;flex-shrink:0;}
+.who-cta{display:inline-flex;align-items:center;gap:.5rem;font-family:'Epilogue',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.06em;color:white;border-bottom:1.5px solid rgba(255,255,255,.35);padding-bottom:.2rem;transition:border-color .2s,gap .2s;}
+.who-panel:hover .who-cta{border-color:rgba(255,255,255,.85);gap:.75rem;}
+.who-divider{width:1px;background:rgba(255,255,255,.15);position:absolute;top:10%;bottom:10%;left:50%;z-index:3;}
 
 /* ── WHY BLUE ENGINE ── */
 .why-section{background:#1A3A5C;padding:7rem 5rem;position:relative;overflow:hidden;}
@@ -234,6 +258,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .guarantee-badge-seal{width:130px;height:130px;}
   .section-header{grid-template-columns:1fr;gap:1.5rem;}
   .services-grid{grid-template-columns:1fr;}
+  .who-section{grid-template-columns:1fr;}.who-panel{min-height:420px;padding:3rem 2rem;}.who-divider{display:none;}
   .health-inner{grid-template-columns:1fr;text-align:center;}
   .testimonials-grid{grid-template-columns:1fr;}
   .guarantee-strip-inner{grid-template-columns:1fr;gap:1.75rem;}
@@ -320,14 +345,49 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="section-right-text reveal">Whether you need a one-time rescue, a full rebuild, or an ongoing partner — we meet you where you are. No overselling, no hand-offs, no lock-in.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card reveal"><div class="service-icon-wrap">🔍</div><h3 class="service-title">Salesforce Health Check</h3><p class="service-desc">We audit your org, identify what's broken or bloated, and give you a clear, honest roadmap. No jargon, no fluff, no invoice.</p><p class="service-quote">"We didn't know what we didn't know — now we have a clear plan."</p></div>
-      <div class="service-card featured reveal reveal-delay-1"><div class="service-icon-wrap">🔄</div><h3 class="service-title">Managed Services</h3><p class="service-desc">Your on-call Salesforce team. Monthly retainers, proactive support, ongoing optimization. We act like part of your team — without the full-time overhead.</p><p class="service-quote">"Like having an expert on staff, without the full-time cost."</p></div>
-      <div class="service-card reveal reveal-delay-2"><div class="service-icon-wrap">🔧</div><h3 class="service-title">Org Cleanup &amp; Rebuild</h3><p class="service-desc">Untangle years of messy customization. We rebuild with clean architecture, scalable data models, and documentation your team will actually read.</p><p class="service-quote">"Finally, a Salesforce that makes sense."</p></div>
-      <div class="service-card reveal"><div class="service-icon-wrap">⚡</div><h3 class="service-title">Quick Starts</h3><p class="service-desc">New to Salesforce? We get you live fast — with a setup built for how you actually work, not how the manual says you should.</p><p class="service-quote">"Got us live faster than any other vendor we spoke to."</p></div>
-      <div class="service-card reveal reveal-delay-1"><div class="service-icon-wrap">📈</div><h3 class="service-title">Reports &amp; Dashboards</h3><p class="service-desc">We turn your Salesforce data into real insight — dashboards leadership will actually check, with metrics that drive real decisions.</p><p class="service-quote">"We can finally see what's happening in our pipeline."</p></div>
-      <div class="service-card reveal reveal-delay-2"><div class="service-icon-wrap">🔗</div><h3 class="service-title">Integrations</h3><p class="service-desc">Connect Salesforce to the rest of your stack. Twilio, FormAssembly, Zapier, marketing tools, financial platforms. We make your systems talk to each other.</p><p class="service-quote">"Everything finally flows — no more manual exports."</p></div>
+      <div class="service-card reveal"><div class="service-icon-wrap">🔍</div><h3 class="service-title">Salesforce Health Check</h3><p class="service-desc">We audit your org, identify what's broken or bloated, and give you a clear, honest roadmap. No jargon, no fluff, no invoice.</p><a href="/services.html#acc-fix" class="service-link">More →</a></div>
+      <div class="service-card featured reveal reveal-delay-1"><div class="service-icon-wrap">🔄</div><h3 class="service-title">Managed Services</h3><p class="service-desc">Your on-call Salesforce team. Monthly retainers, proactive support, ongoing optimization. We act like part of your team — without the full-time overhead.</p><a href="/services.html#acc-managed" class="service-link">More →</a></div>
+      <div class="service-card reveal reveal-delay-2"><div class="service-icon-wrap">🔧</div><h3 class="service-title">Org Cleanup &amp; Rebuild</h3><p class="service-desc">Untangle years of messy customization. We rebuild with clean architecture, scalable data models, and documentation your team will actually read.</p><a href="/services.html#acc-fix" class="service-link">More →</a></div>
+      <div class="service-card reveal"><div class="service-icon-wrap">⚡</div><h3 class="service-title">Quick Starts</h3><p class="service-desc">New to Salesforce? We get you live fast — with a setup built for how you actually work, not how the manual says you should.</p><a href="/services.html#acc-implement" class="service-link">More →</a></div>
+      <div class="service-card reveal reveal-delay-1"><div class="service-icon-wrap">📈</div><h3 class="service-title">Reports &amp; Dashboards</h3><p class="service-desc">We turn your Salesforce data into real insight — dashboards leadership will actually check, with metrics that drive real decisions.</p><a href="/services.html#acc-managed" class="service-link">More →</a></div>
+      <div class="service-card reveal reveal-delay-2"><div class="service-icon-wrap">🔗</div><h3 class="service-title">Integrations</h3><p class="service-desc">Connect Salesforce to the rest of your stack. Twilio, FormAssembly, Zapier, marketing tools, financial platforms. We make your systems talk to each other.</p><a href="/services.html#acc-implement" class="service-link">More →</a></div>
     </div>
   </div>
+</section>
+
+<!-- ── WHO WE SERVE ── -->
+<section class="who-section" style="position:relative;">
+  <div class="who-divider"></div>
+  <a href="/for-businesses.html" class="who-panel who-panel--biz">
+    <div class="who-bg" style="background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80')"></div>
+    <div class="who-overlay"></div>
+    <div class="who-content">
+      <span class="who-eyebrow">Growing Businesses</span>
+      <h3 class="who-title">Scale without the<br><em>Salesforce headache.</em></h3>
+      <p class="who-desc">We work with retail, financial services, real estate, healthcare, and professional services firms that have outgrown their current setup — or never had a good one.</p>
+      <ul class="who-list">
+        <li>Fix broken or overcomplicated orgs</li>
+        <li>Build pipelines that scale with you</li>
+        <li>Integrate with the rest of your stack</li>
+      </ul>
+      <span class="who-cta">See how we help businesses →</span>
+    </div>
+  </a>
+  <a href="/for-nonprofits.html" class="who-panel who-panel--np">
+    <div class="who-bg" style="background-image:url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=80')"></div>
+    <div class="who-overlay"></div>
+    <div class="who-content">
+      <span class="who-eyebrow">Nonprofits</span>
+      <h3 class="who-title">Mission-critical Salesforce,<br><em>built to last.</em></h3>
+      <p class="who-desc">About half our clients are nonprofits. We speak NPSP fluently, understand donor management, and know how to stretch every dollar of your technology budget.</p>
+      <ul class="who-list">
+        <li>NPSP &amp; Nonprofit Cloud expertise</li>
+        <li>Donor, grant &amp; volunteer tracking</li>
+        <li>Empower your internal admin team</li>
+      </ul>
+      <span class="who-cta">See how we help nonprofits →</span>
+    </div>
+  </a>
 </section>
 
 <!-- ── 5. WHY BLUE ENGINE ── -->

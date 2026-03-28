@@ -177,7 +177,7 @@
       <a href="/index.html" class="ft-brand-logo">
         <img src="/brand_assets/blueengine-2b-white.svg" alt="Blue Engine">
       </a>
-      <p class="ft-desc">A certified Salesforce Partner helping nonprofits and growing businesses get more from the platform they've already invested in. Founded 2019.</p>
+      <p class="ft-desc">We fix broken Salesforce implementations and help your team actually love it.</p>
     </div>
     <div>
       <p class="ft-col-title">Services</p>
@@ -185,9 +185,13 @@
         <li><a href="/health-assessment/">Health Check</a></li>
         <li><a href="/services/#acc-managed">Managed Services</a></li>
         <li><a href="/services/#acc-fix">Org Cleanup</a></li>
-        <li><a href="/services/#acc-implement">Quick Starts</a></li>
         <li><a href="/services/#acc-automate">Integrations</a></li>
         <li><a href="/services/#acc-training">Training</a></li>
+      </ul>
+      <p class="ft-col-title" style="margin-top:1.5rem;">Who We Serve</p>
+      <ul class="ft-links">
+        <li><a href="/for-businesses.html">Growing Businesses</a></li>
+        <li><a href="/for-nonprofits.html">Nonprofits</a></li>
       </ul>
     </div>
     <div>
