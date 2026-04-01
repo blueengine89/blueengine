@@ -85,6 +85,136 @@ body { font-family: 'Epilogue', sans-serif; background: var(--bg); color: var(--
   .apply-header-inner { padding: 2rem 1.25rem; }
   .apply-body { padding: 2rem 1.25rem 4rem; }
 }
+
+/* ── TFAForms overrides ───────────────────────────────────────────── */
+.wFormContainer {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+.wForm {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow-soft);
+}
+h3.wFormTitle {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.5rem !important;
+  font-weight: 700 !important;
+  color: var(--navy) !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 2rem !important;
+  padding-bottom: 1.25rem !important;
+  border-bottom: 1px solid var(--border-light) !important;
+}
+.oneField {
+  margin-bottom: 1.5rem !important;
+}
+.wForm label.label {
+  font-family: 'Epilogue', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--ink-mid) !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  margin-bottom: 0.4rem !important;
+  display: block !important;
+}
+/* Required asterisk */
+.wForm label.reqMark::after {
+  content: ' *';
+  color: var(--red) !important;
+  font-weight: 700;
+}
+.wForm .inputWrapper input[type="text"],
+.wForm .inputWrapper input[type="email"],
+.wForm .inputWrapper input[type="url"],
+.wForm .inputWrapper input[type="number"],
+.wForm .inputWrapper textarea,
+.wForm .inputWrapper select {
+  width: 100% !important;
+  font-family: 'Epilogue', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  color: var(--ink) !important;
+  background: var(--bg) !important;
+  border: 1.5px solid var(--border) !important;
+  border-radius: 8px !important;
+  padding: 10px 14px !important;
+  outline: none !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+  box-shadow: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+}
+.wForm .inputWrapper input:focus,
+.wForm .inputWrapper textarea:focus,
+.wForm .inputWrapper select:focus {
+  border-color: var(--teal) !important;
+  box-shadow: 0 0 0 3px rgba(61, 166, 205, 0.15) !important;
+  background: #fff !important;
+}
+.wForm .inputWrapper textarea {
+  min-height: 100px !important;
+  resize: vertical !important;
+}
+/* Submit button */
+.wForm .primaryAction input[type="submit"],
+.wForm .actions input[type="submit"],
+.wForm input[type="submit"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  padding: 13px 32px !important;
+  background: var(--red) !important;
+  color: white !important;
+  font-family: 'Epilogue', sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+  border: none !important;
+  border-radius: 100px !important;
+  cursor: pointer !important;
+  box-shadow: 0 3px 16px rgba(196, 48, 64, 0.30) !important;
+  transition: background 0.2s, transform 0.15s cubic-bezier(.34,1.56,.64,1), box-shadow 0.2s !important;
+  margin-top: 0.5rem !important;
+}
+.wForm .primaryAction input[type="submit"]:hover,
+.wForm .actions input[type="submit"]:hover,
+.wForm input[type="submit"]:hover {
+  background: var(--red-deep) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 24px rgba(196, 48, 64, 0.38) !important;
+}
+/* Error messages */
+.wForm .errMsg,
+.wForm .err {
+  font-family: 'Epilogue', sans-serif !important;
+  font-size: 12px !important;
+  color: var(--red) !important;
+  margin-top: 4px !important;
+}
+/* Section headers inside form */
+.wForm .section > .label {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  color: var(--navy) !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 1rem !important;
+  padding-top: 1rem !important;
+  border-top: 1px solid var(--border-light) !important;
+}
+/* Hint / supporting text */
+.wForm .supportingText,
+.wForm .hints {
+  font-family: 'Epilogue', sans-serif !important;
+  font-size: 12px !important;
+  color: var(--ink-light) !important;
+  margin-top: 4px !important;
+}
 </style>
 </head>
 <body>
