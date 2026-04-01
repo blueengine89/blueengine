@@ -1,6 +1,13 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/nonprofits",
+      "destination": "/for-nonprofits",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/blog/:path*",
