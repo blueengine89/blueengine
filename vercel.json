@@ -11,7 +11,7 @@
   "rewrites": [
     {
       "source": "/blog/:path*",
-      "destination": "https://mervpandacam.wpcomstaging.com/:path*"
+      "destination": "https://mervpandacam.wpcomstaging.com/blog/:path*"
     }
   ]
 }
