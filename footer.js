@@ -19,15 +19,21 @@
 }
 #site-footer .ft-brand-logo {
   display: inline-flex;
+  align-items: center;
+  gap: 7px;
   margin-bottom: .85rem;
   text-decoration: none;
 }
-#site-footer .ft-brand-logo img {
-  height: 28px;
-  width: auto;
-  display: block;
-  opacity: 1;
+#site-footer .ft-logo-chevron { height: 20px; width: auto; flex-shrink: 0; }
+#site-footer .ft-logo-wordmark {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  line-height: 1;
 }
+#site-footer .ft-logo-blue { color: #3DA6CD; }
+#site-footer .ft-logo-engine { color: #ffffff; }
 #site-footer .ft-desc {
   font-size: .87rem;
   color: rgba(255,255,255,.58);
@@ -175,7 +181,8 @@
   <div class="ft-top">
     <div>
       <a href="/index.html" class="ft-brand-logo">
-        <img src="/brand_assets/logo chevron transparent.png" alt="Blue Engine" style="filter: brightness(0) invert(1);">
+        <svg class="ft-logo-chevron" viewBox="0 0 14 24" fill="none" aria-hidden="true"><path d="M2 2L12 12L2 22" stroke="#3DA6CD" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="ft-logo-wordmark"><span class="ft-logo-blue">Blue</span><span class="ft-logo-engine"> Engine</span></span>
       </a>
       <p class="ft-desc">We fix broken Salesforce implementations and help your team actually love it.</p>
     </div>
