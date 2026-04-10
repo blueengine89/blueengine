@@ -175,7 +175,7 @@
   <div class="ft-top">
     <div>
       <a href="/index.html" class="ft-brand-logo">
-        <img src="/brand_assets/blueengine-2b-white.svg" alt="Blue Engine">
+        <img src="/brand_assets/logo chevron transparent.png" alt="Blue Engine" style="filter: brightness(0) invert(1);">
       </a>
       <p class="ft-desc">We fix broken Salesforce implementations and help your team actually love it.</p>
     </div>

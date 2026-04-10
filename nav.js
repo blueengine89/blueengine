@@ -198,7 +198,7 @@
   const html = `
 <nav id="bes-nav">
   <a href="/index.html" class="sn-logo">
-    <img src="/brand_assets/blueengine-2b.svg" alt="Blue Engine Solutions">
+    <img src="/brand_assets/logo chevron transparent.png" alt="Blue Engine Solutions">
   </a>
   <ul class="sn-links">
     <li><a href="/index.html">Home</a></li>
