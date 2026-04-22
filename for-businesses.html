@@ -75,12 +75,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .help-link{display:inline-flex;align-items:center;gap:.3rem;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border-light);font-family:'Epilogue',sans-serif;font-size:.875rem;font-weight:700;letter-spacing:.04em;color:var(--teal-deep);text-decoration:none;transition:gap .2s;}
 .help-link:hover{gap:.55rem;}
 
-/* ── INDUSTRIES ── */
-.industries-section{background:white;padding:5rem 5rem;border-top:1px solid var(--border-light);}
-.industries-inner{max-width:1200px;margin:0 auto;}
-.industries-row{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem;}
-.industry-chip{font-family:'Epilogue',sans-serif;font-size:.875rem;font-weight:600;letter-spacing:.04em;color:var(--navy);background:var(--bg);border:1px solid var(--border);border-radius:100px;padding:.5rem 1.1rem;transition:background .2s,border-color .2s;}
-.industry-chip:hover{background:var(--teal-pale);border-color:var(--teal-border);}
 
 /* ── WHY US STRIP ── */
 .why-strip{background:var(--navy);padding:5rem 5rem;}
@@ -113,11 +107,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .cta-sub{font-size:1rem;line-height:1.75;color:rgba(255,255,255,.65);font-weight:300;margin-bottom:2.5rem;}
 .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 
+/* ── CLIENT LOGOS ── */
+.clients-section{background:white;padding:3.5rem 5rem;border-bottom:1px solid var(--border-light);}
+.clients-inner{max-width:1200px;margin:0 auto;text-align:center;}
+.clients-eyebrow-label{font-family:'Epilogue',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-light);display:block;margin-bottom:2.25rem;}
+.clients-logos{display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap;}
+.client-logo{max-height:52px;max-width:200px;width:auto;height:auto;opacity:.8;transition:opacity .25s ease;}
+.client-logo:hover{opacity:1;}
+.client-logo-pill{display:inline-flex;align-items:center;justify-content:center;background:var(--navy);border-radius:10px;padding:.6rem 1.1rem;opacity:.8;transition:opacity .25s ease;}
+.client-logo-pill:hover{opacity:1;}
+.client-logo-pill img{max-height:36px;max-width:180px;width:auto;height:auto;}
+
+/* ── AI SECTION ── */
+.ai-section{background:var(--navy);padding:7rem 5rem;position:relative;overflow:hidden;}
+.ai-section::before{content:'';position:absolute;top:-150px;left:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(61,166,205,.12),transparent 65%);pointer-events:none;}
+.ai-section::after{content:'';position:absolute;bottom:-100px;right:-50px;width:400px;height:400px;background:radial-gradient(circle,rgba(61,166,205,.07),transparent 65%);pointer-events:none;}
+.ai-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.ai-left .section-eyebrow{color:var(--teal);}
+.ai-left .section-headline{color:white;}
+.ai-left .section-headline em{color:var(--teal);}
+.ai-left .section-sub{color:rgba(255,255,255,.65);}
+.ai-items{display:flex;flex-direction:column;gap:1.1rem;}
+.ai-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--teal);border-radius:0 10px 10px 0;padding:1.4rem 1.75rem;transition:background .25s;}
+.ai-item:hover{background:rgba(255,255,255,.09);}
+.ai-item-title{font-family:'Playfair Display',Georgia,serif;font-size:1rem;font-weight:700;color:white;margin-bottom:.35rem;}
+.ai-item-desc{font-size:.875rem;line-height:1.7;color:rgba(255,255,255,.55);font-weight:300;margin:0;}
+
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
+  .clients-section{padding:3rem 1.5rem;}
+  .clients-logos{gap:2.5rem;}
+  .client-logo{max-height:38px;}
   .page-hero{min-height:auto;}
   .hero-inner{padding:calc(72px + 3rem) 1.5rem 5rem;}
-  .pain-section,.help-section,.industries-section,.why-strip,.testi-section,.cta-section{padding:5rem 1.5rem;}
+  .pain-section,.help-section,.ai-section,.why-strip,.testi-section,.cta-section{padding:5rem 1.5rem;}
+  .ai-inner{grid-template-columns:1fr;gap:3rem;}
   .pain-grid,.help-grid{grid-template-columns:1fr;}
   .why-strip-inner{grid-template-columns:1fr;gap:2rem;}
 }
@@ -141,6 +165,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="hero-btns">
       <a href="/health-assessment/" class="btn-primary">Get a free health check →</a>
       <a href="/contact/" class="btn-secondary" style="color:white;border-color:rgba(255,255,255,.35);">Schedule a call</a>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT LOGOS -->
+<section class="clients-section">
+  <div class="clients-inner">
+    <span class="clients-eyebrow-label">Trusted by businesses like</span>
+    <div class="clients-logos">
+      <img src="/Client%20Logos/hero%20devs%20logo.png" alt="Hero Devs" class="client-logo">
+      <img src="/Client%20Logos/Topgolf-Emblem.png" alt="Topgolf" class="client-logo" style="max-height:52px;max-width:175px;">
+      <img src="/Client%20Logos/WAG_Signature_logo_RGB.png" alt="Walgreens" class="client-logo">
+      <img src="/Client%20Logos/PERDOMO-logo-2019-600.webp" alt="Perdomo" class="client-logo">
+      <img src="/Client%20Logos/Metropolitan-Shuttle-logo.png" alt="Metropolitan Shuttle" class="client-logo">
+      <img src="/Client%20Logos/candidly.svg" alt="Candidly" class="client-logo" style="max-width:150px;">
     </div>
   </div>
 </section>
@@ -187,22 +226,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="section-sub reveal d2">Whether you need a one-time rescue or an ongoing partner, we meet you where you are. No overselling, no hand-offs, no lock-in.</p>
     <div class="help-grid">
       <div class="help-card reveal">
+        <div class="help-icon">🔄</div>
+        <h3 class="help-title">Managed Services</h3>
+        <p class="help-desc">Your on-call Salesforce team. Monthly retainers, proactive support, ongoing optimization — without the full-time overhead.</p>
+        <a href="/services.html#acc-managed" class="help-link">More about this →</a>
+      </div>
+      <div class="help-card reveal d1">
         <div class="help-icon">🔍</div>
-        <h3 class="help-title">Salesforce Health Check</h3>
+        <h3 class="help-title">Salesforce Audit</h3>
         <p class="help-desc">We audit your org, find what's broken or bloated, and give you a clear prioritized roadmap. No jargon, no fluff — and no invoice.</p>
         <a href="/services.html#acc-fix" class="help-link">More about this →</a>
       </div>
-      <div class="help-card reveal d1">
+      <div class="help-card reveal d2">
         <div class="help-icon">🔧</div>
         <h3 class="help-title">Org Cleanup &amp; Rebuild</h3>
         <p class="help-desc">Untangle years of messy customization. Clean data model, scalable architecture, documentation your team will actually read.</p>
         <a href="/services.html#acc-fix" class="help-link">More about this →</a>
-      </div>
-      <div class="help-card reveal d2">
-        <div class="help-icon">⚡</div>
-        <h3 class="help-title">New Implementations</h3>
-        <p class="help-desc">First time in Salesforce? We build it clean from day one — so you don't inherit a mess six months later that takes years to untangle.</p>
-        <a href="/services.html#acc-implement" class="help-link">More about this →</a>
       </div>
       <div class="help-card reveal">
         <div class="help-icon">🔗</div>
@@ -217,30 +256,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="/services.html#acc-managed" class="help-link">More about this →</a>
       </div>
       <div class="help-card reveal d2">
-        <div class="help-icon">🔄</div>
-        <h3 class="help-title">Managed Services</h3>
-        <p class="help-desc">Your on-call Salesforce team. Monthly retainers, proactive support, ongoing optimization — without the full-time overhead.</p>
-        <a href="/services.html#acc-managed" class="help-link">More about this →</a>
+        <div class="help-icon">✨</div>
+        <h3 class="help-title">AI &amp; Automation</h3>
+        <p class="help-desc">From Einstein and Agentforce to custom AI integrations, we help you figure out what's actually worth building — then build it.</p>
+        <a href="#ai-section" class="help-link">Learn more →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- INDUSTRIES -->
-<section class="industries-section">
-  <div class="industries-inner">
-    <span class="section-eyebrow reveal">Industries</span>
-    <h2 class="section-headline reveal d1" style="font-size:clamp(1.5rem,2.2vw,2rem);">We've worked across<br><em>a wide range of sectors.</em></h2>
-    <p class="section-sub reveal d2" style="margin-top:.5rem;">We don't care what industry you're in. We care that you want clarity, partnership, and a system that works.</p>
-    <div class="industries-row reveal d3">
-      <span class="industry-chip">Retail &amp; Consumer Goods</span>
-      <span class="industry-chip">Financial Services</span>
-      <span class="industry-chip">Real Estate</span>
-      <span class="industry-chip">Healthcare</span>
-      <span class="industry-chip">Professional Services</span>
-      <span class="industry-chip">Government Contractors</span>
-      <span class="industry-chip">Technology</span>
-      <span class="industry-chip">Media &amp; Publishing</span>
+
+<!-- AI & AUTOMATION -->
+<section class="ai-section" id="ai-section">
+  <div class="ai-inner">
+    <div class="ai-left reveal">
+      <span class="section-eyebrow">AI &amp; Automation</span>
+      <h2 class="section-headline">Stop doing manually<br><em>what AI can do for you.</em></h2>
+      <p class="section-sub">Most companies know they should be doing something with AI. Few know exactly what — or whether it's worth the investment. We help you figure that out, then build it.</p>
+      <p class="section-sub" style="margin-top:1.25rem;">We start with your actual workflows, not a vendor pitch deck, and only build what creates real leverage for your team.</p>
+    </div>
+    <div class="ai-items reveal d1">
+      <div class="ai-item">
+        <div class="ai-item-title">Salesforce-Native AI</div>
+        <p class="ai-item-desc">Einstein, Agentforce, predictive scoring, and generative summaries built into your existing platform — no new tools, no new logins.</p>
+      </div>
+      <div class="ai-item">
+        <div class="ai-item-title">Smart Workflow Automation</div>
+        <p class="ai-item-desc">Flows and triggers that eliminate the manual work your team shouldn't be doing. Less clicking, less copying, fewer mistakes.</p>
+      </div>
+      <div class="ai-item">
+        <div class="ai-item-title">External AI Integrations</div>
+        <p class="ai-item-desc">Connect Salesforce to tools like Claude, ChatGPT, or your internal AI stack. We bridge the gap between your CRM and your AI investments.</p>
+      </div>
     </div>
   </div>
 </section>

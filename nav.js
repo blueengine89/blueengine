@@ -208,11 +208,11 @@
       <div class="sn-dropdown">
         <a href="/for-businesses.html">
           <span class="sn-dd-icon">📈</span>
-          <span><span class="sn-dd-label">Growing Businesses</span><span class="sn-dd-sub">Retail, finance, real estate &amp; more</span></span>
+          <span><span class="sn-dd-label">Growing Businesses</span></span>
         </a>
         <a href="/for-nonprofits.html">
           <span class="sn-dd-icon">🤝</span>
-          <span><span class="sn-dd-label">Nonprofits</span><span class="sn-dd-sub">NPSP, donor management &amp; training</span></span>
+          <span><span class="sn-dd-label">Nonprofits</span></span>
         </a>
       </div>
     </li>
