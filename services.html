@@ -59,14 +59,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   pointer-events:none;
 }
 .hero-inner { max-width:1300px; margin:0 auto; position:relative; z-index:1; }
-.hero-breadcrumb {
+.hero-eyebrow {
   font-family:'Epilogue',sans-serif; font-size:0.875rem; font-weight:700;
-  letter-spacing:0.15em; text-transform:uppercase;
-  color:rgba(255,255,255,0.35); margin-bottom:1.5rem;
+  letter-spacing:0.2em; text-transform:uppercase;
+  color:var(--teal); display:block; margin-bottom:1.5rem;
+  animation:fadeUp 0.7s 0.05s both;
 }
-.hero-breadcrumb a { color:rgba(255,255,255,0.35); text-decoration:none; transition:color 0.2s; }
-.hero-breadcrumb a:hover { color:var(--sky); }
-.hero-breadcrumb span { color:rgba(255,255,255,0.2); margin:0 0.5rem; }
 .page-hero h1 {
   font-family:'Playfair Display',Georgia,serif;
   font-size:clamp(3rem,5vw,5.5rem); font-weight:700;
@@ -385,11 +383,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div style="position:absolute;border-radius:50%;pointer-events:none;width:220px;height:220px;top:40px;right:calc(8% + 80px);background:rgba(61,166,205,0.10);"></div>
   <div style="position:absolute;border-radius:50%;pointer-events:none;width:120px;height:120px;bottom:10%;left:6%;background:rgba(61,166,205,0.15);"></div>
   <div class="hero-inner">
-    <div class="hero-breadcrumb">
-      <a href="/">Home</a>
-      <span>/</span>
-      Services
-    </div>
+    <span class="hero-eyebrow">Salesforce Services</span>
     <h1>The right help,<br><em>wherever you're stuck.</em></h1>
     <p>We work with nonprofits, growing companies, and mission-driven teams to solve Salesforce problems that slow teams down, frustrate leadership, and waste money.</p>
     <div class="hero-cta-row">

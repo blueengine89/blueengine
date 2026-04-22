@@ -20,7 +20,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:site_name" content="Blue Engine Solutions">
 <meta property="og:url" content="https://www.blueenginesolutions.com/for-nonprofits">
 <meta property="og:title" content="Salesforce Consulting for Nonprofits | NPSP Experts | Blue Engine Solutions">
-<meta property="og:description" content="We help nonprofits get more out of Salesforce — fixing messy NPSP orgs, improving donor tracking, and empowering internal teams. About half our clients are nonprofits.">
+<meta property="og:description" content="We help nonprofits get more out of Salesforce — fixing messy NPSP orgs, improving donor tracking, and empowering internal teams.">
 <meta property="og:image" content="https://www.blueenginesolutions.com/og-image.png">
 <link rel="stylesheet" href="/brand.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,10 +47,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .hero-img{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center 40%;}
 .hero-img::before{content:'';position:absolute;inset:0;background:linear-gradient(105deg,rgba(18,62,46,.96) 0%,rgba(26,58,92,.82) 50%,rgba(26,58,92,.2) 100%);}
 .hero-inner{position:relative;z-index:2;max-width:1200px;margin:0 auto;padding:calc(72px + 5rem) 5rem 6rem;width:100%;}
-.hero-breadcrumb{font-family:'Epilogue',sans-serif;font-size:.875rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:1.5rem;}
-.hero-breadcrumb a{color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
-.hero-breadcrumb a:hover{color:var(--np-green);}
-.hero-breadcrumb span{color:rgba(255,255,255,.2);margin:0 .5rem;}
 .hero-eyebrow{font-family:'Epilogue',sans-serif;font-size:.875rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--np-green);display:block;margin-bottom:1.25rem;animation:fadeUp .6s .05s both;}
 .hero-h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(2.8rem,4.5vw,4.5rem);font-weight:700;color:white;line-height:1.05;margin-bottom:1.5rem;animation:fadeUp .7s .15s both;}
 .hero-h1 em{font-style:italic;color:var(--np-green);}
@@ -119,8 +115,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 .cta-sub{font-size:1rem;line-height:1.75;color:rgba(255,255,255,.65);font-weight:300;margin-bottom:2.5rem;}
 .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
 
+/* ── CLIENT LOGOS ── */
+.clients-section{background:white;padding:3.5rem 5rem;border-bottom:1px solid var(--border-light);}
+.clients-inner{max-width:1200px;margin:0 auto;text-align:center;}
+.clients-eyebrow-label{font-family:'Epilogue',sans-serif;font-size:.8rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-light);display:block;margin-bottom:2.25rem;}
+.clients-logos{display:flex;align-items:center;justify-content:center;gap:4rem;flex-wrap:wrap;}
+.client-logo{max-height:52px;max-width:200px;width:auto;height:auto;opacity:.8;transition:opacity .25s ease;}
+.client-logo:hover{opacity:1;}
+.client-logo-pill{display:inline-flex;align-items:center;justify-content:center;background:var(--navy);border-radius:10px;padding:.6rem 1.1rem;opacity:.8;transition:opacity .25s ease;}
+.client-logo-pill:hover{opacity:1;}
+.client-logo-pill img{max-height:36px;max-width:180px;width:auto;height:auto;}
+
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
+  .clients-section{padding:3rem 1.5rem;}
+  .clients-logos{gap:2.5rem;}
+  .client-logo{max-height:38px;}
   .page-hero{min-height:auto;}
   .hero-inner{padding:calc(72px + 3rem) 1.5rem 5rem;}
   .trust-bar{padding:1.25rem 1.5rem;}
@@ -145,10 +155,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="page-hero">
   <div class="hero-img"></div>
   <div class="hero-inner">
-    <div class="hero-breadcrumb"><a href="/">Home</a><span>/</span>Nonprofits</div>
     <span class="hero-eyebrow">Nonprofits</span>
     <h1 class="hero-h1">Salesforce built for<br><em>your mission.</em></h1>
-    <p class="hero-sub">About half our clients are nonprofits. We understand the pressure you're under — limited budgets, small teams, and the constant need to demonstrate impact. We've been there with dozens of organizations like yours.</p>
+    <p class="hero-sub">We understand the pressure you're under — limited budgets, small teams, and the constant need to demonstrate impact. We've been there with dozens of organizations like yours.</p>
     <div class="hero-btns">
       <a href="/health-assessment/" class="btn-primary">Get a free health check →</a>
       <a href="/contact/" class="btn-secondary" style="color:white;border-color:rgba(255,255,255,.35);">Schedule a call</a>
@@ -159,12 +168,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-bar-inner">
-    <span class="trust-item">~50% of our clients are nonprofits</span>
     <span class="trust-item">NPSP &amp; Nonprofit Cloud fluent</span>
     <span class="trust-item">We respect your budget</span>
     <span class="trust-item">We empower internal teams</span>
   </div>
 </div>
+
+<!-- CLIENT LOGOS -->
+<section class="clients-section">
+  <div class="clients-inner">
+    <span class="clients-eyebrow-label">Trusted by organizations like</span>
+    <div class="clients-logos">
+      <img src="/Client%20Logos/umd-logo-final.png" alt="University of Maryland" class="client-logo">
+      <img src="/Client%20Logos/penn%20logo.png" alt="University of Pennsylvania" class="client-logo">
+      <img src="/Client%20Logos/camden%20health%20logo%20transparent.png" alt="Camden Coalition" class="client-logo">
+      <img src="/Client%20Logos/nmpa.png" alt="National Music Publishers' Association" class="client-logo">
+      <img src="/Client%20Logos/rebuilding-together-logo-vector.png" alt="Rebuilding Together" class="client-logo">
+      <img src="/Client%20Logos/jcc_033571.jpg" alt="Jewish Community Center of Greater Baltimore" class="client-logo">
+    </div>
+  </div>
+</section>
 
 <!-- PAIN POINTS -->
 <section class="pain-section">
@@ -261,10 +284,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="section-sub" style="margin-top:1.25rem;">We've worked with human services organizations, healthcare nonprofits, advocacy groups, arts organizations, community foundations, and everything in between. Each one is different — and we treat it that way.</p>
     </div>
     <div class="understand-right reveal d1">
-      <div class="understand-stat">
-        <div class="understand-stat-num">~50%</div>
-        <div class="understand-stat-label">of our active clients are nonprofit organizations</div>
-      </div>
       <div class="understand-stat">
         <div class="understand-stat-num">3+ yrs</div>
         <div class="understand-stat-label">average engagement length with our nonprofit clients</div>
