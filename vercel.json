@@ -6,6 +6,16 @@
       "source": "/nonprofits",
       "destination": "/for-nonprofits",
       "permanent": true
+    },
+    {
+      "source": "/ticket",
+      "destination": "https://forms.clickup.com/8609665/f/86qw1-8984/OWLASZ7AZOOKLZTXL6",
+      "permanent": false
+    },
+    {
+      "source": "/request",
+      "destination": "https://forms.clickup.com/8609665/f/86qw1-8984/OWLASZ7AZOOKLZTXL6",
+      "permanent": false
     }
   ],
   "rewrites": [
