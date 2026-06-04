@@ -1,0 +1,27 @@
+name: Archive ClickUp Daily Summary Emails
+
+# Runs Mon–Fri at 10 PM EST (03:00 UTC Tue–Sat)
+on:
+  schedule:
+    - cron: '0 3 * * 2-6'
+  workflow_dispatch: # allow manual runs
+
+jobs:
+  archive-emails:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install google-auth google-auth-httplib2 google-api-python-client
+
+      - name: Archive ClickUp daily summary emails
+        env:
+          GMAIL_TOKEN_JSON: ${{ secrets.GMAIL_TOKEN_JSON }}
+        run: python scripts/archive_clickup_emails.py
