@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ Layout Options</title>
+<link rel="stylesheet" href="/brand.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Epilogue:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+body { background: #f5f6f8; font-family: 'Epilogue', sans-serif; margin: 0; padding: 2rem; }
+
+.preview-label {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #888;
+  margin: 3rem 0 1rem;
+  display: block;
+}
+.preview-label:first-child { margin-top: 0; }
+
+/* ═══════════════════════════════════════
+   OPTION A — Numbered Cards
+   Each Q&A is a floating card. Large faded
+   question number as decorative element.
+   No left border at all.
+═══════════════════════════════════════ */
+
+.opt-a { background: #f0f4f8; padding: 3.5rem 2rem; }
+.opt-a-inner { max-width: 860px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.25rem; }
+
+.qa-card {
+  background: white;
+  border-radius: 14px;
+  padding: 2rem 2.25rem 2rem 2rem;
+  border: 1px solid rgba(26,58,92,0.08);
+  box-shadow: 0 2px 8px rgba(26,58,92,0.06), 0 8px 24px rgba(26,58,92,0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.qa-card-num {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 4.5rem;
+  font-weight: 800;
+  color: rgba(61,166,205,0.07);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.qa-card h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+  margin: 0 0 0.75rem;
+  padding-right: 3rem;
+}
+
+.qa-card p {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.82;
+  color: var(--ink-mid);
+  font-weight: 300;
+  margin: 0;
+}
+
+/* ═══════════════════════════════════════
+   OPTION B — Dot + Rule with Rhythm
+   Questions stand taller, answers indent.
+   Alternating subtle bg on every other item.
+   No continuous border — just a teal dot.
+═══════════════════════════════════════ */
+
+.opt-b { background: white; padding: 3.5rem 2rem; }
+.opt-b-inner { max-width: 860px; margin: 0 auto; }
+
+.qb-item {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 0 1.5rem;
+  padding: 2.25rem 1.5rem;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.qb-item:nth-child(even) {
+  background: #f7f9fc;
+}
+
+.qb-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--teal);
+  border-radius: 50%;
+  margin-top: 0.42rem;
+  flex-shrink: 0;
+}
+
+.qb-content h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+  margin: 0 0 0.7rem;
+}
+
+.qb-content p {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.82;
+  color: var(--ink-mid);
+  font-weight: 300;
+  margin: 0;
+}
+
+
+/* ═══════════════════════════════════════
+   OPTION C — Two-column at wider viewport,
+   stacked mobile. Q on left in a narrow
+   column, answer on right. Dividers between
+   items only (not a continuous rail).
+═══════════════════════════════════════ */
+
+.opt-c { background: #f0f4f8; padding: 3.5rem 2rem; }
+.opt-c-inner { max-width: 900px; margin: 0 auto; }
+
+.qc-item {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid rgba(26,58,92,0.1);
+  align-items: start;
+}
+.qc-item:last-child { border-bottom: none; }
+
+.qc-q {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.35;
+  position: relative;
+  padding-top: 0.2rem;
+}
+
+.qc-q-num {
+  display: block;
+  font-family: 'Epilogue', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 0.5rem;
+}
+
+.qc-a {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.82;
+  color: var(--ink-mid);
+  font-weight: 300;
+  margin: 0;
+}
+
+/* Option labels */
+.opt-label-bar {
+  padding: 1rem 2rem;
+  font-family: 'Epilogue', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.opt-label-bar.a { background: #1A3A5C; }
+.opt-label-bar.b { background: #2d6a7f; }
+.opt-label-bar.c { background: #1A3A5C; }
+.opt-label-bar span { opacity: 0.6; font-weight: 300; letter-spacing: 0; text-transform: none; font-size: 12px; }
+
+</style>
+</head>
+<body>
+
+<!-- ─── OPTION A ──────────────────────── -->
+<div class="opt-label-bar a">Option A — Floating Cards <span>Each Q&A in its own card with depth. Faded large number decorative element. No left border.</span></div>
+<div class="opt-a">
+  <div class="opt-a-inner">
+
+    <div class="qa-card">
+      <div class="qa-card-num">01</div>
+      <h3>Do you work with nonprofits?</h3>
+      <p>Yes. A significant portion of our portfolio consists of nonprofits. We are uniquely tailored to handle tight budgets, limited staffing, and high operational complexity.</p>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-card-num">02</div>
+      <h3>How much will a typical Salesforce engagement cost?</h3>
+      <p>Small projects typically run $8k–$16k. Medium and large builds run $21k–$63k+. Retainers scale from $2k–$4k/mo (small) to $8k–$12k/mo (enterprise).</p>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-card-num">03</div>
+      <h3>Do you offer fixed-price projects, hourly blocks, or monthly retainers?</h3>
+      <p>We offer all three: fixed-price for clearly defined, scope-frozen projects; hourly blocks for short-term burst work; and monthly retainers for proactive support.</p>
+    </div>
+
+    <div class="qa-card">
+      <div class="qa-card-num">04</div>
+      <h3>What is included in an initial project estimate versus what becomes a change order?</h3>
+      <p>Estimates cover discovery, configuration, testing, and training. Change orders typically stem from mid-project integration additions, messy data rescue, or major layout pivots.</p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ─── OPTION B ──────────────────────── -->
+<div class="opt-label-bar b">Option B — Dot + Alternating Rows <span>Teal dot replaces left rail. Every other item gets a soft background tint — creates rhythm without borders.</span></div>
+<div class="opt-b">
+  <div class="opt-b-inner">
+
+    <div class="qb-item">
+      <div class="qb-dot"></div>
+      <div class="qb-content">
+        <h3>Do you work with nonprofits?</h3>
+        <p>Yes. A significant portion of our portfolio consists of nonprofits. We are uniquely tailored to handle tight budgets, limited staffing, and high operational complexity.</p>
+      </div>
+    </div>
+
+    <div class="qb-item">
+      <div class="qb-dot"></div>
+      <div class="qb-content">
+        <h3>How much will a typical Salesforce engagement cost?</h3>
+        <p>Small projects typically run $8k–$16k. Medium and large builds run $21k–$63k+. Retainers scale from $2k–$4k/mo (small) to $8k–$12k/mo (enterprise).</p>
+      </div>
+    </div>
+
+    <div class="qb-item">
+      <div class="qb-dot"></div>
+      <div class="qb-content">
+        <h3>Do you offer fixed-price projects, hourly blocks, or monthly retainers?</h3>
+        <p>We offer all three: fixed-price for clearly defined, scope-frozen projects; hourly blocks for short-term burst work; and monthly retainers for proactive support.</p>
+      </div>
+    </div>
+
+    <div class="qb-item">
+      <div class="qb-dot"></div>
+      <div class="qb-content">
+        <h3>What is included in an initial project estimate versus what becomes a change order?</h3>
+        <p>Estimates cover discovery, configuration, testing, and training. Change orders typically stem from mid-project integration additions, messy data rescue, or major layout pivots.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ─── OPTION C ──────────────────────── -->
+<div class="opt-label-bar c">Option C — Two-Column Split <span>Question left, answer right. Numbered eyebrow on each question. Horizontal dividers between rows only.</span></div>
+<div class="opt-c">
+  <div class="opt-c-inner">
+
+    <div class="qc-item">
+      <div class="qc-q">
+        <span class="qc-q-num">01</span>
+        Do you work with nonprofits?
+      </div>
+      <p class="qc-a">Yes. A significant portion of our portfolio consists of nonprofits. We are uniquely tailored to handle tight budgets, limited staffing, and high operational complexity.</p>
+    </div>
+
+    <div class="qc-item">
+      <div class="qc-q">
+        <span class="qc-q-num">02</span>
+        How much will a typical Salesforce engagement cost?
+      </div>
+      <p class="qc-a">Small projects typically run $8k–$16k. Medium and large builds run $21k–$63k+. Retainers scale from $2k–$4k/mo (small) to $8k–$12k/mo (enterprise).</p>
+    </div>
+
+    <div class="qc-item">
+      <div class="qc-q">
+        <span class="qc-q-num">03</span>
+        Do you offer fixed-price projects, hourly blocks, or monthly retainers?
+      </div>
+      <p class="qc-a">We offer all three: fixed-price for clearly defined, scope-frozen projects; hourly blocks for short-term burst work; and monthly retainers for proactive support.</p>
+    </div>
+
+    <div class="qc-item">
+      <div class="qc-q">
+        <span class="qc-q-num">04</span>
+        What is included in an initial project estimate versus what becomes a change order?
+      </div>
+      <p class="qc-a">Estimates cover discovery, configuration, testing, and training. Change orders typically stem from mid-project integration additions, messy data rescue, or major layout pivots.</p>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
