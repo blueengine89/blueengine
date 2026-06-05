@@ -72,6 +72,9 @@ Before applying a new or changed visual identity to ANY production page (index.h
 4. If the user requests changes, update `identity-preview.html` and re-screenshot. Repeat until approved.
 5. Only after approval: apply the identity to production pages.
 
+## Section Hierarchy Rule
+Never stack eyebrow + heading + subheading that all say the same thing three different ways. Each layer must add distinct information or be omitted. Default: pick two of the three, and make the heading the only thing a user needs to read. Prefer fewer words at larger size over more words at smaller size.
+
 ## Hard Rules
 - Do not add sections, features, or content not in the reference
 - Do not "improve" a reference design — match it
