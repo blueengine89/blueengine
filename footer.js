@@ -238,6 +238,7 @@
     <a href="/approach/">Our Approach</a>
     <a href="/case-studies/">Case Studies</a>
     <a href="/testimonials/">Testimonials</a>
+    <a href="/faq.html">FAQ</a>
     <a href="/careers/">Careers</a>
     <div class="ft-trust-group">
       <a href="https://appexchange.salesforce.com/appxConsultingListingDetail?listingId=a0N3u00000ONlmUEAT" target="_blank" rel="noopener" class="ft-cert"><span class="ft-cert-dot"></span>CERTIFIED SALESFORCE PARTNER SINCE 2019</a>

@@ -68,23 +68,23 @@
 }
 #site-nav .sn-links a:hover { color: #0B1E36; }
 
-/* Contact — secondary outline button */
-#site-nav .sn-contact {
-  padding: 9px 20px !important;
+/* Free Diagnostic — secondary outline button */
+#site-nav .sn-secondary {
+  padding: 9px 18px !important;
   background: transparent !important;
   color: rgba(11, 30, 54, 0.75) !important;
-  font-size: 14px !important;
+  font-size: 13.5px !important;
   font-weight: 600 !important;
   border: 1.5px solid rgba(11, 30, 54, 0.2) !important;
   border-radius: 7px !important;
   transition: border-color 0.2s, color 0.2s !important;
 }
-#site-nav .sn-contact:hover {
+#site-nav .sn-secondary:hover {
   border-color: rgba(11, 30, 54, 0.45) !important;
   color: #0B1E36 !important;
 }
 
-/* Free Health Check — primary red button */
+/* Contact Us — primary red button */
 #site-nav .sn-cta {
   padding: 9px 22px !important;
   background: #C43040 !important;
@@ -196,6 +196,10 @@
     transition: color 0.2s;
   }
   #site-nav .mobile-menu a:hover { color: #0B1E36; }
+  #site-nav .mobile-menu a:nth-last-child(2) {
+    color: rgba(11, 30, 54, 0.65);
+    font-size: 14px;
+  }
   #site-nav .mobile-menu a:last-child {
     border-bottom: none;
     margin-top: 12px;
@@ -234,9 +238,8 @@
       </div>
     </li>
     <li><a href="/about-us/">About</a></li>
-    <li><a href="/faq.html">FAQ</a></li>
-    <li><a href="/contact/" class="sn-contact">Contact</a></li>
-    <li><a href="/health-assessment/" class="sn-cta">Free Health Check →</a></li>
+    <li><a href="/health-assessment/" class="sn-secondary">Free Diagnostic →</a></li>
+    <li><a href="/contact/" class="sn-cta">Contact Us</a></li>
   </ul>
   <div class="sn-hamburger">
     <span></span>
@@ -249,9 +252,8 @@
     <a href="/for-businesses.html">Growing Businesses</a>
     <a href="/for-nonprofits.html">Nonprofits</a>
     <a href="/about-us/">About</a>
-    <a href="/faq.html">FAQ</a>
-    <a href="/contact/">Contact</a>
-    <a href="/health-assessment/">Free Health Check →</a>
+    <a href="/health-assessment/">Free Diagnostic →</a>
+    <a href="/contact/">Contact Us</a>
   </div>
 </nav>`;
 
