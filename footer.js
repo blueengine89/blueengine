@@ -257,7 +257,12 @@
         "https://www.google.com/maps/place/?q=place_id:ChIJf4Aah4ERsYkROuII-u91jTY",
         "https://g.page/salesforcetampa",
         "https://www.google.com/maps/place/Blue+Engine+Salesforce+Consultants/@25.7717773,-80.3628806,11z/data=!4m5!3m4!1s0x88d9b797b7966493:0x86d895590f9a0b18!8m2!3d25.7738321!4d-80.1899842",
-        "https://www.google.com/maps/place/Blue+Engine+Salesforce+Consultants/@35.7689488,-78.6659838,13z/data=!4m5!3m4!1s0x0:0x2d5cb6bf592d086b!8m2!3d35.773249!4d-78.6390759"
+        "https://www.google.com/maps/place/Blue+Engine+Salesforce+Consultants/@35.7689488,-78.6659838,13z/data=!4m5!3m4!1s0x0:0x2d5cb6bf592d086b!8m2!3d35.773249!4d-78.6390759",
+        "https://www.bing.com/maps/search?style=r&q=Blue+Engine+Salesforce+Consultants%2C+1342+Florida+Ave+NW%2C+Washington%2C+DC+20009%2C+United+States&ss=id.local_ypid%3A%22YNBC361B29AC77FC7A%22&st=Blue+Engine+Salesforce+Consultants&sfa=1342+Florida+Ave+NW%2C+Washington%2C+DC+20009%2C+United+States&cp=38.920097%7E-77.031067&lvl=16",
+        "https://www.bing.com/maps/search?style=r&q=Blue+Engine+Salesforce+Consulting%2C+61+Jane+St%2C+New+York%2C+NY+10014%2C+United+States&ss=id.local_ypid%3A%22YN8C633058411BDBC6%22&st=Blue+Engine+Salesforce+Consulting&sfa=61+Jane+St%2C+New+York%2C+NY+10014%2C+United+States&cp=40.738445%7E-74.005875&lvl=16",
+        "https://www.bing.com/maps/search?style=r&q=Blue+Engine+Salesforce+Consulting%2C+1010+N+Hancock+St%2C+Philadelphia%2C+PA+19123%2C+United+States&ss=id.local_ypid%3A%22YNE71066F8B4F5EDB7%22&st=Blue+Engine+Salesforce+Consulting&sfa=1010+N+Hancock+St%2C+Philadelphia%2C+PA+19123%2C+United+States&cp=39.965748%7E-75.139420&lvl=16",
+        "https://www.bing.com/maps/search?style=r&q=Blue+Engine+Salesforce+Consultants%2C+555+Fayetteville+St%2C+Raleigh%2C+NC+27601%2C+United+States&ss=id.local_ypid%3A%22YN4A580D682A71C98A%22&st=Blue+Engine+Salesforce+Consultants&sfa=555+Fayetteville+St%2C+Raleigh%2C+NC+27601%2C+United+States&cp=35.773258%7E-78.638954&lvl=16",
+        "https://www.bing.com/maps/search?style=r&q=Blue+Engine+Salesforce+Consultants%2C+2120+W+Cary+St%2C+Richmond%2C+VA+23220%2C+United+States&ss=id.local_ypid%3A%22YN45E0132F4BB75254%22&st=Blue+Engine+Salesforce+Consultants&sfa=2120+W+Cary+St%2C+Richmond%2C+VA+23220%2C+United+States&cp=37.548958%7E-77.468475&lvl=16"
       ]
     });
     document.head.appendChild(schema);
