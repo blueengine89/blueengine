@@ -10,6 +10,8 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#1A8BB5">
+<!-- LCP preload — logo is injected by deferred nav.js; preloading makes it discoverable from initial HTML -->
+<link rel="preload" as="image" href="/brand_assets/logo chevron transparent navy text.png" fetchpriority="high">
 <!-- Canonical -->
 <link rel="canonical" href="https://www.blueenginesolutions.com/contact">
 <!-- Open Graph -->
@@ -232,7 +234,7 @@ body{background:var(--warm);}
   <div class="hero-inner">
     <div class="hero-photo-col">
       <div class="founder-photo-wrap">
-        <img src="/brand_assets/Team Photos/Jon headshot.JPG" class="founder-photo" alt="Jon Mervis, Founder & CEO">
+        <img src="/brand_assets/Team Photos/Jon headshot.JPG" class="founder-photo" alt="Jon Mervis, Founder & CEO" fetchpriority="high">
       </div>
       <div class="founder-badge">
         <div class="founder-badge-copy">
@@ -258,10 +260,7 @@ body{background:var(--warm);}
 <section class="calendly-section" id="book-a-call">
   <div class="calendly-section-inner">
     <div class="calendly-card reveal">
-      <!-- Calendly inline widget begin -->
-      <div class="calendly-inline-widget" data-url="https://calendly.com/jonmervis/intro" style="min-width:320px;height:695px;"></div>
-      <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-      <!-- Calendly inline widget end -->
+      <div class="calendly-inline-widget" data-url="https://calendly.com/jonmervis/intro?hide_gdpr_banner=1" style="min-width:320px;height:700px;"></div>
     </div>
     <p style="text-align:center;font-size:16px;color:var(--ink-light);font-style:italic;margin-top:1rem;font-weight:300;max-width:800px;margin-left:auto;margin-right:auto;"><em>Let's jump on a screenshare and you can show us what's going on in your Salesforce.<br>We'll give you straight answers — no deck, no pitch.</em></p>
     <p class="prefer-write"><a href="/contact-form">Prefer to write instead? Send us a message →</a></p>
@@ -301,6 +300,19 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('up'); });
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// Lazy-load Calendly only when the widget scrolls into view — avoids ~2.8s of main-thread JS on initial load
+const calendlyWidget = document.querySelector('.calendly-inline-widget');
+if (calendlyWidget) {
+  new IntersectionObserver((entries, o) => {
+    if (entries[0].isIntersecting) {
+      const s = document.createElement('script');
+      s.src = 'https://assets.calendly.com/assets/external/widget.js';
+      document.head.appendChild(s);
+      o.disconnect();
+    }
+  }, { rootMargin: '300px' }).observe(calendlyWidget);
+}
 
 
 
