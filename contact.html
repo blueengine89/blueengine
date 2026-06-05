@@ -24,60 +24,12 @@
 <meta name="twitter:title" content="Talk to a Salesforce Consultant | Blue Engine Solutions">
 <meta name="twitter:description" content="Ready to fix your Salesforce org? Contact Blue Engine directly — no sales reps, no runaround. HQ'd in Washington, DC with consultants nationwide.">
 <meta name="twitter:image" content="https://www.blueenginesolutions.com/og-image.png">
-<!-- FORM: HEAD SECTION -->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="referrer" content="no-referrer-when-downgrade">
-    <!-- THIS SCRIPT NEEDS TO BE LOADED FIRST BEFORE wforms.js -->
-    <script type="text/javascript" data-for="FA__DOMContentLoadedEventDispatch" src="https://www.tfaforms.com/js/FA__DOMContentLoadedEventDispatcher.js" defer></script>
-        <script type="text/javascript">
-        document.addEventListener("FA__DOMContentLoaded", function(){
-            const FORM_TIME_START = Math.floor((new Date).getTime()/1000);
-            let formElement = document.getElementById("tfa_0");
-            if (null === formElement) {
-                formElement = document.getElementById("0");
-            }
-            let appendJsTimerElement = function(){
-                let formTimeDiff = Math.floor((new Date).getTime()/1000) - FORM_TIME_START;
-                let cumulatedTimeElement = document.getElementById("tfa_dbCumulatedTime");
-                if (null !== cumulatedTimeElement) {
-                    let cumulatedTime = parseInt(cumulatedTimeElement.value);
-                    if (null !== cumulatedTime && cumulatedTime > 0) {
-                        formTimeDiff += cumulatedTime;
-                    }
-                }
-                let jsTimeInput = document.createElement("input");
-                jsTimeInput.setAttribute("type", "hidden");
-                jsTimeInput.setAttribute("value", formTimeDiff.toString());
-                jsTimeInput.setAttribute("name", "tfa_dbElapsedJsTime");
-                jsTimeInput.setAttribute("id", "tfa_dbElapsedJsTime");
-                jsTimeInput.setAttribute("autocomplete", "off");
-                if (null !== formElement) {
-                    formElement.appendChild(jsTimeInput);
-                }
-            };
-            if (null !== formElement) {
-                if(formElement.addEventListener){
-                    formElement.addEventListener('submit', appendJsTimerElement, false);
-                } else if(formElement.attachEvent){
-                    formElement.attachEvent('onsubmit', appendJsTimerElement);
-                }
-            }
-        });
-    </script>
 
-    <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-layout.css?v=1773345792" rel="stylesheet" type="text/css" />
-
-    <link href="https://www.tfaforms.com/uploads/themes/theme-68007.css" rel="stylesheet" type="text/css" />
-    <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=1773345792" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
-    <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=1773345792"></script>
-    <script type="text/javascript">
-        wFORMS.behaviors.prefill.skip = false;
-    </script>
-        <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_US.js?v=1773345792"></script>
-
-<link rel="stylesheet" href="/brand.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Epilogue:wght@300;400;500;600;700&family=Inconsolata:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Epilogue:wght@300;400;500;600;700&family=Inconsolata:wght@500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Epilogue:wght@300;400;500;600;700&family=Inconsolata:wght@500;700&display=swap"></noscript>
+<link rel="stylesheet" href="/brand.css">
 <style>
 :root{--sand:#EEF3F8;--warm:#F5F8FB;--rust:#8B1A2A;--mid:#5a6272;--light:#8e97a8;--rule:rgba(26,58,92,0.1);}
 body{background:var(--warm);}
@@ -273,7 +225,7 @@ body{background:var(--warm);}
 <body>
 
 <div id="site-nav"></div>
-<script src="/nav.js"></script>
+<script src="/nav.js" defer></script>
 
 <!-- ── HERO ── -->
 <section class="contact-hero">
@@ -341,7 +293,7 @@ body{background:var(--warm);}
 
 
 <div id="site-footer"></div>
-<script src="/footer.js"></script>
+<script src="/footer.js" defer></script>
 
 <script>
 // Scroll reveal

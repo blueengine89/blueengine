@@ -277,19 +277,25 @@
         });
     </script>
 
-    <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-layout.css?v=1774451549" rel="stylesheet" type="text/css" />
+    <link rel="preload" as="style" href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-layout.css?v=1774451549" onload="this.onload=null;this.rel='stylesheet'" type="text/css">
+    <noscript><link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-layout.css?v=1774451549" rel="stylesheet" type="text/css"></noscript>
 
-    <link href="https://www.tfaforms.com/uploads/themes/theme-68007.css" rel="stylesheet" type="text/css" />
+    <link rel="preload" as="style" href="https://www.tfaforms.com/uploads/themes/theme-68007.css" onload="this.onload=null;this.rel='stylesheet'" type="text/css">
+    <noscript><link href="https://www.tfaforms.com/uploads/themes/theme-68007.css" rel="stylesheet" type="text/css"></noscript>
     <link href="https://www.tfaforms.com/dist/form-builder/5.0.0/wforms-jsonly.css?v=1774451549" rel="alternate stylesheet" title="This stylesheet activated by javascript" type="text/css" />
-    <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=1774451549"></script>
+    <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/wforms.js?v=1774451549" defer></script>
     <script type="text/javascript">
-        wFORMS.behaviors.prefill.skip = false;
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof wFORMS !== 'undefined') { wFORMS.behaviors.prefill.skip = false; }
+        });
     </script>
-        <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_US.js?v=1774451549"></script>
+    <script type="text/javascript" src="https://www.tfaforms.com/wForms/3.11/js/localization-en_US.js?v=1774451549" defer></script>
 
-<link rel="stylesheet" href="/brand.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Epilogue:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Epilogue:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Epilogue:wght@300;400;500;600;700&display=swap"></noscript>
+<link rel="stylesheet" href="/brand.css">
 <style>
 :root{--sand:#EEF3F8;--warm:#F5F8FB;--rust:#8B1A2A;--mid:#5a6272;--light:#8e97a8;--rule:rgba(26,58,92,0.1);}
 body{background:var(--warm);}
@@ -337,7 +343,7 @@ body{background:var(--warm);}
 <body>
 
 <div id="site-nav"></div>
-<script src="/nav.js"></script>
+<script src="/nav.js" defer></script>
 
 <section class="cf-section">
   <div class="cf-inner">
@@ -417,12 +423,12 @@ body{background:var(--warm);}
   <p class="supportInfo" >
       </p>
  </div>
-<script src="https://www.tfaforms.com/api_v2/sst/copy-and-paste"></script>
+<script src="https://www.tfaforms.com/api_v2/sst/copy-and-paste" defer></script>
 
   </div>
 </section>
 
 <div id="site-footer"></div>
-<script src="/footer.js"></script>
+<script src="/footer.js" defer></script>
 </body>
 </html>
