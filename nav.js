@@ -4,6 +4,16 @@
  * Place the div at the very start of <body>.
  */
 (function () {
+  // Inject Google Fonts async (non-blocking) once, from a single source of truth
+  if (!document.getElementById('bes-fonts')) {
+    var _pc1 = document.createElement('link'); _pc1.rel='preconnect'; _pc1.href='https://fonts.googleapis.com';
+    var _pc2 = document.createElement('link'); _pc2.rel='preconnect'; _pc2.href='https://fonts.gstatic.com'; _pc2.crossOrigin='anonymous';
+    var _fl = document.createElement('link'); _fl.id='bes-fonts'; _fl.rel='stylesheet'; _fl.media='print';
+    _fl.href='https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Epilogue:wght@300;400;500;600;700&display=swap';
+    _fl.onload = function(){ this.media='all'; };
+    document.head.appendChild(_pc1); document.head.appendChild(_pc2); document.head.appendChild(_fl);
+  }
+
   // Inject Google Tag Manager once, from a single source of truth
   if (!window.__gtmLoaded) {
     window.__gtmLoaded = true;
