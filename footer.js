@@ -231,4 +231,35 @@
     document.head.insertAdjacentHTML('beforeend', css);
   }
   target.innerHTML = html;
+
+  // Inject Organization schema on every page for AEO entity signaling
+  if (!document.getElementById('bes-org-schema')) {
+    const schema = document.createElement('script');
+    schema.id = 'bes-org-schema';
+    schema.type = 'application/ld+json';
+    schema.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Blue Engine Solutions",
+      "alternateName": "Blue Engine Salesforce Consultants",
+      "url": "https://www.blueenginesolutions.com",
+      "description": "Boutique Salesforce consulting firm specializing in org cleanups, data architecture, and workflow automation for nonprofits and growing businesses.",
+      "sameAs": [
+        "https://www.linkedin.com/company/blue-engine-solutions",
+        "https://www.facebook.com/BlueEngineSalesforce",
+        "https://www.youtube.com/@blueenginesalesforceconsul1434",
+        "https://appexchange.salesforce.com/appxConsultingListingDetail?listingId=a0N3u00000ONlmUEAT",
+        "https://g.page/salesforcedc",
+        "https://g.co/kgs/jJwMpff",
+        "https://www.google.com/maps/place/Blue+Engine+Salesforce+Consultants/@33.8027394,-84.3933341,15z/data=!4m5!3m4!1s0x88f505b89cf279db:0xfaac04440ed26666!8m2!3d33.8027394!4d-84.3933341",
+        "https://g.page/salesforceconsultantsphilly",
+        "https://g.page/salesforcelosangeles",
+        "https://g.co/kgs/vmw9r5D",
+        "https://g.page/salesforcetampa",
+        "https://www.google.com/maps/place/Blue+Engine+Salesforce+Consultants/@25.7717773,-80.3628806,11z/data=!4m5!3m4!1s0x88d9b797b7966493:0x86d895590f9a0b18!8m2!3d25.7738321!4d-80.1899842",
+        "https://www.google.com/maps/place/Blue+Engine+Salesforce+Consultants/@35.7689488,-78.6659838,13z/data=!4m5!3m4!1s0x0:0x2d5cb6bf592d086b!8m2!3d35.773249!4d-78.6390759"
+      ]
+    });
+    document.head.appendChild(schema);
+  }
 })();
