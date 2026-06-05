@@ -1,0 +1,28 @@
+name: Archive ClickUp Daily Summaries
+
+on:
+  schedule:
+    # Monday–Friday at 10 PM EST (UTC-5) = 03:00 UTC Tuesday–Saturday
+    - cron: '0 3 * * 2-6'
+  workflow_dispatch: # manual trigger for testing
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r scripts/requirements-gmail.txt
+
+      - name: Archive ClickUp daily summaries
+        env:
+          GMAIL_CLIENT_ID: ${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET: ${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN: ${{ secrets.GMAIL_REFRESH_TOKEN }}
+        run: python scripts/archive_clickup_summaries.py
