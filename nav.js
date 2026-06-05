@@ -234,6 +234,7 @@
       </div>
     </li>
     <li><a href="/about-us/">About</a></li>
+    <li><a href="/faq.html">FAQ</a></li>
     <li><a href="/contact/" class="sn-contact">Contact</a></li>
     <li><a href="/health-assessment/" class="sn-cta">Free Health Check →</a></li>
   </ul>
@@ -248,6 +249,7 @@
     <a href="/for-businesses.html">Growing Businesses</a>
     <a href="/for-nonprofits.html">Nonprofits</a>
     <a href="/about-us/">About</a>
+    <a href="/faq.html">FAQ</a>
     <a href="/contact/">Contact</a>
     <a href="/health-assessment/">Free Health Check →</a>
   </div>

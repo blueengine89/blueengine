@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salesforce Integrations, Data &amp; Reporting FAQ | Blue Engine Solutions</title>
+<meta name="description" content="10 answered questions about Salesforce integrations with accounting software, payment processors, form tools, data migrations, deduplication, custom dashboards, and BI tools.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1A3A5C">
+<link rel="canonical" href="https://www.blueenginesolutions.com/faq-integrations">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Blue Engine Solutions">
+<meta property="og:url" content="https://www.blueenginesolutions.com/faq-integrations">
+<meta property="og:title" content="Salesforce Integrations, Data &amp; Reporting FAQ | Blue Engine Solutions">
+<meta property="og:description" content="Answers about connecting Salesforce to QuickBooks, NetSuite, Stripe, payment tools, form software, and building accurate custom dashboards and BI reporting pipelines.">
+<meta property="og:image" content="https://www.blueenginesolutions.com/og-image.png">
+<link rel="stylesheet" href="/brand.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Epilogue:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you integrate Salesforce with our other software tools?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We break down data silos by building robust API or middleware connections across accounting systems, payment tools, and operational software platforms." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you integrate Salesforce with our exact accounting software (QuickBooks/SAP/NetSuite)?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We synchronize transactional data, ledger accounts, and customer invoices directly between Salesforce and your accounting tools via middleware connectors." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you connect Salesforce to our payment processors or online giving platforms?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We deploy native tools like Chargent or connect external gateways (Stripe, Give platforms) to log transactions securely against client or donor records." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you connect Salesforce with our form tools or content management systems (CMS)?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We map data flows from tools like FormAssembly, JotForm, or Gravity Forms straight into core Salesforce objects while honoring deduplication rules." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you help us automate our manual, repetitive everyday work?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We construct automated data paths and event-driven triggers that eliminate double data entry, handle back-and-forth notifications, and track task queues." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you handle data migration, de-duplication, and field mapping from multiple sources?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We execute a rigid schema migration: initial extraction mapping, sandbox staging runs, deployment of fuzzy matching duplicate logic, and production validation." }
+    },
+    {
+      "@type": "Question",
+      "name": "Will you backfill historical data or focus only on importing new records?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Both. We audit your legacy database and scope backfills based on volume, often recommending migrating critical historical summaries first to save your budget." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you build the custom reports and dashboards we need for finance or operations?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We build tailored reports and real-time operational dashboards so leadership has direct visibility into key performance indicators." }
+    },
+    {
+      "@type": "Question",
+      "name": "How will you ensure data quality for accurate reporting (e.g., matching opportunities to payments)?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We deploy strict system validation rules, lock down manual entry layout fields, and use backend roll-up summary flows to match transactional inputs perfectly." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you support Tableau, CRM Analytics, or external BI tools and their underlying data models?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We normalize your Salesforce schema architecture, optimize relational data pipelines, and package datasets to feed corporate BI reporting tools cleanly." }
+    }
+  ]
+}
+</script>
+
+<style>
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: .08s; } .d2 { transition-delay: .16s; } .d3 { transition-delay: .24s; }
+
+.spoke-eyebrow { font-family: 'Epilogue', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--teal); display: block; margin-bottom: 0.85rem; }
+.spoke-eyebrow-light { color: rgba(255,255,255,0.5); }
+.spoke-hero { background: var(--navy); padding: calc(72px + 4rem) 2rem 4.5rem; position: relative; overflow: hidden; }
+.spoke-hero::before { content: ''; position: absolute; top: -150px; right: -150px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(61,166,205,0.11), transparent 65%); pointer-events: none; }
+.spoke-hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+.spoke-breadcrumb { display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'Epilogue', sans-serif; font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.5); text-decoration: none; margin-bottom: 1.5rem; transition: color 0.2s; animation: fadeUp 0.5s both; }
+.spoke-breadcrumb:hover { color: rgba(255,255,255,0.8); }
+.spoke-hero-h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(2rem, 4vw, 3.25rem); font-weight: 700; color: white; line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1rem; animation: fadeUp 0.6s 0.1s both; }
+.spoke-hero-sub { font-family: 'Epilogue', sans-serif; font-size: 1rem; line-height: 1.75; color: rgba(255,255,255,0.58); font-weight: 300; max-width: 580px; animation: fadeUp 0.6s 0.2s both; }
+.spoke-count-badge { display: inline-block; margin-top: 1.25rem; padding: 5px 14px; background: rgba(61,166,205,0.18); border: 1px solid rgba(61,166,205,0.3); border-radius: 100px; font-family: 'Epilogue', sans-serif; font-size: 13px; font-weight: 600; color: var(--teal); animation: fadeUp 0.6s 0.28s both; }
+.spoke-qa-section { background: var(--bg); padding: 6rem 2rem; }
+.spoke-qa-inner { max-width: 860px; margin: 0 auto; }
+.spoke-qa-list { display: flex; flex-direction: column; }
+.spoke-qa-item { padding: 2.5rem 0 2.5rem 2rem; border-left: 3px solid var(--teal); border-bottom: 1px solid var(--border-light); }
+.spoke-qa-item:last-child { border-bottom: none; }
+.spoke-qa-item h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 700; color: var(--navy); line-height: 1.3; margin-bottom: 0.9rem; }
+.spoke-qa-item p { font-family: 'Epilogue', sans-serif; font-size: 0.975rem; line-height: 1.82; color: var(--ink-mid); font-weight: 300; }
+.spoke-related { background: white; padding: 5rem 2rem; border-top: 1px solid var(--border-light); }
+.spoke-related-inner { max-width: 1100px; margin: 0 auto; }
+.spoke-related-h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 1.6rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; }
+.spoke-related-sub { font-family: 'Epilogue', sans-serif; font-size: 0.9rem; color: var(--ink-light); font-weight: 300; margin-bottom: 2.25rem; }
+.spoke-related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.spoke-related-card { background: white; border: 1px solid var(--border-light); border-radius: 10px; padding: 1.5rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; }
+.spoke-related-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-blue); border-color: var(--teal); }
+.spoke-related-icon { font-size: 1.4rem; margin-bottom: 0.6rem; }
+.spoke-related-title { font-family: 'Playfair Display', Georgia, serif; font-size: 0.95rem; font-weight: 700; color: var(--navy); line-height: 1.3; }
+.spoke-related-link { font-family: 'Epilogue', sans-serif; font-size: 0.8rem; font-weight: 700; color: var(--teal-deep); display: block; margin-top: 0.75rem; }
+.spoke-cta { background: linear-gradient(135deg, var(--teal-deep) 0%, var(--navy) 65%); padding: 6rem 2rem; text-align: center; position: relative; overflow: hidden; }
+.spoke-cta::before { content: ''; position: absolute; top: -100px; right: -100px; width: 450px; height: 450px; background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 65%); }
+.spoke-cta-inner { max-width: 640px; margin: 0 auto; position: relative; z-index: 1; }
+.spoke-cta-h2 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.9rem, 3vw, 2.75rem); font-weight: 700; color: white; line-height: 1.12; margin-bottom: 0.9rem; }
+.spoke-cta-sub { font-family: 'Epilogue', sans-serif; font-size: 1rem; line-height: 1.75; color: rgba(255,255,255,0.6); font-weight: 300; margin-bottom: 2.25rem; }
+.spoke-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+@media (max-width: 768px) { .spoke-related-grid { grid-template-columns: repeat(2, 1fr); } .spoke-qa-item { padding-left: 1.25rem; } }
+@media (max-width: 480px) { .spoke-related-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div id="site-nav"></div>
+<script src="/nav.js"></script>
+
+<section class="spoke-hero">
+  <div class="spoke-hero-inner">
+    <a href="/faq.html" class="spoke-breadcrumb">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to FAQ Hub
+    </a>
+    <span class="spoke-eyebrow">Salesforce FAQ — Integrations &amp; Data</span>
+    <h1 class="spoke-hero-h1">Integrations, Data &amp; Reporting</h1>
+    <p class="spoke-hero-sub">Answers about connecting Salesforce to accounting software, payment processors, and form tools — plus data migrations, deduplication, and building accurate dashboards.</p>
+    <span class="spoke-count-badge">10 questions answered</span>
+  </div>
+</section>
+
+<section class="spoke-qa-section">
+  <div class="spoke-qa-inner">
+    <div class="spoke-qa-list">
+
+      <article class="spoke-qa-item reveal">
+        <h3>Can you integrate Salesforce with our other software tools?</h3>
+        <p>Yes. We break down data silos by building robust API or middleware connections across accounting systems, payment tools, and operational software platforms.</p>
+      </article>
+
+      <article class="spoke-qa-item reveal">
+        <h3>Can you integrate Salesforce with our exact accounting software (QuickBooks/SAP/NetSuite)?</h3>
+        <p>Yes. We synchronize transactional data, ledger accounts, and customer invoices directly between Salesforce and your accounting tools via middleware connectors.</p>
+      </article>
+
+      <article class="spoke-qa-item reveal">
+        <h3>Can you connect Salesforce to our payment processors or online giving platforms?</h3>
+        <p>Yes. We deploy native tools like Chargent or connect external gateways (Stripe, Give platforms) to log transactions securely against client or donor records.</p>
+      </article>
+
+      <article class="spoke-qa-item reveal">
+        <h3>Can you connect Salesforce with our form tools or content management systems (CMS)?</h3>
+        <p>Yes. We map data flows from tools like FormAssembly, JotForm, or Gravity Forms straight into core Salesforce objects while honoring deduplication rules.</p>
+      </article>
+
+      <article class="spoke-qa-item reveal">
+        <h3>Can you help us automate our manual, repetitive everyday work?</h3>
+        <p>Yes. We construct automated data paths and event-driven triggers that eliminate double data entry, handle back-and-forth notifications, and track task queues.</p>
+      </article>
+
+      <article class="spoke-qa-item reveal">
+        <h3>How do you handle data migration, de-duplication, and field mapping from multiple sources?</h3>
+        <p>We execute a rigid schema migration: initial extraction mapping, sandbox staging runs, deployment of fuzzy matching duplicate logic, and production validation.</p>
+      </article>
+
+      <article class="spoke-qa-item reveal">
+        <h3>Will you backfill historical data or focus only on importing new records?</h3>
+        <p>Both. We audit your legacy database and scope backfills based on volume, often recommending migrating critical historical summaries first to save your budget.</p>
+      </article>
+
+      <article class="spoke-qa-item reveal">
+        <h3>Can you build the custom reports and dashboards we need for finance or operations?</h3>
+        <p>Yes. We build tailored reports and real-time operational dashboards so leadership has direct visibility into key performance indicators.</p>
+      </article>
+
+      <article class="spoke-qa-item reveal">
+        <h3>How will you ensure data quality for accurate reporting (e.g., matching opportunities to payments)?</h3>
+        <p>We deploy strict system validation rules, lock down manual entry layout fields, and use backend roll-up summary flows to match transactional inputs perfectly.</p>
+      </article>
+
+      <article class="spoke-qa-item reveal">
+        <h3>Do you support Tableau, CRM Analytics, or external BI tools and their underlying data models?</h3>
+        <p>Yes. We normalize your Salesforce schema architecture, optimize relational data pipelines, and package datasets to feed corporate BI reporting tools cleanly.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="spoke-related">
+  <div class="spoke-related-inner">
+    <h2 class="spoke-related-h2">Explore More FAQ Topics</h2>
+    <p class="spoke-related-sub">Find answers across all five Salesforce consulting categories.</p>
+    <div class="spoke-related-grid">
+      <a href="/faq-support.html" class="spoke-related-card">
+        <div class="spoke-related-icon">🛡️</div>
+        <div class="spoke-related-title">Ongoing Support &amp; Managed Services</div>
+        <span class="spoke-related-link">19 questions →</span>
+      </a>
+      <a href="/faq-pricing.html" class="spoke-related-card">
+        <div class="spoke-related-icon">💰</div>
+        <div class="spoke-related-title">Pricing, Licensing &amp; Engagement</div>
+        <span class="spoke-related-link">10 questions →</span>
+      </a>
+      <a href="/faq-implementation.html" class="spoke-related-card">
+        <div class="spoke-related-icon">⚙️</div>
+        <div class="spoke-related-title">Implementation &amp; Technical Delivery</div>
+        <span class="spoke-related-link">12 questions →</span>
+      </a>
+      <a href="/faq-portals.html" class="spoke-related-card">
+        <div class="spoke-related-icon">🌐</div>
+        <div class="spoke-related-title">Portals, Programs &amp; Field Operations</div>
+        <span class="spoke-related-link">13 questions →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="spoke-cta">
+  <div class="spoke-cta-inner">
+    <span class="spoke-eyebrow spoke-eyebrow-light reveal">Need a Connection Built?</span>
+    <h2 class="spoke-cta-h2 reveal d1">Let's Audit Your Data Landscape</h2>
+    <p class="spoke-cta-sub reveal d2">Tell us which systems you're juggling. We'll map a clean integration path — no duct tape.</p>
+    <div class="spoke-cta-btns reveal d3">
+      <a href="/health-assessment/" class="btn-primary">Get a Free Assessment →</a>
+      <a href="/contact/" class="btn btn-outline-light">Ask a Question</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+<script src="/footer.js"></script>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

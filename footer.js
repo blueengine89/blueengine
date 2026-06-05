@@ -157,6 +157,26 @@
   border-radius: 50%;
   flex-shrink: 0;
 }
+#site-footer a.ft-cert {
+  text-decoration: none;
+  transition: color .2s, background .2s;
+}
+#site-footer a.ft-cert:hover {
+  color: rgba(255,255,255,.85);
+  background: rgba(255,255,255,.1);
+}
+#site-footer .ft-cert-stars {
+  color: #f5b731;
+  letter-spacing: .04em;
+  font-size: .72rem;
+  line-height: 1;
+}
+#site-footer .ft-trust-group {
+  display: flex;
+  gap: .75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
 @media (max-width: 960px) {
   #site-footer footer { padding: 3rem 1.5rem 2rem; }
   #site-footer .ft-top { grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -219,7 +239,10 @@
     <a href="/case-studies/">Case Studies</a>
     <a href="/testimonials/">Testimonials</a>
     <a href="/careers/">Careers</a>
-    <div class="ft-cert"><span class="ft-cert-dot"></span>CERTIFIED SALESFORCE PARTNER SINCE 2019</div>
+    <div class="ft-trust-group">
+      <a href="https://appexchange.salesforce.com/appxConsultingListingDetail?listingId=a0N3u00000ONlmUEAT" target="_blank" rel="noopener" class="ft-cert"><span class="ft-cert-dot"></span>CERTIFIED SALESFORCE PARTNER SINCE 2019</a>
+      <a href="https://appexchange.salesforce.com/appxConsultingListingDetail?listingId=a0N3u00000ONlmUEAT" target="_blank" rel="noopener" class="ft-cert"><span class="ft-cert-stars">★★★★★</span>4.9 ON APPEXCHANGE</a>
+    </div>
   </div>
 </footer>`;
 

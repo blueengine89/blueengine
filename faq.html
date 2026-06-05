@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Salesforce FAQ — Support, Pricing &amp; Implementation Answers | Blue Engine Solutions</title>
+<meta name="description" content="Find straight answers to common Salesforce consulting questions: costs, retainers, implementation timelines, integrations, portals, and platform support. Blue Engine Solutions FAQ hub.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#1A3A5C">
+<link rel="canonical" href="https://www.blueenginesolutions.com/faq">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Blue Engine Solutions">
+<meta property="og:url" content="https://www.blueenginesolutions.com/faq">
+<meta property="og:title" content="Salesforce FAQ — Support, Pricing &amp; Implementation Answers | Blue Engine Solutions">
+<meta property="og:description" content="Common questions about Salesforce consulting costs, retainers, implementation timelines, integrations, portals, and platform support — answered transparently.">
+<meta property="og:image" content="https://www.blueenginesolutions.com/og-image.png">
+<link rel="stylesheet" href="/brand.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Epilogue:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does a typical Salesforce engagement cost (implementation and ongoing support)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because every organization has a unique setup, costs vary based on your specific user count, required integrations, and data complexity. Our typical engagements fall into these clear ranges: Small Implementations / Projects run roughly 40–80 hours ($8,000–$16,000 at our standard $210/hr rate). Medium to Large Platform Builds run between 100–300+ hours ($21,000–$63,000+), with very large platform builds frequently exceeding $60,000. Ongoing Support Retainers range from small (10–20 hours/month approximately $2,000–$4,000) to larger enterprise support (40–60 hours/month approximately $8,000–$12,000). We also sell fixed-hour blocks of 20, 40, or 80 hours."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you offer fixed-price projects, hourly blocks, or monthly retainers—and which is best for us?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We offer all three models to align with your project's predictability and goals. Fixed-Price Projects are best for narrow, well-specified builds with a clearly defined and frozen scope of work. Hourly Blocks are ideal for flexible, short-term burst work, discovery phases, or minor iterations. Monthly Retainers (Ongoing Support) are our most recommended model for long-term platform health—ensuring proactive maintenance, continuous optimizations, and predictable monthly costs. The best choice depends on your scope certainty: fixed-price for defined projects, and blocks or retainers for ongoing maintenance and iterative growth."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to our Salesforce platform if our internal Administrator leaves the company?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This is one of the most common catalysts for organizations transitioning to an external partner. If your internal Salesforce Admin resigns, we can step in immediately to provide fractional admin coverage, ensuring zero disruption to your daily workflows and data integrity. Long-term, outsourcing your platform management to an ongoing support retainer gives your organization fractional access to an entire team of certified admins, custom developers, and solutions architects for significantly less than the overhead cost of recruiting and employing a single, full-time internal staff member."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How will you help our staff actually adopt Salesforce and stop relying on spreadsheets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "True software adoption succeeds only when the platform solves a real, everyday pain point for your team—such as eliminating a grueling, manual monthly report. We drive user adoption through friction-free design and a structured training process: We build simplified homepages, custom task lists, and tailored user views so your staff only sees what they need. We provide recorded Loom videos for routine daily tasks, build comprehensive documentation, and run interactive, role-based train-the-trainer workshops. We implement change management strategies that give users a voice during the design phase, and we track ongoing adoption post-launch using native Salesforce usage reports."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is included in your initial project estimates versus what typically becomes a change order?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our project estimates are comprehensive and cover the complete lifecycle of the agreed scope, including discovery, system configuration, thorough testing, basic user training, and a short post-launch warranty period. Items that fall outside the initial minimum viable product (MVP) scope are handled via a formal change-order process. The most common drivers of change orders include unexpected data cleanup or unanticipated data quality issues, complex third-party integrations added mid-project, user interface redesigns beyond the initial scope, and additional custom report or dashboard requests. For enterprise-level clients, we routinely pad estimates to absorb standard scope drift."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .75s ease, transform .75s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: .1s; } .d2 { transition-delay: .2s; } .d3 { transition-delay: .3s; }
+.d4 { transition-delay: .4s; } .d5 { transition-delay: .5s; }
+
+/* ── SHARED TOKENS ── */
+.faq-eyebrow {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--teal);
+  display: block;
+  margin-bottom: 1rem;
+}
+.faq-eyebrow-light { color: rgba(255,255,255,0.5); }
+.faq-section-h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.85rem;
+}
+.faq-section-h2 em { font-style: italic; color: var(--teal); }
+.faq-section-sub {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 1rem;
+  line-height: 1.78;
+  color: var(--ink-light);
+  font-weight: 300;
+  max-width: 620px;
+  margin-bottom: 3.5rem;
+}
+
+/* ── HERO ── */
+.faq-hero {
+  background: var(--navy);
+  padding: calc(72px + 5rem) 2rem 6rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+}
+.faq-hero::before {
+  content: '';
+  position: absolute;
+  top: -180px; right: -180px;
+  width: 680px; height: 680px;
+  background: radial-gradient(circle, rgba(61,166,205,0.13), transparent 65%);
+  pointer-events: none;
+}
+.faq-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -80px;
+  width: 480px; height: 480px;
+  background: radial-gradient(circle, rgba(61,166,205,0.07), transparent 65%);
+  pointer-events: none;
+}
+.faq-hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+.faq-hero .faq-eyebrow { animation: fadeUp 0.6s 0.05s both; }
+.faq-hero-h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.4rem, 4.5vw, 4rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: 1.35rem;
+  animation: fadeUp 0.7s 0.15s both;
+}
+.faq-hero-sub {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.78;
+  color: rgba(255,255,255,0.62);
+  font-weight: 300;
+  max-width: 580px;
+  margin: 0 auto 2.75rem;
+  animation: fadeUp 0.7s 0.25s both;
+}
+.faq-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  animation: fadeUp 0.7s 0.36s both;
+}
+.faq-pill {
+  display: inline-block;
+  padding: 7px 17px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 100px;
+  font-family: 'Epilogue', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.72);
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.faq-pill:hover {
+  background: rgba(61,166,205,0.18);
+  border-color: rgba(61,166,205,0.4);
+  color: white;
+}
+
+/* ── FEATURED Q&As ── */
+.faq-featured {
+  background: var(--bg);
+  padding: 7rem 2rem;
+}
+.faq-featured-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+.faq-items { display: flex; flex-direction: column; }
+.faq-item {
+  padding: 2.75rem 0 2.75rem 2rem;
+  border-left: 3px solid var(--teal);
+  border-bottom: 1px solid var(--border-light);
+}
+.faq-item:last-child { border-bottom: none; }
+.faq-item h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.3;
+  margin-bottom: 1.1rem;
+}
+.faq-item p {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 0.975rem;
+  line-height: 1.82;
+  color: var(--ink-mid);
+  font-weight: 300;
+  margin-bottom: 0.75rem;
+}
+.faq-item p:last-child { margin-bottom: 0; }
+.faq-item ul {
+  padding-left: 1.35rem;
+  margin: 0.5rem 0 0.85rem;
+}
+.faq-item li {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.78;
+  color: var(--ink-mid);
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+.faq-item li:last-child { margin-bottom: 0; }
+.faq-item li strong {
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* ── GATEWAY CARDS ── */
+.faq-gateways {
+  background: white;
+  padding: 7rem 2rem;
+  border-top: 1px solid var(--border-light);
+}
+.faq-gateways-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.faq-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 3.5rem;
+  justify-content: center;
+}
+.faq-card {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 2rem 1.75rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 calc(33.333% - 0.85rem);
+  min-width: 260px;
+  max-width: 380px;
+  transition: transform 0.25s cubic-bezier(.34,1.56,.64,1), box-shadow 0.25s, border-color 0.25s;
+}
+.faq-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-teal);
+  border-color: var(--teal);
+}
+.faq-card-icon { font-size: 1.85rem; margin-bottom: 1.1rem; }
+.faq-card-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+.faq-card-desc {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.72;
+  color: var(--ink-light);
+  font-weight: 300;
+  flex: 1;
+  margin-bottom: 1.5rem;
+}
+.faq-card-link {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--teal-deep);
+  letter-spacing: 0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: auto;
+  transition: gap 0.2s, color 0.2s;
+}
+.faq-card:hover .faq-card-link { gap: 0.55rem; color: var(--teal); }
+
+/* ── BOTTOM CTA ── */
+.faq-cta {
+  background: linear-gradient(135deg, var(--teal-deep) 0%, var(--navy) 65%);
+  padding: 7rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.faq-cta::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(255,255,255,0.06), transparent 65%);
+  pointer-events: none;
+}
+.faq-cta-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.faq-cta-h2 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: white;
+  line-height: 1.12;
+  margin-bottom: 1rem;
+}
+.faq-cta-sub {
+  font-family: 'Epilogue', sans-serif;
+  font-size: 1rem;
+  line-height: 1.78;
+  color: rgba(255,255,255,0.62);
+  font-weight: 300;
+  margin-bottom: 2.5rem;
+}
+.faq-cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .faq-card { flex: 0 1 calc(50% - 0.65rem); }
+}
+@media (max-width: 600px) {
+  .faq-card { flex: 0 1 100%; max-width: 100%; }
+  .faq-item { padding-left: 1.25rem; }
+  .faq-featured { padding-top: 4rem; padding-bottom: 4rem; }
+  .faq-gateways { padding-top: 4rem; padding-bottom: 4rem; }
+  .faq-cta { padding-top: 4rem; padding-bottom: 4rem; }
+}
+</style>
+</head>
+<body>
+<div id="site-nav"></div>
+<script src="/nav.js"></script>
+
+<!-- ── HERO ── -->
+<section class="faq-hero">
+  <div class="faq-hero-inner">
+    <span class="faq-eyebrow">Salesforce FAQ</span>
+    <h1 class="faq-hero-h1">Salesforce Support, Pricing<br>&amp; Implementation Answers</h1>
+    <p class="faq-hero-sub">Whether you're looking for long-term managed services, planning a migration, or trying to optimize your current Salesforce platform — find your answers here.</p>
+    <nav class="faq-pills" aria-label="FAQ categories">
+      <a href="/faq-support.html" class="faq-pill">Ongoing Support</a>
+      <a href="/faq-pricing.html" class="faq-pill">Pricing &amp; Licensing</a>
+      <a href="/faq-implementation.html" class="faq-pill">Implementation</a>
+      <a href="/faq-integrations.html" class="faq-pill">Integrations &amp; Data</a>
+      <a href="/faq-portals.html" class="faq-pill">Portals &amp; Programs</a>
+    </nav>
+  </div>
+</section>
+
+<!-- ── FEATURED Q&As ── -->
+<section class="faq-featured">
+  <div class="faq-featured-inner">
+    <span class="faq-eyebrow reveal">Top Questions</span>
+    <h2 class="faq-section-h2 reveal d1">The Questions We Hear <em>Most</em></h2>
+    <p class="faq-section-sub reveal d2">These five questions cover the most critical decisions organizations face when evaluating a Salesforce partner. Read them in full — they're answered with complete transparency.</p>
+
+    <div class="faq-items">
+      <article class="faq-item reveal">
+        <h3>How much does a typical Salesforce engagement cost (implementation and ongoing support)?</h3>
+        <p>Because every organization has a unique setup, costs vary based on your specific user count, required integrations, and data complexity. However, our typical engagements fall into these clear ranges:</p>
+        <ul>
+          <li><strong>Small Implementations / Projects:</strong> Run roughly 40–80 hours ($8,000–$16,000 at our standard $210/hr rate).</li>
+          <li><strong>Medium to Large Platform Builds:</strong> Run between 100–300+ hours ($21,000–$63,000+), with very large platform builds frequently exceeding $60,000.</li>
+          <li><strong>Ongoing Support Retainers:</strong> To keep your platform optimized long-term, we offer monthly retainer bands ranging from small (10–20 hours/month ≈ $2,000–$4,000) to larger enterprise support (40–60 hours/month ≈ $8,000–$12,000). We also sell fixed-hour blocks of 20, 40, or 80 hours.</li>
+        </ul>
+      </article>
+
+      <article class="faq-item reveal">
+        <h3>Do you offer fixed-price projects, hourly blocks, or monthly retainers — and which is best for us?</h3>
+        <p>We offer all three models to align with your project's predictability and goals:</p>
+        <ul>
+          <li><strong>Fixed-Price Projects:</strong> Best for narrow, well-specified builds with a clearly defined and "frozen" scope of work.</li>
+          <li><strong>Hourly Blocks:</strong> Ideal for flexible, short-term "burst" work, discovery phases, or minor iterations.</li>
+          <li><strong>Monthly Retainers (Ongoing Support):</strong> This is our most recommended model for long-term platform health. It ensures proactive maintenance, continuous optimizations, and predictable monthly costs.</li>
+        </ul>
+        <p>Ultimately, the best choice depends on your scope certainty: fixed-price for defined projects, and blocks or retainers for ongoing maintenance and iterative growth.</p>
+      </article>
+
+      <article class="faq-item reveal">
+        <h3>What happens to our Salesforce platform if our internal Administrator leaves the company?</h3>
+        <p>This is one of the most common catalysts for organizations transitioning to an external partner. If your internal Salesforce Admin resigns, we can step in immediately to provide fractional admin coverage, ensuring zero disruption to your daily workflows and data integrity.</p>
+        <p>Long-term, outsourcing your platform management to an ongoing support retainer gives your organization fractional access to an entire team of certified admins, custom developers, and solutions architects for significantly less than the overhead cost of recruiting and employing a single, full-time internal staff member.</p>
+      </article>
+
+      <article class="faq-item reveal">
+        <h3>How will you help our staff actually adopt Salesforce and stop relying on spreadsheets?</h3>
+        <p>True software adoption succeeds only when the platform solves a real, everyday pain point for your team — such as eliminating a grueling, manual monthly report. We drive user adoption through a friction-free design and structured training process:</p>
+        <ul>
+          <li>We build simplified homepages, custom task lists, and tailored user views so your staff only sees what they need.</li>
+          <li>We provide recorded Loom videos for routine daily tasks, build comprehensive documentation, and run interactive, role-based "train-the-trainer" workshops.</li>
+          <li>We implement change management strategies that give your users a voice during the design phase, and we track ongoing adoption post-launch using native Salesforce usage reports.</li>
+        </ul>
+      </article>
+
+      <article class="faq-item reveal">
+        <h3>What is included in your initial project estimates versus what typically becomes a change order?</h3>
+        <p>Our project estimates are comprehensive and cover the complete lifecycle of the agreed scope, including discovery, system configuration, thorough testing, basic user training, and a short post-launch warranty period.</p>
+        <p>To maintain total budget transparency, items that fall outside the initial minimum viable product (MVP) scope are handled via a formal change-order process. The most common drivers of change orders include unexpected data cleanup or unanticipated data quality issues, complex third-party integrations added mid-project, user interface redesigns beyond the initial scope, and additional custom report or dashboard requests. For enterprise-level clients, we routinely pad estimates to absorb standard scope drift.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ── GATEWAY CARDS ── -->
+<section class="faq-gateways">
+  <div class="faq-gateways-inner">
+    <span class="faq-eyebrow reveal">Browse by Topic</span>
+    <h2 class="faq-section-h2 reveal d1">Explore All <em>64 Questions</em> by Category</h2>
+    <p class="faq-section-sub reveal d2">Each topic page contains fully written answers — optimized for the specific questions your team is actually asking.</p>
+
+    <div class="faq-cards">
+      <a href="/faq-support.html" class="faq-card reveal d1">
+        <div class="faq-card-icon">🛡️</div>
+        <h3 class="faq-card-title">Ongoing Support &amp; Managed Services</h3>
+        <p class="faq-card-desc">19 questions covering retainer options, fractional admin coverage, security audits, training programs, change management, and routine monthly maintenance.</p>
+        <span class="faq-card-link">Explore Support FAQs →</span>
+      </a>
+      <a href="/faq-pricing.html" class="faq-card reveal d2">
+        <div class="faq-card-icon">💰</div>
+        <h3 class="faq-card-title">Pricing, Licensing &amp; Engagement</h3>
+        <p class="faq-card-desc">10 questions covering implementation cost ranges, nonprofit pricing, Salesforce edition selection, seat license types, AppExchange costs, and ROI timelines.</p>
+        <span class="faq-card-link">Explore Pricing FAQs →</span>
+      </a>
+      <a href="/faq-implementation.html" class="faq-card reveal d3">
+        <div class="faq-card-icon">⚙️</div>
+        <h3 class="faq-card-title">Implementation &amp; Technical Delivery</h3>
+        <p class="faq-card-desc">12 questions covering project timelines, deliverables, scope management, declarative vs. custom code decisions, and what happens immediately after your kickoff call.</p>
+        <span class="faq-card-link">Explore Implementation FAQs →</span>
+      </a>
+      <a href="/faq-integrations.html" class="faq-card reveal d4">
+        <div class="faq-card-icon">🔗</div>
+        <h3 class="faq-card-title">Integrations, Data &amp; Reporting</h3>
+        <p class="faq-card-desc">10 questions covering accounting system connections, payment processors, form tools, data migrations, deduplication logic, custom dashboards, and BI tools.</p>
+        <span class="faq-card-link">Explore Integrations FAQs →</span>
+      </a>
+      <a href="/faq-portals.html" class="faq-card reveal d5">
+        <div class="faq-card-icon">🌐</div>
+        <h3 class="faq-card-title">Portals, Programs &amp; Field Operations</h3>
+        <p class="faq-card-desc">13 questions covering Experience Cloud portals, program enrollment tracking, assessment workflows, volunteer management, field scheduling, and email deliverability.</p>
+        <span class="faq-card-link">Explore Portals FAQs →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── BOTTOM CTA ── -->
+<section class="faq-cta">
+  <div class="faq-cta-inner">
+    <span class="faq-eyebrow faq-eyebrow-light reveal">Still Have Questions?</span>
+    <h2 class="faq-cta-h2 reveal d1">Let's Talk Through Your Specific Situation</h2>
+    <p class="faq-cta-sub reveal d2">Every Salesforce environment is different. Schedule a free 30-minute call and we'll give you a straight, no-pressure answer.</p>
+    <div class="faq-cta-btns reveal d3">
+      <a href="/health-assessment/" class="btn-primary">Get a Free Assessment →</a>
+      <a href="/contact/" class="btn btn-outline-light">Ask a Question</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+<script src="/nav.js"></script>
+<script src="/footer.js"></script>
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
