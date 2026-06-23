@@ -7,7 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
 
 // Load puppeteer-core from the temp install outside Google Drive
-const puppeteer = require('C:/Users/jonme/AppData/Local/Temp/puppeteer-test/node_modules/puppeteer-core/lib/cjs/puppeteer/puppeteer-core.js');
+const puppeteer = require('C:/Users/jonme/AppData/Local/Temp/puppeteer-test/node_modules/puppeteer-core/lib/puppeteer/puppeteer-core.js');
 
 const url = process.argv[2] || 'http://localhost:3000';
 const label = process.argv[3] || '';
