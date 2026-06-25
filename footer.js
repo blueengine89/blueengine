@@ -236,7 +236,6 @@
   <div class="ft-utility">
     <a href="/about-us/">About</a>
     <a href="/approach/">Our Approach</a>
-    <a href="/case-studies/">Case Studies</a>
     <a href="/testimonials/">Testimonials</a>
     <a href="/faq.html">FAQ</a>
     <a href="/careers/">Careers</a>
