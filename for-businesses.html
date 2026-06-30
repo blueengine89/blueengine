@@ -129,14 +129,19 @@
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
   .clients-section{padding:3rem 1.5rem;}
-  .clients-logos{gap:2.5rem;}
-  .client-logo{max-height:38px;}
+  .clients-logos{gap:2rem 3rem;flex-wrap:wrap;justify-content:center;}
+  .client-logo{max-height:36px;}
   .page-hero{min-height:auto;}
   .hero-inner{padding:calc(72px + 3rem) 1.5rem 5rem;}
   .pain-section,.help-section,.ai-section,.why-strip,.testi-section,.cta-section{padding:5rem 1.5rem;}
   .ai-inner{grid-template-columns:1fr;gap:3rem;}
   .pain-grid,.help-grid{grid-template-columns:1fr;}
   .why-strip-inner{grid-template-columns:1fr;gap:2rem;}
+}
+@media(max-width:600px){
+  .clients-logos{gap:1.5rem 2.5rem;}
+  .client-logo{max-height:30px;}
+  .logo-mobile-hide{display:none;}
 }
 </style>
 </head>
@@ -168,9 +173,9 @@
       <img src="/Client%20Logos/hero%20devs%20logo.png" alt="Hero Devs" class="client-logo">
       <img src="/Client%20Logos/Topgolf-Emblem.png" alt="Topgolf" class="client-logo" style="max-height:52px;max-width:175px;">
       <img src="/Client%20Logos/WAG_Signature_logo_RGB.png" alt="Walgreens" class="client-logo">
-      <img src="/Client%20Logos/PERDOMO-logo-2019-600.webp" alt="Perdomo" class="client-logo">
-      <img src="/Client%20Logos/Metropolitan-Shuttle-logo.png" alt="Metropolitan Shuttle" class="client-logo">
-      <img src="/Client%20Logos/candidly.svg" alt="Candidly" class="client-logo" style="max-width:150px;">
+      <img src="/Client%20Logos/PERDOMO-logo-2019-600.webp" alt="Perdomo" class="client-logo logo-mobile-hide">
+      <img src="/Client%20Logos/Metropolitan-Shuttle-logo.png" alt="Metropolitan Shuttle" class="client-logo logo-mobile-hide">
+      <img src="/Client%20Logos/candidly.svg" alt="Candidly" class="client-logo logo-mobile-hide" style="max-width:150px;">
     </div>
   </div>
 </section>

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -28,36 +28,41 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Epilogue:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+
 /* ── HERO ── */
 .t-hero {
   padding-top: 72px;
   background: var(--navy);
-  padding-bottom: 5rem;
+  padding-bottom: 0;
   position: relative;
   overflow: hidden;
 }
 .t-hero::before {
   content: '';
   position: absolute;
-  top: -100px; right: -150px;
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(61,166,205,.12), transparent 65%);
+  top: -120px; right: -120px;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(61,166,205,.13), transparent 65%);
   pointer-events: none;
 }
 .t-hero::after {
   content: '';
   position: absolute;
-  bottom: -80px; left: 5%;
-  width: 400px; height: 400px;
-  background: radial-gradient(circle, rgba(196,48,64,.06), transparent 65%);
+  bottom: 0; left: 0;
+  width: 500px; height: 400px;
+  background: radial-gradient(circle, rgba(196,48,64,.07), transparent 65%);
   pointer-events: none;
 }
 .t-hero-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 5rem 5rem 0;
+  padding: 5rem 5rem 4rem;
   position: relative;
   z-index: 1;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 4rem;
+  align-items: center;
 }
 .t-eyebrow {
   font-family: 'Epilogue', sans-serif;
@@ -71,8 +76,8 @@
 }
 .t-h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.4rem, 4vw, 4rem);
-  line-height: 1.05;
+  font-size: clamp(2.4rem, 3.6vw, 3.75rem);
+  line-height: 1.06;
   color: white;
   margin-bottom: 1.25rem;
 }
@@ -80,52 +85,247 @@
 .t-sub {
   font-size: 1rem;
   line-height: 1.75;
-  color: rgba(255,255,255,.75);
+  color: rgba(255,255,255,.7);
   font-weight: 300;
-  max-width: 520px;
+  max-width: 440px;
 }
-.t-sub p { color: rgba(255,255,255,.75); }
+.t-sub p { color: rgba(255,255,255,.7); }
+
+/* Hero quote panel */
+.t-hero-panel {
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 16px;
+  padding: 2rem 2rem 1.875rem;
+}
+.t-hero-panel-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 1.125rem;
+}
+.t-hero-panel-stars svg { width: 15px; height: 15px; }
+.t-hero-panel-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.72;
+  color: rgba(255,255,255,.88);
+  margin-bottom: 1.375rem;
+}
+.t-hero-panel-quote::before { content: '\201C'; }
+.t-hero-panel-quote::after  { content: '\201D'; }
+.t-hero-panel-attr {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+.t-hero-panel-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: rgba(61,166,205,.18);
+  border: 1.5px solid rgba(61,166,205,.35);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Epilogue', sans-serif;
+  font-size: .8rem; font-weight: 700;
+  color: var(--teal);
+  flex-shrink: 0;
+}
+.t-hero-panel-name {
+  font-family: 'Epilogue', sans-serif;
+  font-size: .85rem; font-weight: 600;
+  color: rgba(255,255,255,.9);
+  line-height: 1.2;
+}
+.t-hero-panel-org {
+  font-family: 'Epilogue', sans-serif;
+  font-size: .76rem; font-weight: 400;
+  color: rgba(255,255,255,.45);
+  margin-top: .1rem;
+}
 
 /* ── STATS BAR ── */
 .t-stats {
-  background: rgba(255,255,255,.05);
+  background: rgba(255,255,255,.04);
   border-top: 1px solid rgba(255,255,255,.08);
-  margin-top: 3.5rem;
   padding: 2rem 5rem;
   display: flex;
   gap: 4rem;
+  position: relative;
+  z-index: 1;
 }
 .t-stat-num {
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;
+  font-size: 2.1rem;
   font-weight: 700;
   color: white;
   line-height: 1;
 }
+.t-stat-stars {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+  margin-top: .35rem;
+}
+.t-stat-stars svg { width: 13px; height: 13px; }
 .t-stat-label {
   font-family: 'Epilogue', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: .12em;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.45);
+  color: rgba(255,255,255,.4);
   margin-top: .3rem;
 }
 .t-stat-divider {
   width: 1px;
-  background: rgba(255,255,255,.12);
+  background: rgba(255,255,255,.1);
   align-self: stretch;
 }
 
-/* ── GRID ── */
+/* ── FEATURED SECTION ── */
+.t-featured {
+  background: var(--bg);
+  padding: 5.5rem 5rem 4rem;
+}
+.t-featured-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.t-sec-eyebrow {
+  font-family: 'Epilogue', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--teal-deep);
+  display: block;
+  margin-bottom: .6rem;
+}
+.t-sec-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 2.5vw, 2.1rem);
+  color: var(--ink);
+  line-height: 1.15;
+  margin-bottom: 2.5rem;
+}
+.t-sec-title em { font-style: italic; color: var(--teal-deep); }
+.t-feat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.t-feat-card {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid var(--border-light);
+  border-top: 3px solid var(--teal);
+  padding: 2.125rem 1.875rem 1.875rem;
+  box-shadow: 0 4px 24px rgba(61,166,205,.1), 0 1px 4px rgba(26,58,92,.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.t-feat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 36px rgba(61,166,205,.16), 0 2px 8px rgba(26,58,92,.07);
+}
+.t-feat-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 1rem;
+}
+.t-feat-stars svg { width: 14px; height: 14px; }
+.t-feat-qmark {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.25rem;
+  line-height: .5;
+  color: var(--teal);
+  opacity: .4;
+  display: block;
+  margin-bottom: .5rem;
+}
+.t-feat-quote {
+  font-family: 'Epilogue', sans-serif;
+  font-size: .925rem;
+  line-height: 1.78;
+  color: var(--ink-mid);
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+.t-feat-attr {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-light);
+}
+.t-feat-avatar {
+  width: 38px; height: 38px;
+  border-radius: 50%;
+  background: var(--teal-pale);
+  border: 1.5px solid var(--teal-border);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Epilogue', sans-serif;
+  font-size: .85rem; font-weight: 700;
+  color: var(--teal-deep);
+  flex-shrink: 0;
+}
+.t-feat-name {
+  font-family: 'Epilogue', sans-serif;
+  font-size: .85rem; font-weight: 600;
+  color: var(--ink); line-height: 1.2;
+}
+.t-feat-src {
+  display: flex; align-items: center; gap: .3rem;
+  font-family: 'Epilogue', sans-serif;
+  font-size: .75rem; font-weight: 600;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin-top: .2rem;
+}
+.t-feat-src svg { opacity: .55; }
+
+/* ── ALL REVIEWS ── */
 .t-section {
   background: var(--bg);
-  padding: 6rem 5rem 8rem;
+  padding: 2rem 5rem 8rem;
 }
 .t-inner {
   max-width: 1100px;
   margin: 0 auto;
 }
+.t-all-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.t-all-label {
+  font-family: 'Epilogue', sans-serif;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+}
+.t-all-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 100px;
+  padding: .3rem .85rem .3rem .7rem;
+  font-family: 'Epilogue', sans-serif;
+  font-size: .8rem; font-weight: 600;
+  color: var(--ink-mid);
+}
+.t-all-badge svg { opacity: .65; }
 .t-masonry {
   columns: 3;
   column-gap: 1.5rem;
@@ -135,75 +335,76 @@
   background: white;
   border-radius: 12px;
   border: 1px solid var(--border-light);
-  padding: 1.75rem 1.75rem 1.5rem;
+  padding: 1.5rem 1.625rem 1.375rem;
   box-shadow: var(--shadow-soft);
   margin-bottom: 1.5rem;
   display: block;
+  transition: transform .2s ease, box-shadow .2s ease;
 }
+.t-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(26,58,92,.1), 0 2px 6px rgba(26,58,92,.06);
+}
+.t-card-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: .875rem;
+}
+.t-card-stars svg { width: 13px; height: 13px; }
 .t-quote-mark {
   font-family: 'Playfair Display', serif;
-  font-size: 3.5rem;
-  line-height: .6;
+  font-size: 3rem;
+  line-height: .5;
   color: var(--teal);
-  opacity: .25;
+  opacity: .3;
   margin-bottom: .5rem;
   display: block;
 }
 .t-quote {
   font-family: 'Epilogue', sans-serif;
-  font-size: .9rem;
+  font-size: .875rem;
   line-height: 1.75;
   color: var(--ink-mid);
-  font-weight: 400;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.125rem;
 }
 .t-attribution {
   display: flex;
   align-items: center;
-  gap: .75rem;
-  padding-top: 1rem;
+  gap: .7rem;
+  padding-top: .875rem;
   border-top: 1px solid var(--border-light);
 }
 .t-avatar {
-  width: 36px;
-  height: 36px;
+  width: 34px; height: 34px;
   border-radius: 50%;
   background: var(--teal-pale);
   border: 1.5px solid var(--teal-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   font-family: 'Epilogue', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 700;
+  font-size: .8rem; font-weight: 700;
   color: var(--teal-deep);
   flex-shrink: 0;
 }
 .t-name {
   font-family: 'Epilogue', sans-serif;
-  font-size: .85rem;
-  font-weight: 600;
-  color: var(--ink);
-  line-height: 1.2;
+  font-size: .82rem; font-weight: 600;
+  color: var(--ink); line-height: 1.2;
 }
 .t-source {
-  display: flex;
-  align-items: center;
-  gap: .3rem;
+  display: flex; align-items: center; gap: .3rem;
   font-family: 'Epilogue', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: .08em;
+  font-size: .75rem; font-weight: 600;
+  letter-spacing: .07em;
   text-transform: uppercase;
   color: var(--ink-light);
-  margin-top: .15rem;
+  margin-top: .1rem;
 }
-.t-source svg { opacity: .5; }
+.t-source svg { opacity: .55; }
 
 /* ── CTA ── */
 .t-cta {
   background: var(--navy);
-  padding: 6rem 5rem;
+  padding: 7rem 5rem;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -211,13 +412,36 @@
 .t-cta::before {
   content: '';
   position: absolute;
-  top: -100px; left: 50%;
+  top: -80px; left: 50%;
   transform: translateX(-50%);
-  width: 600px; height: 400px;
-  background: radial-gradient(circle, rgba(61,166,205,.1), transparent 65%);
+  width: 700px; height: 500px;
+  background: radial-gradient(circle, rgba(61,166,205,.12), transparent 65%);
   pointer-events: none;
 }
-.t-cta-inner { max-width: 580px; margin: 0 auto; position: relative; z-index: 1; }
+.t-cta::after {
+  content: '';
+  position: absolute;
+  bottom: -60px; right: 8%;
+  width: 450px; height: 400px;
+  background: radial-gradient(circle, rgba(196,48,64,.07), transparent 65%);
+  pointer-events: none;
+}
+.t-cta-inner { max-width: 600px; margin: 0 auto; position: relative; z-index: 1; }
+.t-cta-proof {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  margin-bottom: 1.75rem;
+}
+.t-cta-proof-stars { display: flex; gap: 3px; }
+.t-cta-proof-stars svg { width: 16px; height: 16px; }
+.t-cta-proof-text {
+  font-family: 'Epilogue', sans-serif;
+  font-size: .82rem; font-weight: 600;
+  color: rgba(255,255,255,.45);
+  letter-spacing: .04em;
+}
 .t-cta-label {
   font-family: 'Epilogue', sans-serif;
   font-weight: 700;
@@ -230,34 +454,68 @@
 }
 .t-cta-h2 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: clamp(2rem, 3.25vw, 3.25rem);
   line-height: 1.1;
   color: white;
-  margin-bottom: 1rem;
+  margin-bottom: 1.125rem;
 }
 .t-cta-h2 em { font-style: italic; color: var(--teal); }
 .t-cta-sub {
   font-size: .95rem;
   line-height: 1.75;
-  color: rgba(255,255,255,.65);
+  color: rgba(255,255,255,.6);
   font-weight: 300;
-  margin-bottom: 2.25rem;
+  margin-bottom: 2.5rem;
 }
-.t-cta-sub p { color: rgba(255,255,255,.65); }
+.t-cta-sub p { color: rgba(255,255,255,.6); }
 .t-cta-btns { display: flex; gap: .85rem; justify-content: center; flex-wrap: wrap; }
 
+/* ── SCROLL REVEAL ── */
+.t-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .55s ease, transform .55s ease;
+}
+.t-reveal.in { opacity: 1; transform: none; }
+.t-reveal-d1 { transition-delay: .08s; }
+.t-reveal-d2 { transition-delay: .16s; }
+.t-reveal-d3 { transition-delay: .24s; }
+
 /* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .t-hero-inner { grid-template-columns: 1fr; }
+  .t-hero-panel { display: none; }
+  .t-feat-grid { grid-template-columns: 1fr 1fr; }
+  .t-feat-grid .t-feat-card:last-child { grid-column: span 2; max-width: 520px; }
+}
 @media (max-width: 960px) {
-  .t-hero-inner, .t-section, .t-cta { padding-left: 2rem; padding-right: 2rem; }
+  .t-hero-inner, .t-featured, .t-section, .t-cta { padding-left: 2rem; padding-right: 2rem; }
   .t-stats { padding-left: 2rem; padding-right: 2rem; gap: 2rem; flex-wrap: wrap; }
   .t-masonry { columns: 2; }
+  .t-feat-grid { grid-template-columns: 1fr; }
+  .t-feat-grid .t-feat-card:last-child { grid-column: unset; max-width: none; }
 }
 @media (max-width: 600px) {
   .t-masonry { columns: 1; }
+  .t-featured { padding-top: 3.5rem; }
+  .t-hero-inner { padding-top: 3.5rem; }
 }
 </style>
 </head>
 <body>
+
+<!-- SVG symbol defs -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="icon-star" viewBox="0 0 20 20">
+    <path fill="#FBBF24" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+  </symbol>
+  <symbol id="icon-google" viewBox="0 0 24 24">
+    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+  </symbol>
+</svg>
 
 <div id="site-nav"></div>
 <script src="/nav.js"></script>
@@ -265,15 +523,43 @@
 <!-- HERO -->
 <section class="t-hero">
   <div class="t-hero-inner">
-    <span class="t-eyebrow">Client Reviews</span>
-    <h1 class="t-h1">Don't take our word <em>for it.</em></h1>
-    <div class="t-sub">
-      <p>Every review below is from a real client, published on Google. We let their words speak for us.</p>
+    <div class="t-hero-left">
+      <span class="t-eyebrow">Client Reviews</span>
+      <h1 class="t-h1">Don't take our word <em>for it.</em></h1>
+      <div class="t-sub">
+        <p>Every review below is from a real client, published on Google. We let their words speak for us.</p>
+      </div>
+    </div>
+    <div class="t-hero-panel">
+      <div class="t-hero-panel-stars" aria-label="5 out of 5 stars">
+        <svg width="15" height="15"><use href="#icon-star"/></svg>
+        <svg width="15" height="15"><use href="#icon-star"/></svg>
+        <svg width="15" height="15"><use href="#icon-star"/></svg>
+        <svg width="15" height="15"><use href="#icon-star"/></svg>
+        <svg width="15" height="15"><use href="#icon-star"/></svg>
+      </div>
+      <p class="t-hero-panel-quote">Jon Mervis has transformed how we manage the sales organization at Toptracer. His willingness to fully understand our business needs makes him truly a part of our team.</p>
+      <div class="t-hero-panel-attr">
+        <div class="t-hero-panel-avatar">AG</div>
+        <div>
+          <div class="t-hero-panel-name">Alexander G.</div>
+          <div class="t-hero-panel-org">Toptracer</div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <!-- STATS BAR -->
   <div class="t-stats">
     <div>
       <div class="t-stat-num">5.0</div>
+      <div class="t-stat-stars" aria-label="5 stars">
+        <svg width="13" height="13"><use href="#icon-star"/></svg>
+        <svg width="13" height="13"><use href="#icon-star"/></svg>
+        <svg width="13" height="13"><use href="#icon-star"/></svg>
+        <svg width="13" height="13"><use href="#icon-star"/></svg>
+        <svg width="13" height="13"><use href="#icon-star"/></svg>
+      </div>
       <div class="t-stat-label">Google Rating</div>
     </div>
     <div class="t-stat-divider"></div>
@@ -289,319 +575,519 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- FEATURED REVIEWS -->
+<section class="t-featured">
+  <div class="t-featured-inner">
+    <span class="t-sec-eyebrow">Standout Reviews</span>
+    <h2 class="t-sec-title">What clients <em>remember most.</em></h2>
+    <div class="t-feat-grid">
+
+      <div class="t-feat-card t-reveal">
+        <div class="t-feat-stars" aria-label="5 out of 5 stars">
+          <svg width="14" height="14"><use href="#icon-star"/></svg>
+          <svg width="14" height="14"><use href="#icon-star"/></svg>
+          <svg width="14" height="14"><use href="#icon-star"/></svg>
+          <svg width="14" height="14"><use href="#icon-star"/></svg>
+          <svg width="14" height="14"><use href="#icon-star"/></svg>
+        </div>
+        <span class="t-feat-qmark">"</span>
+        <p class="t-feat-quote">Blue Engine and Jon Mervis have transformed how we manage the sales organization at Toptracer. His willingness to fully understand our business needs makes him truly a part of our team. Without Jon's expertise and solution based approach we wouldn't be in the position we're in today to drive the desired habits from our sales team and analyze our business in an effective and efficient way.</p>
+        <div class="t-feat-attr">
+          <div class="t-feat-avatar">AG</div>
+          <div>
+            <div class="t-feat-name">Alexander G.</div>
+            <div class="t-feat-src"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-feat-card t-reveal t-reveal-d1">
+        <div class="t-feat-stars" aria-label="5 out of 5 stars">
+          <svg width="14" height="14"><use href="#icon-star"/></svg>
+          <svg width="14" height="14"><use href="#icon-star"/></svg>
+          <svg width="14" height="14"><use href="#icon-star"/></svg>
+          <svg width="14" height="14"><use href="#icon-star"/></svg>
+          <svg width="14" height="14"><use href="#icon-star"/></svg>
+        </div>
+        <span class="t-feat-qmark">"</span>
+        <p class="t-feat-quote">Blue Engine is a fabulous resource. As a small non-profit looking to improve how we manage and analyze data, we reached out to Blue Engine for advice on how Salesforce might meet our needs. Blue Engine actually pointed us in the direction of an alternative solution that would be better for our organization. Their team listened to our needs, did not push a solution that would be in their financial interest, and ultimately advised us to move in a direction outside of their scope of work. Their client services are exceptional.</p>
+        <div class="t-feat-attr">
+          <div class="t-feat-avatar">JS</div>
+          <div>
+            <div class="t-feat-name">John S.</div>
+            <div class="t-feat-src"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="t-feat-card t-reveal t-reveal-d2">
+        <div class="t-feat-stars" aria-label="5 out of 5 stars">
+          <svg width="14" height="14"><use href="#icon-star"/></svg>
+          <svg width="14" height="14"><use href="#icon-star"/></svg>
+          <svg width="14" height="14"><use href="#icon-star"/></svg>
+          <svg width="14" height="14"><use href="#icon-star"/></svg>
+          <svg width="14" height="14"><use href="#icon-star"/></svg>
+        </div>
+        <span class="t-feat-qmark">"</span>
+        <p class="t-feat-quote">One of my favorite things about working with Jon is that he sees the big business picture and works to determine the best strategy that'll drive the best results. He's not afraid to think outside the box to determine personalized solutions that may not even be on other's radar. He's also a great teacher, and will "teach you how to fish" if you will, enabling you to become a master at optimizing your CRM for your unique business needs. And lastly, he's a genuinely good person and fun to work with!</p>
+        <div class="t-feat-attr">
+          <div class="t-feat-avatar">HE</div>
+          <div>
+            <div class="t-feat-name">Heather E.</div>
+            <div class="t-feat-src"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ALL REVIEWS -->
 <section class="t-section">
   <div class="t-inner">
+    <div class="t-all-header">
+      <span class="t-all-label">All Reviews</span>
+      <span class="t-all-badge">
+        <svg width="10" height="10"><use href="#icon-google"/></svg>
+        26 Google Reviews
+      </span>
+    </div>
     <div class="t-masonry">
 
-      <div class="t-card">
-        <span class="t-quote-mark">"</span>
-        <p class="t-quote">Blue Engine and Jon Mervis have transformed how we manage the sales organization at Toptracer. His willingness to fully understand our business needs makes him truly a part of our team. Without Jon's expertise and solution based approach we wouldn't be in the position we're in today to drive the desired habits from our sales team and analyze our business in an effective and efficient way.</p>
-        <div class="t-attribution">
-          <div class="t-avatar">AG</div>
-          <div>
-            <div class="t-name">Alexander G.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
-          </div>
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
         </div>
-      </div>
-
-      <div class="t-card">
-        <span class="t-quote-mark">"</span>
-        <p class="t-quote">Blue Engine is a fabulous resource. As a small non-profit looking to improve how we manage and analyze data, we reached out to Blue Engine for advice on how Salesforce might meet our needs. We were impressed with how honest and frank the Blue Engine team was on possible alternatives. Blue Engine actually pointed us in the direction of an alternative solution that would be better for our organization. Their team listened to our needs, did not push a solution that would be in their financial interest, and ultimately advised us to move in a direction outside of their scope of work. Their client services are exceptional.</p>
-        <div class="t-attribution">
-          <div class="t-avatar">JS</div>
-          <div>
-            <div class="t-name">John S.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="t-card">
-        <span class="t-quote-mark">"</span>
-        <p class="t-quote">One of my favorite things about working with Jon is that he sees the big business picture and works to determine the best strategy that'll drive the best results. He's not afraid to think outside the box to determine personalized solutions that may not even be on other's radar. He's also a great teacher, and will "teach you how to fish" if you will, enabling you to become a master at optimizing your CRM for your unique business needs. And lastly, he's a genuinely good person and fun to work with!</p>
-        <div class="t-attribution">
-          <div class="t-avatar">HE</div>
-          <div>
-            <div class="t-name">Heather E.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="t-card">
         <span class="t-quote-mark">"</span>
         <p class="t-quote">Jon Mervis and his company, Blue Engine, did a very good job introducing Salesforce as a tool to strengthen the nonprofit Caring Across Generations. He's so enthusiastic about Salesforce technology that he has compared his work to playing with Legos. Jon trained me one-on-one to use our Salesforce system and was always patient with my many questions. He was very flexible, always willing to listen to the needs and feedback of our staff and respond by tailoring Salesforce to give us the best results. Jon is well versed in his field and delightful to work with. I recommend him highly.</p>
         <div class="t-attribution">
           <div class="t-avatar">MK</div>
           <div>
             <div class="t-name">Mollie K.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">Great company to work with. Jon and his team have been responsive in a very timely manner with all of our requests. Blue Engine has a "can do" mindset in making Salesforce work for our business needs. If you want peace of mind in understanding Salesforce and incorporating it with your business definitely work with Blue Engine.</p>
         <div class="t-attribution">
           <div class="t-avatar">JW</div>
           <div>
             <div class="t-name">Jill Walsh</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">We are currently decommissioning a prior CRM system and building a new CRM on Salesforce. We spoke with Jon and he helped us think through design and implementation. He's an expert on industry verticals and helped us think through best practices across our new CRM. He's an incredible resource to any team considering how to utilize the capabilities of Salesforce!</p>
         <div class="t-attribution">
           <div class="t-avatar">BG</div>
           <div>
             <div class="t-name">Brett G.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">Blue Engine has a great team of highly skilled professionals with a lot of experience. It has been an absolute pleasure to work with them. Very knowledgeable, professional and answered all the questions that I had regarding our issues. They were able to set up a couple of very helpful (and creative) solutions to some problems that led to increased efficiency for our company. Highly recommend.</p>
         <div class="t-attribution">
           <div class="t-avatar">EA</div>
           <div>
             <div class="t-name">Edmond A.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">We would highly recommend Blue Engine! Jon and Brad helped our small business build out a customized, multi-layered project tracking system and provided some great solutions to problems we'd been trying to solve for years. They were quick to pick up on the nuances of our small independent rep group and were fast, responsive and enjoyable to collaborate with.</p>
         <div class="t-attribution">
           <div class="t-avatar">BF</div>
           <div>
             <div class="t-name">Bethany F.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">I'm thrilled to express my exceptional encounter with Blue Engine Salesforce Consulting. With a history of partnering with various tech consultants over time, I can confidently say that Blue Engine, and Jon in particular, truly understand what they're talking about. They have a knack for making complex tech stuff easy to understand, and their insights have made a real difference.</p>
         <div class="t-attribution">
           <div class="t-avatar">DG</div>
           <div>
             <div class="t-name">Daniel G.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">Phenomenal company, can get your projects done quickly and professionally. I hired multiple Salesforce companies but am sticking to this one as they have been the most efficient and highest quality I have dealt with. This is while giving you the best service there is. 10/10</p>
         <div class="t-attribution">
           <div class="t-avatar">BU</div>
           <div>
             <div class="t-name">Brian U.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">Jon worked as a consultant to assist our Company with its CRM infrastructure. Jon worked with us through the design-thinking process, including the user mapping, and setting guidelines on our platform. Jon was extremely knowledgeable, efficient, and communicated with us throughout the entire process. We received a finished end product, and are extremely satisfied with the results.</p>
         <div class="t-attribution">
           <div class="t-avatar">MD</div>
           <div>
             <div class="t-name">Mark D.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">The Team at Blue Engine was INCREDIBLY helpful and professional. They went above and beyond to answer all of my questions and ensure I was as comfortable as possible. Not only were they very quick to respond to my needs but also put my mind at ease, gave me clear and concise information and next steps. I HIGHLY recommend working with Blue Engine!</p>
         <div class="t-attribution">
           <div class="t-avatar">SN</div>
           <div>
             <div class="t-name">Shelfie NYC</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">I had the great pleasure of working with my friend Jon Mervis, Salesforce Consultant and Principal at Blue Engine. It was apparent that his years of experience in not only building and managing CRMs, but also using them in a practical setting gives him the edge in his consultation. I truly appreciated how he took the time to best understand my business and its needs in order to assess what system would best meet our requirements.</p>
         <div class="t-attribution">
           <div class="t-avatar">JS</div>
           <div>
             <div class="t-name">Josh S.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">The Blue Engine team is the real deal. Without any hesitation, I recommend their services to anyone looking to implement SF or improve their utilization. Their professionalism and trustworthiness are second to none and they will collaborate with you to meet your needs.</p>
         <div class="t-attribution">
           <div class="t-avatar">ME</div>
           <div>
             <div class="t-name">Maggie E.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">Jon is a man of ideas able to find a solution for every problem! He was able to fix our long-standing organizational issue in days optimizing our system and user experience. Highly recommend the Blue Engine Team!</p>
         <div class="t-attribution">
           <div class="t-avatar">IF</div>
           <div>
             <div class="t-name">Inga F.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">Blue Engine has been extremely helpful and timely. From base level instruction to specific modifications designed for our sales cycles, he goes above and beyond to ensure his customers are successful. I would highly recommend Blue Engine to any business looking to optimize their SF.</p>
         <div class="t-attribution">
           <div class="t-avatar">JS</div>
           <div>
             <div class="t-name">Jared S.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">I had the pleasure of working with the Blue Engine team and it was amazing how they spin a project in such a timely manner and on budget. The key was an excellent communication and team collaboration. I HIGHLY recommend!</p>
         <div class="t-attribution">
           <div class="t-avatar">JA</div>
           <div>
             <div class="t-name">Jonny A.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">I was fortunate to find Blue Engine when we did. Seeking optimization advice, I was pleased with the responsiveness and mastery of the issues I was facing. Distilled in simple, easy nuggets I could implement. Experience was great.</p>
         <div class="t-attribution">
           <div class="t-avatar">EW</div>
           <div>
             <div class="t-name">Ezra W.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">Dan is incredibly kind, knowledgeable, and responsive/easy to work with! Blue Engine is an asset to our small team.</p>
         <div class="t-attribution">
           <div class="t-avatar">CO</div>
           <div>
             <div class="t-name">Christina O.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">Jon at Blue Engine was so helpful and professional. He really made sense of all my thoughts and notes and provided great counsel on how to move forward.</p>
         <div class="t-attribution">
           <div class="t-avatar">MW</div>
           <div>
             <div class="t-name">Miriam W.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">Blue Engine has provided exceptional consultation services and support. They've been very patient and knowledgeable in answering all my questions.</p>
         <div class="t-attribution">
           <div class="t-avatar">DD</div>
           <div>
             <div class="t-name">Dina D.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">So great working with the Blue Engine team — including their willingness to bug Salesforce for answers!</p>
         <div class="t-attribution">
           <div class="t-avatar">PL</div>
           <div>
             <div class="t-name">Pat L.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">Very creative and has a passion for innovation! Highly recommend.</p>
         <div class="t-attribution">
           <div class="t-avatar">MP</div>
           <div>
             <div class="t-name">Monica P.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">Fantastic SF consulting. Steve Trumble is an ace.</p>
         <div class="t-attribution">
           <div class="t-avatar">JS</div>
           <div>
             <div class="t-name">Jonathan S.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">Always had a good experience with these guys!</p>
         <div class="t-attribution">
           <div class="t-avatar">ML</div>
           <div>
             <div class="t-name">Michael L.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
 
-      <div class="t-card">
+      <div class="t-card t-reveal">
+        <div class="t-card-stars" aria-label="5 out of 5 stars">
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+          <svg width="13" height="13"><use href="#icon-star"/></svg>
+        </div>
         <span class="t-quote-mark">"</span>
         <p class="t-quote">Professional and very helpful!</p>
         <div class="t-attribution">
           <div class="t-avatar">DR</div>
           <div>
             <div class="t-name">David R.</div>
-            <div class="t-source"><svg width="10" height="10" viewBox="0 0 24 24" fill="#EA4335"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>Google</div>
+            <div class="t-source"><svg width="10" height="10"><use href="#icon-google"/></svg>Google</div>
           </div>
         </div>
       </div>
@@ -613,6 +1099,16 @@
 <!-- CTA -->
 <section class="t-cta">
   <div class="t-cta-inner">
+    <div class="t-cta-proof">
+      <div class="t-cta-proof-stars" aria-label="5 stars">
+        <svg width="16" height="16"><use href="#icon-star"/></svg>
+        <svg width="16" height="16"><use href="#icon-star"/></svg>
+        <svg width="16" height="16"><use href="#icon-star"/></svg>
+        <svg width="16" height="16"><use href="#icon-star"/></svg>
+        <svg width="16" height="16"><use href="#icon-star"/></svg>
+      </div>
+      <span class="t-cta-proof-text">5.0 · 26 Google Reviews</span>
+    </div>
     <span class="t-cta-label">Ready to get started?</span>
     <h2 class="t-cta-h2">Join the list of <em>happy clients.</em></h2>
     <div class="t-cta-sub">
@@ -626,6 +1122,22 @@
 
 <div id="site-footer"></div>
 <script src="/footer.js"></script>
+
+<script>
+(function() {
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+  document.querySelectorAll('.t-reveal').forEach(function(el) {
+    observer.observe(el);
+  });
+})();
+</script>
 
 </body>
 </html>
